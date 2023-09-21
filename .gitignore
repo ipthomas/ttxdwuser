@@ -6,7 +6,7 @@
 /coverage
 /logs
 /build/certs
-/main/envvars.json
+/main/envvars*
 
 # misc
 .DS_Store
