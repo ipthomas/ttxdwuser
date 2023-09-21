@@ -5,7 +5,7 @@
 .pnp.js
 /coverage
 logs
-build/certs
+main/certs
 main/envvars*
 
 # misc
