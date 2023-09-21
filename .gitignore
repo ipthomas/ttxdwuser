@@ -5,8 +5,8 @@
 .pnp.js
 /coverage
 /logs
-/build/certs
-/main/envvars*
+build/certs
+main/envvars*
 
 # misc
 .DS_Store
