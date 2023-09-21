@@ -16,24 +16,24 @@
       {
         "id": "1",
         "tasktype": "NOTIFICATION",
-        "name": "Secure_Transport_Scheduled",
-        "description": "Secure Transport Scheduled for Transfer of Patient",
+        "name": "Transport_Scheduled",
+        "description": "Secure Transport Scheduled",
         "actualowner": "",
-        "expirationtime": "day(1)",
+        "expirationtime": "",
         "startbytime": "",
-        "completebytime": "day(1)",
+        "completebytime": "",
         "isskipable": false,
         "potentialOwners": null,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(SPV1_Transport Scheduled)"
+              "condition": "output(Transport_Scheduled)"
             }
           }
         ],
         "output": [
           {
-            "name": "SPV1_Transport Scheduled",
+            "name": "Transport_Scheduled",
             "contenttype": "text/plain",
             "accesstype": "url"
           }
@@ -41,8 +41,8 @@
       },
       {
         "id": "2",
-        "tasktype": "NOTIFICATION",
-        "name": "Secure_Patient_Admitted",
+        "tasktype": "TASK",
+        "name": "Patient_Admitted",
         "description": "Patient Admitted by Health Provider",
         "actualowner": "",
         "expirationtime": "",
@@ -53,29 +53,29 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(SPV2_Patient Admitted)"
+              "condition": "task(3)"
             }
           }
         ],
         "input": [
           {
-            "name": "SPV1_Transport Scheduled",
+            "name": "Transport_Scheduled",
             "contenttype": "text/plain",
             "accesstype": "url"
           }
         ],
         "output": [
           {
-            "name": "SPV2_Patient Admitted",
-            "contenttype": "text/plain",
-            "accesstype": "url"
+            "name": "SPV2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ]
       },
       {
         "id": "3",
-        "tasktype": "NOTIFICATION",
-        "name": "Secure_Patient_Discharged",
+        "tasktype": "TASK",
+        "name": "Patient_Discharged",
         "description": "Secure Patient Discharged by Health Provider",
         "actualowner": "",
         "expirationtime": "",
@@ -92,28 +92,28 @@
         ],
         "input": [
           {
-            "name": "SPV2_Patient Admitted",
-            "contenttype": "text/plain",
-            "accesstype": "url"
+            "name": "SPV2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "SPV3_Patient Discharged",
-            "contenttype": "text/plain",
-            "accesstype": "url"
+            "name": "SPV3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ]
       },
       {
         "id": "4",
         "tasktype": "TASK",
-        "name": "Publish_Discharge_Notes",
-        "description": "Publish Patient Discharge Notes",
+        "name": "Patient_Returned",
+        "description": "Patient returned to secure location",
         "actualowner": "",
         "expirationtime": "",
         "startbytime": "",
-        "completebytime": "day(2)",
+        "completebytime": "day(1)",
         "isskipable": false,
         "potentialOwners": null,
         "completionBehavior": [
@@ -125,9 +125,9 @@
         ],
         "input": [
           {
-            "name": "SPV3_Patient Discharged",
-            "contenttype": "text/plain",
-            "accesstype": "url"
+            "name": "SPV3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [

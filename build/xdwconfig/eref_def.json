@@ -1,6 +1,6 @@
 {
     "ref": "eref_def",
-    "name": "E-Referral",
+    "name": "Electronic Referral",
     "confidentialitycode": "N",
     "startbytime": "",
     "completebytime": "day(2)",
@@ -8,42 +8,42 @@
     "completionBehavior": [
       {
         "completion": {
-          "condition": "task(2)"
+          "condition": "task(4)"
         }
       }
     ],
     "tasks": [
       {
         "id": "1",
-        "tasktype": "NOTIFICATION",
-        "name": "E-Referral_Requested",
-        "description": "Create Electronic Referral Request",
+        "tasktype": "TASK",
+        "name": "Referral_Requested",
+        "description": "Electronic Referral Requested",
         "actualowner": "",
-        "expirationtime": "day(1)",
+        "expirationtime": "",
         "startbytime": "",
-        "completebytime": "hour(4)",
+        "completebytime": "",
         "isskipable": false,
         "potentialOwners": null,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(EREF1_Request Referral)"
+              "condition": "task(4)"
             }
           }
         ],
         "output": [
           {
-            "name": "EREF1_Request Referral",
-            "contenttype": "text/plain",
-            "accesstype": "url"
+            "name": "EREF1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ]
       },
       {
         "id": "2",
-        "tasktype": "NOTIFICATION",
-        "name": "E-Referral_Claimed",
-        "description": "Claim Electronic Referral",
+        "tasktype": "TASK",
+        "name": "Referral_Claimed",
+        "description": "Electronic Referral Claimed",
         "actualowner": "",
         "expirationtime": "day(2)",
         "startbytime": "",
@@ -53,15 +53,82 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(EREF2_Referral Claimed)"
+              "condition": "output(EREF2^^TypeCode_EPUT_2018"
             }
           }
         ],
+        "input": {
+          "name": "EREF1^^TypeCode_EPUT_2018",
+          "contenttype": "application/pdf",
+          "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+        },
         "output": [
           {
-            "name": "EREF2_Referral Claimed",
-            "contenttype": "text/plain",
-            "accesstype": "url"
+            "name": "EREF2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "tasktype": "TASK",
+        "name": "Patient_Transferred",
+        "description": "Patient Transferred",
+        "actualowner": "",
+        "expirationtime": "day(2)",
+        "startbytime": "",
+        "completebytime": "day(1)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(EREF3^^TypeCode_EPUT_2018"
+            }
+          }
+        ],
+        "input": {
+          "name": "EREF2^^TypeCode_EPUT_2018",
+          "contenttype": "application/pdf",
+          "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+        },
+        "output": [
+          {
+            "name": "EREF3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "tasktype": "TASK",
+        "name": "Patient_Admiited",
+        "description": "Patient Admitted",
+        "actualowner": "",
+        "expirationtime": "day(2)",
+        "startbytime": "",
+        "completebytime": "day(1)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(EREF4^^TypeCode_EPUT_2018"
+            }
+          }
+        ],
+        "input": {
+          "name": "EREF3^^TypeCode_EPUT_2018",
+          "contenttype": "application/pdf",
+          "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+        },
+        "output": [
+          {
+            "name": "EREF4^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ]
       }

@@ -9,7 +9,7 @@
         <wsa:ReplyTo SOAP-ENV:mustUnderstand='true'>
             <wsa:Address>http://www.w3.org/2005/08/addressing/anonymous</wsa:Address>
         </wsa:ReplyTo>
-        <wsa:To>{{.EnvVars.DSUB_Broker_URL}}</wsa:To>
+        <wsa:To>{{.EnvVars.DSUB_BROKER_URL}}</wsa:To>
     </SOAP-ENV:Header>
     <SOAP-ENV:Body>
         <wsnt:Subscribe xmlns:wsnt='http://docs.oasis-open.org/wsn/b-2'
@@ -17,7 +17,7 @@
             xmlns:rim='urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0'
             xmlns:wsa='http://www.w3.org/2005/08/addressing'>
             <wsnt:ConsumerReference>
-                <wsa:Address>{{.EnvVars.XDW_SERVER_URL}}</wsa:Address>
+                <wsa:Address>{{.EnvVars.DSUB_CONSUMER_URL}}</wsa:Address>
             </wsnt:ConsumerReference>
             <wsnt:Filter>
                 <wsnt:TopicExpression Dialect='http://docs.oasis-open.org/wsn/t-1/TopicExpression/Simple'>ihe:FullDocumentEntry</wsnt:TopicExpression>

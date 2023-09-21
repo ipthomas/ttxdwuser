@@ -1,9 +1,43 @@
 {{define "pds_tmplt"}}
 {{$user := .Query.User}}
+{{$hasPatient := "false"}}
+{{range .PDSRetrieveResponse.Name}}
+    {{if ne .Family ""}}
+        {{$hasPatient = "true"}}
+    {{end}}
+{{end}}
 <div class="col-md-12">
     <div class="panel panel-default">
-        <div class="panel-heading panel-default" style="text-align: center;color: blue;">
-            PDS Patient Record
+        <div class="panel-heading panel-default" style="text-align: center;color: blue;">           
+            {{if eq $hasPatient "false"}}
+                <span style="color: red;">No NHS Spine PDS Patient Record Found for {{.Query.Nhs}}</span>
+            {{else}}
+                NHS Spine PDS Patient Record for {{.Query.Nhs}}
+                {{if eq .PDSResponse "retrieve"}}
+                    {{$conf := ""}}
+                    {{range .PDSRetrieveResponse.Meta.Security}}
+                        {{$conf = .Display}}
+                    {{end}}
+                    <td>Confidentiality {{$conf}}</td>
+                    {{if not .PDSRetrieveResponse.DeceasedDateTime.IsZero}}
+                    <span style="color: red;">Patient is Deceased</span>
+                    {{end}}
+                {{else}}
+                    {{if eq .PDSResponse "search"}}
+                        {{$conf := ""}}
+                        {{range .PDSSearchResponse.Entry}}
+                            {{if eq .Resource.ResourceType "Patient"}}
+                                {{range .Resource.Meta.Security}}
+                                    {{$conf = .Display}}
+                                {{end}}
+                            {{end}}
+                        {{end}}
+                        <td>Confidentiality {{$conf}}</td>
+                        {{if not .PDSSearchResponse.DeceasedDateTime.IsZero}}
+                        <span style="color: red;">Patient is Deceased</span>
+                        {{end}}
+                    {{end}}
+                {{end}}
         </div>
         <div class="panel-body">
             <table class="table table-condensed table-striped">
@@ -13,122 +47,20 @@
                                 class="glyphicon glyphicon-chevron-down"></span> Address</td>
                         <td data-toggle="collapse" data-target="#pds2" class="accordion-toggle"><span
                                 class="glyphicon glyphicon-chevron-down"></span> Contact</td>
-                    </tr>
-                    <tr class="info">
-                        <th>Prefix</th>
-                        <th>Fist Name</th>
-                        <th>Last Name</th>
-                        <th>Suffix</th>
-                        <th>Use</th>
-                        <th>Start</th>
-                        <th>End</th>
-                        <th>Gender</th>
-                        <th>Birthdate</th>
-                        <th>Multiple Birth</th>
-                        <th>Deceased</th>
+                        <td data-toggle="collapse" data-target="#pds3" class="accordion-toggle"><span
+                                class="glyphicon glyphicon-chevron-down"></span> Other Details</td>
                     </tr>
                 </thead>
-
                 <tbody>
-                    {{if eq .PDSResponse.ResponseType "search"}}
-                    {{range .PDSResponse.Response.entry}}
-                    {{$entry := .}}
-                    {{ if eq $entry.resourceType "Patient"}}
-                    {{$pat := .}}
-                    {{range $pat.name}}
-                    <tr>
-                        <td>{{.prefix}}</td>
-                        <td>{{.given}}</td>
-                        <td>{{.family}}</td>
-                        <td>{{.suffix}}</td>
-                        <td>{{.use}}</td>
-                        <td>{{.period.start}}</td>
-                        <td>{{.period.end}}</td>
-                        <td>{{.gender}}</td>
-                        <td>{{.birthDate}}</td>
-                        <td>{{.multipleBirthInteger}}</td>
-                        <td>{{.deceasedDateTime}}</td>
-                    </tr>
-                    {{end}}
-                    <tr>
-                        <td colspan="12" class="hiddenRow">
-                            <div class="accordian-body collapse" id="pds1">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr class="info">
-                                            <th>House</th>
-                                            <th>Street</th>
-                                            <th>Town</th>
-                                            <th>City</th>
-                                            <th>County</th>
-                                            <th>Postcode</th>
-                                            <th>Address Keys</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {{range $pat.Address}}
-                                        <tr>
-                                            {{range .line}}
-                                            <td>{{.}}</td>
-                                            {{end}}
-                                            <td>{{.postalCode}}</td>
-                                            {{$td := ""}}
-                                            {{range .extension}}
-                                            {{- range .extension}}
-                                            {{if eq .url "type"}}
-                                            {{- $td = (printf "%s, %s, %s" $td .valueCoding.code ":") }}
-                                            {{- end }}
-                                            {{if eq .url "value"}}
-                                            {{- $td = (printf "%s, %s" $td .valueString) }}
-                                            {{- end}}
-                                            <td>{{$td}}</td>
-                                            {{end}}
-                                        </tr>
-                                        {{end}}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="12" class="hiddenRow">
-                            <div class="accordian-body collapse" id="pds2">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr class="info">
-                                            <th>System</th>
-                                            <th>Value</th>
-                                            <th>Use</th>
-                                            <th>Start</th>
-                                            <th>End</th>
-                                            <th>Info</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {{range $pat.telecom}}
-                                        <tr>
-                                            <td>{{.system}}</td>
-                                            <td>{{.value}}</td>
-                                            <td>{{.use}}</td>
-                                            <td>{{.period.start}}</td>
-                                            <td>{{.period.end}}</td>
-                                            {{$td := ""}}
-                                            <td>{{mappedid $user .System}}</td>
-
-                                        </tr>
-                                        {{end}}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </td>
-                    </tr>
-                    {{end}}
-                    {{end}}
-                    {{end}}
+                    {{if eq .PDSResponse "retrieve"}}
+                        {{template "pdsretrieve_tmplt" .}}
+                    {{else}}
+                        {{template "pdssearch_tmplt" .}}
                     {{end}}
                 </tbody>
             </table>
         </div>
+            {{end}}
     </div>
 </div>
 </body>

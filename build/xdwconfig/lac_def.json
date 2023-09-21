@@ -4,11 +4,16 @@
     "confidentialitycode": "Restricted",
     "startbytime": "",
     "completebytime": "day(20)",
-    "expirationtime": "",
+    "expirationtime": "day(21)",
     "completionBehavior": [
       {
         "completion": {
           "condition": "task(6)"
+        }
+      },
+      {
+        "completion": {
+          "condition": "task(7)"
         }
       }
     ],
@@ -17,7 +22,7 @@
         "id": "1",
         "tasktype": "TASK",
         "name": "LAC_Identified",
-        "description": "LAC Identfied By Child Services",
+        "description": "Simulate the Social Services EPR sending a message to start the LAC Workflow",
         "actualowner": "",
         "expirationtime": "",
         "startbytime": "",
@@ -27,11 +32,6 @@
           {
             "completion": {
               "condition": "output(LAC1^^TypeCode_EPUT_2018)"
-            }
-          },
-          {
-            "completion": {
-              "condition": "task(2)"
             }
           }
         ],
@@ -47,20 +47,37 @@
         "id": "2",
         "tasktype": "TASK",
         "name": "LAC_Paperwork_Sent",
-        "description": "LAC paperwork sent to Provide",
+        "description": "Simulate the Social Services EPR sending messages to the HIE with the different Paperwork items",
         "actualowner": "",
-        "expirationtime": "",
-        "startbytime": "day(2)",
-        "completebytime": "day(3)",
+        "expirationtime": "day(6)",
+        "startbytime": "day(4)",
+        "completebytime": "day(5)",
         "isskipable": false,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "task(3)"
+              "condition": "output(LAC2^^TypeCode_EPUT_2018) and output(LAC3^^TypeCode_EPUT_2018) and output(LAC4^^TypeCode_EPUT_2018)"
             }
           }
         ],
+        "input": [
+          {
+            "name": "LAC1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
         "output": [
+          {
+            "name": "LAC2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "LAC3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
           {
             "name": "LAC4^^TypeCode_EPUT_2018",
             "contenttype": "application/pdf",
@@ -71,11 +88,11 @@
       {
         "id": "3",
         "tasktype": "TASK",
-        "name": "LAC_Paperwork_Accepted",
-        "description": "Provide Accepts or Rejects LAC Paperwork",
+        "name": "LAC_Paperwork_Accepted_Rejected",
+        "description": "Simulate Provide EPR sending a message to the HIE to Accept or Reject the LAC Paperwork",
         "actualowner": "",
-        "expirationtime": "day(14)",
-        "startbytime": "day(3)",
+        "expirationtime": "day(8)",
+        "startbytime": "day(5)",
         "completebytime": "day(7)",
         "isskipable": false,
         "completionBehavior": [
@@ -83,6 +100,23 @@
             "completion": {
               "condition": "output(LAC5^^TypeCode_EPUT_2018) and latest(LAC5^^TypeCode_EPUT_2018)"
             }
+          }
+        ],
+        "input": [
+          {
+            "name": "LAC2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "LAC3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "LAC4^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
@@ -102,17 +136,24 @@
         "id": "4",
         "tasktype": "TASK",
         "name": "LAC_IHA_Scheduled",
-        "description": "Provide Schedules IHA Apointment",
+        "description": "Simulate Provide EPR sending a message to the HIE with the IHA appointment Information",
         "actualowner": "",
-        "expirationtime": "day(15)",
-        "startbytime": "day(7)",
-        "completebytime": "day(8)",
+        "expirationtime": "day(10)",
+        "startbytime": "day(8)",
+        "completebytime": "day(9)",
         "isskipable": false,
         "completionBehavior": [
           {
             "completion": {
               "condition": "output(LAC7^^TypeCode_EPUT_2018)"
             }
+          }
+        ],
+        "input": [
+          {
+            "name": "LAC5^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
@@ -127,16 +168,16 @@
         "id": "5",
         "tasktype": "TASK",
         "name": "LAC_IHA_Completed",
-        "description": "Provide Completes IHA Assessment",
+        "description": "Simulate Provide EPR sending a message to the HIE with the IHA Information",
         "actualowner": "",
-        "expirationtime": "",
-        "startbytime": "day(8)",
+        "expirationtime": "day(19)",
+        "startbytime": "day(13)",
         "completebytime": "day(18)",
         "isskipable": false,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(LAC8^^TypeCode_EPUT_2018)"
+              "condition": "task(6)"
             }
           }
         ],
@@ -158,10 +199,10 @@
       {
         "id": "6",
         "tasktype": "TASK",
-        "name": "LAC_Workflow_Completed",
-        "description": "Child Services Acknowledges Receipt of IHA",
+        "name": "IHA_Accepted",
+        "description": "Simulate Social Services EPR sending a message to the HIE to Accept the IHA",
         "actualowner": "",
-        "expirationtime": "day(25)",
+        "expirationtime": "day(21)",
         "startbytime": "day(19)",
         "completebytime": "day(20)",
         "isskipable": false,
@@ -182,6 +223,31 @@
         "output": [
           {
             "name": "LAC9^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "tasktype": "TASK",
+        "name": "IHA_Withdrawn",
+        "description": "Simulate any stakeholders' EPR sending a message to the HIE to withdraw the IHA Request",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "day(21)",
+        "isskipable": true,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(LAC10^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "LAC10^^TypeCode_EPUT_2018",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }

@@ -50,7 +50,7 @@
                 <ul>
                     <div class="trigger">
                         <li onclick="showprogress()">
-                            <a id="sidebarmySubs" href="/beta/spa/consumer/mysubs?user={{$user}}&org={{$org}}&role={{$role}}&email={{$user}}@{{$org}}.co.uk" target="iconsumer">My Subscriptions</a>
+                            <a id="sidebarmySubs" href="/beta/spa/consumer/mysubs?user={{$user}}&org={{$org}}&role={{$role}}" target="iconsumer">My Subscriptions</a>
                         </li>
                         <div class="popup">
                             Manage Subscriptions
@@ -80,6 +80,18 @@
                 <ul class="list-unstyled components">
                     <div class="trigger">
                         <li onclick="showprogress()">
+                            <a id="sidebarPublish"
+                                href="/beta/spa/publish?act=Publish Content&user={{$user}}&org={{$org}}&role={{$role}}"
+                                target="iconsumer">Publish Content</a>
+                        </li>
+                        <div class="popup">
+                            Publish Content to the SCR
+                        </div>
+                    </div>
+                </ul>
+                <ul class="list-unstyled components">
+                    <div class="trigger">
+                        <li onclick="showprogress()">
                             <a id="sidebarRegisterDef" href="/beta/spa/consumer/definition?act=Register Definition&user={{$user}}&org={{$org}}&role={{$role}}" target="iconsumer">Register Definition</a>
                         </li>
                         <div class="popup">
@@ -99,6 +111,17 @@
                     </div>
                 </ul>
                 {{if eq $org "2tsolutions"}}
+                <ul>
+                    <div class="trigger">
+                        <li>
+                            <a id="sidebarAllSubscription" href="/beta/spa/consumer/mysubs"
+                                target="iconsumer">All Subscriptions</a>
+                        </li>
+                        <div class="popup">
+                            Manage all ICB Subscriptions
+                        </div>
+                    </div>
+                </ul>
                 <ul>
                     <div class="trigger">
                         <li>
@@ -134,12 +157,12 @@
             <div class="col-lg-9 col-md-8 col-sm-6 col-xs-12 main-content">
                 <div class="trigger">
                     <h5>
-                    <div class="row center-row">
-                        <img id="logo" src="" alt="logo" class="toggle-sidebar" onclick="toggleSidebar()">
-                        <div class="popup">
-                            Toggle Workflow Service Menu
+                        <div class="row center-row">
+                            <img id="logo" src="" alt="logo" class="toggle-sidebar" onclick="toggleSidebar()">
+                            <div class="popup">
+                                Toggle Workflow Service Menu
+                            </div>
                         </div>
-                    </div>
                     </h5>
                 </div>
                 <div>
@@ -178,7 +201,7 @@
                         </div>
                         <label for="vers">Status:</label>
                         <div class="trigger">
-                            <select class="form-control" id="status" name="status" onchange="checkInputs()">
+                            <select class="form-control" id="status" name="status">
                                 <option value="">All</option>
                                 <option value="OPEN">Open</option>
                                 <option value="CLOSED">Closed</option>
@@ -194,10 +217,12 @@
                         <input class="form-control" id="org" name="org" value="{{$org}}" style="width: 90px;">
                         <label for="role"> Role:</label>
                         <input class="form-control" id="role" name="role" value="{{$role}}" style="width: 90px;">
-                        <input type="hidden" class="form-control" id="email" name="email" value="{{$user}}@{{$org}}.co.uk">
+                        <label for="email"> Email:</label>
+                        <input class="form-control" id="email" name="email" value="{{$user}}@{{$org}}.co.uk" style="width: 200px;" onchange="checkInputs()">
                     </form>
                 </div>
                 <div class="loader"></div>
+                <hr></hr>
                 <div class="row">
                     <iframe width="100%" height="900" frameborder="0" name="iconsumer" title="iconsumer"
                          id="iconsumer" src="/beta/spa/consumer/xdws?user={{$user}}&org={{$org}}&role={{$role}}&nhs={{$nhs}}&pathway={{$pwy}}&status={{$status}}" onload="hideLoader()">
@@ -275,7 +300,7 @@
                     const codemapsUrl = `/beta/spa/consumer/codemap?user=${userValue}&org=${orgValue}&role=${roleValue}`;
                     const allpdqUrl = `/beta/spa/consumer/patient?user=${userValue}&org=${orgValue}&role=${roleValue}&nhs=${nhsValue}`;
                     const publisherUrl = `/beta/spa/consumer/upload?act=publish&user=${userValue}&org=${orgValue}&role=${roleValue}&pathway=${pwyValue}&nhs=${nhsValue}&expression=${expressionValue}&vers=${versValue}`;
-                    const mysubsUrl = `/beta/spa/consumer/mysubs?topic=EMAIL&user=${userValue}&org=${orgValue}&role=${roleValue}&email=${emailValue}`;
+                    const mysubsUrl = `/beta/spa/consumer/mysubs?topic=EMAIL&user=${userValue}&org=${orgValue}&role=${roleValue}`;
                     const subsUrl = `/beta/spa/consumer/newsub?topic=EMAIL&user=${userValue}&org=${orgValue}&role=${roleValue}&email=${emailValue}&pathway=${pwyValue}&expression=${expressionValue}&nhs=${nhsValue}`;
                     console.log('setting URLS');
                     document.getElementById('my-form').Action = xdwsURL;

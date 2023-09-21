@@ -2,7 +2,8 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading panel-default" style="text-align: center; color: blue;">
-                    CGL Patient Record
+                    {{if eq .CGLResponse.Data.Client.BasicDetails.Name.Given ""}}<span style="color: red;">No CGL Patient Record Found for {{.Query.Nhs}}</span>
+                    {{else}}CGL Patient Record for {{.Query.Nhs}}
                 </div>
                 <div class="panel-body">
                     <table class="table table-condensed table-striped">
@@ -29,15 +30,15 @@
 
                         <tbody>
                             <tr>
-                                <td>{{.data.client.basicDetails.name.given}}</td>
-                                <td>{{.data.client.basicDetails.name.family}}</td>
-                                <td>{{.data.client.basicDetails.birthDate}}</td>
-                                <td>{{.data.client.basicDetails.sexAtBirth}}</td>
-                                <td>{{.data.client.basicDetails.address.addressLine1}}</td>
-                                <td>{{.data.client.basicDetails.address.addressLine2}}</td>
-                                <td>{{.data.client.basicDetails.address.addressLine3}}</td>
-                                <td>{{.data.client.basicDetails.address.postCode}}</td>
-                                <td>{{.data.client.basicDetails.disability}}</td>
+                                <td>{{.CGLResponse.Data.Client.BasicDetails.Name.Given}}</td>
+                                <td>{{.CGLResponse.Data.Client.BasicDetails.Name.Family}}</td>
+                                <td>{{.CGLResponse.Data.Client.BasicDetails.BirthDate}}</td>
+                                <td>{{.CGLResponse.Data.Client.BasicDetails.SexAtBirth}}</td>
+                                <td>{{.CGLResponse.Data.Client.BasicDetails.Address.AddressLine1}}</td>
+                                <td>{{.CGLResponse.Data.Client.BasicDetails.Address.AddressLine2}}</td>
+                                <td>{{.CGLResponse.Data.Client.BasicDetails.Address.AddressLine3}}</td>
+                                <td>{{.CGLResponse.Data.Client.BasicDetails.Address.PostCode}}</td>
+                                <td>{{.CGLResponse.Data.Client.BasicDetails.Disability}}</td>
                             </tr>
                             <tr> 
                                 <td colspan="12" class="hiddenRow">
@@ -55,11 +56,11 @@
 
                                             <tbody>
                                                 <tr>
-                                                    <td>{{.data.client.basicDetails.lastEngagementByCGLDate}}</td>
-                                                    <td>{{.data.client.basicDetails.lastFaceToFaceEngagementDate}}</td>
-                                                    <td>{{.data.client.basicDetails.nextCGLAppointmentDate}}</td>
-                                                    <td>{{.data.keyWorker.name.given}} {{.data.keyWorker.name.family}}</td>
-                                                    <td>{{.data.keyWorker.telecom}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.BasicDetails.LastEngagementByCGLDate}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.BasicDetails.LastFaceToFaceEngagementDate}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.BasicDetails.NextCGLAppointmentDate}}</td>
+                                                    <td>{{.CGLResponse.Data.KeyWorker.Name.Given}} {{.CGLResponse.Data.KeyWorker.Name.Family}}</td>
+                                                    <td>{{.CGLResponse.Data.KeyWorker.Telecom}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -72,7 +73,6 @@
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr class="info">
-                                                    <th>Drug Test Results</th>
                                                     <th>BBV Tested</th>
                                                     <th>HepC Last Test Date</th>
                                                     <th>HepC Result</th>
@@ -84,27 +84,21 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    {{$cnt := len .data.client.drugTestResults.results}}
-                                                    {{if eq $cnt 0}}
-                                                    <td>Test Results Not Available</td>
-                                                    {{else}}
-                                                    <td>{{range .data.client.drugTestResults.results}}{{.}} {{end}}</td>
-                                                    {{end}}
-                                                    {{if eq .data.client.bbvInformation.bbvTested "Yes"}}
+                                                    {{if eq .CGLResponse.Data.Client.BbvInformation.BbvTested "Yes"}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{else}}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
-                                                    <td>{{.data.client.bbvInformation.hepCLastTestDate}}</td>
-                                                    <td>{{.data.client.bbvInformation.hepCResult}}</td>
-                                                    {{if eq .data.client.bbvInformation.hivPositive "Yes"}}
+                                                    <td>{{.CGLResponse.Data.Client.BbvInformation.HepCLastTestDate}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.BbvInformation.HepCResult}}</td>
+                                                    {{if eq .CGLResponse.Data.Client.BbvInformation.HivPositive "Yes"}}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{else}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
-                                                    <td>{{.data.client.riskInformation.substanceMisuseDomain.injecting}}</td>
-                                                    <td>{{.data.client.riskInformation.substanceMisuseDomain.polyDrugUse}}</td>
-                                                    <td>{{.data.client.riskInformation.substanceMisuseDomain.previousOverDose}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.RiskInformation.SubstanceMisuseDomain.Injecting}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.RiskInformation.SubstanceMisuseDomain.PolyDrugUse}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.RiskInformation.SubstanceMisuseDomain.PreviousOverDose}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -129,49 +123,49 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>{{.data.client.riskInformation.lastSelfReportedDate}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.RiskInformation.LastSelfReportedDate}}</td>
                                                     
-                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.attemptedSuicide "Current"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.MentalHealthDomain.AttemptedSuicide "Current"}}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.attemptedSuicide "Previous"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.MentalHealthDomain.AttemptedSuicide "Previous"}}
                                                     <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.attemptedSuicide ""}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.MentalHealthDomain.AttemptedSuicide ""}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
                                                     
-                                                    <td>{{.data.client.riskInformation.mentalHealthDomain.diagnosedMentalHealthCondition}}</td>
-                                                    <td>{{.data.client.riskInformation.mentalHealthDomain.hospitalAdmissionsForMentalHealth}}</td>
-                                                    <td>{{.data.client.riskInformation.mentalHealthDomain.notTakingPrescribedMedicationAsInstructed}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.RiskInformation.MentalHealthDomain.DiagnosedMentalHealthCondition}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.RiskInformation.MentalHealthDomain.HospitalAdmissionsForMentalHealth}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.RiskInformation.MentalHealthDomain.NotTakingPrescribedMedicationAsInstructed}}</td>
                                                     
-                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.psychiatricOrPreviousCrisisTeamIntervention "Current"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.MentalHealthDomain.PsychiatricOrPreviousCrisisTeamIntervention "Current"}}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.psychiatricOrPreviousCrisisTeamIntervention "Previous"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.MentalHealthDomain.PsychiatricOrPreviousCrisisTeamIntervention "Previous"}}
                                                     <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.psychiatricOrPreviousCrisisTeamIntervention ""}}
-                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
-                                                    {{end}}
-
-                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.assessedAsNotHavingMentalCapacity "Current"}}
-                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
-                                                    {{end}}
-                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.assessedAsNotHavingMentalCapacity "Previous"}}
-                                                    <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
-                                                    {{end}}
-                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.assessedAsNotHavingMentalCapacity ""}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.MentalHealthDomain.PsychiatricOrPreviousCrisisTeamIntervention ""}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
 
-                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.learningDisability "Current"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.RiskOfHarmToSelfDomain.AssessedAsNotHavingMentalCapacity "Current"}}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.learningDisability "Previous"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.RiskOfHarmToSelfDomain.AssessedAsNotHavingMentalCapacity "Previous"}}
                                                     <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.learningDisability ""}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.RiskOfHarmToSelfDomain.AssessedAsNotHavingMentalCapacity ""}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.RiskOfHarmToSelfDomain.LearningDisability "Current"}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.RiskOfHarmToSelfDomain.LearningDisability "Previous"}}
+                                                    <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.RiskOfHarmToSelfDomain.LearningDisability ""}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
                                                 </tr>
@@ -197,47 +191,47 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    {{if eq .data.client.riskInformation.socialDomain.homelessRoughSleepingNFA "Current"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.SocialDomain.HomelessRoughSleepingNFA "Current"}}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.socialDomain.homelessRoughSleepingNFA "Previous"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.SocialDomain.HomelessRoughSleepingNFA "Previous"}}
                                                     <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.socialDomain.homelessRoughSleepingNFA ""}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.SocialDomain.HomelessRoughSleepingNFA ""}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
 
-                                                    {{if eq .data.client.riskInformation.socialDomain.housingAtRisk "Current"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.SocialDomain.HousingAtRisk "Current"}}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.socialDomain.housingAtRisk "Previous"}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.SocialDomain.HousingAtRisk "Previous"}}
                                                     <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{end}}
-                                                    {{if eq .data.client.riskInformation.socialDomain.housingAtRisk ""}}
+                                                    {{if eq .CGLResponse.Data.Client.RiskInformation.SocialDomain.HousingAtRisk ""}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
 
-                                                    <td>{{.data.client.riskInformation.socialDomain.sociallyIsolatedNoSupport}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.RiskInformation.SocialDomain.SociallyIsolatedNoSupport}}</td>
                                                     
-                                                    {{if eq .data.client.safeguardingInformation.riskHarmFromOthers "Yes"}}
+                                                    {{if eq .CGLResponse.Data.Client.SafeguardingInformation.RiskHarmFromOthers "Yes"}}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{else}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
 
-                                                    {{if eq .data.client.safeguardingInformation.riskToAdults "Yes" }}
+                                                    {{if eq .CGLResponse.Data.Client.SafeguardingInformation.RiskToAdults "Yes" }}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{else}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
                                                     
-                                                    {{if eq .data.client.safeguardingInformation.riskToChildrenOrYP "Yes" }}
+                                                    {{if eq .CGLResponse.Data.Client.SafeguardingInformation.RiskToChildrenOrYP "Yes" }}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{else}}
                                                     <td> style="color: green;"<i class="glyphicon glyphicon-remove"></i></td>
                                                     {{end}}
                                                     
-                                                    {{if eq .data.client.safeguardingInformation.riskToSelf "Yes" }}
+                                                    {{if eq .CGLResponse.Data.Client.SafeguardingInformation.RiskToSelf "Yes" }}
                                                     <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
                                                     {{else}}
                                                     <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
@@ -262,9 +256,9 @@
                             
                                             <tbody>
                                                 <tr>
-                                                    <td>{{.data.client.basicDetails.localIdentifier}}</td>
-                                                    <td>{{.data.client.basicDetails.nhsNumber}}</td>
-                                                    <td>{{.data.keyWorker.localIdentifier}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.BasicDetails.LocalIdentifier}}</td>
+                                                    <td>{{.CGLResponse.Data.Client.BasicDetails.NhsNumber}}</td>
+                                                    <td>{{.CGLResponse.Data.KeyWorker.LocalIdentifier}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -273,6 +267,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    {{end}}
                 </div>
             </div>
         </div>

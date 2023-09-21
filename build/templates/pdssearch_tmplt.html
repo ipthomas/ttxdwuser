@@ -1,0 +1,127 @@
+{{define "pdssearch_tmplt"}}
+    {{$user := .Query.User}}
+    {{$pat := ""}}
+    {{range .PDSSearchResponse.Entry}}
+        {{$entry := .}}
+        {{ if eq $entry.ResourceType "Patient"}}
+            {{$pat = .}}
+            <tr class="info">
+                <th>Prefix</th>
+                <th>Fist Name</th>
+                <th>Last Name</th>
+                <th>Suffix</th>
+                <th>Use</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Gender</th>
+                <th>Birthdate</th>
+                <th>Multiple Birth</th>
+                <th>Deceased</th>
+            </tr>
+            {{range $pat.name}}
+            <tr>
+                {{$td := ""}}
+                {{- range $index, $value := .Prefix }}
+                    {{- if $index }},{{ end }}
+                    {{- $td = (printf "%s%s" $td $value) }}
+                {{- end }}
+                <td>{{$td}}</td>
+                {{$td := ""}}
+                {{- range $index, $value := .Given }}
+                    {{- if $index }},{{ end }}
+                    {{- $td = (printf "%s%s" $td $value) }}
+                {{- end }}
+                <td>{{$td}}</td>
+                <td>{{.Family}}</td>
+                {{$td := ""}}
+                {{- range $index, $value := .Suffix }}
+                    {{- if $index }},{{ end }}
+                    {{- $td = (printf "%s%s" $td $value) }}
+                {{- end }}
+                <td>{{$td}}</td>
+                <td>{{.Use}}</td>
+                <td>{{.Period.Start}}</td>
+                <td>{{.Period.End}}</td>
+                <td>{{.Gender}}</td>
+                <td>{{.BirthDate}}</td>
+                <td>{{.MultipleBirthInteger}}</td>
+                <td>{{.DeceasedDateTime}}</td>
+            </tr>
+            {{end}}
+            <tr>
+                <td colspan="12" class="hiddenRow">
+                    <div class="accordian-body collapse" id="pds1">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th>House</th>
+                                    <th>Street</th>
+                                    <th>Town</th>
+                                    <th>City</th>
+                                    <th>County</th>
+                                    <th>Postcode</th>
+                                    <th>Address Keys</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{$td := ""}}
+                                {{range $pat.Address}}
+                                    <tr>
+                                        {{- range $index, $value := .Line }}
+                                            {{- if $index }},{{ end }}
+                                            {{- $td = (printf "%s%s" $td $value) }}
+                                        {{- end }}
+                                        <td>{{$td}}</td>
+                                        <td>{{.PostalCode}}</td>
+                                        {{$td = ""}}
+                                        {{range .Extension}}
+                                            {{range .Extension}}
+                                                {{if eq .url "type"}}
+                                                    {{$td = (printf "%s, %s, %s" $td .ValueCoding.code ":") }}
+                                                {{end}}
+                                                {{if eq .url "value"}}
+                                                    {{$td = (printf "%s, %s" $td .ValueString) }}
+                                                {{end}}
+                                            {{end}}
+                                        {{end}}
+                                        <td>{{$td}}</td>
+                                    </tr>
+                                {{end}}
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="12" class="hiddenRow">
+                    <div class="accordian-body collapse" id="pds2">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr class="info">
+                                    <th>System</th>
+                                    <th>Value</th>
+                                    <th>Use</th>
+                                    <th>Start</th>
+                                    <th>End</th>
+                                    <th>Info</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{range $entry.telecom}}
+                                <tr>
+                                    <td>{{.System}}</td>
+                                    <td>{{.Value}}</td>
+                                    <td>{{.Use}}</td>
+                                    <td>{{.Period.Start}}</td>
+                                    <td>{{.Period.End}}</td>
+                                    <td>{{mappedid $user .System}}</td>
+                                </tr>
+                                {{end}}
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        {{end}}
+    {{end}}
+{{end}}

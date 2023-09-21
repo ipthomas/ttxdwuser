@@ -12,7 +12,6 @@
 {{$wfrole := .XDWState.WorkflowDocument.Author.AssignedAuthor.AssignedPerson.Name.Prefix}}
 {{$events := .XDWState.Events}}
 {{$confcode := .XDWState.WorkflowDocument.ConfidentialityCode.Code}}
-{{$docid := .XDWState.WorkflowDocument.ID.Extension}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -135,7 +134,7 @@
                                             </thead>
                                             <tbody>
                                             {{range $events.Events}}
-                                                {{if ne .Taskid -1}}
+                                                {{if and (ne .Eventtype "CREATE_TASK") (ne .Taskid -1)}}
                                                 <tr>
                                                     <td>{{.Id}}</td>
                                                     <td>{{.Taskid}}</td>
@@ -196,6 +195,7 @@
                                                     <th>Created</th>
                                                     <th>Started</th>
                                                     <th>Latest Update</th>
+                                                    <th>Time Elapsed</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -229,6 +229,11 @@
                                                     <td>{{prettytime .TaskData.TaskDetails.CreatedTime}}</td>
                                                     <td>{{prettytime .TaskData.TaskDetails.ActivationTime}}</td>
                                                     <td>{{prettytime .TaskData.TaskDetails.LastModifiedTime}}</td>
+                                                    {{if ne .TaskData.TaskDetails.ActivationTime ""}}
+                                                    <td>{{duration .TaskData.TaskDetails.CreatedTime .TaskData.TaskDetails.LastModifiedTime}}</td>
+                                                    {{else}}
+                                                    <td></td>
+                                                    {{end}}
                                                 </tr>
                                                 <tr>
                                                     <td colspan="12" class="hiddenRow">
@@ -268,12 +273,12 @@
                                                                            <form target="iconsumer" action="/beta/spa/publisher/event" method="post">
                                                                                 <label for="comments">Comments:</label>
                                                                                 <div class="trigger">
-                                                                                    <textarea type="input" class="form-control" id="comments" name="comments" rows="3" cols="200">Task {{$taskid}} {{$tdesc}} Actioned by {{$user}} at {{$org}} in the Role of {{$role}} -- {{.Part.AttachmentInfo.Name}} has been registered for Patient {{$nhs}}</textarea>
+                                                                                    <textarea type="input" class="form-control" id="comments" name="comments" rows="3" cols="200">{{$tdesc}} - Task {{$taskid}} - {{mappedid $user .Part.AttachmentInfo.Name}} - has been Actioned by {{$user}} at {{$org}} in the Role of {{$role}}. A {{mappedid $user .Part.AttachmentInfo.Name}} message has been sent to the HIE for NHS ID: {{$nhs}}</textarea>
                                                                                     <div class="popup">
                                                                                         Enter any Additional information for this Event 
                                                                                     </div>
                                                                                 </div>
-                                                                                <input type="hidden" class="form-control" id="eventtype" name="eventtype" value="ATTACHMENT">
+                                                                                <input type="hidden" class="form-control" id="eventtype" name="eventtype" value="UPDATE_TASK">
                                                                                 <input type="hidden" class="form-control" id="formatcode" name="formatcode" value="{{.Part.AttachmentInfo.ContentType}}">
                                                                                 <input type="hidden" class="form-control" id="pathway" name="pathway" value="{{$wf}}">
                                                                                 <input type="hidden" class="form-control" id="nhs" name="nhs" value="{{$nhs}}">
@@ -284,9 +289,9 @@
                                                                                 <input type="hidden" class="form-control" id="user" name="user" value="{{$user}}">
                                                                                 <input type="hidden" class="form-control" id="org" name="org" value="{{$org}}">
                                                                                 <input type="hidden" class="form-control" id="role" name="role" value="{{$role}}">
-                                                                                <input type="hidden" class="form-control" id="repositoryuid" name="repositoryuid" value="/api/events?user={{$user}}&org={{$org}}&role={{$role}}&pathway={{$wf}}&nhs={{$nhs}}&vers={{$vers}}&taskid={{$taskid}}">
-                                                                                <input type="hidden" class="form-control" id="xdsdocentryuid" name="xdsdocentryuid" value="{{.Part.AttachmentInfo.Identifier}}">
-                                                                                <input type="submit" value="Action Task Input">
+                                                                                <input type="hidden" class="form-control" id="repositoryuid" name="repositoryuid" value="">
+                                                                                <input type="hidden" class="form-control" id="xdsdocentryuid" name="xdsdocentryuid" value="{{$wse}}/spa/consumer/event?user={{$user}}&org={{$org}}&role={{$role}}&pathway={{$wf}}&nhs={{$nhs}}&vers={{$vers}}&taskid={{$taskid}}">
+                                                                                <input type="submit" value="Simulate EPR Message">
                                                                             </form>
                                                                         </td>
                                                                     </tr>
@@ -305,20 +310,17 @@
                                                                         <td>{{mappedid $user .Part.AttachmentInfo.Name}}</td>
                                                                         <td>{{mappedid $user .Part.AttachmentInfo.AccessType}}</td>
                                                                     </tr>
-                                                                    {{if ne $taskstatus "COMPLETE"}}
-                                                                    {{if eq .Part.AttachmentInfo.AttachedTime ""}}
                                                                     <tr>
                                                                         <td colspan="100">
                                                                             <form target="iconsumer" action="/beta/spa/publisher/event" method="post">
                                                                                 <label for="comments">Comments:</label>
                                                                                 <div class="trigger">
-                                                                                    <textarea type="input" class="form-control" id="comments" name="comments" rows="3"
-                                                                                        cols="200">Task {{$taskid}} {{$tdesc}} Actioned by {{$user}} at {{$org}} in the Role of {{$role}} -- {{.Part.AttachmentInfo.Name}} has been registered for Patient {{$nhs}}</textarea>
+                                                                                    <textarea type="input" class="form-control" id="comments" name="comments" rows="3" cols="200">{{$tdesc}} - Task {{$taskid}} - {{mappedid $user .Part.AttachmentInfo.Name}} - has been Actioned by {{$user}} at {{$org}} in the Role of {{$role}}. A {{mappedid $user .Part.AttachmentInfo.Name}} message has been sent to the HIE for NHS ID: {{$nhs}}</textarea>
                                                                                     <div class="popup">
                                                                                         Enter any Additional information for this Event
                                                                                     </div>
                                                                                 </div>
-                                                                                <input type="hidden" class="form-control" id="eventtype" name="eventtype" value="ATTACHMENT">
+                                                                                <input type="hidden" class="form-control" id="eventtype" name="eventtype" value="UPDATE_TASK">
                                                                                 <input type="hidden" class="form-control" id="formatcode" name="formatcode" value="{{.Part.AttachmentInfo.ContentType}}">
                                                                                 <input type="hidden" class="form-control" id="pathway" name="pathway" value="{{$wf}}">
                                                                                 <input type="hidden" class="form-control" id="nhs" name="nhs" value="{{$nhs}}">
@@ -329,14 +331,12 @@
                                                                                 <input type="hidden" class="form-control" id="user" name="user" value="{{$user}}">
                                                                                 <input type="hidden" class="form-control" id="org" name="org" value="{{$org}}">
                                                                                 <input type="hidden" class="form-control" id="role" name="role" value="{{$role}}">
-                                                                                <input type="hidden" class="form-control" id="repositoryuid" name="repositoryuid" value="/api/events?user={{$user}}&org={{$org}}&role={{$role}}&pathway={{$wf}}&nhs={{$nhs}}&vers={{$vers}}&taskid={{$taskid}}">
-                                                                                <input type="hidden" class="form-control" id="xdsdocentryuid" name="xdsdocentryuid" value="{{.Part.AttachmentInfo.Identifier}}">
-                                                                                <input type="submit" value="Action Task Ouput">
+                                                                                <input type="hidden" class="form-control" id="repositoryuid" name="repositoryuid" value="">
+                                                                                <input type="hidden" class="form-control" id="xdsdocentryuid" name="xdsdocentryuid" value="{{$wse}}/spa/consumer/event?user={{$user}}&org={{$org}}&role={{$role}}&pathway={{$wf}}&nhs={{$nhs}}&vers={{$vers}}&taskid={{$taskid}}">
+                                                                                <input type="submit" value="Simulate EPR Message">
                                                                             </form>
                                                                         </td>
                                                                     </tr>
-                                                                    {{end}}
-                                                                    {{end}}
                                                                     {{end}}
                                                                 </tbody>
                                                             </table>

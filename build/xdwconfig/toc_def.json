@@ -3,7 +3,7 @@
     "name": "Transfer of Care",
     "confidentialitycode": "N",
     "startbytime": "",
-    "completebytime": "day(5)",
+    "completebytime": "day(2)",
     "expirationtime": "",
     "completionBehavior": [
       {
@@ -15,39 +15,39 @@
     "tasks": [
       {
         "id": "1",
-        "tasktype": "NOTIFICATION",
-        "name": "TOC_Request",
+        "tasktype": "TASK",
+        "name": "Transfer_Requested",
         "description": "Transfer of Care Requested",
         "actualowner": "",
-        "expirationtime": "day(1)",
+        "expirationtime": "",
         "startbytime": "",
-        "completebytime": "hour(1)",
+        "completebytime": "",
         "isskipable": false,
         "potentialOwners": null,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(TOC1_Request Transfer)"
+              "condition": "task(2)"
             }
           }
         ],
         "output": [
           {
-            "name": "TOC1_Request Transfer",
-            "contenttype": "text/plain",
-            "accesstype": "url"
+            "name": "TOC1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ]
       },
       {
         "id": "2",
         "tasktype": "NOTIFICATION",
-        "name": "TOC_Claimed",
+        "name": "Transfer_Claimed",
         "description": "Transfer Of Care Request Claimed",
         "actualowner": "",
-        "expirationtime": "day(2)",
+        "expirationtime": "day(1)",
         "startbytime": "",
-        "completebytime": "day(1)",
+        "completebytime": "hour(4)",
         "isskipable": false,
         "potentialOwners": null,
         "completionBehavior": [
@@ -59,14 +59,14 @@
         ],
         "input": [
           {
-            "name": "TOC1_Request Transfer",
-            "contenttype": "text/plain",
-            "accesstype": "url"
+            "name": "TOC1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "TOC2_Claimed",
+            "name": "Transfer_Claimed",
             "contenttype": "text/plain",
             "accesstype": "url"
           }
@@ -75,31 +75,31 @@
       {
         "id": "3",
         "tasktype": "NOTIFICATION",
-        "name": "TOC_Scheduled",
+        "name": "Transfer_Scheduled",
         "description": "Patient Transfer Scheduled",
         "actualowner": "",
-        "expirationtime": "day(3)",
+        "expirationtime": "day(1)",
         "startbytime": "",
-        "completebytime": "day(2)",
+        "completebytime": "hour(8)",
         "isskipable": false,
         "potentialOwners": null,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(TOC3_Scheduled)"
+              "condition": "output(Transfer_Scheduled)"
             }
           }
         ],
         "input": [
           {
-            "name": "TOC2_Claimed",
+            "name": "Transfer_Claimed",
             "contenttype": "text/plain",
             "accesstype": "url"
           }
         ],
         "output": [
           {
-            "name": "TOC3_Scheduled",
+            "name": "Transfer_Scheduled",
             "contenttype": "text/plain",
             "accesstype": "url"
           }
@@ -107,34 +107,34 @@
       },
       {
         "id": "4",
-        "tasktype": "NOTIFICATION",
-        "name": "TOC_Completed",
+        "tasktype": "TASK",
+        "name": "Patient_Admitted",
         "description": "Patient Admitted by New Provider",
         "actualowner": "",
-        "expirationtime": "day(6)",
+        "expirationtime": "day(2)",
         "startbytime": "",
-        "completebytime": "day(5)",
+        "completebytime": "day(2)",
         "isskipable": false,
         "potentialOwners": null,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(TOC4_Completed)"
+              "condition": "output(TOC4^^TypeCode_EPUT_2018)"
             }
           }
         ],
         "input": [
           {
-            "name": "TOC3_Scheduled",
+            "name": "Transfer_Scheduled",
             "contenttype": "text/plain",
             "accesstype": "url"
           }
         ],
         "output": [
           {
-            "name": "TOC4_Completed",
-            "contenttype": "text/plain",
-            "accesstype": "url"
+            "name": "TOC4^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ]
       }

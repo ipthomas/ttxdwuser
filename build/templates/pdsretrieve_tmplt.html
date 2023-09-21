@@ -1,0 +1,211 @@
+{{define "pdsretrieve_tmplt"}}
+{{$user := .Query.User}}
+{{$rsp := .PDSRetrieveResponse}}
+{{$td := ""}}
+<tr class="info">
+    <th>Prefix</th>
+    <th>Fist Name</th>
+    <th>Last Name</th>
+    <th>Suffix</th>
+    <th>Use</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Gender</th>
+    <th>DOB</th>
+    <th>Multiple Birth</th>
+    {{if not $rsp.DeceasedDateTime.IsZero}}
+    <th>Deceased</th>
+    {{end}}
+    <th>GP Practice</th>
+</tr>
+{{range $rsp.Name}}
+<tr>
+    {{- range $index, $value := .Prefix }}
+    {{- if $index }},{{ end }}
+    {{- $td = (printf "%s%s" $td $value) }}
+    {{- end }}
+    <td>{{$td}}</td>
+    {{$td = ""}}
+    {{- range $index, $value := .Given }}
+    {{- if $index }},{{ end }}
+    {{- $td = (printf "%s%s" $td $value) }}
+    {{- end }}
+    <td>{{$td}}</td>
+    <td>{{.Family}}</td>
+    {{$td = ""}}
+    {{- range $index, $value := .Suffix }}
+    {{- if $index }},{{ end }}
+    {{- $td = (printf "%s%s" $td $value) }}
+    {{- end }}
+    <td>{{$td}}</td>
+    <td>{{.Use}}</td>
+    <td>{{.Period.Start}}</td>
+    <td>{{.Period.End}}</td>
+    <td>{{$rsp.Gender}}</td>
+    <td>{{$rsp.BirthDate}}</td>
+    <td>{{$rsp.MultipleBirthInteger}}</td>
+    {{if not $rsp.DeceasedDateTime.IsZero}}
+    <td>{{$rsp.DeceasedDateTime}}</td>
+    {{end}}
+    <td>{{$rsp.ManagingOrganization.Identifier.Value}}</td>
+</tr>
+{{end}}
+<tr>
+    <td colspan="12" class="hiddenRow">
+        <div class="accordian-body collapse" id="pds1">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="info">
+                        <th>House</th>
+                        <th>Street</th>
+                        <th>Town</th>
+                        <th>City</th>
+                        <th>County</th>
+                        <th>Postcode</th>
+                        <th>Use</th>
+                        <th>Type</th>
+                        <th>Period</th>
+                        <th>PAF</th>
+                        <th>UPRN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range $rsp.Address}}
+                    {{$addr := .}}
+                    <tr>
+                        {{range .Line}}
+                        <td>{{.}}</td>
+                        {{end}}
+                        <td>{{$addr.PostalCode}}</td>
+                        <td>{{$addr.Use}}</td>
+                        <td>{{$addr.Text}}</td>
+                        <td>{{$addr.Period.Start}} - {{$addr.Period.End}}</td>
+                        {{- range $index, $value := $addr.Extension }}
+                            {{$foundPaf := "false"}}
+                            {{- range $i, $v := .Extension }}
+                                {{if eq $v.ValueCoding.Code "PAF"}}
+                                    {{$foundPaf = "true"}}
+                                {{end}}
+                                {{if and (eq $foundPaf "true") (ne $v.ValueString "")}}
+                                <td>{{$v.ValueString}}</td>
+                                {{end}}
+                            {{- end }}
+                        {{end}}
+                        {{- range $index, $value := $addr.Extension }}
+                        {{$foundUprn := "false"}}
+                        {{- range $i, $v := .Extension }}
+                        {{if eq $v.ValueCoding.Code "UPRN"}}
+                        {{$foundUprn = "true"}}
+                        {{end}}
+                        {{if and (eq $foundUprn "true") (ne $v.ValueString "")}}
+                        <td>{{$v.ValueString}}</td>
+                        {{end}}
+                        {{- end }}
+                        {{end}}
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td colspan="12" class="hiddenRow">
+        <div class="accordian-body collapse" id="pds2">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="info">
+                        <th>System</th>
+                        <th>Value</th>
+                        <th>Use</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Extension</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range $rsp.Telecom}}
+                    <tr>
+                        <td>{{.System}}</td>
+                        <td>{{.Value}}</td>
+                        <td>{{.Use}}</td>
+                        <td>{{.Period.Start}}</td>
+                        <td>{{.Period.End}}</td>
+                        {{range .Extension}}
+                        <td>{{.ValueCoding.Display}}</td>
+                        {{end}}
+                    </tr>
+                    {{end}}
+                    {{range $rsp.Contact}}
+                    <tr>
+                        {{$contact := .}}
+                        {{range $contact.Telecom}}
+                        <td>{{.System}}</td>
+                        <td>{{.Value}}</td>
+                        {{end}}
+                        {{range $contact.Relationship}}
+                            {{range .Coding}}
+                            <td>{{.Display}}</td>
+                            {{end}}
+                        {{end}}
+                        <td>{{$contact.Period.Start}}</td>
+                        <td>{{$contact.Period.End}}</td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td colspan="12" class="hiddenRow">
+        <div class="accordian-body collapse" id="pds3">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="info">
+                        <th>Description</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range $rsp.Extension}}
+                        {{if eq (len .Extension) 0}}
+                            <tr>
+                                <td>{{mappedid $user .URL}}</td>
+                                {{if eq .URL "http://hl7.org/fhir/StructureDefinition/patient-birthPlace"}}
+                                <td>{{.ValueAddress.City}} {{.ValueAddress.District}} {{.ValueAddress.Country}}</td>
+                                {{else}}
+                                <td>{{mappedid $user .ValueReference.Identifier.Value}}</td>
+                                {{end}}
+                            </tr>
+                        {{else}}
+                            {{range .Extension}}
+                                {{if and (ne .URL "systemEffectiveDate") (ne .URL "effectiveTime")}}
+                                    {{if ne (len .ValueCodeableConcept.Coding) 0}}
+                                        {{$val := ""}}
+                                        <tr>
+                                            <td>{{mappedid $user .URL}}</td>
+                                            {{range .ValueCodeableConcept.Coding}}{{$val = .Display}}{{end}}
+                                            <td>{{mappedid $user $val}}</td>
+                                        </tr>
+                                        {{else}}
+                                        <tr>
+                                            <td>{{mappedid $user .URL}}</td>
+                                            {{if eq .URL "PreferredContactTimes"}}
+                                            <td>{{.ValueString}}</td>
+                                            {{end}}
+                                            {{if eq .URL "interpreterRequired"}}
+                                            <td>{{.ValueBoolean}}</td>
+                                            {{end}}
+                                        </tr>
+                                    {{end}}
+                                {{end}}
+                            {{end}}
+                        {{end}}
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </td>
+</tr>
+{{end}}

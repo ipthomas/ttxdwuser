@@ -28,7 +28,7 @@
                         </a>
                     </div>
                     <div class="panel-body">
-                        <h5 style="text-align: center;color: green;">Subscriptions for {{$email}}</h5>
+                        <h5 style="text-align: center;color: green;">{{$user}} Subscriptions</h5>
                         <table class="table table-condensed table-striped">
                             <thead>
                                 <tr class="info">
@@ -37,6 +37,10 @@
                                     <th>Pathway</th>
                                     <th>Event</th>
                                     <th>NHS</th>
+                                    <th>User</th>
+                                    <th>Org</th>
+                                    <th>Role</th>
+                                    <th>Email</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,6 +66,10 @@
                                     {{else}}
                                     <td>{{.NhsId}}</td>
                                     {{end}}
+                                    <td>{{.User}}</td>
+                                    <td>{{.Org}}</td>
+                                    <td>{{.Role}}</td>
+                                    <td>{{.Email}}</td>
                                 </tr>
                                 {{end}}
                             {{end}}

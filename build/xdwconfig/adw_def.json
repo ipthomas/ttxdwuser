@@ -1,0 +1,178 @@
+{
+    "ref": "adw_def",
+    "name": "Assessment Discharge Withdraw",
+    "confidentialitycode": "Normal",
+    "startbytime": "",
+    "completebytime": "day(5)",
+    "expirationtime": "",
+    "completionBehavior": [
+      {
+        "completion": {
+          "condition": "task(4)"
+        }
+      },
+      {
+        "completion": {
+          "condition": "task(5)"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "id": "1",
+        "tasktype": "TASK",
+        "name": "Patient_Identified",
+        "description": "Patient Identfied for Assessment",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(ADW1^^TypeCode_EPUT_2018)"
+            }
+          },
+          {
+            "completion": {
+              "condition": "task(2)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "ADW1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "tasktype": "TASK",
+        "name": "Assessment_Created",
+        "description": "Assessment Published",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "day(2)",
+        "completebytime": "day(3)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "task(3)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "ADW1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "ADW2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "tasktype": "TASK",
+        "name": "Assessment_Accepted",
+        "description": "LCC Accepts or Rejects Assessment",
+        "actualowner": "",
+        "expirationtime": "day(14)",
+        "startbytime": "day(3)",
+        "completebytime": "day(7)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(ADW3^^TypeCode_EPUT_2018) and latest(ADW3^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "ADW2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "ADW3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "ADW4^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "tasktype": "TASK",
+        "name": "Patient_Discharged",
+        "description": "Patient Discharged onto D2A Pathway ",
+        "actualowner": "",
+        "expirationtime": "day(6)",
+        "startbytime": "",
+        "completebytime": "day(5)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(ADW5^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "ADW3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "ADW5^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "tasktype": "TASK",
+        "name": "Assessment_Withdrawn",
+        "description": "Request for Assessment Withdrawn",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "",
+        "isskipable": true,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(ADW6^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "ADW6^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      }
+    ]
+  }
