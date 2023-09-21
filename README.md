@@ -1,6 +1,6 @@
 # ttxdwuser
 
-This package combines various IHE Profiles, UK NHS SPINE PDS Consumera nd a UK CGL Consumer to provide a Cross Community Workflow and EVent Service
+This package combines various IHE Profiles a UK NHS SPINE PDS Consumer and a UK CGL Consumer to provide Cross Community Workflow and Event Services
 
 The Backend utilises the following IHE Profiles and Actors
     
