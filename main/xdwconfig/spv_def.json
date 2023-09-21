@@ -1,0 +1,142 @@
+{
+    "ref": "spv_def",
+    "name": "Secure Patient Visit",
+    "confidentialitycode": "N",
+    "startbytime": "",
+    "completebytime": "day(2)",
+    "expirationtime": "",
+    "completionBehavior": [
+      {
+        "completion": {
+          "condition": "task(4)"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "id": "1",
+        "tasktype": "NOTIFICATION",
+        "name": "Transport_Scheduled",
+        "description": "Secure Transport Scheduled",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(Transport_Scheduled)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "Transport_Scheduled",
+            "contenttype": "text/plain",
+            "accesstype": "url"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "tasktype": "TASK",
+        "name": "Patient_Admitted",
+        "description": "Patient Admitted by Health Provider",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "day(1)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "task(3)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "Transport_Scheduled",
+            "contenttype": "text/plain",
+            "accesstype": "url"
+          }
+        ],
+        "output": [
+          {
+            "name": "SPV2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "tasktype": "TASK",
+        "name": "Patient_Discharged",
+        "description": "Secure Patient Discharged by Health Provider",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "day(1)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(SPV3_Patinet Discharged)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "SPV2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "SPV3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "tasktype": "TASK",
+        "name": "Patient_Returned",
+        "description": "Patient returned to secure location",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "day(1)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(SPV4^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "SPV3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "SPV4^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      }
+    ]
+  }

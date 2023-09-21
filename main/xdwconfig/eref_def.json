@@ -1,0 +1,136 @@
+{
+    "ref": "eref_def",
+    "name": "Electronic Referral",
+    "confidentialitycode": "N",
+    "startbytime": "",
+    "completebytime": "day(2)",
+    "expirationtime": "",
+    "completionBehavior": [
+      {
+        "completion": {
+          "condition": "task(4)"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "id": "1",
+        "tasktype": "TASK",
+        "name": "Referral_Requested",
+        "description": "Electronic Referral Requested",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "task(4)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "EREF1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "tasktype": "TASK",
+        "name": "Referral_Claimed",
+        "description": "Electronic Referral Claimed",
+        "actualowner": "",
+        "expirationtime": "day(2)",
+        "startbytime": "",
+        "completebytime": "day(1)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(EREF2^^TypeCode_EPUT_2018"
+            }
+          }
+        ],
+        "input": {
+          "name": "EREF1^^TypeCode_EPUT_2018",
+          "contenttype": "application/pdf",
+          "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+        },
+        "output": [
+          {
+            "name": "EREF2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "tasktype": "TASK",
+        "name": "Patient_Transferred",
+        "description": "Patient Transferred",
+        "actualowner": "",
+        "expirationtime": "day(2)",
+        "startbytime": "",
+        "completebytime": "day(1)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(EREF3^^TypeCode_EPUT_2018"
+            }
+          }
+        ],
+        "input": {
+          "name": "EREF2^^TypeCode_EPUT_2018",
+          "contenttype": "application/pdf",
+          "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+        },
+        "output": [
+          {
+            "name": "EREF3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "tasktype": "TASK",
+        "name": "Patient_Admiited",
+        "description": "Patient Admitted",
+        "actualowner": "",
+        "expirationtime": "day(2)",
+        "startbytime": "",
+        "completebytime": "day(1)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(EREF4^^TypeCode_EPUT_2018"
+            }
+          }
+        ],
+        "input": {
+          "name": "EREF3^^TypeCode_EPUT_2018",
+          "contenttype": "application/pdf",
+          "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+        },
+        "output": [
+          {
+            "name": "EREF4^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      }
+    ]
+}

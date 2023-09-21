@@ -1,0 +1,144 @@
+{{define "pds_tmplt"}}
+{{$user := .Query.User}}
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading panel-default" style="text-align: center;color: blue;">
+            PDS Patient Record
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed table-striped">
+                <thead>
+                    <tr>
+                        <td data-toggle="collapse" data-target="#pds1" class="accordion-toggle"><span
+                                class="glyphicon glyphicon-chevron-down"></span> Address</td>
+                        <td data-toggle="collapse" data-target="#pds2" class="accordion-toggle"><span
+                                class="glyphicon glyphicon-chevron-down"></span> Contact</td>
+                    </tr>
+                    <tr class="info">
+                        <th>Prefix</th>
+                        <th>Fist Name</th>
+                        <th>Last Name</th>
+                        <th>Suffix</th>
+                        <th>Use</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>Gender</th>
+                        <th>Birthdate</th>
+                        <th>Multiple Birth</th>
+                        <th>Deceased</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {{if eq .PDSResponse.ResponseType "search"}}
+                    {{range .PDSResponse.Response.entry}}
+                    {{$entry := .}}
+                    {{ if eq $entry.resourceType "Patient"}}
+                    {{$pat := .}}
+                    {{range $pat.name}}
+                    <tr>
+                        <td>{{.prefix}}</td>
+                        <td>{{.given}}</td>
+                        <td>{{.family}}</td>
+                        <td>{{.suffix}}</td>
+                        <td>{{.use}}</td>
+                        <td>{{.period.start}}</td>
+                        <td>{{.period.end}}</td>
+                        <td>{{.gender}}</td>
+                        <td>{{.birthDate}}</td>
+                        <td>{{.multipleBirthInteger}}</td>
+                        <td>{{.deceasedDateTime}}</td>
+                    </tr>
+                    {{end}}
+                    <tr>
+                        <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body collapse" id="pds1">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>House</th>
+                                            <th>Street</th>
+                                            <th>Town</th>
+                                            <th>City</th>
+                                            <th>County</th>
+                                            <th>Postcode</th>
+                                            <th>Address Keys</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{range $pat.Address}}
+                                        <tr>
+                                            {{range .line}}
+                                            <td>{{.}}</td>
+                                            {{end}}
+                                            <td>{{.postalCode}}</td>
+                                            {{$td := ""}}
+                                            {{range .extension}}
+                                            {{- range .extension}}
+                                            {{if eq .url "type"}}
+                                            {{- $td = (printf "%s, %s, %s" $td .valueCoding.code ":") }}
+                                            {{- end }}
+                                            {{if eq .url "value"}}
+                                            {{- $td = (printf "%s, %s" $td .valueString) }}
+                                            {{- end}}
+                                            <td>{{$td}}</td>
+                                            {{end}}
+                                        </tr>
+                                        {{end}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="12" class="hiddenRow">
+                            <div class="accordian-body collapse" id="pds2">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>System</th>
+                                            <th>Value</th>
+                                            <th>Use</th>
+                                            <th>Start</th>
+                                            <th>End</th>
+                                            <th>Info</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{range $pat.telecom}}
+                                        <tr>
+                                            <td>{{.system}}</td>
+                                            <td>{{.value}}</td>
+                                            <td>{{.use}}</td>
+                                            <td>{{.period.start}}</td>
+                                            <td>{{.period.end}}</td>
+                                            {{$td := ""}}
+                                            <td>{{mappedid $user .System}}</td>
+
+                                        </tr>
+                                        {{end}}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    {{end}}
+                    {{end}}
+                    {{end}}
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    body {
+        padding-top: 50px;
+        background-color: #34495e;
+        font-family: sans-serif;
+    }
+</style>
+
+</html>
+{{end}}

@@ -1,0 +1,178 @@
+{
+    "ref": "d2a_def",
+    "name": "Discharge to Assessment",
+    "confidentialitycode": "Normal",
+    "startbytime": "",
+    "completebytime": "day(20)",
+    "expirationtime": "",
+    "completionBehavior": [
+      {
+        "completion": {
+          "condition": "task(4)"
+        }
+      },
+      {
+        "completion": {
+          "condition": "task(5)"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "id": "1",
+        "tasktype": "TASK",
+        "name": "D2A_Identified",
+        "description": "Patient Identfied for Assessment",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(D2A1^^TypeCode_EPUT_2018)"
+            }
+          },
+          {
+            "completion": {
+              "condition": "task(2)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "D2A1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "tasktype": "TASK",
+        "name": "Assessment_Created",
+        "description": "D2A Assessment Published",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "day(2)",
+        "completebytime": "day(3)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "task(3)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "D2A1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "D2A2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "tasktype": "TASK",
+        "name": "Assessment Accepted",
+        "description": "LCC Accepts or Rejects Assessment",
+        "actualowner": "",
+        "expirationtime": "day(14)",
+        "startbytime": "day(3)",
+        "completebytime": "day(7)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(D2A3^^TypeCode_EPUT_2018) and latest(D2A3^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "D2A2^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "D2A3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "D2A4^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "tasktype": "TASK",
+        "name": "Patient_Discharged",
+        "description": "Patient Discharged onto D2A Pathway ",
+        "actualowner": "",
+        "expirationtime": "day(15)",
+        "startbytime": "day(7)",
+        "completebytime": "day(8)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(D2A5^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "D2A3^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "D2A5^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "tasktype": "TASK",
+        "name": "Assessment Withdrawn",
+        "description": "Request for Assessment Withdrawn",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "",
+        "isskipable": true,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(D2A6^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "D2A6^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      }
+    ]
+  }

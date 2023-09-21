@@ -1,0 +1,69 @@
+{
+    "ref": "eref_def",
+    "name": "E-Referral",
+    "confidentialitycode": "N",
+    "startbytime": "",
+    "completebytime": "day(2)",
+    "expirationtime": "",
+    "completionBehavior": [
+      {
+        "completion": {
+          "condition": "task(2)"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "id": "1",
+        "tasktype": "NOTIFICATION",
+        "name": "E-Referral_Requested",
+        "description": "Create Electronic Referral Request",
+        "actualowner": "",
+        "expirationtime": "day(1)",
+        "startbytime": "",
+        "completebytime": "hour(4)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(EREF1_Request Referral)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "EREF1_Request Referral",
+            "contenttype": "text/plain",
+            "accesstype": "url"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "tasktype": "NOTIFICATION",
+        "name": "E-Referral_Claimed",
+        "description": "Claim Electronic Referral",
+        "actualowner": "",
+        "expirationtime": "day(2)",
+        "startbytime": "",
+        "completebytime": "day(1)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(EREF2_Referral Claimed)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "EREF2_Referral Claimed",
+            "contenttype": "text/plain",
+            "accesstype": "url"
+          }
+        ]
+      }
+    ]
+}

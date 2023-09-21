@@ -1,0 +1,1118 @@
+2023/09/11 22:09:04.345016 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/11 22:09:04.345571 ttdb.go:50: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/11 22:09:04.345750 ttdb.go:53: Opened Database
+2023/09/11 22:09:04.345791 ttserver.go:38: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/11 22:09:34.979915 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:09:34.980275 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:09:34.980602 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac",
+  "Vers": "1"
+}
+2023/09/11 22:09:34.980647 ttgethandler.go:16: Path = /api/state/comments
+2023/09/11 22:09:35.442343 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:11:25.383410 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:11:25.383522 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:11:25.383615 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac",
+  "Vers": "1",
+  "Taskid": "4"
+}
+2023/09/11 22:11:25.383645 ttgethandler.go:16: Path = /api/state/comments
+2023/09/11 22:11:25.447944 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:12:29.282867 ttserver.go:50: ICB Workflow Service stopped
+2023/09/11 22:12:36.588974 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/11 22:12:36.590789 ttdb.go:50: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/11 22:12:36.591617 ttdb.go:53: Opened Database
+2023/09/11 22:12:36.591670 ttserver.go:38: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/11 22:12:40.034305 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:12:40.035093 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:12:40.039892 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac",
+  "Vers": "1",
+  "Taskid": "4"
+}
+2023/09/11 22:12:40.039959 ttgethandler.go:16: Path = /api/state/comments
+2023/09/11 22:12:40.258008 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:12:40.285633 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:12:40.285705 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:12:40.285749 ttutil.go:140: 	{}
+2023/09/11 22:12:40.285772 ttgethandler.go:16: Path = /favicon.ico
+2023/09/11 22:12:40.285885 ttsysman.go:231: Retrieving favicon.ico
+2023/09/11 22:12:40.346416 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:12:46.712567 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:12:46.712758 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:12:46.712853 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac",
+  "Vers": "1"
+}
+2023/09/11 22:12:46.713026 ttgethandler.go:16: Path = /api/state/comments
+2023/09/11 22:12:46.776827 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:38:09.066662 ttserver.go:50: ICB Workflow Service stopped
+2023/09/11 22:38:14.345967 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/11 22:38:14.346493 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/11 22:38:14.346637 ttdb.go:54: Opened Database
+2023/09/11 22:38:14.346654 ttserver.go:38: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/11 22:38:18.317823 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:38:18.318206 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:38:18.318561 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac",
+  "Vers": "1"
+}
+2023/09/11 22:38:18.318590 ttgethandler.go:16: Path = /api/state/comments
+2023/09/11 22:38:18.529047 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:38:18.590036 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:38:18.590108 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:38:18.590174 ttutil.go:140: 	{}
+2023/09/11 22:38:18.590191 ttgethandler.go:16: Path = /favicon.ico
+2023/09/11 22:38:18.590212 ttsysman.go:231: Retrieving favicon.ico
+2023/09/11 22:38:18.647489 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:10.349248 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:39:10.349423 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:10.349526 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/11 22:39:10.349559 ttgethandler.go:16: Path = /spa
+2023/09/11 22:39:10.349602 tttmplts.go:21: Using Default SPA template
+2023/09/11 22:39:10.535373 tttmplts.go:78: Caching 21 Templates
+2023/09/11 22:39:10.544614 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:10.602249 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:39:10.602320 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:10.602352 ttutil.go:140: 	{
+  "Name": "event-logo.png"
+}
+2023/09/11 22:39:10.602367 ttgethandler.go:16: Path = /beta/spa/consumer/static
+2023/09/11 22:39:10.602378 ttsysman.go:231: Retrieving event-logo.png
+2023/09/11 22:39:10.602400 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:39:10.602443 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:10.602470 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/11 22:39:10.602524 ttgethandler.go:16: Path = /beta/spa/consumer/xdws
+2023/09/11 22:39:10.661222 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:10.961525 ttxdwconsumer.go:387: selected 41 Workflows for Pathway  NHS  Version -1
+2023/09/11 22:39:11.039951 ttxdwconsumer.go:153: Setting Workflow States
+2023/09/11 22:39:11.053026 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.056291 ttxdwconsumer.go:265: Workflow Started 2023-08-07 07:51:53 +0100 BST Status CLOSED
+2023/09/11 22:39:11.056414 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.056407 +0100 BST
+2023/09/11 22:39:11.057090 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-07 15:27:28 +0000 UTC
+2023/09/11 22:39:11.057127 ttxdwconsumer.go:274: Duration - 0 Days 8 Hrs 35 Mins
+2023/09/11 22:39:11.057233 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.057335 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-27 07:51:53 +0100 BST
+2023/09/11 22:39:11.058026 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-07 15:27:28 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.058066 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.058974 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.059720 ttxdwconsumer.go:265: Workflow Started 2023-08-07 16:31:21 +0100 BST Status CLOSED
+2023/09/11 22:39:11.059807 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.059805 +0100 BST
+2023/09/11 22:39:11.060491 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-07 15:43:47 +0000 UTC
+2023/09/11 22:39:11.060515 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 12 Mins
+2023/09/11 22:39:11.060607 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.060697 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-27 16:31:21 +0100 BST
+2023/09/11 22:39:11.061532 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-07 15:43:47 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.061579 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.062286 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.062795 ttxdwconsumer.go:265: Workflow Started 2023-08-07 16:50:33 +0100 BST Status CLOSED
+2023/09/11 22:39:11.062863 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.06286 +0100 BST
+2023/09/11 22:39:11.063348 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-18 19:24:47 +0000 UTC
+2023/09/11 22:39:11.063364 ttxdwconsumer.go:274: Duration - 11 Days 3 Hrs 34 Mins
+2023/09/11 22:39:11.063439 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.063536 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-27 16:50:33 +0100 BST
+2023/09/11 22:39:11.064109 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-18 19:24:47 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.064128 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.064687 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 6072406157
+2023/09/11 22:39:11.065219 ttxdwconsumer.go:265: Workflow Started 2023-08-17 19:35:38 +0100 BST Status CLOSED
+2023/09/11 22:39:11.065331 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.065328 +0100 BST
+2023/09/11 22:39:11.065864 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 15:55:30 +0100 BST
+2023/09/11 22:39:11.065876 ttxdwconsumer.go:274: Duration - 8 Days 20 Hrs 19 Mins
+2023/09/11 22:39:11.065956 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.066044 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-06 19:35:38 +0100 BST
+2023/09/11 22:39:11.066548 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-26 15:55:30 +0100 BST. Workflow Target Met = true
+2023/09/11 22:39:11.066564 ttxdwconsumer.go:234: Workflow lac6072406157 is CLOSED
+2023/09/11 22:39:11.067017 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:11.067446 ttxdwconsumer.go:265: Workflow Started 2023-08-24 19:18:57 +0100 BST Status CLOSED
+2023/09/11 22:39:11.067503 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.067501 +0100 BST
+2023/09/11 22:39:11.067874 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-24 19:42:42 +0000 UTC
+2023/09/11 22:39:11.067886 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 23 Mins
+2023/09/11 22:39:11.067949 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.068012 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-13 19:18:57 +0100 BST
+2023/09/11 22:39:11.068021 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.068038 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:11.068230 ttxdwconsumer.go:166: Setting EREF Workflow state for Patient 6072406157
+2023/09/11 22:39:11.068540 ttxdwconsumer.go:265: Workflow Started 2023-08-24 19:23:11 +0100 BST Status CLOSED
+2023/09/11 22:39:11.068603 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.068601 +0100 BST
+2023/09/11 22:39:11.068873 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-24 19:22:58 +0000 UTC
+2023/09/11 22:39:11.068885 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 59 Mins
+2023/09/11 22:39:11.068943 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.069005 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-26 19:23:11 +0100 BST
+2023/09/11 22:39:11.069277 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-24 19:22:58 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.069293 ttxdwconsumer.go:234: Workflow eref6072406157 is CLOSED
+2023/09/11 22:39:11.069754 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:11.070164 ttxdwconsumer.go:265: Workflow Started 2023-08-24 20:42:54 +0100 BST Status CLOSED
+2023/09/11 22:39:11.070220 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.070219 +0100 BST
+2023/09/11 22:39:11.070576 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 15:06:08 +0000 UTC
+2023/09/11 22:39:11.070610 ttxdwconsumer.go:274: Duration - 1 Days 19 Hrs 23 Mins
+2023/09/11 22:39:11.070654 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.070690 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-13 20:42:54 +0100 BST
+2023/09/11 22:39:11.070696 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.070703 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:11.070824 ttxdwconsumer.go:166: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/11 22:39:11.070984 ttxdwconsumer.go:265: Workflow Started 2023-08-25 10:15:32 +0100 BST Status CLOSED
+2023/09/11 22:39:11.071026 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.071025 +0100 BST
+2023/09/11 22:39:11.071159 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-25 09:15:38 +0000 UTC
+2023/09/11 22:39:11.071165 ttxdwconsumer.go:274: Duration - 6 Secs
+2023/09/11 22:39:11.071194 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.071226 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-25 13:15:32 +0100 BST
+2023/09/11 22:39:11.071361 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-25 09:15:38 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.071372 ttxdwconsumer.go:234: Workflow radconsult9999999468 is CLOSED
+2023/09/11 22:39:11.071454 ttxdwconsumer.go:166: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/11 22:39:11.071581 ttxdwconsumer.go:265: Workflow Started 2023-08-25 10:36:31 +0100 BST Status CLOSED
+2023/09/11 22:39:11.071602 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.071601 +0100 BST
+2023/09/11 22:39:11.071717 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-25 09:36:36 +0000 UTC
+2023/09/11 22:39:11.071721 ttxdwconsumer.go:274: Duration - 5 Secs
+2023/09/11 22:39:11.071745 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.071767 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-28 10:36:31 +0100 BST
+2023/09/11 22:39:11.071872 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-25 09:36:36 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.071878 ttxdwconsumer.go:234: Workflow radconsult9999999468 is CLOSED
+2023/09/11 22:39:11.071958 ttxdwconsumer.go:166: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/11 22:39:11.072061 ttxdwconsumer.go:265: Workflow Started 2023-08-25 10:57:22 +0100 BST Status CLOSED
+2023/09/11 22:39:11.072081 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.07208 +0100 BST
+2023/09/11 22:39:11.072171 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-25 09:58:09 +0000 UTC
+2023/09/11 22:39:11.072175 ttxdwconsumer.go:274: Duration - 47 Secs
+2023/09/11 22:39:11.072197 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.072221 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-28 10:57:22 +0100 BST
+2023/09/11 22:39:11.072311 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-25 09:58:09 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.072317 ttxdwconsumer.go:234: Workflow radconsult9999999468 is CLOSED
+2023/09/11 22:39:11.072391 ttxdwconsumer.go:166: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/11 22:39:11.072494 ttxdwconsumer.go:265: Workflow Started 2023-08-25 11:43:49 +0100 BST Status CLOSED
+2023/09/11 22:39:11.072514 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.072513 +0100 BST
+2023/09/11 22:39:11.072601 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-25 18:24:45 +0000 UTC
+2023/09/11 22:39:11.072605 ttxdwconsumer.go:274: Duration - 0 Days 7 Hrs 40 Mins
+2023/09/11 22:39:11.072625 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.072646 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-28 11:43:49 +0100 BST
+2023/09/11 22:39:11.072730 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-25 18:24:45 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.072735 ttxdwconsumer.go:234: Workflow radconsult9999999468 is CLOSED
+2023/09/11 22:39:11.072821 ttxdwconsumer.go:166: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/11 22:39:11.072928 ttxdwconsumer.go:265: Workflow Started 2023-08-25 19:25:01 +0100 BST Status CLOSED
+2023/09/11 22:39:11.072947 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.072947 +0100 BST
+2023/09/11 22:39:11.073034 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 09:01:49 +0100 BST
+2023/09/11 22:39:11.073038 ttxdwconsumer.go:274: Duration - 0 Days 13 Hrs 36 Mins
+2023/09/11 22:39:11.073057 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.073079 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-25 22:25:01 +0100 BST
+2023/09/11 22:39:11.073382 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-26 09:01:49 +0100 BST. Workflow Target Met = false
+2023/09/11 22:39:11.073399 ttxdwconsumer.go:234: Workflow radconsult9999999468 is CLOSED
+2023/09/11 22:39:11.074136 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.074607 ttxdwconsumer.go:265: Workflow Started 2023-08-26 16:09:11 +0100 BST Status CLOSED
+2023/09/11 22:39:11.074643 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.074642 +0100 BST
+2023/09/11 22:39:11.074824 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 15:50:47 +0000 UTC
+2023/09/11 22:39:11.074830 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 41 Mins
+2023/09/11 22:39:11.074856 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.074881 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-15 16:09:11 +0100 BST
+2023/09/11 22:39:11.074884 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.074890 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.075083 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 6072406157
+2023/09/11 22:39:11.075272 ttxdwconsumer.go:265: Workflow Started 2023-08-26 16:54:23 +0100 BST Status CLOSED
+2023/09/11 22:39:11.075296 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.075295 +0100 BST
+2023/09/11 22:39:11.075457 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 17:38:28 +0000 UTC
+2023/09/11 22:39:11.075461 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 44 Mins
+2023/09/11 22:39:11.075481 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.075501 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-15 16:54:23 +0100 BST
+2023/09/11 22:39:11.075505 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.075509 ttxdwconsumer.go:234: Workflow lac6072406157 is CLOSED
+2023/09/11 22:39:11.075681 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.075845 ttxdwconsumer.go:265: Workflow Started 2023-08-26 18:42:19 +0100 BST Status CLOSED
+2023/09/11 22:39:11.075863 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.075862 +0100 BST
+2023/09/11 22:39:11.076010 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 18:18:02 +0000 UTC
+2023/09/11 22:39:11.076014 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 35 Mins
+2023/09/11 22:39:11.076032 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.076050 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-15 18:42:19 +0100 BST
+2023/09/11 22:39:11.076053 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.076058 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.076224 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 6072406157
+2023/09/11 22:39:11.076386 ttxdwconsumer.go:265: Workflow Started 2023-08-26 19:36:03 +0100 BST Status CLOSED
+2023/09/11 22:39:11.076406 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.076406 +0100 BST
+2023/09/11 22:39:11.076557 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 20:14:10 +0100 BST
+2023/09/11 22:39:11.076561 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 38 Mins
+2023/09/11 22:39:11.076582 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.076600 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-15 19:36:03 +0100 BST
+2023/09/11 22:39:11.076603 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.076608 ttxdwconsumer.go:234: Workflow lac6072406157 is CLOSED
+2023/09/11 22:39:11.076778 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 6072406157
+2023/09/11 22:39:11.076956 ttxdwconsumer.go:265: Workflow Started 2023-08-26 20:15:12 +0100 BST Status CLOSED
+2023/09/11 22:39:11.076977 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.076976 +0100 BST
+2023/09/11 22:39:11.077188 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 19:42:05 +0000 UTC
+2023/09/11 22:39:11.077205 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 26 Mins
+2023/09/11 22:39:11.077226 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.077248 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-15 20:15:12 +0100 BST
+2023/09/11 22:39:11.077252 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.077258 ttxdwconsumer.go:234: Workflow lac6072406157 is CLOSED
+2023/09/11 22:39:11.077453 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.077635 ttxdwconsumer.go:265: Workflow Started 2023-08-26 20:45:42 +0100 BST Status CLOSED
+2023/09/11 22:39:11.077658 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.077657 +0100 BST
+2023/09/11 22:39:11.077815 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-27 08:29:36 +0000 UTC
+2023/09/11 22:39:11.077820 ttxdwconsumer.go:274: Duration - 0 Days 12 Hrs 43 Mins
+2023/09/11 22:39:11.077847 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.077868 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-15 20:45:42 +0100 BST
+2023/09/11 22:39:11.077871 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.077878 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.078066 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 6072406157
+2023/09/11 22:39:11.078355 ttxdwconsumer.go:265: Workflow Started 2023-08-27 11:05:09 +0100 BST Status CLOSED
+2023/09/11 22:39:11.078376 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.078375 +0100 BST
+2023/09/11 22:39:11.078527 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-27 10:48:00 +0000 UTC
+2023/09/11 22:39:11.078531 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 42 Mins
+2023/09/11 22:39:11.078551 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.078571 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-16 11:05:09 +0100 BST
+2023/09/11 22:39:11.078574 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.078585 ttxdwconsumer.go:234: Workflow lac6072406157 is CLOSED
+2023/09/11 22:39:11.078771 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 1111111111
+2023/09/11 22:39:11.078947 ttxdwconsumer.go:265: Workflow Started 2023-08-27 11:57:23 +0100 BST Status CLOSED
+2023/09/11 22:39:11.078971 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.07897 +0100 BST
+2023/09/11 22:39:11.079116 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-27 19:03:33 +0000 UTC
+2023/09/11 22:39:11.079120 ttxdwconsumer.go:274: Duration - 0 Days 8 Hrs 6 Mins
+2023/09/11 22:39:11.079138 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.079157 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-16 11:57:23 +0100 BST
+2023/09/11 22:39:11.079160 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.079165 ttxdwconsumer.go:234: Workflow lac1111111111 is CLOSED
+2023/09/11 22:39:11.079343 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.079498 ttxdwconsumer.go:265: Workflow Started 2023-08-27 20:05:51 +0100 BST Status CLOSED
+2023/09/11 22:39:11.079521 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.07952 +0100 BST
+2023/09/11 22:39:11.079683 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 07:16:43 +0000 UTC
+2023/09/11 22:39:11.079687 ttxdwconsumer.go:274: Duration - 1 Days 12 Hrs 10 Mins
+2023/09/11 22:39:11.079705 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.079724 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-16 20:05:51 +0100 BST
+2023/09/11 22:39:11.079727 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.079732 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.079892 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.080047 ttxdwconsumer.go:265: Workflow Started 2023-08-29 13:11:49 +0100 BST Status CLOSED
+2023/09/11 22:39:11.080065 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.080064 +0100 BST
+2023/09/11 22:39:11.080236 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 12:29:07 +0000 UTC
+2023/09/11 22:39:11.080239 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 17 Mins
+2023/09/11 22:39:11.080258 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.080282 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-18 13:11:49 +0100 BST
+2023/09/11 22:39:11.080286 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.080291 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.080521 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.080694 ttxdwconsumer.go:265: Workflow Started 2023-08-29 15:05:10 +0100 BST Status CLOSED
+2023/09/11 22:39:11.080712 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.080711 +0100 BST
+2023/09/11 22:39:11.080861 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 14:15:30 +0000 UTC
+2023/09/11 22:39:11.080864 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 10 Mins
+2023/09/11 22:39:11.080882 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.080900 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-18 15:05:10 +0100 BST
+2023/09/11 22:39:11.080903 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.080908 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.081094 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 1111111111
+2023/09/11 22:39:11.081239 ttxdwconsumer.go:265: Workflow Started 2023-08-29 15:35:16 +0100 BST Status CLOSED
+2023/09/11 22:39:11.081257 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.081256 +0100 BST
+2023/09/11 22:39:11.081377 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 14:57:38 +0000 UTC
+2023/09/11 22:39:11.081380 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 22 Mins
+2023/09/11 22:39:11.081401 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.081420 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-18 15:35:16 +0100 BST
+2023/09/11 22:39:11.081423 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.081428 ttxdwconsumer.go:234: Workflow lac1111111111 is CLOSED
+2023/09/11 22:39:11.081626 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.084025 ttxdwconsumer.go:265: Workflow Started 2023-08-29 16:27:36 +0100 BST Status CLOSED
+2023/09/11 22:39:11.084046 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.084046 +0100 BST
+2023/09/11 22:39:11.084214 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 15:34:17 +0000 UTC
+2023/09/11 22:39:11.084218 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 6 Mins
+2023/09/11 22:39:11.084243 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.084265 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-18 16:27:36 +0100 BST
+2023/09/11 22:39:11.084268 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.084274 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.084437 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:11.084549 ttxdwconsumer.go:265: Workflow Started 2023-08-29 17:00:58 +0100 BST Status CLOSED
+2023/09/11 22:39:11.084566 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.084566 +0100 BST
+2023/09/11 22:39:11.084657 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 16:03:32 +0000 UTC
+2023/09/11 22:39:11.084660 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/11 22:39:11.084678 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.084697 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-18 17:00:58 +0100 BST
+2023/09/11 22:39:11.084700 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.084707 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:11.084794 ttxdwconsumer.go:166: Setting PATHALERT Workflow state for Patient 6072406157
+2023/09/11 22:39:11.084910 ttxdwconsumer.go:265: Workflow Started 2023-08-29 17:20:32 +0100 BST Status CLOSED
+2023/09/11 22:39:11.084928 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.084927 +0100 BST
+2023/09/11 22:39:11.085022 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 16:23:05 +0000 UTC
+2023/09/11 22:39:11.085025 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/11 22:39:11.085043 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.085062 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-30 01:20:32 +0100 BST
+2023/09/11 22:39:11.085158 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-29 16:23:05 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.085164 ttxdwconsumer.go:234: Workflow pathalert6072406157 is CLOSED
+2023/09/11 22:39:11.085399 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.085621 ttxdwconsumer.go:265: Workflow Started 2023-08-29 17:40:23 +0100 BST Status CLOSED
+2023/09/11 22:39:11.085642 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.085641 +0100 BST
+2023/09/11 22:39:11.085804 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 16:56:56 +0000 UTC
+2023/09/11 22:39:11.085809 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 16 Mins
+2023/09/11 22:39:11.085830 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.085852 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-18 17:40:23 +0100 BST
+2023/09/11 22:39:11.085856 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.085862 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.086081 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.086399 ttxdwconsumer.go:265: Workflow Started 2023-08-29 17:58:42 +0100 BST Status CLOSED
+2023/09/11 22:39:11.086452 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.086451 +0100 BST
+2023/09/11 22:39:11.086794 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-30 09:11:26 +0000 UTC
+2023/09/11 22:39:11.086815 ttxdwconsumer.go:274: Duration - 0 Days 16 Hrs 12 Mins
+2023/09/11 22:39:11.086841 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.086864 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-18 17:58:42 +0100 BST
+2023/09/11 22:39:11.086868 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.086876 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.087039 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:11.087173 ttxdwconsumer.go:265: Workflow Started 2023-08-30 10:21:36 +0100 BST Status CLOSED
+2023/09/11 22:39:11.087195 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.087195 +0100 BST
+2023/09/11 22:39:11.087310 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-30 09:36:38 +0000 UTC
+2023/09/11 22:39:11.087315 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 15 Mins
+2023/09/11 22:39:11.087334 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.087355 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-19 10:21:36 +0100 BST
+2023/09/11 22:39:11.087358 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.087363 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:11.087517 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:11.087643 ttxdwconsumer.go:265: Workflow Started 2023-08-30 10:39:37 +0100 BST Status CLOSED
+2023/09/11 22:39:11.087661 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.08766 +0100 BST
+2023/09/11 22:39:11.087768 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-30 11:31:20 +0000 UTC
+2023/09/11 22:39:11.087771 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 51 Mins
+2023/09/11 22:39:11.087789 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.087808 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-19 10:39:37 +0100 BST
+2023/09/11 22:39:11.087825 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.087830 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:11.087896 ttxdwconsumer.go:166: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/11 22:39:11.087992 ttxdwconsumer.go:265: Workflow Started 2023-08-30 14:34:22 +0100 BST Status CLOSED
+2023/09/11 22:39:11.088011 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.08801 +0100 BST
+2023/09/11 22:39:11.088087 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-30 13:39:22 +0000 UTC
+2023/09/11 22:39:11.088090 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 5 Mins
+2023/09/11 22:39:11.088109 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.088132 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-30 17:34:22 +0100 BST
+2023/09/11 22:39:11.088213 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-08-30 13:39:22 +0000 UTC. Workflow Target Met = true
+2023/09/11 22:39:11.088218 ttxdwconsumer.go:234: Workflow radconsult9999999468 is CLOSED
+2023/09/11 22:39:11.088283 ttxdwconsumer.go:166: Setting RADCONSULT Workflow state for Patient 1111111111
+2023/09/11 22:39:11.088374 ttxdwconsumer.go:265: Workflow Started 2023-08-30 17:47:08 +0100 BST Status CLOSED
+2023/09/11 22:39:11.088390 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.08839 +0100 BST
+2023/09/11 22:39:11.088463 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-11 19:22:50 +0000 UTC
+2023/09/11 22:39:11.088466 ttxdwconsumer.go:274: Duration - 12 Days 2 Hrs 35 Mins
+2023/09/11 22:39:11.088483 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.088500 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-08-30 20:47:08 +0100 BST
+2023/09/11 22:39:11.088573 ttxdwconsumer.go:296: Workflow Latest Event Time 2023-09-11 19:22:50 +0000 UTC. Workflow Target Met = false
+2023/09/11 22:39:11.088587 ttxdwconsumer.go:234: Workflow radconsult1111111111 is CLOSED
+2023/09/11 22:39:11.088729 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:11.088846 ttxdwconsumer.go:265: Workflow Started 2023-09-03 15:33:30 +0100 BST Status CLOSED
+2023/09/11 22:39:11.088862 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.088862 +0100 BST
+2023/09/11 22:39:11.088963 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-05 14:42:19 +0100 BST
+2023/09/11 22:39:11.088966 ttxdwconsumer.go:274: Duration - 1 Days 23 Hrs 8 Mins
+2023/09/11 22:39:11.088983 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.089001 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-23 15:33:30 +0100 BST
+2023/09/11 22:39:11.089004 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.089008 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:11.089199 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.089356 ttxdwconsumer.go:265: Workflow Started 2023-09-04 14:11:57 +0100 BST Status CLOSED
+2023/09/11 22:39:11.089373 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.089372 +0100 BST
+2023/09/11 22:39:11.089515 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-04 14:28:13 +0100 BST
+2023/09/11 22:39:11.089518 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 16 Mins
+2023/09/11 22:39:11.089535 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.089553 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-24 14:11:57 +0100 BST
+2023/09/11 22:39:11.089555 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.089560 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.089752 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.089935 ttxdwconsumer.go:265: Workflow Started 2023-09-04 14:28:53 +0100 BST Status CLOSED
+2023/09/11 22:39:11.089951 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.08995 +0100 BST
+2023/09/11 22:39:11.090127 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-04 13:42:25 +0000 UTC
+2023/09/11 22:39:11.090135 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 13 Mins
+2023/09/11 22:39:11.090156 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.090174 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-24 14:28:53 +0100 BST
+2023/09/11 22:39:11.090177 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.090181 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.090369 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 9999999468
+2023/09/11 22:39:11.090539 ttxdwconsumer.go:265: Workflow Started 2023-09-04 18:27:56 +0100 BST Status CLOSED
+2023/09/11 22:39:11.090556 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.090555 +0100 BST
+2023/09/11 22:39:11.091407 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-04 17:48:36 +0000 UTC
+2023/09/11 22:39:11.091553 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 20 Mins
+2023/09/11 22:39:11.091599 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.091630 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-24 18:27:56 +0100 BST
+2023/09/11 22:39:11.091634 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.091639 ttxdwconsumer.go:234: Workflow lac9999999468 is CLOSED
+2023/09/11 22:39:11.091939 ttxdwconsumer.go:166: Setting LAC Workflow state for Patient 1111111111
+2023/09/11 22:39:11.092155 ttxdwconsumer.go:265: Workflow Started 2023-09-07 08:54:15 +0100 BST Status CLOSED
+2023/09/11 22:39:11.092173 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.092173 +0100 BST
+2023/09/11 22:39:11.092377 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-07 07:57:22 +0000 UTC
+2023/09/11 22:39:11.092380 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 3 Mins
+2023/09/11 22:39:11.092398 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.092417 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-27 08:54:15 +0100 BST
+2023/09/11 22:39:11.092420 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.092432 ttxdwconsumer.go:234: Workflow lac1111111111 is CLOSED
+2023/09/11 22:39:11.092563 ttxdwconsumer.go:166: Setting TOC Workflow state for Patient 6072406157
+2023/09/11 22:39:11.092684 ttxdwconsumer.go:265: Workflow Started 2023-09-09 09:47:48 +0100 BST Status CLOSED
+2023/09/11 22:39:11.092702 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.092701 +0100 BST
+2023/09/11 22:39:11.092807 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-09 08:52:24 +0000 UTC
+2023/09/11 22:39:11.092811 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 4 Mins
+2023/09/11 22:39:11.092829 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.092848 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-14 09:47:48 +0100 BST
+2023/09/11 22:39:11.092850 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.092855 ttxdwconsumer.go:234: Workflow toc6072406157 is CLOSED
+2023/09/11 22:39:11.092999 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:11.093127 ttxdwconsumer.go:265: Workflow Started 2023-09-11 20:25:32 +0100 BST Status CLOSED
+2023/09/11 22:39:11.093145 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.093144 +0100 BST
+2023/09/11 22:39:11.093258 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-11 19:52:17 +0000 UTC
+2023/09/11 22:39:11.093261 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 26 Mins
+2023/09/11 22:39:11.093279 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.093298 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-10-01 20:25:32 +0100 BST
+2023/09/11 22:39:11.093301 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.093306 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:11.093439 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 9999999468
+2023/09/11 22:39:11.093506 ttxdwconsumer.go:265: Workflow Started 2023-09-11 21:09:53 +0100 BST Status OPEN
+2023/09/11 22:39:11.093533 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:11.093533 +0100 BST
+2023/09/11 22:39:11.093536 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 29 Mins
+2023/09/11 22:39:11.093560 ttxdwconsumer.go:280: Completion time 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:39:11.093564 ttxdwconsumer.go:285: Workflow Time Remaining : 478h30m41.906437s
+2023/09/11 22:39:11.093588 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:11.093612 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:39:11.093616 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:11.093623 ttxdwconsumer.go:224: Workflow d2a9999999468 is OPEN
+2023/09/11 22:39:11.093628 ttxdwconsumer.go:319: No Escalate time defined for Workflow
+2023/09/11 22:39:11.185689 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:11.223854 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:39:11.223885 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:11.223906 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/11 22:39:11.223912 ttgethandler.go:16: Path = /beta/spa/consumer/pathways
+2023/09/11 22:39:11.226067 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:39:11.226082 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:11.226090 ttutil.go:140: 	{
+  "Name": "favicon.ico"
+}
+2023/09/11 22:39:11.226094 ttgethandler.go:16: Path = /beta/spa/consumer/static
+2023/09/11 22:39:11.226103 ttsysman.go:231: Retrieving favicon.ico
+2023/09/11 22:39:11.286977 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:11.287504 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:17.675685 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:39:17.675925 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:17.676012 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9999999468",
+  "Pathway": "d2a",
+  "Vers": "1"
+}
+2023/09/11 22:39:17.676039 ttgethandler.go:16: Path = /beta/spa/consumer/xdw
+2023/09/11 22:39:17.772158 ttxdwconsumer.go:387: selected 1 Workflows for Pathway d2a NHS 9999999468 Version 1
+2023/09/11 22:39:17.831701 ttxdwconsumer.go:153: Setting Workflow States
+2023/09/11 22:39:17.834420 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 9999999468
+2023/09/11 22:39:17.835281 ttxdwconsumer.go:265: Workflow Started 2023-09-11 21:09:53 +0100 BST Status OPEN
+2023/09/11 22:39:17.835448 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:17.835442 +0100 BST
+2023/09/11 22:39:17.835488 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 29 Mins
+2023/09/11 22:39:17.835637 ttxdwconsumer.go:280: Completion time 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:39:17.835671 ttxdwconsumer.go:285: Workflow Time Remaining : 478h30m35.164335s
+2023/09/11 22:39:17.835810 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:17.835947 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:39:17.835973 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:17.836015 ttxdwconsumer.go:224: Workflow d2a9999999468 is OPEN
+2023/09/11 22:39:17.836046 ttxdwconsumer.go:319: No Escalate time defined for Workflow
+2023/09/11 22:39:17.844750 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:25.564668 ttposthandler.go:15: Processing new POST /beta/spa/publisher/event Request
+2023/09/11 22:39:25.564880 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:25.564987 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9999999468",
+  "Pathway": "D2A",
+  "Topic": "urn:ihe:iti:xdw:2011:XDSregistered",
+  "Expression": "D2A2^^TypeCode_EPUT_2018",
+  "Vers": "1",
+  "Taskid": "3",
+  "Comments": "Task 3 LCC Accepts or Rejects Assessment Actioned by system at 2tsolutions in the Role of clinical -- D2A2^^TypeCode_EPUT_2018 has been registered for Patient 9999999468",
+  "Formatcode": "application/pdf",
+  "Eventype": "UPDATE_TASK",
+  "Repositoryuid": "http://localhost:8080//spa/consumer/event?user=system\u0026org=2tsolutions\u0026role=clinical\u0026pathway=D2A\u0026nhs=9999999468\u0026vers=1\u0026taskid=3"
+}
+2023/09/11 22:39:25.565051 ttevents.go:54: Processing New User Event
+2023/09/11 22:39:25.689812 ttevents.go:87: Persisted Event
+2023/09/11 22:39:25.690099 ttutil.go:140: 	{
+  "id": 0,
+  "eventtype": "UPDATE_TASK",
+  "docname": "Discharge to Assessment Workflow",
+  "classcode": "Clinical Document",
+  "confcode": "Normal",
+  "formatcode": "application/pdf",
+  "facilitycode": "2tsolutions",
+  "practicecode": "clinical",
+  "expression": "D2A2^^TypeCode_EPUT_2018",
+  "authors": "system",
+  "nhs": "9999999468",
+  "user": "system",
+  "org": "2tsolutions",
+  "role": "clinical",
+  "speciality": "clinical",
+  "topic": "urn:ihe:iti:xdw:2011:XDSregistered",
+  "pathway": "D2A",
+  "comments": "Task 3 LCC Accepts or Rejects Assessment Actioned by system at 2tsolutions in the Role of clinical -- D2A2^^TypeCode_EPUT_2018 has been registered for Patient 9999999468",
+  "ver": 1,
+  "taskid": 3
+}
+2023/09/11 22:39:25.779811 ttxdwconsumer.go:387: selected 1 Workflows for Pathway D2A NHS 9999999468 Version 1
+2023/09/11 22:39:25.780746 ttxdwupdater.go:15: Loaded d2a Definition
+2023/09/11 22:39:25.781549 ttxdwupdater.go:17: Loaded Version 1 of d2a XDW Document for NHS 9999999468
+2023/09/11 22:39:25.841156 ttxdwupdater.go:19: Selected 8 Events for Pathway d2a NHS 9999999468 Version 1
+2023/09/11 22:39:25.841299 ttxdwupdater.go:28: Updating Workflow State
+2023/09/11 22:39:25.841366 ttxdwupdater.go:57: Matched workflow document task 1 Output Part : D2A1^^TypeCode_EPUT_2018 with Event Expression : D2A1^^TypeCode_EPUT_2018 Status : COMPLETE
+2023/09/11 22:39:25.841411 ttxdwupdater.go:117: Event ID 2767 is Registered
+2023/09/11 22:39:25.841441 ttxdwupdater.go:36: Matched Task 2 D2A1^^TypeCode_EPUT_2018 Input with event 2767
+2023/09/11 22:39:25.841466 ttxdwupdater.go:117: Event ID 2767 is Registered
+2023/09/11 22:39:25.841489 ttxdwupdater.go:57: Matched workflow document task 2 Output Part : D2A2^^TypeCode_EPUT_2018 with Event Expression : D2A2^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:39:25.841515 ttxdwupdater.go:121: New Event Found. ID = 2768
+2023/09/11 22:39:25.842082 ttxdwupdater.go:36: Matched Task 3 D2A2^^TypeCode_EPUT_2018 Input with event 2768
+2023/09/11 22:39:25.842123 ttxdwupdater.go:45: Set Task 3 Activation Time 2023-09-11T21:39:25Z
+2023/09/11 22:39:25.842146 ttxdwupdater.go:117: Event ID 2768 is Registered
+2023/09/11 22:39:25.842168 ttxdwupdater.go:137: Checking if Task 1 is complete
+2023/09/11 22:39:25.842202 ttxdwupdater.go:198: Task 1 is complete
+2023/09/11 22:39:25.842226 ttxdwupdater.go:137: Checking if Task 2 is complete
+2023/09/11 22:39:25.842246 ttxdwupdater.go:203: Task 2 is not complete
+2023/09/11 22:39:25.842264 ttxdwupdater.go:137: Checking if Task 3 is complete
+2023/09/11 22:39:25.842442 ttxdwupdater.go:203: Task 3 is not complete
+2023/09/11 22:39:25.842466 ttxdwupdater.go:137: Checking if Task 4 is complete
+2023/09/11 22:39:25.842491 ttxdwupdater.go:203: Task 4 is not complete
+2023/09/11 22:39:25.842509 ttxdwupdater.go:137: Checking if Task 5 is complete
+2023/09/11 22:39:25.842535 ttxdwupdater.go:203: Task 5 is not complete
+2023/09/11 22:39:25.842556 ttxdwupdater.go:212: Workflow Completion Condition 1 task(4)
+2023/09/11 22:39:25.842577 ttxdwupdater.go:212: Workflow Completion Condition 2 task(5)
+2023/09/11 22:39:25.842605 ttxdwupdater.go:244: D2A Workflow for Nhs ID 9999999468 is not complete
+2023/09/11 22:39:25.914748 ttxdwupdater.go:274: Upddated Workflow State for Pathway D2A Nhs ID 9999999468 Version 1 Status OPEN
+2023/09/11 22:39:25.984942 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:32.468599 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:39:32.468796 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:32.468880 ttutil.go:140: 	{
+  "Act": "select",
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Pathway": "D2A",
+  "Vers": "-1",
+  "Taskid": "-1"
+}
+2023/09/11 22:39:32.468899 ttgethandler.go:16: Path = /beta/spa/consumer/xdws
+2023/09/11 22:39:32.628911 ttxdwconsumer.go:387: selected 8 Workflows for Pathway D2A NHS  Version -1
+2023/09/11 22:39:32.691053 ttxdwconsumer.go:153: Setting Workflow States
+2023/09/11 22:39:32.692295 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:32.693580 ttxdwconsumer.go:265: Workflow Started 2023-08-24 19:18:57 +0100 BST Status CLOSED
+2023/09/11 22:39:32.693737 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:32.693731 +0100 BST
+2023/09/11 22:39:32.694483 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-24 19:42:42 +0000 UTC
+2023/09/11 22:39:32.694513 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 23 Mins
+2023/09/11 22:39:32.694641 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:32.694773 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-13 19:18:57 +0100 BST
+2023/09/11 22:39:32.694794 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:32.694830 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:32.695752 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:32.696580 ttxdwconsumer.go:265: Workflow Started 2023-08-24 20:42:54 +0100 BST Status CLOSED
+2023/09/11 22:39:32.696697 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:32.696693 +0100 BST
+2023/09/11 22:39:32.697408 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 15:06:08 +0000 UTC
+2023/09/11 22:39:32.697431 ttxdwconsumer.go:274: Duration - 1 Days 19 Hrs 23 Mins
+2023/09/11 22:39:32.697551 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:32.697677 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-13 20:42:54 +0100 BST
+2023/09/11 22:39:32.697702 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:32.697735 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:32.698651 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:32.699375 ttxdwconsumer.go:265: Workflow Started 2023-08-29 17:00:58 +0100 BST Status CLOSED
+2023/09/11 22:39:32.699495 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:32.699487 +0100 BST
+2023/09/11 22:39:32.700243 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 16:03:32 +0000 UTC
+2023/09/11 22:39:32.700275 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/11 22:39:32.700404 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:32.700539 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-18 17:00:58 +0100 BST
+2023/09/11 22:39:32.700559 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:32.700591 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:32.701496 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:32.702320 ttxdwconsumer.go:265: Workflow Started 2023-08-30 10:21:36 +0100 BST Status CLOSED
+2023/09/11 22:39:32.702453 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:32.702449 +0100 BST
+2023/09/11 22:39:32.703178 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-30 09:36:38 +0000 UTC
+2023/09/11 22:39:32.703200 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 15 Mins
+2023/09/11 22:39:32.703323 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:32.703467 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-19 10:21:36 +0100 BST
+2023/09/11 22:39:32.703534 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:32.703559 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:32.704207 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:32.704810 ttxdwconsumer.go:265: Workflow Started 2023-08-30 10:39:37 +0100 BST Status CLOSED
+2023/09/11 22:39:32.704906 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:32.704903 +0100 BST
+2023/09/11 22:39:32.705426 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-30 11:31:20 +0000 UTC
+2023/09/11 22:39:32.705444 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 51 Mins
+2023/09/11 22:39:32.705537 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:32.705672 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-19 10:39:37 +0100 BST
+2023/09/11 22:39:32.705687 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:32.705711 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:32.707970 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:32.708544 ttxdwconsumer.go:265: Workflow Started 2023-09-03 15:33:30 +0100 BST Status CLOSED
+2023/09/11 22:39:32.708616 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:32.708613 +0100 BST
+2023/09/11 22:39:32.709007 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-05 14:42:19 +0100 BST
+2023/09/11 22:39:32.709022 ttxdwconsumer.go:274: Duration - 1 Days 23 Hrs 8 Mins
+2023/09/11 22:39:32.709087 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:32.709153 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-23 15:33:30 +0100 BST
+2023/09/11 22:39:32.709164 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:32.709180 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:32.709659 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:39:32.710111 ttxdwconsumer.go:265: Workflow Started 2023-09-11 20:25:32 +0100 BST Status CLOSED
+2023/09/11 22:39:32.710177 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:32.710174 +0100 BST
+2023/09/11 22:39:32.710565 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-11 19:52:17 +0000 UTC
+2023/09/11 22:39:32.710580 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 26 Mins
+2023/09/11 22:39:32.710661 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:32.710789 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-10-01 20:25:32 +0100 BST
+2023/09/11 22:39:32.710804 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:32.710823 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:39:32.711287 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 9999999468
+2023/09/11 22:39:32.711586 ttxdwconsumer.go:265: Workflow Started 2023-09-11 21:09:53 +0100 BST Status OPEN
+2023/09/11 22:39:32.711645 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:32.711643 +0100 BST
+2023/09/11 22:39:32.711656 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 29 Mins
+2023/09/11 22:39:32.711716 ttxdwconsumer.go:280: Completion time 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:39:32.711728 ttxdwconsumer.go:285: Workflow Time Remaining : 478h30m20.288275s
+2023/09/11 22:39:32.711796 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:32.711854 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:39:32.711863 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:32.711878 ttxdwconsumer.go:224: Workflow d2a9999999468 is OPEN
+2023/09/11 22:39:32.711889 ttxdwconsumer.go:319: No Escalate time defined for Workflow
+2023/09/11 22:39:32.718397 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:35.432260 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:39:35.432438 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:35.432530 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9999999468",
+  "Pathway": "d2a",
+  "Vers": "1"
+}
+2023/09/11 22:39:35.432554 ttgethandler.go:16: Path = /beta/spa/consumer/xdw
+2023/09/11 22:39:35.521468 ttxdwconsumer.go:387: selected 1 Workflows for Pathway d2a NHS 9999999468 Version 1
+2023/09/11 22:39:35.580806 ttxdwconsumer.go:153: Setting Workflow States
+2023/09/11 22:39:35.581966 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 9999999468
+2023/09/11 22:39:35.582890 ttxdwconsumer.go:265: Workflow Started 2023-09-11 21:09:53 +0100 BST Status OPEN
+2023/09/11 22:39:35.583046 ttxdwconsumer.go:268: Time Now 2023-09-11 22:39:35.58304 +0100 BST
+2023/09/11 22:39:35.583078 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 29 Mins
+2023/09/11 22:39:35.583221 ttxdwconsumer.go:280: Completion time 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:39:35.583304 ttxdwconsumer.go:285: Workflow Time Remaining : 478h30m17.416701s
+2023/09/11 22:39:35.583439 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:39:35.583573 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:39:35.583595 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:39:35.583629 ttxdwconsumer.go:224: Workflow d2a9999999468 is OPEN
+2023/09/11 22:39:35.583655 ttxdwconsumer.go:319: No Escalate time defined for Workflow
+2023/09/11 22:39:35.589915 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:39:52.683698 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:39:52.683854 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:39:52.683919 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "d2a",
+  "Vers": "1"
+}
+2023/09/11 22:39:52.683941 ttgethandler.go:16: Path = /api/state/comments
+2023/09/11 22:39:52.743258 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:41:04.751532 ttposthandler.go:15: Processing new POST /beta/spa/publisher/event Request
+2023/09/11 22:41:04.751864 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:41:04.752006 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9999999468",
+  "Pathway": "D2A",
+  "Topic": "urn:ihe:iti:xdw:2011:XDSregistered",
+  "Expression": "D2A2^^TypeCode_EPUT_2018",
+  "Vers": "1",
+  "Taskid": "2",
+  "Comments": "Task 2 D2A Assessment Published Actioned by system at 2tsolutions in the Role of clinical -- D2A2^^TypeCode_EPUT_2018 has been registered for Patient 9999999468",
+  "Formatcode": "application/pdf",
+  "Eventype": "UPDATE_TASK",
+  "Repositoryuid": "http://localhost:8080//spa/consumer/event?user=system\u0026org=2tsolutions\u0026role=clinical\u0026pathway=D2A\u0026nhs=9999999468\u0026vers=1\u0026taskid=2"
+}
+2023/09/11 22:41:04.752051 ttevents.go:54: Processing New User Event
+2023/09/11 22:41:04.933968 ttevents.go:87: Persisted Event
+2023/09/11 22:41:04.934250 ttutil.go:140: 	{
+  "id": 0,
+  "eventtype": "UPDATE_TASK",
+  "docname": "Discharge to Assessment Workflow",
+  "classcode": "Clinical Document",
+  "confcode": "Normal",
+  "formatcode": "application/pdf",
+  "facilitycode": "2tsolutions",
+  "practicecode": "clinical",
+  "expression": "D2A2^^TypeCode_EPUT_2018",
+  "authors": "system",
+  "nhs": "9999999468",
+  "user": "system",
+  "org": "2tsolutions",
+  "role": "clinical",
+  "speciality": "clinical",
+  "topic": "urn:ihe:iti:xdw:2011:XDSregistered",
+  "pathway": "D2A",
+  "comments": "Task 2 D2A Assessment Published Actioned by system at 2tsolutions in the Role of clinical -- D2A2^^TypeCode_EPUT_2018 has been registered for Patient 9999999468",
+  "ver": 1,
+  "taskid": 2
+}
+2023/09/11 22:41:05.023402 ttxdwconsumer.go:387: selected 1 Workflows for Pathway D2A NHS 9999999468 Version 1
+2023/09/11 22:41:05.023873 ttxdwupdater.go:15: Loaded d2a Definition
+2023/09/11 22:41:05.024645 ttxdwupdater.go:17: Loaded Version 1 of d2a XDW Document for NHS 9999999468
+2023/09/11 22:41:05.085210 ttxdwupdater.go:19: Selected 9 Events for Pathway d2a NHS 9999999468 Version 1
+2023/09/11 22:41:05.085363 ttxdwupdater.go:28: Updating Workflow State
+2023/09/11 22:41:05.085423 ttxdwupdater.go:57: Matched workflow document task 1 Output Part : D2A1^^TypeCode_EPUT_2018 with Event Expression : D2A1^^TypeCode_EPUT_2018 Status : COMPLETE
+2023/09/11 22:41:05.085470 ttxdwupdater.go:117: Event ID 2767 is Registered
+2023/09/11 22:41:05.085500 ttxdwupdater.go:36: Matched Task 2 D2A1^^TypeCode_EPUT_2018 Input with event 2767
+2023/09/11 22:41:05.085532 ttxdwupdater.go:117: Event ID 2767 is Registered
+2023/09/11 22:41:05.085559 ttxdwupdater.go:57: Matched workflow document task 2 Output Part : D2A2^^TypeCode_EPUT_2018 with Event Expression : D2A2^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:41:05.085590 ttxdwupdater.go:117: Event ID 2768 is Registered
+2023/09/11 22:41:05.085614 ttxdwupdater.go:36: Matched Task 3 D2A2^^TypeCode_EPUT_2018 Input with event 2768
+2023/09/11 22:41:05.085640 ttxdwupdater.go:117: Event ID 2768 is Registered
+2023/09/11 22:41:05.085707 ttxdwupdater.go:57: Matched workflow document task 2 Output Part : D2A2^^TypeCode_EPUT_2018 with Event Expression : D2A2^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:41:05.085733 ttxdwupdater.go:121: New Event Found. ID = 2769
+2023/09/11 22:41:05.086379 ttxdwupdater.go:36: Matched Task 3 D2A2^^TypeCode_EPUT_2018 Input with event 2769
+2023/09/11 22:41:05.086434 ttxdwupdater.go:117: Event ID 2769 is Registered
+2023/09/11 22:41:05.086461 ttxdwupdater.go:137: Checking if Task 1 is complete
+2023/09/11 22:41:05.086498 ttxdwupdater.go:198: Task 1 is complete
+2023/09/11 22:41:05.086522 ttxdwupdater.go:137: Checking if Task 2 is complete
+2023/09/11 22:41:05.086542 ttxdwupdater.go:203: Task 2 is not complete
+2023/09/11 22:41:05.086561 ttxdwupdater.go:137: Checking if Task 3 is complete
+2023/09/11 22:41:05.086729 ttxdwupdater.go:203: Task 3 is not complete
+2023/09/11 22:41:05.086753 ttxdwupdater.go:137: Checking if Task 4 is complete
+2023/09/11 22:41:05.086778 ttxdwupdater.go:203: Task 4 is not complete
+2023/09/11 22:41:05.086796 ttxdwupdater.go:137: Checking if Task 5 is complete
+2023/09/11 22:41:05.086821 ttxdwupdater.go:203: Task 5 is not complete
+2023/09/11 22:41:05.086841 ttxdwupdater.go:212: Workflow Completion Condition 1 task(4)
+2023/09/11 22:41:05.086862 ttxdwupdater.go:212: Workflow Completion Condition 2 task(5)
+2023/09/11 22:41:05.086882 ttxdwupdater.go:244: D2A Workflow for Nhs ID 9999999468 is not complete
+2023/09/11 22:41:05.159287 ttxdwupdater.go:274: Upddated Workflow State for Pathway D2A Nhs ID 9999999468 Version 1 Status OPEN
+2023/09/11 22:41:05.227915 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:41:13.574284 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:41:13.574518 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:41:13.574646 ttutil.go:140: 	{
+  "Act": "select",
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Pathway": "D2A",
+  "Vers": "-1",
+  "Taskid": "-1"
+}
+2023/09/11 22:41:13.574684 ttgethandler.go:16: Path = /beta/spa/consumer/xdws
+2023/09/11 22:41:13.730314 ttxdwconsumer.go:387: selected 8 Workflows for Pathway D2A NHS  Version -1
+2023/09/11 22:41:13.791710 ttxdwconsumer.go:153: Setting Workflow States
+2023/09/11 22:41:13.792442 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:41:13.793192 ttxdwconsumer.go:265: Workflow Started 2023-08-24 19:18:57 +0100 BST Status CLOSED
+2023/09/11 22:41:13.793293 ttxdwconsumer.go:268: Time Now 2023-09-11 22:41:13.793289 +0100 BST
+2023/09/11 22:41:13.793707 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-24 19:42:42 +0000 UTC
+2023/09/11 22:41:13.793730 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 23 Mins
+2023/09/11 22:41:13.793802 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:41:13.793877 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-13 19:18:57 +0100 BST
+2023/09/11 22:41:13.793892 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:41:13.793917 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:41:13.794415 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:41:13.794886 ttxdwconsumer.go:265: Workflow Started 2023-08-24 20:42:54 +0100 BST Status CLOSED
+2023/09/11 22:41:13.794941 ttxdwconsumer.go:268: Time Now 2023-09-11 22:41:13.79494 +0100 BST
+2023/09/11 22:41:13.795242 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-26 15:06:08 +0000 UTC
+2023/09/11 22:41:13.795254 ttxdwconsumer.go:274: Duration - 1 Days 19 Hrs 23 Mins
+2023/09/11 22:41:13.795306 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:41:13.795360 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-13 20:42:54 +0100 BST
+2023/09/11 22:41:13.795370 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:41:13.795385 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:41:13.795759 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:41:13.796066 ttxdwconsumer.go:265: Workflow Started 2023-08-29 17:00:58 +0100 BST Status CLOSED
+2023/09/11 22:41:13.796156 ttxdwconsumer.go:268: Time Now 2023-09-11 22:41:13.796154 +0100 BST
+2023/09/11 22:41:13.796420 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-29 16:03:32 +0000 UTC
+2023/09/11 22:41:13.796430 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/11 22:41:13.796479 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:41:13.796530 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-18 17:00:58 +0100 BST
+2023/09/11 22:41:13.796537 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:41:13.796550 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:41:13.796919 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:41:13.797264 ttxdwconsumer.go:265: Workflow Started 2023-08-30 10:21:36 +0100 BST Status CLOSED
+2023/09/11 22:41:13.797313 ttxdwconsumer.go:268: Time Now 2023-09-11 22:41:13.797311 +0100 BST
+2023/09/11 22:41:13.797614 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-30 09:36:38 +0000 UTC
+2023/09/11 22:41:13.797625 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 15 Mins
+2023/09/11 22:41:13.797676 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:41:13.797727 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-19 10:21:36 +0100 BST
+2023/09/11 22:41:13.797735 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:41:13.797747 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:41:13.798154 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:41:13.798510 ttxdwconsumer.go:265: Workflow Started 2023-08-30 10:39:37 +0100 BST Status CLOSED
+2023/09/11 22:41:13.798562 ttxdwconsumer.go:268: Time Now 2023-09-11 22:41:13.79856 +0100 BST
+2023/09/11 22:41:13.798886 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-08-30 11:31:20 +0000 UTC
+2023/09/11 22:41:13.798896 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 51 Mins
+2023/09/11 22:41:13.798945 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:41:13.799013 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-19 10:39:37 +0100 BST
+2023/09/11 22:41:13.799021 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:41:13.799036 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:41:13.799393 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:41:13.799724 ttxdwconsumer.go:265: Workflow Started 2023-09-03 15:33:30 +0100 BST Status CLOSED
+2023/09/11 22:41:13.799771 ttxdwconsumer.go:268: Time Now 2023-09-11 22:41:13.79977 +0100 BST
+2023/09/11 22:41:13.800079 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-05 14:42:19 +0100 BST
+2023/09/11 22:41:13.800092 ttxdwconsumer.go:274: Duration - 1 Days 23 Hrs 8 Mins
+2023/09/11 22:41:13.800140 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:41:13.800188 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-09-23 15:33:30 +0100 BST
+2023/09/11 22:41:13.800196 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:41:13.800210 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:41:13.800557 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 6072406157
+2023/09/11 22:41:13.800897 ttxdwconsumer.go:265: Workflow Started 2023-09-11 20:25:32 +0100 BST Status CLOSED
+2023/09/11 22:41:13.800945 ttxdwconsumer.go:268: Time Now 2023-09-11 22:41:13.800943 +0100 BST
+2023/09/11 22:41:13.802156 ttxdwconsumer.go:271: Workflow is Complete. Latest Event Time was 2023-09-11 19:52:17 +0000 UTC
+2023/09/11 22:41:13.802178 ttxdwconsumer.go:274: Duration - 0 Days 0 Hrs 26 Mins
+2023/09/11 22:41:13.802246 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:41:13.802314 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-10-01 20:25:32 +0100 BST
+2023/09/11 22:41:13.802323 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:41:13.802342 ttxdwconsumer.go:234: Workflow d2a6072406157 is CLOSED
+2023/09/11 22:41:13.803180 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 9999999468
+2023/09/11 22:41:13.803521 ttxdwconsumer.go:265: Workflow Started 2023-09-11 21:09:53 +0100 BST Status OPEN
+2023/09/11 22:41:13.803574 ttxdwconsumer.go:268: Time Now 2023-09-11 22:41:13.803572 +0100 BST
+2023/09/11 22:41:13.803586 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 31 Mins
+2023/09/11 22:41:13.803638 ttxdwconsumer.go:280: Completion time 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:41:13.803649 ttxdwconsumer.go:285: Workflow Time Remaining : 478h28m39.196353s
+2023/09/11 22:41:13.803699 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:41:13.803750 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:41:13.803757 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:41:13.803771 ttxdwconsumer.go:224: Workflow d2a9999999468 is OPEN
+2023/09/11 22:41:13.803781 ttxdwconsumer.go:319: No Escalate time defined for Workflow
+2023/09/11 22:41:13.808801 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:41:16.328934 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:41:16.329018 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:41:16.329070 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9999999468",
+  "Pathway": "d2a",
+  "Vers": "1"
+}
+2023/09/11 22:41:16.329785 ttgethandler.go:16: Path = /beta/spa/consumer/xdw
+2023/09/11 22:41:16.424521 ttxdwconsumer.go:387: selected 1 Workflows for Pathway d2a NHS 9999999468 Version 1
+2023/09/11 22:41:16.486667 ttxdwconsumer.go:153: Setting Workflow States
+2023/09/11 22:41:16.487881 ttxdwconsumer.go:166: Setting D2A Workflow state for Patient 9999999468
+2023/09/11 22:41:16.489019 ttxdwconsumer.go:265: Workflow Started 2023-09-11 21:09:53 +0100 BST Status OPEN
+2023/09/11 22:41:16.489196 ttxdwconsumer.go:268: Time Now 2023-09-11 22:41:16.48919 +0100 BST
+2023/09/11 22:41:16.489227 ttxdwconsumer.go:274: Duration - 0 Days 1 Hrs 31 Mins
+2023/09/11 22:41:16.489382 ttxdwconsumer.go:280: Completion time 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:41:16.489411 ttxdwconsumer.go:285: Workflow Time Remaining : 478h28m36.510594s
+2023/09/11 22:41:16.489546 ttxdwconsumer.go:289: Checking if Workflow is Overdue
+2023/09/11 22:41:16.489677 ttxdwconsumer.go:292: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/11 22:41:16.489698 ttxdwconsumer.go:303: Workflow is not overdue
+2023/09/11 22:41:16.489734 ttxdwconsumer.go:224: Workflow d2a9999999468 is OPEN
+2023/09/11 22:41:16.489761 ttxdwconsumer.go:319: No Escalate time defined for Workflow
+2023/09/11 22:41:16.495709 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:41:31.166169 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:41:31.166321 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:41:31.166388 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "d2a",
+  "Vers": "1"
+}
+2023/09/11 22:41:31.166408 ttgethandler.go:16: Path = /api/state/comments
+2023/09/11 22:41:31.226335 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:41:31.240431 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:41:31.240489 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:41:31.240528 ttutil.go:140: 	{}
+2023/09/11 22:41:31.240544 ttgethandler.go:16: Path = /favicon.ico
+2023/09/11 22:41:31.240556 ttsysman.go:231: Retrieving favicon.ico
+2023/09/11 22:41:31.298941 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:42:21.735089 ttposthandler.go:15: Processing new POST /beta/spa/publisher/event Request
+2023/09/11 22:42:21.735305 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:42:21.735420 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9999999468",
+  "Pathway": "D2A",
+  "Topic": "urn:ihe:iti:xdw:2011:XDSregistered",
+  "Expression": "D2A3^^TypeCode_EPUT_2018",
+  "Vers": "1",
+  "Taskid": "3",
+  "Comments": "Task 3 LCC Accepts or Rejects Assessment Actioned by system at 2tsolutions in the Role of clinical -- D2A3^^TypeCode_EPUT_2018 has been registered for Patient 9999999468",
+  "Formatcode": "application/pdf",
+  "Eventype": "UPDATE_TASK",
+  "Repositoryuid": "http://localhost:8080//spa/consumer/event?user=system\u0026org=2tsolutions\u0026role=clinical\u0026pathway=D2A\u0026nhs=9999999468\u0026vers=1\u0026taskid=3"
+}
+2023/09/11 22:42:21.735451 ttevents.go:54: Processing New User Event
+2023/09/11 22:42:21.923404 ttevents.go:87: Persisted Event
+2023/09/11 22:42:21.923653 ttutil.go:140: 	{
+  "id": 0,
+  "eventtype": "UPDATE_TASK",
+  "docname": "Discharge to Assessment Workflow",
+  "classcode": "Clinical Document",
+  "confcode": "Normal",
+  "formatcode": "application/pdf",
+  "facilitycode": "2tsolutions",
+  "practicecode": "clinical",
+  "expression": "D2A3^^TypeCode_EPUT_2018",
+  "authors": "system",
+  "nhs": "9999999468",
+  "user": "system",
+  "org": "2tsolutions",
+  "role": "clinical",
+  "speciality": "clinical",
+  "topic": "urn:ihe:iti:xdw:2011:XDSregistered",
+  "pathway": "D2A",
+  "comments": "Task 3 LCC Accepts or Rejects Assessment Actioned by system at 2tsolutions in the Role of clinical -- D2A3^^TypeCode_EPUT_2018 has been registered for Patient 9999999468",
+  "ver": 1,
+  "taskid": 3
+}
+2023/09/11 22:42:22.013268 ttxdwconsumer.go:387: selected 1 Workflows for Pathway D2A NHS 9999999468 Version 1
+2023/09/11 22:42:22.013748 ttxdwupdater.go:15: Loaded d2a Definition
+2023/09/11 22:42:22.014555 ttxdwupdater.go:17: Loaded Version 1 of d2a XDW Document for NHS 9999999468
+2023/09/11 22:42:22.075829 ttxdwupdater.go:19: Selected 10 Events for Pathway d2a NHS 9999999468 Version 1
+2023/09/11 22:42:22.075955 ttxdwupdater.go:28: Updating Workflow State
+2023/09/11 22:42:22.075998 ttxdwupdater.go:57: Matched workflow document task 1 Output Part : D2A1^^TypeCode_EPUT_2018 with Event Expression : D2A1^^TypeCode_EPUT_2018 Status : COMPLETE
+2023/09/11 22:42:22.076039 ttxdwupdater.go:117: Event ID 2767 is Registered
+2023/09/11 22:42:22.076067 ttxdwupdater.go:36: Matched Task 2 D2A1^^TypeCode_EPUT_2018 Input with event 2767
+2023/09/11 22:42:22.076099 ttxdwupdater.go:117: Event ID 2767 is Registered
+2023/09/11 22:42:22.076126 ttxdwupdater.go:57: Matched workflow document task 2 Output Part : D2A2^^TypeCode_EPUT_2018 with Event Expression : D2A2^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:42:22.076155 ttxdwupdater.go:117: Event ID 2768 is Registered
+2023/09/11 22:42:22.076179 ttxdwupdater.go:36: Matched Task 3 D2A2^^TypeCode_EPUT_2018 Input with event 2768
+2023/09/11 22:42:22.076206 ttxdwupdater.go:117: Event ID 2768 is Registered
+2023/09/11 22:42:22.076232 ttxdwupdater.go:57: Matched workflow document task 2 Output Part : D2A2^^TypeCode_EPUT_2018 with Event Expression : D2A2^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:42:22.076260 ttxdwupdater.go:117: Event ID 2769 is Registered
+2023/09/11 22:42:22.076283 ttxdwupdater.go:36: Matched Task 3 D2A2^^TypeCode_EPUT_2018 Input with event 2769
+2023/09/11 22:42:22.076309 ttxdwupdater.go:117: Event ID 2769 is Registered
+2023/09/11 22:42:22.076332 ttxdwupdater.go:57: Matched workflow document task 3 Output Part : D2A3^^TypeCode_EPUT_2018 with Event Expression : D2A3^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:42:22.076361 ttxdwupdater.go:121: New Event Found. ID = 2770
+2023/09/11 22:42:22.076934 ttxdwupdater.go:36: Matched Task 4 D2A3^^TypeCode_EPUT_2018 Input with event 2770
+2023/09/11 22:42:22.076984 ttxdwupdater.go:45: Set Task 4 Activation Time 2023-09-11T21:42:21Z
+2023/09/11 22:42:22.077021 ttxdwupdater.go:117: Event ID 2770 is Registered
+2023/09/11 22:42:22.077048 ttxdwupdater.go:137: Checking if Task 1 is complete
+2023/09/11 22:42:22.077088 ttxdwupdater.go:198: Task 1 is complete
+2023/09/11 22:42:22.077116 ttxdwupdater.go:137: Checking if Task 2 is complete
+2023/09/11 22:42:22.077140 ttxdwupdater.go:203: Task 2 is not complete
+2023/09/11 22:42:22.077164 ttxdwupdater.go:137: Checking if Task 3 is complete
+2023/09/11 22:42:22.077456 ttxdwupdater.go:198: Task 3 is complete
+2023/09/11 22:42:22.077491 ttxdwupdater.go:137: Checking if Task 4 is complete
+2023/09/11 22:42:22.077526 ttxdwupdater.go:203: Task 4 is not complete
+2023/09/11 22:42:22.077548 ttxdwupdater.go:137: Checking if Task 5 is complete
+2023/09/11 22:42:22.077577 ttxdwupdater.go:203: Task 5 is not complete
+2023/09/11 22:42:22.077602 ttxdwupdater.go:212: Workflow Completion Condition 1 task(4)
+2023/09/11 22:42:22.077627 ttxdwupdater.go:212: Workflow Completion Condition 2 task(5)
+2023/09/11 22:42:22.077651 ttxdwupdater.go:244: D2A Workflow for Nhs ID 9999999468 is not complete
+2023/09/11 22:42:22.146803 ttxdwupdater.go:274: Upddated Workflow State for Pathway D2A Nhs ID 9999999468 Version 1 Status OPEN
+2023/09/11 22:42:22.216147 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:42:35.249569 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:42:35.249744 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:42:35.249827 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "d2a",
+  "Vers": "1"
+}
+2023/09/11 22:42:35.249853 ttgethandler.go:16: Path = /api/state/comments
+2023/09/11 22:42:35.311392 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:42:35.326298 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:42:35.326369 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:42:35.326406 ttutil.go:140: 	{}
+2023/09/11 22:42:35.326423 ttgethandler.go:16: Path = /favicon.ico
+2023/09/11 22:42:35.326439 ttsysman.go:231: Retrieving favicon.ico
+2023/09/11 22:42:35.383662 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:43:09.860544 ttposthandler.go:15: Processing new POST /beta/spa/publisher/event Request
+2023/09/11 22:43:09.860806 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:43:09.860949 ttutil.go:140: 	{
+  "User": "system",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9999999468",
+  "Pathway": "D2A",
+  "Topic": "urn:ihe:iti:xdw:2011:XDSregistered",
+  "Expression": "D2A5^^TypeCode_EPUT_2018",
+  "Vers": "1",
+  "Taskid": "4",
+  "Comments": "Task 4 Patient Discharged onto D2A Pathway  Actioned by system at 2tsolutions in the Role of clinical -- D2A5^^TypeCode_EPUT_2018 has been registered for Patient 9999999468",
+  "Formatcode": "application/pdf",
+  "Eventype": "UPDATE_TASK",
+  "Repositoryuid": "http://localhost:8080//spa/consumer/event?user=system\u0026org=2tsolutions\u0026role=clinical\u0026pathway=D2A\u0026nhs=9999999468\u0026vers=1\u0026taskid=4"
+}
+2023/09/11 22:43:09.860987 ttevents.go:54: Processing New User Event
+2023/09/11 22:43:09.987292 ttevents.go:87: Persisted Event
+2023/09/11 22:43:09.987548 ttutil.go:140: 	{
+  "id": 0,
+  "eventtype": "UPDATE_TASK",
+  "docname": "Discharge to Assessment Workflow",
+  "classcode": "Clinical Document",
+  "confcode": "Normal",
+  "formatcode": "application/pdf",
+  "facilitycode": "2tsolutions",
+  "practicecode": "clinical",
+  "expression": "D2A5^^TypeCode_EPUT_2018",
+  "authors": "system",
+  "nhs": "9999999468",
+  "user": "system",
+  "org": "2tsolutions",
+  "role": "clinical",
+  "speciality": "clinical",
+  "topic": "urn:ihe:iti:xdw:2011:XDSregistered",
+  "pathway": "D2A",
+  "comments": "Task 4 Patient Discharged onto D2A Pathway  Actioned by system at 2tsolutions in the Role of clinical -- D2A5^^TypeCode_EPUT_2018 has been registered for Patient 9999999468",
+  "ver": 1,
+  "taskid": 4
+}
+2023/09/11 22:43:10.083250 ttxdwconsumer.go:387: selected 1 Workflows for Pathway D2A NHS 9999999468 Version 1
+2023/09/11 22:43:10.083701 ttxdwupdater.go:15: Loaded d2a Definition
+2023/09/11 22:43:10.084512 ttxdwupdater.go:17: Loaded Version 1 of d2a XDW Document for NHS 9999999468
+2023/09/11 22:43:10.148192 ttxdwupdater.go:19: Selected 11 Events for Pathway d2a NHS 9999999468 Version 1
+2023/09/11 22:43:10.148328 ttxdwupdater.go:28: Updating Workflow State
+2023/09/11 22:43:10.148371 ttxdwupdater.go:57: Matched workflow document task 1 Output Part : D2A1^^TypeCode_EPUT_2018 with Event Expression : D2A1^^TypeCode_EPUT_2018 Status : COMPLETE
+2023/09/11 22:43:10.148412 ttxdwupdater.go:117: Event ID 2767 is Registered
+2023/09/11 22:43:10.148441 ttxdwupdater.go:36: Matched Task 2 D2A1^^TypeCode_EPUT_2018 Input with event 2767
+2023/09/11 22:43:10.148472 ttxdwupdater.go:117: Event ID 2767 is Registered
+2023/09/11 22:43:10.148515 ttxdwupdater.go:57: Matched workflow document task 2 Output Part : D2A2^^TypeCode_EPUT_2018 with Event Expression : D2A2^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:43:10.148548 ttxdwupdater.go:117: Event ID 2768 is Registered
+2023/09/11 22:43:10.148573 ttxdwupdater.go:36: Matched Task 3 D2A2^^TypeCode_EPUT_2018 Input with event 2768
+2023/09/11 22:43:10.148600 ttxdwupdater.go:117: Event ID 2768 is Registered
+2023/09/11 22:43:10.148624 ttxdwupdater.go:57: Matched workflow document task 2 Output Part : D2A2^^TypeCode_EPUT_2018 with Event Expression : D2A2^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:43:10.148653 ttxdwupdater.go:117: Event ID 2769 is Registered
+2023/09/11 22:43:10.148678 ttxdwupdater.go:36: Matched Task 3 D2A2^^TypeCode_EPUT_2018 Input with event 2769
+2023/09/11 22:43:10.148704 ttxdwupdater.go:117: Event ID 2769 is Registered
+2023/09/11 22:43:10.148730 ttxdwupdater.go:57: Matched workflow document task 3 Output Part : D2A3^^TypeCode_EPUT_2018 with Event Expression : D2A3^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:43:10.148757 ttxdwupdater.go:117: Event ID 2770 is Registered
+2023/09/11 22:43:10.148781 ttxdwupdater.go:36: Matched Task 4 D2A3^^TypeCode_EPUT_2018 Input with event 2770
+2023/09/11 22:43:10.148808 ttxdwupdater.go:117: Event ID 2770 is Registered
+2023/09/11 22:43:10.148832 ttxdwupdater.go:57: Matched workflow document task 4 Output Part : D2A5^^TypeCode_EPUT_2018 with Event Expression : D2A5^^TypeCode_EPUT_2018 Status : IN_PROGRESS
+2023/09/11 22:43:10.148862 ttxdwupdater.go:121: New Event Found. ID = 2771
+2023/09/11 22:43:10.149477 ttxdwupdater.go:137: Checking if Task 1 is complete
+2023/09/11 22:43:10.149538 ttxdwupdater.go:198: Task 1 is complete
+2023/09/11 22:43:10.149566 ttxdwupdater.go:137: Checking if Task 2 is complete
+2023/09/11 22:43:10.149591 ttxdwupdater.go:203: Task 2 is not complete
+2023/09/11 22:43:10.149615 ttxdwupdater.go:137: Checking if Task 3 is complete
+2023/09/11 22:43:10.150026 ttxdwupdater.go:203: Task 3 is not complete
+2023/09/11 22:43:10.150059 ttxdwupdater.go:137: Checking if Task 4 is complete
+2023/09/11 22:43:10.150098 ttxdwupdater.go:198: Task 4 is complete
+2023/09/11 22:43:10.150125 ttxdwupdater.go:137: Checking if Task 5 is complete
+2023/09/11 22:43:10.150156 ttxdwupdater.go:203: Task 5 is not complete
+2023/09/11 22:43:10.150182 ttxdwupdater.go:212: Workflow Completion Condition 1 task(4)
+2023/09/11 22:43:10.150210 ttxdwupdater.go:239: D2A Workflow for Nhs ID 9999999468 is complete
+2023/09/11 22:43:10.277272 ttevents.go:45: Created Event ID = 2772 Pathway = D2A Type = CLOSE_WORKFLOW
+2023/09/11 22:43:10.277559 ttxdwupdater.go:110: Closed Workflow
+2023/09/11 22:43:10.350350 ttxdwupdater.go:274: Upddated Workflow State for Pathway D2A Nhs ID 9999999468 Version 1 Status CLOSED
+2023/09/11 22:43:10.415469 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:43:15.330576 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:43:15.330758 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:43:15.330853 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "d2a",
+  "Vers": "1"
+}
+2023/09/11 22:43:15.330886 ttgethandler.go:16: Path = /api/state/comments
+2023/09/11 22:43:15.392053 ttproxy.go:149: Response Status Code 200
+2023/09/11 22:43:15.410648 ttgethandler.go:11: Processing new GET Request
+2023/09/11 22:43:15.410713 ttproxy.go:138: 	Request Query Params
+2023/09/11 22:43:15.410746 ttutil.go:140: 	{}
+2023/09/11 22:43:15.410764 ttgethandler.go:16: Path = /favicon.ico
+2023/09/11 22:43:15.410776 ttsysman.go:231: Retrieving favicon.ico
+2023/09/11 22:43:15.468063 ttproxy.go:149: Response Status Code 200
+2023/09/12 09:32:48.862053 ttserver.go:50: ICB Workflow Service stopped

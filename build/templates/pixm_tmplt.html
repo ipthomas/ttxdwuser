@@ -1,0 +1,123 @@
+{{define "pixm_tmplt"}}
+{{$user := .Query.User}}
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading panel-default" style="text-align: center;color: blue;">
+                IHE Patient Record
+            </div>
+            <div class="panel-body">
+                <table class="table table-condensed table-striped">
+                    <thead>
+                        <tr>
+                            <td data-toggle="collapse" data-target="#icb1" class="accordion-toggle"><span class="glyphicon glyphicon-chevron-down"></span> Address</td>
+                            <td data-toggle="collapse" data-target="#icb2" class="accordion-toggle"><span class="glyphicon glyphicon-chevron-down"></span> ID's</td>
+                        </tr>
+                        <tr>
+                            <th>Fist Name</th>
+                            <th>Last Name</th>
+                            <th>Use</th>
+                            <th>Gender</th>
+                            <th>Birthdate</th>
+                            <th>Patient Active</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {{range .PIXmResponse.Entry}}
+                        {{$entry := .}}
+                        {{range .Resource.Name}}
+                        {{$name := .}}
+                        <tr>
+                            {{range .Given}}
+                            <td>{{.}}</td>
+                            {{end}}
+                            <td>{{$name.Family}}</td>
+                            <td>{{$name.Use}}</td>
+                            <td>{{$entry.Resource.Gender}}</td>
+                            <td>{{$entry.Resource.BirthDate}}</td>
+                            {{if $entry.Resource.Active}}
+                            <td><i class="glyphicon glyphicon-ok"></i></td>
+                            {{else}}
+                            <td><i class="glyphicon glyphicon-remove"></i></td>
+                            {{end}}
+                            {{end}}
+                        </tr>
+                        <tr>
+                            <td colspan="12" class="hiddenRow">
+                                <div class="accordian-body collapse" id="icb1">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr class="info">
+                                                <th>Street</th>
+                                                <th>City</th>
+                                                <th>Postcode</th>
+                                                <th>Country</th>
+                                                <th>Use</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{range $entry.Resource.Address}}
+                                            {{$address := .}}
+                                            <tr>
+                                                {{range .Line}}
+                                                <td>{{.}}</td>
+                                                {{end}}
+                                                <td>{{$address.City}}</td>
+                                                <td>{{$address.PostalCode}}</td>
+                                                <td>{{$address.Country}}</td>
+                                                <td>{{$address.Use}}</td>
+                                            </tr> 
+                                            {{end}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="12" class="hiddenRow">
+                                <div class="accordian-body collapse" id="icb2">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr class="info">
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th>ID</th>
+                                                <th>System</th>
+                                                <th>Use</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {{range $entry.Resource.Identifier}}
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>{{.Value}}</td>
+                                                <td>{{mappedid $user .System}}</td>
+                                                <td>{{.Use}}</td>
+                                            </tr>
+                                            {{end}}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        padding-top: 50px;
+        background-color: #34495e;
+        font-family: sans-serif;
+    }
+</style>
+</html>
+{{end}}

@@ -1,0 +1,1578 @@
+2023/09/18 17:01:42.176393 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/18 17:01:42.176884 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/18 17:01:42.177000 ttdb.go:54: Opened Database
+2023/09/18 17:01:42.367882 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/18 17:01:42.431883 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/18 17:01:42.432104 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/18 17:01:42.496481 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/18 17:01:42.596066 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/18 17:01:42.596218 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/18 17:01:42.659912 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/18 17:01:42.728561 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/18 17:01:42.728707 ttdb.go:366: Persisted Template pdssearch_tmplt.html
+2023/09/18 17:01:42.792105 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/18 17:01:42.855209 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/18 17:01:42.855250 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/18 17:01:42.920975 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/18 17:01:42.989560 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/18 17:01:42.989648 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/18 17:01:43.061709 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/18 17:01:43.217440 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/18 17:01:43.217583 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/18 17:01:43.324354 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/18 17:01:43.429275 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/18 17:01:43.429332 ttdb.go:366: Persisted Template pdsretrieve_tmplt.html
+2023/09/18 17:01:43.533269 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/18 17:01:43.633394 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/18 17:01:43.633540 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/18 17:01:43.714805 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/18 17:01:43.793764 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/18 17:01:43.793902 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/18 17:01:43.858686 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/18 17:01:43.939993 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/18 17:01:43.940131 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/18 17:01:44.005997 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/18 17:01:44.076777 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/18 17:01:44.076922 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/18 17:01:44.141548 ttdb.go:379: Persisting Template patpoxy_tmplt
+2023/09/18 17:01:44.212642 ttdb.go:385: Persisted Template patpoxy_tmplt
+2023/09/18 17:01:44.212718 ttdb.go:366: Persisted Template patpoxy_tmplt.html
+2023/09/18 17:01:44.278706 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/18 17:01:44.344181 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/18 17:01:44.344333 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/18 17:01:44.408126 ttdb.go:379: Persisting Template error_tmplt
+2023/09/18 17:01:44.472020 ttdb.go:385: Persisted Template error_tmplt
+2023/09/18 17:01:44.472171 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/18 17:01:44.536515 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/18 17:01:44.606995 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/18 17:01:44.607151 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/18 17:01:44.670882 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/18 17:01:44.737080 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/18 17:01:44.737229 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/18 17:01:44.802775 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/18 17:01:44.869862 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/18 17:01:44.869991 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/18 17:01:44.933990 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/18 17:01:45.006339 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/18 17:01:45.006491 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/18 17:01:45.072107 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/18 17:01:45.146127 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/18 17:01:45.146264 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/18 17:01:45.209589 ttdb.go:379: Persisting Template events_tmplt
+2023/09/18 17:01:45.280341 ttdb.go:385: Persisted Template events_tmplt
+2023/09/18 17:01:45.280394 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/18 17:01:45.346346 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/18 17:01:45.411063 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/18 17:01:45.411115 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/18 17:01:45.411345 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/18 17:01:48.728307 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:01:48.728497 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:01:48.729132 ttutil.go:140: 	{
+  "Act": "Publish Content",
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:01:48.729193 ttgethandler.go:15: Path = /beta/spa/consumer/publish
+2023/09/18 17:01:48.976022 tttmplts.go:100: Caching 25 Templates
+2023/09/18 17:01:48.987141 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:01:48.988332 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:02:06.255260 ttposthandler.go:15: Processing new POST /beta/spa/consumer/publish Request
+2023/09/18 17:02:06.281064 ttposthandler.go:68: File name: Tiani_Test_System.zip
+2023/09/18 17:02:06.293593 ttposthandler.go:84: Publishing Tiani_Test_System.zip to SCR
+2023/09/18 17:02:06.293688 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:02:06.293711 ttutil.go:140: 	{}
+2023/09/18 17:02:06.293725 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:02:06.293768 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:04:49.961018 ttserver.go:52: ICB Workflow Service stopped
+2023/09/18 17:04:52.060769 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/18 17:04:52.061166 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/18 17:04:52.061321 ttdb.go:54: Opened Database
+2023/09/18 17:04:52.249248 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/18 17:04:52.312818 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/18 17:04:52.313075 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/18 17:04:52.377480 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/18 17:04:52.478850 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/18 17:04:52.478970 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/18 17:04:52.542692 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/18 17:04:52.609829 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/18 17:04:52.609978 ttdb.go:366: Persisted Template pdssearch_tmplt.html
+2023/09/18 17:04:52.674213 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/18 17:04:52.738157 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/18 17:04:52.738238 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/18 17:04:52.803778 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/18 17:04:52.866607 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/18 17:04:52.866678 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/18 17:04:52.932068 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/18 17:04:53.049030 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/18 17:04:53.049171 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/18 17:04:53.113731 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/18 17:04:53.184605 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/18 17:04:53.184721 ttdb.go:366: Persisted Template pdsretrieve_tmplt.html
+2023/09/18 17:04:53.248551 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/18 17:04:53.312556 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/18 17:04:53.312663 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/18 17:04:53.375486 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/18 17:04:53.452885 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/18 17:04:53.452990 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/18 17:04:53.517025 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/18 17:04:53.600188 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/18 17:04:53.600295 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/18 17:04:53.663265 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/18 17:04:53.737494 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/18 17:04:53.737611 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/18 17:04:53.802844 ttdb.go:379: Persisting Template patpoxy_tmplt
+2023/09/18 17:04:53.870387 ttdb.go:385: Persisted Template patpoxy_tmplt
+2023/09/18 17:04:53.870494 ttdb.go:366: Persisted Template patpoxy_tmplt.html
+2023/09/18 17:04:53.935039 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/18 17:04:54.000149 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/18 17:04:54.000266 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/18 17:04:54.071545 ttdb.go:379: Persisting Template error_tmplt
+2023/09/18 17:04:54.136823 ttdb.go:385: Persisted Template error_tmplt
+2023/09/18 17:04:54.136968 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/18 17:04:54.202039 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/18 17:04:54.265025 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/18 17:04:54.265130 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/18 17:04:54.329159 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/18 17:04:54.396214 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/18 17:04:54.396367 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/18 17:04:54.459373 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/18 17:04:54.531106 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/18 17:04:54.531252 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/18 17:04:54.596943 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/18 17:04:54.664342 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/18 17:04:54.664432 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/18 17:04:54.729330 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/18 17:04:54.799505 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/18 17:04:54.799651 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/18 17:04:54.863379 ttdb.go:379: Persisting Template events_tmplt
+2023/09/18 17:04:54.933288 ttdb.go:385: Persisted Template events_tmplt
+2023/09/18 17:04:54.933443 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/18 17:04:55.000067 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/18 17:04:55.065041 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/18 17:04:55.065189 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/18 17:04:55.065451 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/18 17:04:57.955416 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:04:57.955605 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:04:57.955966 ttutil.go:140: 	{
+  "Act": "Publish Content",
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:04:57.956000 ttgethandler.go:15: Path = /beta/spa/consumer/publish
+2023/09/18 17:04:58.142867 tttmplts.go:100: Caching 25 Templates
+2023/09/18 17:04:58.153240 tttmplts.go:87: Processing Template error_tmplt
+2023/09/18 17:04:58.154010 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:05:05.526810 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:05:05.526947 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:05:05.527025 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:05:05.527048 ttgethandler.go:15: Path = /spa
+2023/09/18 17:05:05.527068 tttmplts.go:23: Using Default SPA template
+2023/09/18 17:05:05.527082 tttmplts.go:87: Processing Template spa2t_tmplt
+2023/09/18 17:05:05.529018 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:05:05.574037 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:05:05.574113 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:05:05.574153 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:05:05.574171 ttgethandler.go:15: Path = /beta/spa/consumer/xdws
+2023/09/18 17:05:05.574999 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:05:05.575031 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:05:05.575047 ttutil.go:140: 	{
+  "Name": "event-logo.png"
+}
+2023/09/18 17:05:05.575056 ttgethandler.go:15: Path = /beta/spa/consumer/static
+2023/09/18 17:05:05.575064 ttsysman.go:242: Retrieving event-logo.png
+2023/09/18 17:05:05.738378 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:05:05.769651 ttxdwconsumer.go:407: selected 22 Workflows for Pathway  NHS  Version -1
+2023/09/18 17:05:05.838948 ttxdwconsumer.go:213: Setting Workflow States
+2023/09/18 17:05:05.841538 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:05:05.843511 ttxdwconsumer.go:327: Workflow Started 2023-08-24 19:18:57 +0100 BST Status CLOSED
+2023/09/18 17:05:05.843666 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.843661 +0100 BST
+2023/09/18 17:05:05.844485 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-24 19:42:42 +0000 UTC
+2023/09/18 17:05:05.844523 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 23 Mins
+2023/09/18 17:05:05.844655 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.844785 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-13 19:18:57 +0100 BST
+2023/09/18 17:05:05.845608 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-24 19:42:42 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.846250 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:05:05.846692 ttxdwconsumer.go:226: Setting EREF Workflow state for Patient 6072406157
+2023/09/18 17:05:05.847373 ttxdwconsumer.go:327: Workflow Started 2023-08-24 19:23:11 +0100 BST Status CLOSED
+2023/09/18 17:05:05.847477 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.847473 +0100 BST
+2023/09/18 17:05:05.847960 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-24 19:22:58 +0000 UTC
+2023/09/18 17:05:05.847981 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 59 Mins
+2023/09/18 17:05:05.848111 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.848206 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-26 19:23:11 +0100 BST
+2023/09/18 17:05:05.849015 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-24 19:22:58 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.849049 ttxdwconsumer.go:296: Workflow eref6072406157 is CLOSED
+2023/09/18 17:05:05.850049 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:05:05.852243 ttxdwconsumer.go:327: Workflow Started 2023-08-24 20:42:54 +0100 BST Status CLOSED
+2023/09/18 17:05:05.852314 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.852312 +0100 BST
+2023/09/18 17:05:05.852706 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-26 15:06:08 +0000 UTC
+2023/09/18 17:05:05.852726 ttxdwconsumer.go:336: Duration - 1 Days 19 Hrs 23 Mins
+2023/09/18 17:05:05.852793 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.852859 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-13 20:42:54 +0100 BST
+2023/09/18 17:05:05.853409 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-26 15:06:08 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.853437 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:05:05.853699 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:05:05.854096 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:15:32 +0100 BST Status CLOSED
+2023/09/18 17:05:05.854171 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.854168 +0100 BST
+2023/09/18 17:05:05.854500 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:15:38 +0000 UTC
+2023/09/18 17:05:05.854515 ttxdwconsumer.go:336: Duration - 6 Secs
+2023/09/18 17:05:05.854577 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.854641 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-25 13:15:32 +0100 BST
+2023/09/18 17:05:05.854963 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:15:38 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.854984 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:05:05.855292 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:05:05.855753 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:36:31 +0100 BST Status CLOSED
+2023/09/18 17:05:05.855827 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.855824 +0100 BST
+2023/09/18 17:05:05.856200 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:36:36 +0000 UTC
+2023/09/18 17:05:05.856230 ttxdwconsumer.go:336: Duration - 5 Secs
+2023/09/18 17:05:05.856305 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.856373 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 10:36:31 +0100 BST
+2023/09/18 17:05:05.856730 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:36:36 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.856764 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:05:05.856991 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:05:05.857353 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:57:22 +0100 BST Status CLOSED
+2023/09/18 17:05:05.857415 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.857413 +0100 BST
+2023/09/18 17:05:05.857686 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:58:09 +0000 UTC
+2023/09/18 17:05:05.857698 ttxdwconsumer.go:336: Duration - 47 Secs
+2023/09/18 17:05:05.857758 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.857831 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 10:57:22 +0100 BST
+2023/09/18 17:05:05.858102 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:58:09 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.858128 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:05:05.858313 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:05:05.858582 ttxdwconsumer.go:327: Workflow Started 2023-08-25 11:43:49 +0100 BST Status CLOSED
+2023/09/18 17:05:05.858628 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.858626 +0100 BST
+2023/09/18 17:05:05.858845 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 18:24:45 +0000 UTC
+2023/09/18 17:05:05.858854 ttxdwconsumer.go:336: Duration - 0 Days 7 Hrs 40 Mins
+2023/09/18 17:05:05.858904 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.858965 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 11:43:49 +0100 BST
+2023/09/18 17:05:05.859172 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 18:24:45 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.859185 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:05:05.859350 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:05:05.859606 ttxdwconsumer.go:327: Workflow Started 2023-08-25 19:25:01 +0100 BST Status CLOSED
+2023/09/18 17:05:05.859675 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.859674 +0100 BST
+2023/09/18 17:05:05.859910 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-26 09:01:49 +0100 BST
+2023/09/18 17:05:05.859919 ttxdwconsumer.go:336: Duration - 0 Days 13 Hrs 36 Mins
+2023/09/18 17:05:05.859972 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.860027 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-25 22:25:01 +0100 BST
+2023/09/18 17:05:05.860261 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-26 09:01:49 +0100 BST. Workflow Target Met = false
+2023/09/18 17:05:05.860529 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:05:05.860910 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:05:05.861242 ttxdwconsumer.go:327: Workflow Started 2023-08-29 17:00:58 +0100 BST Status CLOSED
+2023/09/18 17:05:05.861291 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.86129 +0100 BST
+2023/09/18 17:05:05.861573 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-29 16:03:32 +0000 UTC
+2023/09/18 17:05:05.861582 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 17:05:05.861637 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.861694 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-18 17:00:58 +0100 BST
+2023/09/18 17:05:05.862275 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-29 16:03:32 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.862302 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:05:05.862424 ttxdwconsumer.go:226: Setting PATHALERT Workflow state for Patient 6072406157
+2023/09/18 17:05:05.862698 ttxdwconsumer.go:327: Workflow Started 2023-08-29 17:20:32 +0100 BST Status CLOSED
+2023/09/18 17:05:05.862745 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.862744 +0100 BST
+2023/09/18 17:05:05.862895 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-29 16:23:05 +0000 UTC
+2023/09/18 17:05:05.862900 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 17:05:05.862928 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.862953 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 01:20:32 +0100 BST
+2023/09/18 17:05:05.863067 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-29 16:23:05 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.863074 ttxdwconsumer.go:296: Workflow pathalert6072406157 is CLOSED
+2023/09/18 17:05:05.863252 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:05:05.863408 ttxdwconsumer.go:327: Workflow Started 2023-08-30 10:21:36 +0100 BST Status CLOSED
+2023/09/18 17:05:05.863427 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.863426 +0100 BST
+2023/09/18 17:05:05.863576 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 09:36:38 +0000 UTC
+2023/09/18 17:05:05.863581 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 15 Mins
+2023/09/18 17:05:05.863603 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.863628 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-19 10:21:36 +0100 BST
+2023/09/18 17:05:05.863631 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:05:05.863637 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:05:05.863794 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:05:05.863947 ttxdwconsumer.go:327: Workflow Started 2023-08-30 10:39:37 +0100 BST Status CLOSED
+2023/09/18 17:05:05.863972 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.863971 +0100 BST
+2023/09/18 17:05:05.864105 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 11:31:20 +0000 UTC
+2023/09/18 17:05:05.864109 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 51 Mins
+2023/09/18 17:05:05.864133 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.864154 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-19 10:39:37 +0100 BST
+2023/09/18 17:05:05.864168 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:05:05.864173 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:05:05.864237 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:05:05.864366 ttxdwconsumer.go:327: Workflow Started 2023-08-30 14:34:22 +0100 BST Status CLOSED
+2023/09/18 17:05:05.864390 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.864389 +0100 BST
+2023/09/18 17:05:05.864489 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 13:39:22 +0000 UTC
+2023/09/18 17:05:05.864493 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 5 Mins
+2023/09/18 17:05:05.864514 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.864538 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 17:34:22 +0100 BST
+2023/09/18 17:05:05.864636 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-30 13:39:22 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.864641 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:05:05.864727 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 1111111111
+2023/09/18 17:05:05.864836 ttxdwconsumer.go:327: Workflow Started 2023-08-30 17:47:08 +0100 BST Status CLOSED
+2023/09/18 17:05:05.864864 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.864863 +0100 BST
+2023/09/18 17:05:05.864966 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 19:22:50 +0000 UTC
+2023/09/18 17:05:05.864969 ttxdwconsumer.go:336: Duration - 12 Days 2 Hrs 35 Mins
+2023/09/18 17:05:05.865834 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.865867 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 20:47:08 +0100 BST
+2023/09/18 17:05:05.865976 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-09-11 19:22:50 +0000 UTC. Workflow Target Met = false
+2023/09/18 17:05:05.865983 ttxdwconsumer.go:296: Workflow radconsult1111111111 is CLOSED
+2023/09/18 17:05:05.866161 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:05:05.866311 ttxdwconsumer.go:327: Workflow Started 2023-09-03 15:33:30 +0100 BST Status CLOSED
+2023/09/18 17:05:05.866337 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.866336 +0100 BST
+2023/09/18 17:05:05.866474 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-05 14:42:19 +0100 BST
+2023/09/18 17:05:05.866479 ttxdwconsumer.go:336: Duration - 1 Days 23 Hrs 8 Mins
+2023/09/18 17:05:05.866500 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.866523 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-23 15:33:30 +0100 BST
+2023/09/18 17:05:05.866526 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:05:05.866531 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:05:05.866672 ttxdwconsumer.go:226: Setting TOC Workflow state for Patient 6072406157
+2023/09/18 17:05:05.866826 ttxdwconsumer.go:327: Workflow Started 2023-09-09 09:47:48 +0100 BST Status CLOSED
+2023/09/18 17:05:05.866852 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.866851 +0100 BST
+2023/09/18 17:05:05.866988 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-09 08:52:24 +0000 UTC
+2023/09/18 17:05:05.866992 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 4 Mins
+2023/09/18 17:05:05.867016 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.867038 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-14 09:47:48 +0100 BST
+2023/09/18 17:05:05.867173 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-09-09 08:52:24 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:05:05.867179 ttxdwconsumer.go:296: Workflow toc6072406157 is CLOSED
+2023/09/18 17:05:05.867333 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:05:05.867474 ttxdwconsumer.go:327: Workflow Started 2023-09-11 20:25:32 +0100 BST Status CLOSED
+2023/09/18 17:05:05.867496 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.867495 +0100 BST
+2023/09/18 17:05:05.867624 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 19:52:17 +0000 UTC
+2023/09/18 17:05:05.867634 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 26 Mins
+2023/09/18 17:05:05.867654 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.867673 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-01 20:25:32 +0100 BST
+2023/09/18 17:05:05.867676 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:05:05.867681 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:05:05.867855 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 9999999468
+2023/09/18 17:05:05.868007 ttxdwconsumer.go:327: Workflow Started 2023-09-11 21:09:53 +0100 BST Status CLOSED
+2023/09/18 17:05:05.868025 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.868025 +0100 BST
+2023/09/18 17:05:05.868154 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 21:43:10 +0000 UTC
+2023/09/18 17:05:05.868158 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 33 Mins
+2023/09/18 17:05:05.868185 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.868209 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/18 17:05:05.868212 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:05:05.868216 ttxdwconsumer.go:296: Workflow d2a9999999468 is CLOSED
+2023/09/18 17:05:05.868357 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:05:05.868431 ttxdwconsumer.go:327: Workflow Started 2023-09-12 22:32:28 +0100 BST Status OPEN
+2023/09/18 17:05:05.868449 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.868448 +0100 BST
+2023/09/18 17:05:05.868452 ttxdwconsumer.go:336: Duration - 5 Days 18 Hrs 32 Mins
+2023/09/18 17:05:05.868476 ttxdwconsumer.go:342: Completion time 2023-10-02 22:32:28 +0100 BST
+2023/09/18 17:05:05.868480 ttxdwconsumer.go:347: Workflow Time Remaining : 341h27m22.131521s
+2023/09/18 17:05:05.868502 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.868522 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-02 22:32:28 +0100 BST
+2023/09/18 17:05:05.868525 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:05:05.868536 ttxdwconsumer.go:286: Workflow d2a6072406157 is OPEN
+2023/09/18 17:05:05.868545 ttxdwconsumer.go:381: No Escalate time defined for Workflow
+2023/09/18 17:05:05.868795 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 17:05:05.869007 ttxdwconsumer.go:327: Workflow Started 2023-09-12 23:00:30 +0100 BST Status CLOSED
+2023/09/18 17:05:05.869034 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.869034 +0100 BST
+2023/09/18 17:05:05.869228 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-12 23:03:05 +0100 BST
+2023/09/18 17:05:05.869233 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 17:05:05.869258 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.869278 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-02 23:00:30 +0100 BST
+2023/09/18 17:05:05.869281 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:05:05.869286 ttxdwconsumer.go:296: Workflow lac1111111111 is CLOSED
+2023/09/18 17:05:05.869531 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 17:05:05.869711 ttxdwconsumer.go:327: Workflow Started 2023-09-13 09:36:29 +0100 BST Status CLOSED
+2023/09/18 17:05:05.869729 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.869729 +0100 BST
+2023/09/18 17:05:05.869900 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-13 09:11:05 +0000 UTC
+2023/09/18 17:05:05.869904 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 34 Mins
+2023/09/18 17:05:05.869923 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.869942 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-03 09:36:29 +0100 BST
+2023/09/18 17:05:05.869945 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:05:05.869951 ttxdwconsumer.go:296: Workflow lac1111111111 is CLOSED
+2023/09/18 17:05:05.870209 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 17:05:05.870679 ttxdwconsumer.go:327: Workflow Started 2023-09-13 10:21:29 +0100 BST Status OPEN
+2023/09/18 17:05:05.870699 ttxdwconsumer.go:330: Time Now 2023-09-18 17:05:05.870698 +0100 BST
+2023/09/18 17:05:05.870702 ttxdwconsumer.go:336: Duration - 5 Days 6 Hrs 43 Mins
+2023/09/18 17:05:05.870723 ttxdwconsumer.go:342: Completion time 2023-10-03 10:21:29 +0100 BST
+2023/09/18 17:05:05.870727 ttxdwconsumer.go:347: Workflow Time Remaining : 353h16m23.129274s
+2023/09/18 17:05:05.870746 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:05:05.870765 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-03 10:21:29 +0100 BST
+2023/09/18 17:05:05.870768 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:05:05.870773 ttxdwconsumer.go:286: Workflow lac1111111111 is OPEN
+2023/09/18 17:05:05.870796 ttxdwconsumer.go:378: Workflow Start Time 2023-09-13T10:21:29+01:00 Worklow Escalate Time 2023-10-04 10:21:29 +0100 BST Workflow Escaleted = false
+2023/09/18 17:05:05.870843 tttmplts.go:87: Processing Template wfstate2t_tmplt
+2023/09/18 17:05:05.956600 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:05:05.981365 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:05:05.981430 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:05:05.981475 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:05:05.981493 ttgethandler.go:15: Path = /beta/spa/consumer/pathways
+2023/09/18 17:05:05.982616 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:05:05.982647 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:05:05.982664 ttutil.go:140: 	{
+  "Name": "favicon.ico"
+}
+2023/09/18 17:05:05.982673 ttgethandler.go:15: Path = /beta/spa/consumer/static
+2023/09/18 17:05:05.982682 ttsysman.go:242: Retrieving favicon.ico
+2023/09/18 17:05:06.042435 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:05:06.043096 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:05:08.937358 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:05:08.937570 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:05:08.937641 ttutil.go:140: 	{
+  "Act": "Publish Content",
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:05:08.937660 ttgethandler.go:15: Path = /beta/spa/publish
+2023/09/18 17:05:08.937673 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:05:08.937967 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:05:16.511773 ttposthandler.go:15: Processing new POST /beta/spa/publish Request
+2023/09/18 17:05:16.535786 ttposthandler.go:68: File name: Tiani_Test_System.zip
+2023/09/18 17:05:16.546920 ttposthandler.go:84: Publishing Tiani_Test_System.zip to SCR
+2023/09/18 17:05:16.547015 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:05:16.547034 ttutil.go:140: 	{}
+2023/09/18 17:05:16.547040 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:05:16.547084 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:07:34.494884 ttserver.go:52: ICB Workflow Service stopped
+2023/09/18 17:07:37.007919 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/18 17:07:37.008399 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/18 17:07:37.008534 ttdb.go:54: Opened Database
+2023/09/18 17:07:37.218770 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/18 17:07:37.305756 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/18 17:07:37.305826 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/18 17:07:37.407848 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/18 17:07:37.576205 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/18 17:07:37.576395 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/18 17:07:37.661672 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/18 17:07:37.733267 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/18 17:07:37.733458 ttdb.go:366: Persisted Template pdssearch_tmplt.html
+2023/09/18 17:07:37.797167 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/18 17:07:37.860801 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/18 17:07:37.860903 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/18 17:07:37.925090 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/18 17:07:38.001047 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/18 17:07:38.001198 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/18 17:07:38.066455 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/18 17:07:38.186406 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/18 17:07:38.186590 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/18 17:07:38.251102 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/18 17:07:38.320713 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/18 17:07:38.320817 ttdb.go:366: Persisted Template pdsretrieve_tmplt.html
+2023/09/18 17:07:38.384971 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/18 17:07:38.451001 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/18 17:07:38.451123 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/18 17:07:38.514957 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/18 17:07:38.592794 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/18 17:07:38.592837 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/18 17:07:38.656237 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/18 17:07:38.734868 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/18 17:07:38.734968 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/18 17:07:38.799052 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/18 17:07:38.868503 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/18 17:07:38.868633 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/18 17:07:38.933708 ttdb.go:379: Persisting Template patpoxy_tmplt
+2023/09/18 17:07:38.999646 ttdb.go:385: Persisted Template patpoxy_tmplt
+2023/09/18 17:07:38.999788 ttdb.go:366: Persisted Template patpoxy_tmplt.html
+2023/09/18 17:07:39.065435 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/18 17:07:39.133164 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/18 17:07:39.133295 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/18 17:07:39.198317 ttdb.go:379: Persisting Template error_tmplt
+2023/09/18 17:07:39.261168 ttdb.go:385: Persisted Template error_tmplt
+2023/09/18 17:07:39.261253 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/18 17:07:39.326242 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/18 17:07:39.390421 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/18 17:07:39.390562 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/18 17:07:39.457256 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/18 17:07:39.527413 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/18 17:07:39.527529 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/18 17:07:39.592250 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/18 17:07:39.658110 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/18 17:07:39.658191 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/18 17:07:39.723237 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/18 17:07:39.793259 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/18 17:07:39.793395 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/18 17:07:39.859099 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/18 17:07:39.934240 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/18 17:07:39.934375 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/18 17:07:40.003714 ttdb.go:379: Persisting Template events_tmplt
+2023/09/18 17:07:40.073321 ttdb.go:385: Persisted Template events_tmplt
+2023/09/18 17:07:40.073377 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/18 17:07:40.137899 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/18 17:07:40.206126 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/18 17:07:40.206253 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/18 17:07:40.206541 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/18 17:07:44.868519 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:07:44.868688 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:07:44.869028 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:07:44.869064 ttgethandler.go:15: Path = /spa
+2023/09/18 17:07:44.869079 tttmplts.go:23: Using Default SPA template
+2023/09/18 17:07:45.056435 tttmplts.go:100: Caching 25 Templates
+2023/09/18 17:07:45.071814 tttmplts.go:87: Processing Template spa2t_tmplt
+2023/09/18 17:07:45.074717 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:07:45.119185 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:07:45.119263 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:07:45.119307 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:07:45.119322 ttgethandler.go:15: Path = /beta/spa/consumer/xdws
+2023/09/18 17:07:45.119719 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:07:45.119762 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:07:45.119779 ttutil.go:140: 	{
+  "Name": "event-logo.png"
+}
+2023/09/18 17:07:45.119792 ttgethandler.go:15: Path = /beta/spa/consumer/static
+2023/09/18 17:07:45.119809 ttsysman.go:242: Retrieving event-logo.png
+2023/09/18 17:07:45.218471 ttxdwconsumer.go:407: selected 22 Workflows for Pathway  NHS  Version -1
+2023/09/18 17:07:45.288029 ttxdwconsumer.go:213: Setting Workflow States
+2023/09/18 17:07:45.290754 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:07:45.292905 ttxdwconsumer.go:327: Workflow Started 2023-08-24 19:18:57 +0100 BST Status CLOSED
+2023/09/18 17:07:45.293076 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.293065 +0100 BST
+2023/09/18 17:07:45.294845 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-24 19:42:42 +0000 UTC
+2023/09/18 17:07:45.294912 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 23 Mins
+2023/09/18 17:07:45.295190 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.295418 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-13 19:18:57 +0100 BST
+2023/09/18 17:07:45.300183 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:07:45.301024 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-24 19:42:42 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.301524 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:07:45.302015 ttxdwconsumer.go:226: Setting EREF Workflow state for Patient 6072406157
+2023/09/18 17:07:45.302740 ttxdwconsumer.go:327: Workflow Started 2023-08-24 19:23:11 +0100 BST Status CLOSED
+2023/09/18 17:07:45.302868 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.302865 +0100 BST
+2023/09/18 17:07:45.303232 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-24 19:22:58 +0000 UTC
+2023/09/18 17:07:45.303252 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 59 Mins
+2023/09/18 17:07:45.303337 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.303412 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-26 19:23:11 +0100 BST
+2023/09/18 17:07:45.303739 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-24 19:22:58 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.303760 ttxdwconsumer.go:296: Workflow eref6072406157 is CLOSED
+2023/09/18 17:07:45.304351 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:07:45.304858 ttxdwconsumer.go:327: Workflow Started 2023-08-24 20:42:54 +0100 BST Status CLOSED
+2023/09/18 17:07:45.304925 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.304923 +0100 BST
+2023/09/18 17:07:45.305339 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-26 15:06:08 +0000 UTC
+2023/09/18 17:07:45.305352 ttxdwconsumer.go:336: Duration - 1 Days 19 Hrs 23 Mins
+2023/09/18 17:07:45.305459 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.305537 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-13 20:42:54 +0100 BST
+2023/09/18 17:07:45.305977 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-26 15:06:08 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.305996 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:07:45.306241 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:07:45.306669 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:15:32 +0100 BST Status CLOSED
+2023/09/18 17:07:45.306735 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.306734 +0100 BST
+2023/09/18 17:07:45.307051 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:15:38 +0000 UTC
+2023/09/18 17:07:45.307062 ttxdwconsumer.go:336: Duration - 6 Secs
+2023/09/18 17:07:45.307137 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.307195 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-25 13:15:32 +0100 BST
+2023/09/18 17:07:45.307599 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:15:38 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.307672 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:07:45.307987 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:07:45.308401 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:36:31 +0100 BST Status CLOSED
+2023/09/18 17:07:45.308459 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.308458 +0100 BST
+2023/09/18 17:07:45.308757 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:36:36 +0000 UTC
+2023/09/18 17:07:45.308770 ttxdwconsumer.go:336: Duration - 5 Secs
+2023/09/18 17:07:45.308851 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.308958 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 10:36:31 +0100 BST
+2023/09/18 17:07:45.309317 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:36:36 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.309346 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:07:45.309567 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:07:45.309941 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:57:22 +0100 BST Status CLOSED
+2023/09/18 17:07:45.310003 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.310001 +0100 BST
+2023/09/18 17:07:45.310259 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:58:09 +0000 UTC
+2023/09/18 17:07:45.310271 ttxdwconsumer.go:336: Duration - 47 Secs
+2023/09/18 17:07:45.310347 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.310409 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 10:57:22 +0100 BST
+2023/09/18 17:07:45.310668 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:58:09 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.310684 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:07:45.310900 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:07:45.311286 ttxdwconsumer.go:327: Workflow Started 2023-08-25 11:43:49 +0100 BST Status CLOSED
+2023/09/18 17:07:45.311360 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.311353 +0100 BST
+2023/09/18 17:07:45.311491 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 18:24:45 +0000 UTC
+2023/09/18 17:07:45.311499 ttxdwconsumer.go:336: Duration - 0 Days 7 Hrs 40 Mins
+2023/09/18 17:07:45.311528 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.311580 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 11:43:49 +0100 BST
+2023/09/18 17:07:45.311709 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 18:24:45 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.311717 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:07:45.311852 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:07:45.311990 ttxdwconsumer.go:327: Workflow Started 2023-08-25 19:25:01 +0100 BST Status CLOSED
+2023/09/18 17:07:45.312014 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.312013 +0100 BST
+2023/09/18 17:07:45.312134 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-26 09:01:49 +0100 BST
+2023/09/18 17:07:45.312139 ttxdwconsumer.go:336: Duration - 0 Days 13 Hrs 36 Mins
+2023/09/18 17:07:45.312164 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.312213 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-25 22:25:01 +0100 BST
+2023/09/18 17:07:45.312332 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-26 09:01:49 +0100 BST. Workflow Target Met = false
+2023/09/18 17:07:45.312546 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:07:45.312776 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:07:45.313025 ttxdwconsumer.go:327: Workflow Started 2023-08-29 17:00:58 +0100 BST Status CLOSED
+2023/09/18 17:07:45.313055 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.313054 +0100 BST
+2023/09/18 17:07:45.313202 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-29 16:03:32 +0000 UTC
+2023/09/18 17:07:45.313208 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 17:07:45.313241 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.313270 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-18 17:00:58 +0100 BST
+2023/09/18 17:07:45.313408 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-29 16:03:32 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.313416 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:07:45.313533 ttxdwconsumer.go:226: Setting PATHALERT Workflow state for Patient 6072406157
+2023/09/18 17:07:45.313692 ttxdwconsumer.go:327: Workflow Started 2023-08-29 17:20:32 +0100 BST Status CLOSED
+2023/09/18 17:07:45.313717 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.313717 +0100 BST
+2023/09/18 17:07:45.313860 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-29 16:23:05 +0000 UTC
+2023/09/18 17:07:45.313865 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 17:07:45.313891 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.313918 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 01:20:32 +0100 BST
+2023/09/18 17:07:45.314056 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-29 16:23:05 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.314068 ttxdwconsumer.go:296: Workflow pathalert6072406157 is CLOSED
+2023/09/18 17:07:45.314258 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:07:45.314439 ttxdwconsumer.go:327: Workflow Started 2023-08-30 10:21:36 +0100 BST Status CLOSED
+2023/09/18 17:07:45.314464 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.314464 +0100 BST
+2023/09/18 17:07:45.314620 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 09:36:38 +0000 UTC
+2023/09/18 17:07:45.314624 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 15 Mins
+2023/09/18 17:07:45.314651 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.314677 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-19 10:21:36 +0100 BST
+2023/09/18 17:07:45.314681 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:07:45.314688 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:07:45.315291 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:07:45.315553 ttxdwconsumer.go:327: Workflow Started 2023-08-30 10:39:37 +0100 BST Status CLOSED
+2023/09/18 17:07:45.315589 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.315588 +0100 BST
+2023/09/18 17:07:45.315801 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 11:31:20 +0000 UTC
+2023/09/18 17:07:45.315815 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 51 Mins
+2023/09/18 17:07:45.315859 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.315895 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-19 10:39:37 +0100 BST
+2023/09/18 17:07:45.315898 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:07:45.315908 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:07:45.317277 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:07:45.317420 ttxdwconsumer.go:327: Workflow Started 2023-08-30 14:34:22 +0100 BST Status CLOSED
+2023/09/18 17:07:45.317443 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.317442 +0100 BST
+2023/09/18 17:07:45.317540 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 13:39:22 +0000 UTC
+2023/09/18 17:07:45.317555 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 5 Mins
+2023/09/18 17:07:45.317576 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.317600 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 17:34:22 +0100 BST
+2023/09/18 17:07:45.317699 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-30 13:39:22 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.317706 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:07:45.317791 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 1111111111
+2023/09/18 17:07:45.317925 ttxdwconsumer.go:327: Workflow Started 2023-08-30 17:47:08 +0100 BST Status CLOSED
+2023/09/18 17:07:45.317948 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.317947 +0100 BST
+2023/09/18 17:07:45.318053 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 19:22:50 +0000 UTC
+2023/09/18 17:07:45.318057 ttxdwconsumer.go:336: Duration - 12 Days 2 Hrs 35 Mins
+2023/09/18 17:07:45.318079 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.318103 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 20:47:08 +0100 BST
+2023/09/18 17:07:45.318198 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-09-11 19:22:50 +0000 UTC. Workflow Target Met = false
+2023/09/18 17:07:45.318205 ttxdwconsumer.go:296: Workflow radconsult1111111111 is CLOSED
+2023/09/18 17:07:45.318407 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:07:45.318569 ttxdwconsumer.go:327: Workflow Started 2023-09-03 15:33:30 +0100 BST Status CLOSED
+2023/09/18 17:07:45.318591 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.31859 +0100 BST
+2023/09/18 17:07:45.318729 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-05 14:42:19 +0100 BST
+2023/09/18 17:07:45.318733 ttxdwconsumer.go:336: Duration - 1 Days 23 Hrs 8 Mins
+2023/09/18 17:07:45.318755 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.318784 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-23 15:33:30 +0100 BST
+2023/09/18 17:07:45.318788 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:07:45.318793 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:07:45.318946 ttxdwconsumer.go:226: Setting TOC Workflow state for Patient 6072406157
+2023/09/18 17:07:45.319109 ttxdwconsumer.go:327: Workflow Started 2023-09-09 09:47:48 +0100 BST Status CLOSED
+2023/09/18 17:07:45.319130 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.31913 +0100 BST
+2023/09/18 17:07:45.319259 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-09 08:52:24 +0000 UTC
+2023/09/18 17:07:45.319263 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 4 Mins
+2023/09/18 17:07:45.319285 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.319313 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-14 09:47:48 +0100 BST
+2023/09/18 17:07:45.319451 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-09-09 08:52:24 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:07:45.319459 ttxdwconsumer.go:296: Workflow toc6072406157 is CLOSED
+2023/09/18 17:07:45.319630 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:07:45.319921 ttxdwconsumer.go:327: Workflow Started 2023-09-11 20:25:32 +0100 BST Status CLOSED
+2023/09/18 17:07:45.319976 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.319975 +0100 BST
+2023/09/18 17:07:45.320130 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 19:52:17 +0000 UTC
+2023/09/18 17:07:45.320137 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 26 Mins
+2023/09/18 17:07:45.320160 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.320185 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-01 20:25:32 +0100 BST
+2023/09/18 17:07:45.320189 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:07:45.320195 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:07:45.320406 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 9999999468
+2023/09/18 17:07:45.320581 ttxdwconsumer.go:327: Workflow Started 2023-09-11 21:09:53 +0100 BST Status CLOSED
+2023/09/18 17:07:45.320604 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.320603 +0100 BST
+2023/09/18 17:07:45.320767 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 21:43:10 +0000 UTC
+2023/09/18 17:07:45.320771 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 33 Mins
+2023/09/18 17:07:45.320795 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.320818 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/18 17:07:45.320822 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:07:45.320828 ttxdwconsumer.go:296: Workflow d2a9999999468 is CLOSED
+2023/09/18 17:07:45.320991 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:07:45.321069 ttxdwconsumer.go:327: Workflow Started 2023-09-12 22:32:28 +0100 BST Status OPEN
+2023/09/18 17:07:45.321090 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.32109 +0100 BST
+2023/09/18 17:07:45.321094 ttxdwconsumer.go:336: Duration - 5 Days 18 Hrs 35 Mins
+2023/09/18 17:07:45.321119 ttxdwconsumer.go:342: Completion time 2023-10-02 22:32:28 +0100 BST
+2023/09/18 17:07:45.321123 ttxdwconsumer.go:347: Workflow Time Remaining : 341h24m42.678878s
+2023/09/18 17:07:45.321152 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.321183 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-02 22:32:28 +0100 BST
+2023/09/18 17:07:45.321187 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:07:45.321204 ttxdwconsumer.go:286: Workflow d2a6072406157 is OPEN
+2023/09/18 17:07:45.321212 ttxdwconsumer.go:381: No Escalate time defined for Workflow
+2023/09/18 17:07:45.321493 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 17:07:45.321737 ttxdwconsumer.go:327: Workflow Started 2023-09-12 23:00:30 +0100 BST Status CLOSED
+2023/09/18 17:07:45.321759 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.321758 +0100 BST
+2023/09/18 17:07:45.321992 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-12 23:03:05 +0100 BST
+2023/09/18 17:07:45.321995 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 17:07:45.322017 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.322040 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-02 23:00:30 +0100 BST
+2023/09/18 17:07:45.322044 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:07:45.322049 ttxdwconsumer.go:296: Workflow lac1111111111 is CLOSED
+2023/09/18 17:07:45.322311 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 17:07:45.322527 ttxdwconsumer.go:327: Workflow Started 2023-09-13 09:36:29 +0100 BST Status CLOSED
+2023/09/18 17:07:45.322548 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.322547 +0100 BST
+2023/09/18 17:07:45.322734 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-13 09:11:05 +0000 UTC
+2023/09/18 17:07:45.322738 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 34 Mins
+2023/09/18 17:07:45.322760 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.322785 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-03 09:36:29 +0100 BST
+2023/09/18 17:07:45.322800 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:07:45.322807 ttxdwconsumer.go:296: Workflow lac1111111111 is CLOSED
+2023/09/18 17:07:45.323082 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 17:07:45.323321 ttxdwconsumer.go:327: Workflow Started 2023-09-13 10:21:29 +0100 BST Status OPEN
+2023/09/18 17:07:45.323342 ttxdwconsumer.go:330: Time Now 2023-09-18 17:07:45.323341 +0100 BST
+2023/09/18 17:07:45.323346 ttxdwconsumer.go:336: Duration - 5 Days 6 Hrs 46 Mins
+2023/09/18 17:07:45.323368 ttxdwconsumer.go:342: Completion time 2023-10-03 10:21:29 +0100 BST
+2023/09/18 17:07:45.323372 ttxdwconsumer.go:347: Workflow Time Remaining : 353h13m43.676629s
+2023/09/18 17:07:45.323394 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:07:45.323416 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-03 10:21:29 +0100 BST
+2023/09/18 17:07:45.323420 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:07:45.323425 ttxdwconsumer.go:286: Workflow lac1111111111 is OPEN
+2023/09/18 17:07:45.323454 ttxdwconsumer.go:378: Workflow Start Time 2023-09-13T10:21:29+01:00 Worklow Escalate Time 2023-10-04 10:21:29 +0100 BST Workflow Escaleted = false
+2023/09/18 17:07:45.323514 tttmplts.go:87: Processing Template wfstate2t_tmplt
+2023/09/18 17:07:45.408375 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:07:45.437833 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:07:45.437900 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:07:45.437955 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:07:45.437974 ttgethandler.go:15: Path = /beta/spa/consumer/pathways
+2023/09/18 17:07:45.438847 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:07:45.438876 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:07:45.438894 ttutil.go:140: 	{
+  "Name": "favicon.ico"
+}
+2023/09/18 17:07:45.438903 ttgethandler.go:15: Path = /beta/spa/consumer/static
+2023/09/18 17:07:45.438912 ttsysman.go:242: Retrieving favicon.ico
+2023/09/18 17:07:45.499833 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:07:45.529376 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:07:48.969497 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:07:48.969648 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:07:48.969721 ttutil.go:140: 	{
+  "Act": "Publish Content",
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:07:48.969739 ttgethandler.go:15: Path = /beta/spa/publish
+2023/09/18 17:07:48.969753 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:07:48.970062 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:07:50.947470 ttposthandler.go:15: Processing new POST /beta/spa/publish Request
+2023/09/18 17:07:50.947993 server.go:3217: http: panic serving [::1]:61044: runtime error: index out of range [0] with length 0
+goroutine 8 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1478da0, 0xc0000288a0})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+main.(*Trans).parsePost(0xc000130000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttposthandler.go:65 +0x9b9
+main.(*Trans).newPostHandler(0xc000130000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttposthandler.go:16 +0x6f
+main.(*Trans).newProxyTrans(0xc000130000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:75 +0x4e7
+main.Handle_HTTP_Request({0x1566190, 0xc0000ab340}, 0xc0001d2a00)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xeb
+net/http.HandlerFunc.ServeHTTP(0xc000322ef7?, {0x1566190?, 0xc0000ab340?}, 0x12dfa74?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0x1564fe0?}, {0x1566190, 0xc0000ab340}, 0xc0001d2a00)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001bc240, {0x1566388, 0xc0001e6270})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/18 17:07:50.948818 ttposthandler.go:15: Processing new POST /beta/spa/publish Request
+2023/09/18 17:07:50.948973 server.go:3217: http: panic serving [::1]:61045: runtime error: index out of range [0] with length 0
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1478da0, 0xc000028d08})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+main.(*Trans).parsePost(0xc000132600)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttposthandler.go:65 +0x9b9
+main.(*Trans).newPostHandler(0xc000132600)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttposthandler.go:16 +0x6f
+main.(*Trans).newProxyTrans(0xc000132600)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:75 +0x4e7
+main.Handle_HTTP_Request({0x1566190, 0xc0000ab5e0}, 0xc0001d2b00)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xeb
+net/http.HandlerFunc.ServeHTTP(0xc000323047?, {0x1566190?, 0xc0000ab5e0?}, 0x12dfa74?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0x1564fe0?}, {0x1566190, 0xc0000ab5e0}, 0xc0001d2b00)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001bc2d0, {0x1566388, 0xc0001e6270})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/18 17:07:50.950640 ttposthandler.go:15: Processing new POST /beta/spa/publish Request
+2023/09/18 17:07:50.950769 server.go:3217: http: panic serving [::1]:61049: runtime error: index out of range [0] with length 0
+goroutine 70 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1478da0, 0xc000028ea0})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+main.(*Trans).parsePost(0xc000133900)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttposthandler.go:65 +0x9b9
+main.(*Trans).newPostHandler(0xc000133900)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttposthandler.go:16 +0x6f
+main.(*Trans).newProxyTrans(0xc000133900)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:75 +0x4e7
+main.Handle_HTTP_Request({0x1566190, 0xc0000ab880}, 0xc0001d2c00)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xeb
+net/http.HandlerFunc.ServeHTTP(0xc000323197?, {0x1566190?, 0xc0000ab880?}, 0x12dfa74?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0x1564fe0?}, {0x1566190, 0xc0000ab880}, 0xc0001d2c00)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0000d2990, {0x1566388, 0xc0001e6270})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/18 17:07:58.323094 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:07:58.323247 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:07:58.323332 ttutil.go:140: 	{
+  "Act": "Publish Content",
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:07:58.323355 ttgethandler.go:15: Path = /beta/spa/publish
+2023/09/18 17:07:58.323372 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:07:58.323522 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:08:06.757956 ttposthandler.go:15: Processing new POST /beta/spa/publish Request
+2023/09/18 17:08:06.764807 ttposthandler.go:68: File name: Tiani_Test_System.zip
+2023/09/18 17:08:06.795102 ttposthandler.go:84: Publishing Tiani_Test_System.zip to SCR
+2023/09/18 17:08:06.795213 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:08:06.795236 ttutil.go:140: 	{}
+2023/09/18 17:08:06.795245 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:08:06.795294 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:14:52.527469 ttserver.go:52: ICB Workflow Service stopped
+2023/09/18 17:14:55.094860 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/18 17:14:55.095312 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/18 17:14:55.095427 ttdb.go:54: Opened Database
+2023/09/18 17:14:55.278155 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/18 17:14:55.340436 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/18 17:14:55.340531 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/18 17:14:55.404253 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/18 17:14:55.504059 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/18 17:14:55.504169 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/18 17:14:55.568542 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/18 17:14:55.639775 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/18 17:14:55.639916 ttdb.go:366: Persisted Template pdssearch_tmplt.html
+2023/09/18 17:14:55.707989 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/18 17:14:55.772725 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/18 17:14:55.772857 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/18 17:14:55.843817 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/18 17:14:55.907534 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/18 17:14:55.907629 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/18 17:14:55.970385 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/18 17:14:56.088426 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/18 17:14:56.088569 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/18 17:14:56.151525 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/18 17:14:56.217081 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/18 17:14:56.217205 ttdb.go:366: Persisted Template pdsretrieve_tmplt.html
+2023/09/18 17:14:56.278115 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/18 17:14:56.342949 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/18 17:14:56.343010 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/18 17:14:56.404605 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/18 17:14:56.478959 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/18 17:14:56.479119 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/18 17:14:56.541897 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/18 17:14:56.620852 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/18 17:14:56.620977 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/18 17:14:56.682463 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/18 17:14:56.750200 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/18 17:14:56.750316 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/18 17:14:56.812441 ttdb.go:379: Persisting Template patpoxy_tmplt
+2023/09/18 17:14:56.876028 ttdb.go:385: Persisted Template patpoxy_tmplt
+2023/09/18 17:14:56.876152 ttdb.go:366: Persisted Template patpoxy_tmplt.html
+2023/09/18 17:14:56.938980 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/18 17:14:57.002498 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/18 17:14:57.002568 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/18 17:14:57.063256 ttdb.go:379: Persisting Template error_tmplt
+2023/09/18 17:14:57.128190 ttdb.go:385: Persisted Template error_tmplt
+2023/09/18 17:14:57.128320 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/18 17:14:57.192072 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/18 17:14:57.256128 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/18 17:14:57.256241 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/18 17:14:57.321538 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/18 17:14:57.391561 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/18 17:14:57.391687 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/18 17:14:57.456040 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/18 17:14:57.522756 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/18 17:14:57.522877 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/18 17:14:57.587021 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/18 17:14:57.660040 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/18 17:14:57.660112 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/18 17:14:57.724803 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/18 17:14:57.796243 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/18 17:14:57.796377 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/18 17:14:57.861069 ttdb.go:379: Persisting Template events_tmplt
+2023/09/18 17:14:57.928889 ttdb.go:385: Persisted Template events_tmplt
+2023/09/18 17:14:57.929007 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/18 17:14:57.994235 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/18 17:14:58.059245 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/18 17:14:58.059336 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/18 17:14:58.059506 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/18 17:15:06.692293 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:15:06.692487 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:15:06.692828 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:15:06.692864 ttgethandler.go:15: Path = /spa
+2023/09/18 17:15:06.692881 tttmplts.go:23: Using Default SPA template
+2023/09/18 17:15:06.880128 tttmplts.go:100: Caching 25 Templates
+2023/09/18 17:15:06.895024 tttmplts.go:87: Processing Template spa2t_tmplt
+2023/09/18 17:15:06.897682 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:15:06.943040 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:15:06.943118 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:15:06.943162 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:15:06.943175 ttgethandler.go:15: Path = /beta/spa/consumer/xdws
+2023/09/18 17:15:06.943621 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:15:06.943657 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:15:06.943675 ttutil.go:140: 	{
+  "Name": "event-logo.png"
+}
+2023/09/18 17:15:06.943685 ttgethandler.go:15: Path = /beta/spa/consumer/static
+2023/09/18 17:15:06.943697 ttsysman.go:242: Retrieving event-logo.png
+2023/09/18 17:15:07.043472 ttxdwconsumer.go:407: selected 22 Workflows for Pathway  NHS  Version -1
+2023/09/18 17:15:07.115960 ttxdwconsumer.go:213: Setting Workflow States
+2023/09/18 17:15:07.117858 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:15:07.118979 ttxdwconsumer.go:327: Workflow Started 2023-08-24 19:18:57 +0100 BST Status CLOSED
+2023/09/18 17:15:07.119057 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.119054 +0100 BST
+2023/09/18 17:15:07.119373 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-24 19:42:42 +0000 UTC
+2023/09/18 17:15:07.119408 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 23 Mins
+2023/09/18 17:15:07.119489 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.119554 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-13 19:18:57 +0100 BST
+2023/09/18 17:15:07.119895 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-24 19:42:42 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.120147 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:15:07.120382 ttxdwconsumer.go:226: Setting EREF Workflow state for Patient 6072406157
+2023/09/18 17:15:07.120772 ttxdwconsumer.go:327: Workflow Started 2023-08-24 19:23:11 +0100 BST Status CLOSED
+2023/09/18 17:15:07.120920 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.120916 +0100 BST
+2023/09/18 17:15:07.121331 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-24 19:22:58 +0000 UTC
+2023/09/18 17:15:07.121361 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 59 Mins
+2023/09/18 17:15:07.121440 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.121568 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-26 19:23:11 +0100 BST
+2023/09/18 17:15:07.121913 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-24 19:22:58 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.121936 ttxdwconsumer.go:296: Workflow eref6072406157 is CLOSED
+2023/09/18 17:15:07.122539 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:15:07.122855 ttxdwconsumer.go:327: Workflow Started 2023-08-24 20:42:54 +0100 BST Status CLOSED
+2023/09/18 17:15:07.122907 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.122905 +0100 BST
+2023/09/18 17:15:07.123231 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-26 15:06:08 +0000 UTC
+2023/09/18 17:15:07.123252 ttxdwconsumer.go:336: Duration - 1 Days 19 Hrs 23 Mins
+2023/09/18 17:15:07.123301 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.123354 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-13 20:42:54 +0100 BST
+2023/09/18 17:15:07.123645 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-26 15:06:08 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.123658 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:15:07.123895 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:15:07.124224 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:15:32 +0100 BST Status CLOSED
+2023/09/18 17:15:07.124268 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.124267 +0100 BST
+2023/09/18 17:15:07.124544 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:15:38 +0000 UTC
+2023/09/18 17:15:07.124555 ttxdwconsumer.go:336: Duration - 6 Secs
+2023/09/18 17:15:07.124604 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.124679 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-25 13:15:32 +0100 BST
+2023/09/18 17:15:07.124971 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:15:38 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.124990 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:15:07.125190 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:15:07.125227 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:15:07.125512 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:36:31 +0100 BST Status CLOSED
+2023/09/18 17:15:07.125570 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.125569 +0100 BST
+2023/09/18 17:15:07.125838 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:36:36 +0000 UTC
+2023/09/18 17:15:07.125851 ttxdwconsumer.go:336: Duration - 5 Secs
+2023/09/18 17:15:07.125911 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.125971 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 10:36:31 +0100 BST
+2023/09/18 17:15:07.126265 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:36:36 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.126287 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:15:07.126491 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:15:07.126893 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:57:22 +0100 BST Status CLOSED
+2023/09/18 17:15:07.126975 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.126973 +0100 BST
+2023/09/18 17:15:07.127304 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:58:09 +0000 UTC
+2023/09/18 17:15:07.127330 ttxdwconsumer.go:336: Duration - 47 Secs
+2023/09/18 17:15:07.127401 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.127469 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 10:57:22 +0100 BST
+2023/09/18 17:15:07.127787 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:58:09 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.127805 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:15:07.128071 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:15:07.128442 ttxdwconsumer.go:327: Workflow Started 2023-08-25 11:43:49 +0100 BST Status CLOSED
+2023/09/18 17:15:07.128528 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.128524 +0100 BST
+2023/09/18 17:15:07.128843 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 18:24:45 +0000 UTC
+2023/09/18 17:15:07.128855 ttxdwconsumer.go:336: Duration - 0 Days 7 Hrs 40 Mins
+2023/09/18 17:15:07.128936 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.129026 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 11:43:49 +0100 BST
+2023/09/18 17:15:07.129321 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 18:24:45 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.129337 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:15:07.129577 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:15:07.129967 ttxdwconsumer.go:327: Workflow Started 2023-08-25 19:25:01 +0100 BST Status CLOSED
+2023/09/18 17:15:07.130056 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.130054 +0100 BST
+2023/09/18 17:15:07.130363 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-26 09:01:49 +0100 BST
+2023/09/18 17:15:07.130381 ttxdwconsumer.go:336: Duration - 0 Days 13 Hrs 36 Mins
+2023/09/18 17:15:07.130446 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.130520 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-25 22:25:01 +0100 BST
+2023/09/18 17:15:07.130803 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-26 09:01:49 +0100 BST. Workflow Target Met = false
+2023/09/18 17:15:07.131199 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:15:07.134416 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:15:07.134711 ttxdwconsumer.go:327: Workflow Started 2023-08-29 17:00:58 +0100 BST Status CLOSED
+2023/09/18 17:15:07.134744 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.134743 +0100 BST
+2023/09/18 17:15:07.134871 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-29 16:03:32 +0000 UTC
+2023/09/18 17:15:07.134878 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 17:15:07.134908 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.134940 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-18 17:00:58 +0100 BST
+2023/09/18 17:15:07.135082 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-29 16:03:32 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.135090 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:15:07.135251 ttxdwconsumer.go:226: Setting PATHALERT Workflow state for Patient 6072406157
+2023/09/18 17:15:07.135414 ttxdwconsumer.go:327: Workflow Started 2023-08-29 17:20:32 +0100 BST Status CLOSED
+2023/09/18 17:15:07.135440 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.13544 +0100 BST
+2023/09/18 17:15:07.135598 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-29 16:23:05 +0000 UTC
+2023/09/18 17:15:07.135603 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 17:15:07.135636 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.135660 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 01:20:32 +0100 BST
+2023/09/18 17:15:07.135796 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-29 16:23:05 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.135805 ttxdwconsumer.go:296: Workflow pathalert6072406157 is CLOSED
+2023/09/18 17:15:07.136066 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:15:07.136255 ttxdwconsumer.go:327: Workflow Started 2023-08-30 10:21:36 +0100 BST Status CLOSED
+2023/09/18 17:15:07.136278 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.136278 +0100 BST
+2023/09/18 17:15:07.136440 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 09:36:38 +0000 UTC
+2023/09/18 17:15:07.136445 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 15 Mins
+2023/09/18 17:15:07.136468 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.136493 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-19 10:21:36 +0100 BST
+2023/09/18 17:15:07.136497 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:15:07.136503 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:15:07.136722 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:15:07.136894 ttxdwconsumer.go:327: Workflow Started 2023-08-30 10:39:37 +0100 BST Status CLOSED
+2023/09/18 17:15:07.136917 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.136916 +0100 BST
+2023/09/18 17:15:07.137067 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 11:31:20 +0000 UTC
+2023/09/18 17:15:07.137073 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 51 Mins
+2023/09/18 17:15:07.137098 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.137123 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-19 10:39:37 +0100 BST
+2023/09/18 17:15:07.137127 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:15:07.137136 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:15:07.137235 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 17:15:07.137367 ttxdwconsumer.go:327: Workflow Started 2023-08-30 14:34:22 +0100 BST Status CLOSED
+2023/09/18 17:15:07.137395 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.137394 +0100 BST
+2023/09/18 17:15:07.137509 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 13:39:22 +0000 UTC
+2023/09/18 17:15:07.137513 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 5 Mins
+2023/09/18 17:15:07.137542 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.137572 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 17:34:22 +0100 BST
+2023/09/18 17:15:07.137684 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-30 13:39:22 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.137691 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 17:15:07.137786 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 1111111111
+2023/09/18 17:15:07.137906 ttxdwconsumer.go:327: Workflow Started 2023-08-30 17:47:08 +0100 BST Status CLOSED
+2023/09/18 17:15:07.137940 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.13794 +0100 BST
+2023/09/18 17:15:07.138047 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 19:22:50 +0000 UTC
+2023/09/18 17:15:07.138051 ttxdwconsumer.go:336: Duration - 12 Days 2 Hrs 35 Mins
+2023/09/18 17:15:07.138075 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.138102 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 20:47:08 +0100 BST
+2023/09/18 17:15:07.138204 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-09-11 19:22:50 +0000 UTC. Workflow Target Met = false
+2023/09/18 17:15:07.138212 ttxdwconsumer.go:296: Workflow radconsult1111111111 is CLOSED
+2023/09/18 17:15:07.138435 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:15:07.138599 ttxdwconsumer.go:327: Workflow Started 2023-09-03 15:33:30 +0100 BST Status CLOSED
+2023/09/18 17:15:07.138621 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.138621 +0100 BST
+2023/09/18 17:15:07.138843 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-05 14:42:19 +0100 BST
+2023/09/18 17:15:07.138856 ttxdwconsumer.go:336: Duration - 1 Days 23 Hrs 8 Mins
+2023/09/18 17:15:07.138887 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.138913 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-23 15:33:30 +0100 BST
+2023/09/18 17:15:07.138918 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:15:07.138925 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:15:07.139124 ttxdwconsumer.go:226: Setting TOC Workflow state for Patient 6072406157
+2023/09/18 17:15:07.139285 ttxdwconsumer.go:327: Workflow Started 2023-09-09 09:47:48 +0100 BST Status CLOSED
+2023/09/18 17:15:07.139310 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.13931 +0100 BST
+2023/09/18 17:15:07.139448 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-09 08:52:24 +0000 UTC
+2023/09/18 17:15:07.139452 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 4 Mins
+2023/09/18 17:15:07.139475 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.139499 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-14 09:47:48 +0100 BST
+2023/09/18 17:15:07.139631 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-09-09 08:52:24 +0000 UTC. Workflow Target Met = true
+2023/09/18 17:15:07.139639 ttxdwconsumer.go:296: Workflow toc6072406157 is CLOSED
+2023/09/18 17:15:07.139855 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:15:07.140012 ttxdwconsumer.go:327: Workflow Started 2023-09-11 20:25:32 +0100 BST Status CLOSED
+2023/09/18 17:15:07.140034 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.140034 +0100 BST
+2023/09/18 17:15:07.140168 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 19:52:17 +0000 UTC
+2023/09/18 17:15:07.140172 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 26 Mins
+2023/09/18 17:15:07.140195 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.140231 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-01 20:25:32 +0100 BST
+2023/09/18 17:15:07.140234 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:15:07.140241 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 17:15:07.140474 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 9999999468
+2023/09/18 17:15:07.140667 ttxdwconsumer.go:327: Workflow Started 2023-09-11 21:09:53 +0100 BST Status CLOSED
+2023/09/18 17:15:07.140691 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.14069 +0100 BST
+2023/09/18 17:15:07.140867 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 21:43:10 +0000 UTC
+2023/09/18 17:15:07.140871 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 33 Mins
+2023/09/18 17:15:07.140900 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.140925 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/18 17:15:07.140929 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:15:07.140935 ttxdwconsumer.go:296: Workflow d2a9999999468 is CLOSED
+2023/09/18 17:15:07.141134 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 17:15:07.141226 ttxdwconsumer.go:327: Workflow Started 2023-09-12 22:32:28 +0100 BST Status OPEN
+2023/09/18 17:15:07.141251 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.14125 +0100 BST
+2023/09/18 17:15:07.141255 ttxdwconsumer.go:336: Duration - 5 Days 18 Hrs 42 Mins
+2023/09/18 17:15:07.141285 ttxdwconsumer.go:342: Completion time 2023-10-02 22:32:28 +0100 BST
+2023/09/18 17:15:07.141290 ttxdwconsumer.go:347: Workflow Time Remaining : 341h17m20.858711s
+2023/09/18 17:15:07.141325 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.141353 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-02 22:32:28 +0100 BST
+2023/09/18 17:15:07.141356 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:15:07.141369 ttxdwconsumer.go:286: Workflow d2a6072406157 is OPEN
+2023/09/18 17:15:07.141377 ttxdwconsumer.go:381: No Escalate time defined for Workflow
+2023/09/18 17:15:07.142004 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 17:15:07.142486 ttxdwconsumer.go:327: Workflow Started 2023-09-12 23:00:30 +0100 BST Status CLOSED
+2023/09/18 17:15:07.143057 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.143053 +0100 BST
+2023/09/18 17:15:07.143448 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-12 23:03:05 +0100 BST
+2023/09/18 17:15:07.143461 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 17:15:07.143491 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.143530 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-02 23:00:30 +0100 BST
+2023/09/18 17:15:07.143534 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:15:07.143541 ttxdwconsumer.go:296: Workflow lac1111111111 is CLOSED
+2023/09/18 17:15:07.143925 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 17:15:07.144163 ttxdwconsumer.go:327: Workflow Started 2023-09-13 09:36:29 +0100 BST Status CLOSED
+2023/09/18 17:15:07.144186 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.144185 +0100 BST
+2023/09/18 17:15:07.144383 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-13 09:11:05 +0000 UTC
+2023/09/18 17:15:07.144387 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 34 Mins
+2023/09/18 17:15:07.144411 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.144440 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-03 09:36:29 +0100 BST
+2023/09/18 17:15:07.144444 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:15:07.144454 ttxdwconsumer.go:296: Workflow lac1111111111 is CLOSED
+2023/09/18 17:15:07.144807 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 17:15:07.145083 ttxdwconsumer.go:327: Workflow Started 2023-09-13 10:21:29 +0100 BST Status OPEN
+2023/09/18 17:15:07.145108 ttxdwconsumer.go:330: Time Now 2023-09-18 17:15:07.145107 +0100 BST
+2023/09/18 17:15:07.145112 ttxdwconsumer.go:336: Duration - 5 Days 6 Hrs 53 Mins
+2023/09/18 17:15:07.145136 ttxdwconsumer.go:342: Completion time 2023-10-03 10:21:29 +0100 BST
+2023/09/18 17:15:07.145140 ttxdwconsumer.go:347: Workflow Time Remaining : 353h6m21.854861s
+2023/09/18 17:15:07.145167 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 17:15:07.145195 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-03 10:21:29 +0100 BST
+2023/09/18 17:15:07.145199 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 17:15:07.145205 ttxdwconsumer.go:286: Workflow lac1111111111 is OPEN
+2023/09/18 17:15:07.145235 ttxdwconsumer.go:378: Workflow Start Time 2023-09-13T10:21:29+01:00 Worklow Escalate Time 2023-10-04 10:21:29 +0100 BST Workflow Escaleted = false
+2023/09/18 17:15:07.145294 tttmplts.go:87: Processing Template wfstate2t_tmplt
+2023/09/18 17:15:07.236336 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:15:07.262675 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:15:07.262758 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:15:07.262806 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:15:07.262830 ttgethandler.go:15: Path = /beta/spa/consumer/pathways
+2023/09/18 17:15:07.264125 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:15:07.264164 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:15:07.264186 ttutil.go:140: 	{
+  "Name": "favicon.ico"
+}
+2023/09/18 17:15:07.264204 ttgethandler.go:15: Path = /beta/spa/consumer/static
+2023/09/18 17:15:07.264214 ttsysman.go:242: Retrieving favicon.ico
+2023/09/18 17:15:07.324186 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:15:07.359063 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:15:18.810135 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:15:18.810274 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:15:18.810362 ttutil.go:140: 	{
+  "Act": "Publish Content",
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:15:18.810391 ttgethandler.go:15: Path = /beta/spa/publish
+2023/09/18 17:15:18.810409 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:15:18.810733 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:15:27.165217 ttposthandler.go:15: Processing new POST /beta/spa/publish Request from   
+2023/09/18 17:15:27.179990 ttposthandler.go:68: File name: Tiani_Test_System.zip
+2023/09/18 17:15:27.190507 ttposthandler.go:84: Publishing Tiani_Test_System.zip to SCR
+2023/09/18 17:15:27.190612 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:15:27.190628 ttutil.go:140: 	{}
+2023/09/18 17:15:27.190644 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:15:27.190685 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:17:50.741561 ttgethandler.go:10: Processing new GET Request
+2023/09/18 17:17:50.741688 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:17:50.741744 ttutil.go:140: 	{
+  "Act": "Register Template",
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 17:17:50.741763 ttgethandler.go:15: Path = /beta/spa/consumer/template
+2023/09/18 17:17:50.741777 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:17:50.741862 ttproxy.go:149: Response Status Code 200
+2023/09/18 17:18:30.980623 ttposthandler.go:15: Processing new POST /beta/spa/consumer/template Request from   
+2023/09/18 17:18:30.980904 ttposthandler.go:68: File name: mhdpublish_tmplt.json
+2023/09/18 17:18:31.050301 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/18 17:18:31.114881 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/18 17:18:31.179377 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/18 17:18:31.277147 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/18 17:18:31.340269 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/18 17:18:31.407215 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/18 17:18:31.470671 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/18 17:18:31.537191 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/18 17:18:31.601855 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/18 17:18:31.666144 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/18 17:18:31.731485 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/18 17:18:31.849525 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/18 17:18:31.914099 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/18 17:18:31.983929 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/18 17:18:32.048576 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/18 17:18:32.113530 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/18 17:18:32.178125 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/18 17:18:32.254773 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/18 17:18:32.318703 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/18 17:18:32.400467 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/18 17:18:32.464525 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/18 17:18:32.536506 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/18 17:18:32.601089 ttdb.go:379: Persisting Template patpoxy_tmplt
+2023/09/18 17:18:32.666120 ttdb.go:385: Persisted Template patpoxy_tmplt
+2023/09/18 17:18:32.730736 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/18 17:18:32.795726 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/18 17:18:32.859627 ttdb.go:379: Persisting Template error_tmplt
+2023/09/18 17:18:32.923961 ttdb.go:385: Persisted Template error_tmplt
+2023/09/18 17:18:32.988825 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/18 17:18:33.055577 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/18 17:18:33.120085 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/18 17:18:33.187379 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/18 17:18:33.252324 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/18 17:18:33.320183 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/18 17:18:33.383875 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/18 17:18:33.453947 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/18 17:18:33.519168 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/18 17:18:33.590002 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/18 17:18:33.654559 ttdb.go:379: Persisting Template events_tmplt
+2023/09/18 17:18:33.725436 ttdb.go:385: Persisted Template events_tmplt
+2023/09/18 17:18:33.789606 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/18 17:18:33.855210 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/18 17:18:33.855763 ttproxy.go:138: 	Request Query Params
+2023/09/18 17:18:33.855885 ttutil.go:140: 	{
+  "Template": "mhdpublish_tmplt"
+}
+2023/09/18 17:18:33.920084 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/18 17:18:33.984546 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/18 17:18:34.049632 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/18 17:18:34.123541 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/18 17:18:34.187051 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/18 17:18:34.253591 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/18 17:18:34.317127 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/18 17:18:34.384186 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/18 17:18:34.448754 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/18 17:18:34.516577 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/18 17:18:34.580406 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/18 17:18:34.686829 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/18 17:18:34.751481 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/18 17:18:34.821974 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/18 17:18:34.885948 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/18 17:18:34.950495 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/18 17:18:35.015966 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/18 17:18:35.094534 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/18 17:18:35.164329 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/18 17:18:35.252930 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/18 17:18:35.331730 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/18 17:18:35.432080 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/18 17:18:35.538090 ttdb.go:379: Persisting Template patpoxy_tmplt
+2023/09/18 17:18:35.624239 ttdb.go:385: Persisted Template patpoxy_tmplt
+2023/09/18 17:18:35.687834 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/18 17:18:35.753440 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/18 17:18:35.820350 ttdb.go:379: Persisting Template error_tmplt
+2023/09/18 17:18:35.890668 ttdb.go:385: Persisted Template error_tmplt
+2023/09/18 17:18:35.954697 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/18 17:18:36.018746 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/18 17:18:36.083472 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/18 17:18:36.152281 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/18 17:18:36.215772 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/18 17:18:36.287782 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/18 17:18:36.351870 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/18 17:18:36.423446 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/18 17:18:36.489104 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/18 17:18:36.560077 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/18 17:18:36.628347 ttdb.go:379: Persisting Template events_tmplt
+2023/09/18 17:18:36.697959 ttdb.go:385: Persisted Template events_tmplt
+2023/09/18 17:18:36.762202 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/18 17:18:36.826925 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/18 17:18:36.827272 tttmplts.go:87: Processing Template uploadfile2t_tmplt
+2023/09/18 17:18:36.827505 ttproxy.go:149: Response Status Code 200
+2023/09/18 20:27:33.447593 ttgethandler.go:10: Processing new GET Request
+2023/09/18 20:27:33.447796 ttproxy.go:138: 	Request Query Params
+2023/09/18 20:27:33.447885 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "tiani-spirit",
+  "Role": "clinical"
+}
+2023/09/18 20:27:33.447916 ttgethandler.go:15: Path = /beta/spa/consumer/mysubs
+2023/09/18 20:27:33.851410 tttmplts.go:87: Processing Template subscriptions2t_tmplt
+2023/09/18 20:27:33.856205 ttproxy.go:149: Response Status Code 200
+2023/09/18 20:28:02.466843 ttgethandler.go:10: Processing new GET Request
+2023/09/18 20:28:02.467004 ttproxy.go:138: 	Request Query Params
+2023/09/18 20:28:02.467099 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/18 20:28:02.467135 ttgethandler.go:15: Path = /spa
+2023/09/18 20:28:02.467153 tttmplts.go:23: Using Default SPA template
+2023/09/18 20:28:02.467168 tttmplts.go:87: Processing Template spa2t_tmplt
+2023/09/18 20:28:02.467589 ttproxy.go:149: Response Status Code 200
+2023/09/18 20:28:02.508083 ttgethandler.go:10: Processing new GET Request
+2023/09/18 20:28:02.508157 ttproxy.go:138: 	Request Query Params
+2023/09/18 20:28:02.508193 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/18 20:28:02.508209 ttgethandler.go:15: Path = /beta/spa/consumer/xdws
+2023/09/18 20:28:02.508226 ttgethandler.go:10: Processing new GET Request
+2023/09/18 20:28:02.508257 ttproxy.go:138: 	Request Query Params
+2023/09/18 20:28:02.508281 ttutil.go:140: 	{
+  "Name": "event-logo.png"
+}
+2023/09/18 20:28:02.508293 ttgethandler.go:15: Path = /beta/spa/consumer/static
+2023/09/18 20:28:02.508305 ttsysman.go:242: Retrieving event-logo.png
+2023/09/18 20:28:02.683175 ttproxy.go:149: Response Status Code 200
+2023/09/18 20:28:02.745548 ttxdwconsumer.go:407: selected 22 Workflows for Pathway  NHS  Version -1
+2023/09/18 20:28:02.817113 ttxdwconsumer.go:213: Setting Workflow States
+2023/09/18 20:28:02.818615 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 20:28:02.821717 ttxdwconsumer.go:327: Workflow Started 2023-08-24 19:18:57 +0100 BST Status CLOSED
+2023/09/18 20:28:02.821871 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.821866 +0100 BST
+2023/09/18 20:28:02.822821 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-24 19:42:42 +0000 UTC
+2023/09/18 20:28:02.822859 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 23 Mins
+2023/09/18 20:28:02.823409 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.823602 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-13 19:18:57 +0100 BST
+2023/09/18 20:28:02.826571 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-24 19:42:42 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.826666 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 20:28:02.827112 ttxdwconsumer.go:226: Setting EREF Workflow state for Patient 6072406157
+2023/09/18 20:28:02.827748 ttxdwconsumer.go:327: Workflow Started 2023-08-24 19:23:11 +0100 BST Status CLOSED
+2023/09/18 20:28:02.827820 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.827818 +0100 BST
+2023/09/18 20:28:02.828102 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-24 19:22:58 +0000 UTC
+2023/09/18 20:28:02.828122 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 59 Mins
+2023/09/18 20:28:02.828191 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.828260 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-26 19:23:11 +0100 BST
+2023/09/18 20:28:02.828543 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-24 19:22:58 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.828566 ttxdwconsumer.go:296: Workflow eref6072406157 is CLOSED
+2023/09/18 20:28:02.829107 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 20:28:02.829669 ttxdwconsumer.go:327: Workflow Started 2023-08-24 20:42:54 +0100 BST Status CLOSED
+2023/09/18 20:28:02.829755 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.829752 +0100 BST
+2023/09/18 20:28:02.830170 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-26 15:06:08 +0000 UTC
+2023/09/18 20:28:02.830193 ttxdwconsumer.go:336: Duration - 1 Days 19 Hrs 23 Mins
+2023/09/18 20:28:02.830262 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.830335 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-13 20:42:54 +0100 BST
+2023/09/18 20:28:02.830733 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-26 15:06:08 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.830758 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 20:28:02.831032 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 20:28:02.831434 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:15:32 +0100 BST Status CLOSED
+2023/09/18 20:28:02.831498 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.831496 +0100 BST
+2023/09/18 20:28:02.831822 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:15:38 +0000 UTC
+2023/09/18 20:28:02.831836 ttxdwconsumer.go:336: Duration - 6 Secs
+2023/09/18 20:28:02.831897 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.831965 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-25 13:15:32 +0100 BST
+2023/09/18 20:28:02.832275 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:15:38 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.832299 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 20:28:02.832517 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 20:28:02.832868 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:36:31 +0100 BST Status CLOSED
+2023/09/18 20:28:02.832935 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.832934 +0100 BST
+2023/09/18 20:28:02.833264 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:36:36 +0000 UTC
+2023/09/18 20:28:02.833283 ttxdwconsumer.go:336: Duration - 5 Secs
+2023/09/18 20:28:02.833347 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.833415 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 10:36:31 +0100 BST
+2023/09/18 20:28:02.833738 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:36:36 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.833758 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 20:28:02.833977 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 20:28:02.834283 ttxdwconsumer.go:327: Workflow Started 2023-08-25 10:57:22 +0100 BST Status CLOSED
+2023/09/18 20:28:02.834346 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.834344 +0100 BST
+2023/09/18 20:28:02.834601 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 09:58:09 +0000 UTC
+2023/09/18 20:28:02.834617 ttxdwconsumer.go:336: Duration - 47 Secs
+2023/09/18 20:28:02.834677 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.834747 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 10:57:22 +0100 BST
+2023/09/18 20:28:02.834995 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 09:58:09 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.835019 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 20:28:02.835236 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 20:28:02.835577 ttxdwconsumer.go:327: Workflow Started 2023-08-25 11:43:49 +0100 BST Status CLOSED
+2023/09/18 20:28:02.835768 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.835765 +0100 BST
+2023/09/18 20:28:02.836110 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-25 18:24:45 +0000 UTC
+2023/09/18 20:28:02.836126 ttxdwconsumer.go:336: Duration - 0 Days 7 Hrs 40 Mins
+2023/09/18 20:28:02.836188 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.836244 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-28 11:43:49 +0100 BST
+2023/09/18 20:28:02.836482 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-25 18:24:45 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.836499 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 20:28:02.836755 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 20:28:02.837023 ttxdwconsumer.go:327: Workflow Started 2023-08-25 19:25:01 +0100 BST Status CLOSED
+2023/09/18 20:28:02.837079 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.837077 +0100 BST
+2023/09/18 20:28:02.837290 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-26 09:01:49 +0100 BST
+2023/09/18 20:28:02.837303 ttxdwconsumer.go:336: Duration - 0 Days 13 Hrs 36 Mins
+2023/09/18 20:28:02.837371 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.837436 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-25 22:25:01 +0100 BST
+2023/09/18 20:28:02.837771 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-26 09:01:49 +0100 BST. Workflow Target Met = false
+2023/09/18 20:28:02.837799 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 20:28:02.838213 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 20:28:02.838534 ttxdwconsumer.go:327: Workflow Started 2023-08-29 17:00:58 +0100 BST Status CLOSED
+2023/09/18 20:28:02.838585 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.838583 +0100 BST
+2023/09/18 20:28:02.838904 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-29 16:03:32 +0000 UTC
+2023/09/18 20:28:02.838918 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 20:28:02.838970 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.839026 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-18 17:00:58 +0100 BST
+2023/09/18 20:28:02.839281 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-29 16:03:32 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.839299 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 20:28:02.839573 ttxdwconsumer.go:226: Setting PATHALERT Workflow state for Patient 6072406157
+2023/09/18 20:28:02.839861 ttxdwconsumer.go:327: Workflow Started 2023-08-29 17:20:32 +0100 BST Status CLOSED
+2023/09/18 20:28:02.839902 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.8399 +0100 BST
+2023/09/18 20:28:02.840042 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-29 16:23:05 +0000 UTC
+2023/09/18 20:28:02.840051 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 20:28:02.840080 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.840112 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 01:20:32 +0100 BST
+2023/09/18 20:28:02.840246 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-29 16:23:05 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.840258 ttxdwconsumer.go:296: Workflow pathalert6072406157 is CLOSED
+2023/09/18 20:28:02.840518 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 20:28:02.840694 ttxdwconsumer.go:327: Workflow Started 2023-08-30 10:21:36 +0100 BST Status CLOSED
+2023/09/18 20:28:02.840722 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.840721 +0100 BST
+2023/09/18 20:28:02.840890 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 09:36:38 +0000 UTC
+2023/09/18 20:28:02.840897 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 15 Mins
+2023/09/18 20:28:02.840924 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.840951 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-19 10:21:36 +0100 BST
+2023/09/18 20:28:02.840958 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 20:28:02.840966 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 20:28:02.841206 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 20:28:02.841383 ttxdwconsumer.go:327: Workflow Started 2023-08-30 10:39:37 +0100 BST Status CLOSED
+2023/09/18 20:28:02.841420 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.841419 +0100 BST
+2023/09/18 20:28:02.841574 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 11:31:20 +0000 UTC
+2023/09/18 20:28:02.841581 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 51 Mins
+2023/09/18 20:28:02.841607 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.841636 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-19 10:39:37 +0100 BST
+2023/09/18 20:28:02.841641 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 20:28:02.841649 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 20:28:02.841761 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 9999999468
+2023/09/18 20:28:02.841896 ttxdwconsumer.go:327: Workflow Started 2023-08-30 14:34:22 +0100 BST Status CLOSED
+2023/09/18 20:28:02.841925 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.841924 +0100 BST
+2023/09/18 20:28:02.842638 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-08-30 13:39:22 +0000 UTC
+2023/09/18 20:28:02.842655 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 5 Mins
+2023/09/18 20:28:02.842704 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.842755 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 17:34:22 +0100 BST
+2023/09/18 20:28:02.842943 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-08-30 13:39:22 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.843022 ttxdwconsumer.go:296: Workflow radconsult9999999468 is CLOSED
+2023/09/18 20:28:02.843545 ttxdwconsumer.go:226: Setting RADCONSULT Workflow state for Patient 1111111111
+2023/09/18 20:28:02.843691 ttxdwconsumer.go:327: Workflow Started 2023-08-30 17:47:08 +0100 BST Status CLOSED
+2023/09/18 20:28:02.843718 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.843717 +0100 BST
+2023/09/18 20:28:02.843832 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 19:22:50 +0000 UTC
+2023/09/18 20:28:02.843838 ttxdwconsumer.go:336: Duration - 12 Days 2 Hrs 35 Mins
+2023/09/18 20:28:02.843865 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.843894 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-08-30 20:47:08 +0100 BST
+2023/09/18 20:28:02.844006 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-09-11 19:22:50 +0000 UTC. Workflow Target Met = false
+2023/09/18 20:28:02.844016 ttxdwconsumer.go:296: Workflow radconsult1111111111 is CLOSED
+2023/09/18 20:28:02.844240 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 20:28:02.844766 ttxdwconsumer.go:327: Workflow Started 2023-09-03 15:33:30 +0100 BST Status CLOSED
+2023/09/18 20:28:02.844805 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.844804 +0100 BST
+2023/09/18 20:28:02.844970 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-05 14:42:19 +0100 BST
+2023/09/18 20:28:02.844979 ttxdwconsumer.go:336: Duration - 1 Days 23 Hrs 8 Mins
+2023/09/18 20:28:02.845007 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.845037 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-23 15:33:30 +0100 BST
+2023/09/18 20:28:02.845044 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 20:28:02.845053 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 20:28:02.845240 ttxdwconsumer.go:226: Setting TOC Workflow state for Patient 6072406157
+2023/09/18 20:28:02.845434 ttxdwconsumer.go:327: Workflow Started 2023-09-09 09:47:48 +0100 BST Status CLOSED
+2023/09/18 20:28:02.845461 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.84546 +0100 BST
+2023/09/18 20:28:02.845617 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-09 08:52:24 +0000 UTC
+2023/09/18 20:28:02.845626 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 4 Mins
+2023/09/18 20:28:02.845657 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.845687 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-09-14 09:47:48 +0100 BST
+2023/09/18 20:28:02.845840 ttxdwconsumer.go:358: Workflow Latest Event Time 2023-09-09 08:52:24 +0000 UTC. Workflow Target Met = true
+2023/09/18 20:28:02.845850 ttxdwconsumer.go:296: Workflow toc6072406157 is CLOSED
+2023/09/18 20:28:02.846066 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 20:28:02.846243 ttxdwconsumer.go:327: Workflow Started 2023-09-11 20:25:32 +0100 BST Status CLOSED
+2023/09/18 20:28:02.846271 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.84627 +0100 BST
+2023/09/18 20:28:02.846441 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 19:52:17 +0000 UTC
+2023/09/18 20:28:02.846449 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 26 Mins
+2023/09/18 20:28:02.846476 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.846505 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-01 20:25:32 +0100 BST
+2023/09/18 20:28:02.846511 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 20:28:02.846520 ttxdwconsumer.go:296: Workflow d2a6072406157 is CLOSED
+2023/09/18 20:28:02.846793 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 9999999468
+2023/09/18 20:28:02.846996 ttxdwconsumer.go:327: Workflow Started 2023-09-11 21:09:53 +0100 BST Status CLOSED
+2023/09/18 20:28:02.847027 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.847026 +0100 BST
+2023/09/18 20:28:02.847205 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-11 21:43:10 +0000 UTC
+2023/09/18 20:28:02.847213 ttxdwconsumer.go:336: Duration - 0 Days 1 Hrs 33 Mins
+2023/09/18 20:28:02.847241 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.847270 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-01 21:09:53 +0100 BST
+2023/09/18 20:28:02.847276 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 20:28:02.847284 ttxdwconsumer.go:296: Workflow d2a9999999468 is CLOSED
+2023/09/18 20:28:02.847470 ttxdwconsumer.go:226: Setting D2A Workflow state for Patient 6072406157
+2023/09/18 20:28:02.847561 ttxdwconsumer.go:327: Workflow Started 2023-09-12 22:32:28 +0100 BST Status OPEN
+2023/09/18 20:28:02.847588 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.847587 +0100 BST
+2023/09/18 20:28:02.847595 ttxdwconsumer.go:336: Duration - 5 Days 21 Hrs 55 Mins
+2023/09/18 20:28:02.847623 ttxdwconsumer.go:342: Completion time 2023-10-02 22:32:28 +0100 BST
+2023/09/18 20:28:02.847631 ttxdwconsumer.go:347: Workflow Time Remaining : 338h4m25.15237s
+2023/09/18 20:28:02.847663 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.847695 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-02 22:32:28 +0100 BST
+2023/09/18 20:28:02.847700 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 20:28:02.847708 ttxdwconsumer.go:286: Workflow d2a6072406157 is OPEN
+2023/09/18 20:28:02.847714 ttxdwconsumer.go:381: No Escalate time defined for Workflow
+2023/09/18 20:28:02.848064 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 20:28:02.848356 ttxdwconsumer.go:327: Workflow Started 2023-09-12 23:00:30 +0100 BST Status CLOSED
+2023/09/18 20:28:02.848381 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.848381 +0100 BST
+2023/09/18 20:28:02.848639 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-12 23:03:05 +0100 BST
+2023/09/18 20:28:02.848645 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 2 Mins
+2023/09/18 20:28:02.848673 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.848702 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-02 23:00:30 +0100 BST
+2023/09/18 20:28:02.848707 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 20:28:02.848714 ttxdwconsumer.go:296: Workflow lac1111111111 is CLOSED
+2023/09/18 20:28:02.849036 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 20:28:02.849282 ttxdwconsumer.go:327: Workflow Started 2023-09-13 09:36:29 +0100 BST Status CLOSED
+2023/09/18 20:28:02.849308 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.849307 +0100 BST
+2023/09/18 20:28:02.849531 ttxdwconsumer.go:333: Workflow is Complete. Latest Event Time was 2023-09-13 09:11:05 +0000 UTC
+2023/09/18 20:28:02.849539 ttxdwconsumer.go:336: Duration - 0 Days 0 Hrs 34 Mins
+2023/09/18 20:28:02.849568 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.849598 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-03 09:36:29 +0100 BST
+2023/09/18 20:28:02.849604 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 20:28:02.849613 ttxdwconsumer.go:296: Workflow lac1111111111 is CLOSED
+2023/09/18 20:28:02.849970 ttxdwconsumer.go:226: Setting LAC Workflow state for Patient 1111111111
+2023/09/18 20:28:02.850280 ttxdwconsumer.go:327: Workflow Started 2023-09-13 10:21:29 +0100 BST Status OPEN
+2023/09/18 20:28:02.850308 ttxdwconsumer.go:330: Time Now 2023-09-18 20:28:02.850308 +0100 BST
+2023/09/18 20:28:02.850314 ttxdwconsumer.go:336: Duration - 5 Days 10 Hrs 6 Mins
+2023/09/18 20:28:02.850346 ttxdwconsumer.go:342: Completion time 2023-10-03 10:21:29 +0100 BST
+2023/09/18 20:28:02.850353 ttxdwconsumer.go:347: Workflow Time Remaining : 349h53m26.149648s
+2023/09/18 20:28:02.850387 ttxdwconsumer.go:351: Checking if Workflow is Overdue
+2023/09/18 20:28:02.850424 ttxdwconsumer.go:354: Workflow Complete By Date is 2023-10-03 10:21:29 +0100 BST
+2023/09/18 20:28:02.850430 ttxdwconsumer.go:365: Workflow is not overdue
+2023/09/18 20:28:02.850438 ttxdwconsumer.go:286: Workflow lac1111111111 is OPEN
+2023/09/18 20:28:02.850469 ttxdwconsumer.go:378: Workflow Start Time 2023-09-13T10:21:29+01:00 Worklow Escalate Time 2023-10-04 10:21:29 +0100 BST Workflow Escaleted = false
+2023/09/18 20:28:02.850476 tttmplts.go:87: Processing Template wfstate2t_tmplt
+2023/09/18 20:28:02.939266 ttproxy.go:149: Response Status Code 200
+2023/09/18 20:28:02.969281 ttgethandler.go:10: Processing new GET Request
+2023/09/18 20:28:02.969365 ttproxy.go:138: 	Request Query Params
+2023/09/18 20:28:02.969420 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/18 20:28:02.969440 ttgethandler.go:15: Path = /beta/spa/consumer/pathways
+2023/09/18 20:28:03.033661 ttproxy.go:149: Response Status Code 200
+2023/09/18 20:28:05.321229 ttgethandler.go:10: Processing new GET Request
+2023/09/18 20:28:05.321396 ttproxy.go:138: 	Request Query Params
+2023/09/18 20:28:05.321476 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/18 20:28:05.321504 ttgethandler.go:15: Path = /beta/spa/consumer/mysubs
+2023/09/18 20:28:05.388076 tttmplts.go:87: Processing Template subscriptions2t_tmplt
+2023/09/18 20:28:05.388865 ttproxy.go:149: Response Status Code 200
+2023/09/18 21:01:18.328650 ttserver.go:52: ICB Workflow Service stopped

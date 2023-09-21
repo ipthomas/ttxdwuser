@@ -1,0 +1,108 @@
+2023/09/11 17:08:12.369604 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/11 17:08:12.370070 ttdb.go:50: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/11 17:08:12.370184 ttdb.go:53: Opened Database
+2023/09/11 17:08:12.370220 ttserver.go:38: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/11 17:09:16.738747 ttgethandler.go:11: Processing new GET Request
+2023/09/11 17:09:16.739070 ttproxy.go:138: 	Request Query Params
+2023/09/11 17:09:16.739444 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac"
+}
+2023/09/11 17:09:16.739479 ttgethandler.go:16: Path = /api/state/workflow
+2023/09/11 17:09:17.090541 ttxdwconsumer.go:381: selected 1 Workflows for Pathway lac NHS 9999999468 Version 1
+2023/09/11 17:09:17.092983 ttproxy.go:149: Response Status Code 200
+2023/09/11 17:10:23.493789 ttserver.go:50: ICB Workflow Service stopped
+2023/09/11 17:10:25.769884 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/11 17:10:25.771680 ttdb.go:50: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/11 17:10:25.772453 ttdb.go:53: Opened Database
+2023/09/11 17:10:25.772623 ttserver.go:38: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/11 17:10:31.224271 ttgethandler.go:11: Processing new GET Request
+2023/09/11 17:10:31.225281 ttproxy.go:138: 	Request Query Params
+2023/09/11 17:10:31.231497 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac"
+}
+2023/09/11 17:10:31.231561 ttgethandler.go:16: Path = /api/state/workflow
+2023/09/11 17:10:31.454268 ttxdwconsumer.go:381: selected 1 Workflows for Pathway lac NHS 9999999468 Version 1
+2023/09/11 17:10:31.455644 ttproxy.go:149: Response Status Code 200
+2023/09/11 17:10:31.490744 ttgethandler.go:11: Processing new GET Request
+2023/09/11 17:10:31.490832 ttproxy.go:138: 	Request Query Params
+2023/09/11 17:10:31.490890 ttutil.go:140: 	{}
+2023/09/11 17:10:31.490915 ttgethandler.go:16: Path = /favicon.ico
+2023/09/11 17:10:31.491027 ttsysman.go:231: Retrieving favicon.ico
+2023/09/11 17:10:31.547004 ttproxy.go:149: Response Status Code 200
+2023/09/11 17:19:21.332873 ttserver.go:50: ICB Workflow Service stopped
+2023/09/11 17:19:23.682257 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/11 17:19:23.682681 ttdb.go:50: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/11 17:19:23.682802 ttdb.go:53: Opened Database
+2023/09/11 17:19:23.682846 ttserver.go:38: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/11 17:19:26.904766 ttgethandler.go:11: Processing new GET Request
+2023/09/11 17:19:26.905211 ttproxy.go:138: 	Request Query Params
+2023/09/11 17:19:26.905598 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac"
+}
+2023/09/11 17:19:26.905627 ttgethandler.go:16: Path = /api/state/workflow
+2023/09/11 17:19:27.209724 ttxdwconsumer.go:384: selected 1 Workflows for Pathway lac NHS 9999999468 Version 1
+2023/09/11 17:19:27.213749 ttproxy.go:149: Response Status Code 200
+2023/09/11 17:19:27.235333 ttgethandler.go:11: Processing new GET Request
+2023/09/11 17:19:27.235385 ttproxy.go:138: 	Request Query Params
+2023/09/11 17:19:27.235415 ttutil.go:140: 	{}
+2023/09/11 17:19:27.235434 ttgethandler.go:16: Path = /favicon.ico
+2023/09/11 17:19:27.235455 ttsysman.go:231: Retrieving favicon.ico
+2023/09/11 17:19:27.295954 ttproxy.go:149: Response Status Code 200
+2023/09/11 17:24:21.408043 ttgethandler.go:11: Processing new GET Request
+2023/09/11 17:24:21.408209 ttutil.go:70: Invalid query param Events
+2023/09/11 17:24:21.408263 ttproxy.go:138: 	Request Query Params
+2023/09/11 17:24:21.408332 ttutil.go:140: 	{
+  "Nhs": "9999999468"
+}
+2023/09/11 17:24:21.408433 ttgethandler.go:16: Path = /api/state/workflow
+2023/09/11 17:24:21.408838 ttproxy.go:149: Response Status Code 200
+2023/09/11 17:24:35.575303 ttgethandler.go:11: Processing new GET Request
+2023/09/11 17:24:35.575448 ttutil.go:70: Invalid query param Events
+2023/09/11 17:24:35.575549 ttproxy.go:138: 	Request Query Params
+2023/09/11 17:24:35.575647 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Vers": "1"
+}
+2023/09/11 17:24:35.575671 ttgethandler.go:16: Path = /api/state/workflow
+2023/09/11 17:24:35.575699 ttproxy.go:149: Response Status Code 200
+2023/09/11 17:24:51.832296 ttgethandler.go:11: Processing new GET Request
+2023/09/11 17:24:51.834031 ttproxy.go:138: 	Request Query Params
+2023/09/11 17:24:51.834110 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac",
+  "Vers": "1"
+}
+2023/09/11 17:24:51.835436 ttgethandler.go:16: Path = /api/state/events
+2023/09/11 17:24:51.898795 ttproxy.go:149: Response Status Code 200
+2023/09/11 18:57:21.328221 ttgethandler.go:11: Processing new GET Request
+2023/09/11 18:57:21.328373 ttproxy.go:138: 	Request Query Params
+2023/09/11 18:57:21.328445 ttutil.go:140: 	{
+  "Nhs": "9999999468",
+  "Pathway": "lac",
+  "Vers": "1"
+}
+2023/09/11 18:57:21.328475 ttgethandler.go:16: Path = /api/state/workflow
+2023/09/11 18:57:21.569885 ttxdwconsumer.go:384: selected 1 Workflows for Pathway lac NHS 9999999468 Version 1
+2023/09/11 18:57:21.572532 ttproxy.go:149: Response Status Code 200
+2023/09/11 20:22:20.531477 ttserver.go:50: ICB Workflow Service stopped

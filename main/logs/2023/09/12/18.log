@@ -1,0 +1,79 @@
+2023/09/12 18:28:27.607861 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/12 18:28:27.608388 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/12 18:28:27.608522 ttdb.go:54: Opened Database
+2023/09/12 18:28:27.608539 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/12 18:28:39.999192 ttgethandler.go:11: Processing new GET Request
+2023/09/12 18:28:39.999518 ttproxy.go:138: 	Request Query Params
+2023/09/12 18:28:39.999879 ttutil.go:140: 	{
+  "Nhs": "6072406157",
+  "Pathway": "lac",
+  "Vers": "1",
+  "Taskid": "2"
+}
+2023/09/12 18:28:39.999916 ttgethandler.go:16: Path = /spa/consumer/task
+2023/09/12 18:28:40.394704 tttmplts.go:78: Caching 21 Templates
+2023/09/12 18:28:40.400639 ttproxy.go:149: Response Status Code 200
+2023/09/12 18:28:40.432593 ttgethandler.go:11: Processing new GET Request
+2023/09/12 18:28:40.432650 ttproxy.go:138: 	Request Query Params
+2023/09/12 18:28:40.432687 ttutil.go:140: 	{}
+2023/09/12 18:28:40.432705 ttgethandler.go:16: Path = /favicon.ico
+2023/09/12 18:28:40.432717 ttsysman.go:231: Retrieving favicon.ico
+2023/09/12 18:28:40.498733 ttproxy.go:149: Response Status Code 200
+2023/09/12 18:29:34.196263 ttgethandler.go:11: Processing new GET Request
+2023/09/12 18:29:34.196477 ttproxy.go:138: 	Request Query Params
+2023/09/12 18:29:34.196571 ttutil.go:140: 	{
+  "Nhs": "6072406157",
+  "Pathway": "lac",
+  "Vers": "1",
+  "Taskid": "2"
+}
+2023/09/12 18:29:34.196612 ttgethandler.go:16: Path = /api/state/task
+2023/09/12 18:29:34.196697 ttproxy.go:105: Unsupported Consumer query path - /api/state/task
+2023/09/12 18:29:34.196736 ttproxy.go:105: Unsupported Consumer query path - /api/state/task
+2023/09/12 18:29:34.196780 ttproxy.go:149: Response Status Code 500
+2023/09/12 18:29:34.196839 ttproxy.go:151: 
+2023/09/12 18:29:34.196867 ttproxy.go:152: Response Headers
+2023/09/12 18:29:34.197097 ttutil.go:140: 	{
+  "Access-Control-Allow-Origin": "*",
+  "Content-Type": "",
+  "Server": "Workflow Service"
+}
+2023/09/12 18:29:34.197126 ttproxy.go:154: ----------------
+2023/09/12 18:29:34.197137 ttproxy.go:155: Response
+2023/09/12 18:29:34.197147 ttproxy.go:156: ----------------
+2023/09/12 18:29:34.197344 ttutil.go:140: 	{
+  "Host": "MacBook-Pro-3.lan",
+  "Path": "/api/state/task",
+  "Method": "GET",
+  "SourceIP": "[::1]:59326",
+  "ReqContentType": "",
+  "RspContentType": "",
+  "ResponseBody": "Unsupported Consumer query path - /api/state/task",
+  "StatusCode": 500,
+  "IsBase64": false,
+  "Timeout": 0
+}
+2023/09/12 18:29:34.197362 ttproxy.go:158: -------------
+2023/09/12 18:29:34.197373 ttproxy.go:160: Error Unsupported Consumer query path - /api/state/task
+2023/09/12 18:29:34.197383 ttproxy.go:161: -------------
+2023/09/12 18:29:56.027177 ttgethandler.go:11: Processing new GET Request
+2023/09/12 18:29:56.027324 ttproxy.go:138: 	Request Query Params
+2023/09/12 18:29:56.027455 ttutil.go:140: 	{
+  "Nhs": "6072406157",
+  "Pathway": "lac",
+  "Vers": "1",
+  "Taskid": "2"
+}
+2023/09/12 18:29:56.027492 ttgethandler.go:16: Path = /api/state/task/status
+2023/09/12 18:29:56.027568 ttsysman.go:123: Retrieving XDW Definition lac_def
+2023/09/12 18:29:56.182125 ttutil.go:173: Obtaining time Duration since - 2023-09-12T12:33:29Z
+2023/09/12 18:29:56.182183 ttutil.go:180: Duration - 4h56m27.182177s
+2023/09/12 18:29:56.182200 ttutil.go:192: Returning 0 Days 4 Hrs 56 Mins
+2023/09/12 18:29:56.182340 ttproxy.go:149: Response Status Code 200
+2023/09/12 19:21:44.807481 ttserver.go:52: ICB Workflow Service stopped

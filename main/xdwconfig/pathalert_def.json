@@ -1,0 +1,90 @@
+{
+    "ref": "pathalert_def",
+    "name": "Pathology Consultation",
+    "confidentialitycode": "Normal",
+    "startbytime": "hour(1)",
+    "completebytime": "hour(8)",
+    "expirationtime": "day(1)",
+    "completionBehavior": [{
+        "completion": {
+            "condition": "task(3)"
+        }
+    }],
+    "tasks": [
+        {   
+            "id": "1",
+            "tasktype": "TASK",
+            "name": "Consult_Request",
+            "description": "Request Pathology Consultation",
+            "expirationtime": "hour(2)",
+            "completebytime": "hour(1)",
+            "isskipable": false,
+            "completionBehavior": [
+              {
+                "completion": {
+                    "condition": "output(Path1_Request_Consult)"
+                }
+              }
+            ],
+            "output": [
+              {
+                "name": "Path1^^TypeCode_EPUT_2018",
+                "contenttype": "application/pdf",
+                "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+              }
+            ]
+        },
+        {   "id": "2",
+            "tasktype": "NOTIFICATION",
+            "name": "Consult_Claimed",
+            "description": "Claim Pathology Consultation Request",
+            "expirationtime": "hour(3)",
+            "completebytime": "hour(2)",
+            "isskipable": false,
+            "completionBehavior": [{
+                "completion": {
+                    "condition": "output(Path2_Consult_Claimed)"
+                }
+            }],
+            "input": [
+                {
+                    "name": "Path1^^TypeCode_EPUT_2018",
+                    "contenttype": "application/pdf",
+                    "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+                }
+            ],
+            "output": [
+                {
+                    "name": "Path2_Consult_Claimed",
+                    "contenttype": "text/plain",
+                    "accesstype": "URL"
+                }
+            ]
+        },
+        {   "id": "3",
+            "tasktype": "TASK",
+            "name": "Consult_Results",
+            "description": "Pathology Consultation Results",
+            "expirationtime": "day(1)",
+            "completebytime": "hour(8)",
+            "isskipable": false,
+            "completionBehavior": [{
+                "completion": {
+                    "condition": "output(Path3^^TypeCode_LPRES_2018)"
+                }
+            }],
+            "input": [
+                {
+                    "name": "Path2^^TypeCode_EPUT_2018",
+                    "contenttype": "text/plain",
+                    "accesstype": "URL"
+                }
+            ],
+            "output": [{
+                "name": "Path3^^TypeCode_EPUT_2018",
+                "contenttype": "application/pdf",
+                "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+            }]
+        }
+    ]
+} 

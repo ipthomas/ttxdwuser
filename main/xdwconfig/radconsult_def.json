@@ -1,0 +1,92 @@
+{
+    "ref": "radconsult_def",
+    "name": "Radiology Consultation",
+    "confidentialitycode": "Normal",
+    "startbytime": "hour(1)",
+    "completebytime": "hour(3)",
+    "expirationtime": "hour(4)",
+    "completionBehavior": [{
+        "completion": {
+            "condition": "task(3)"
+        }
+    }],
+    "tasks": [
+        {   
+            "id": "1",
+            "tasktype": "TASK",
+            "name": "Consult_Request",
+            "description": "Radiology Consultation Requested",
+            "expirationtime": "hour(2)",
+            "completebytime": "hour(1)",
+            "isskipable": false,
+            "completionBehavior": [{
+                "completion": {
+                    "condition": "task(2)"
+                }
+                }],
+            "output": [{
+                "name": "RAD1^^TypeCode_EPUT_2018",
+                "contenttype": "application/pdf",
+                "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+            }]
+        },
+        {
+            "id": "2",
+            "tasktype": "NOTIFICATION",
+            "name": "RAD2_Consult_Claimed",
+            "description": "Claim Radiology Consult",
+            "expirationtime": "hour(3)",
+            "completebytime": "hour(2)",
+            "isskipable": false,
+            "completionBehavior": [{
+                "completion": {
+                    "condition": "output(RAD2_Consult_Claimed)"
+                }
+                }],
+            "input": [
+                {
+                    "name": "RAD1^^TypeCode_EPUT_2018",
+                    "contenttype": "application/pdf",
+                    "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+                }
+            ],
+            "output": [
+                {
+                    "name": "RAD2_Consult_Claimed",
+                    "contenttype": "text/plain",
+                    "accesstype": "URL"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "tasktype": "TASK",
+            "name": "Consult_Results",
+            "description": "Radiology Consultation Results",
+            "expirationtime": "day(2)",
+            "completebytime": "day(1)",
+            "isskipable": false,
+            "completionBehavior": [
+                {
+                    "completion": {
+                        "condition": "output(RAD3^^TypeCode_EPUT_2018)"
+                    }
+                }
+            ],
+            "input": [
+                {
+                    "name": "RAD2^^TypeCode_EPUT_2018",
+                    "contenttype": "text/plain",
+                    "accesstype": "URL"
+                }
+            ],
+            "output": [
+                {
+                    "name": "RAD3^^TypeCode_EPUT_2018",
+                    "contenttype": "application/pdf",
+                    "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+                }
+            ]
+        }
+    ]
+}

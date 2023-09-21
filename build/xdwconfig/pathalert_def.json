@@ -1,0 +1,69 @@
+{
+    "ref": "pathalert_def",
+    "name": "Pathology Consultation",
+    "confidentialitycode": "Normal",
+    "startbytime": "hour(1)",
+    "completebytime": "hour(8)",
+    "expirationtime": "day(1)",
+    "completionBehavior": [{
+        "completion": {
+            "condition": "task(3)"
+        }
+    }],
+    "tasks": [
+        {   "id": "1",
+            "tasktype": "NOTIFICATION",
+            "name": "Path1_Consult Requested",
+            "description": "Create Pathology Consult Request",
+            "expirationtime": "hour(2)",
+            "completebytime": "hour(1)",
+            "isskipable": false,
+            "completionBehavior": [{
+                "completion": {
+                    "condition": "output(Path1_Request Consult)"
+                }}
+            ],
+            "output": [{
+                "name": "Path1_Request Consult",
+                "contenttype": "text/plain",
+                "accesstype": "URL"
+            }]
+        },
+        {   "id": "2",
+            "tasktype": "NOTIFICATION",
+            "name": "Path2_Consult Claimed",
+            "description": "Claim Pathology Consult Request",
+            "expirationtime": "hour(3)",
+            "completebytime": "hour(2)",
+            "isskipable": false,
+            "completionBehavior": [{
+                "completion": {
+                    "condition": "output(Path2_Consult Claimed)"
+                }
+            }],
+            "output": [{
+                "name": "Path2_Consult Claimed",
+                "contenttype": "text/plain",
+                "accesstype": "URL"
+            }]
+        },
+        {   "id": "3",
+            "tasktype": "TASK",
+            "name": "Path3_Lab_Result_Published",
+            "description": "Publish Findingd for Pathology Consult Request",
+            "expirationtime": "day(1)",
+            "completebytime": "hour(8)",
+            "isskipable": false,
+            "completionBehavior": [{
+                "completion": {
+                    "condition": "output(Path3^^TypeCode_LPRES_2018)"
+                }
+            }],
+            "output": [{
+                "name": "Path3^^TypeCode_LPRES_2018",
+                "contenttype": "application/pdf",
+                "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+            }]
+        }
+    ]
+} 

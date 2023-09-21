@@ -1,0 +1,423 @@
+2023/09/15 16:00:19.958763 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/15 16:00:19.959272 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/15 16:00:19.959393 ttdb.go:54: Opened Database
+2023/09/15 16:00:20.141840 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/15 16:00:20.208111 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/15 16:00:20.208162 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/15 16:00:20.274190 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/15 16:00:20.375531 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/15 16:00:20.375735 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/15 16:00:20.444807 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/15 16:00:20.513015 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/15 16:00:20.513165 ttdb.go:366: Persisted Template pdssearch_tmplt.html
+2023/09/15 16:00:20.578734 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/15 16:00:20.643775 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/15 16:00:20.643815 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/15 16:00:20.710063 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/15 16:00:20.775829 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/15 16:00:20.775895 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/15 16:00:20.842454 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/15 16:00:20.985268 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/15 16:00:20.985424 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/15 16:00:21.051855 ttdb.go:379: Persisting Template publishfile2t_tmplt
+2023/09/15 16:00:21.121071 ttdb.go:385: Persisted Template publishfile2t_tmplt
+2023/09/15 16:00:21.121112 ttdb.go:366: Persisted Template publishfile2t_tmplt.html
+2023/09/15 16:00:21.187249 ttdb.go:379: Persisting Template react_tmplt
+2023/09/15 16:00:21.252320 ttdb.go:385: Persisted Template react_tmplt
+2023/09/15 16:00:21.252393 ttdb.go:366: Persisted Template react_tmplt.html
+2023/09/15 16:00:21.318256 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/15 16:00:21.385843 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/15 16:00:21.385901 ttdb.go:366: Persisted Template pdsretrieve_tmplt.html
+2023/09/15 16:00:21.452229 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/15 16:00:21.522167 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/15 16:00:21.522308 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/15 16:00:21.589149 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/15 16:00:21.670303 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/15 16:00:21.670473 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/15 16:00:21.737873 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/15 16:00:21.820995 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/15 16:00:21.821043 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/15 16:00:21.886911 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/15 16:00:21.961142 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/15 16:00:21.961199 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/15 16:00:22.029248 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/15 16:00:22.097591 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/15 16:00:22.097655 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/15 16:00:22.168064 ttdb.go:379: Persisting Template error_tmplt
+2023/09/15 16:00:22.233496 ttdb.go:385: Persisted Template error_tmplt
+2023/09/15 16:00:22.233554 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/15 16:00:22.300951 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/15 16:00:22.370366 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/15 16:00:22.370400 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/15 16:00:22.436908 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/15 16:00:22.508102 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/15 16:00:22.508257 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/15 16:00:22.578041 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/15 16:00:22.646435 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/15 16:00:22.646564 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/15 16:00:22.713243 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/15 16:00:22.785317 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/15 16:00:22.785442 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/15 16:00:22.851210 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/15 16:00:22.921913 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/15 16:00:22.921992 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/15 16:00:22.988224 ttdb.go:379: Persisting Template events_tmplt
+2023/09/15 16:00:23.059274 ttdb.go:385: Persisted Template events_tmplt
+2023/09/15 16:00:23.059308 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/15 16:00:23.126172 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/15 16:00:23.191257 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/15 16:00:23.191282 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/15 16:00:23.191429 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/15 16:00:34.985122 ttgethandler.go:10: Processing new GET Request
+2023/09/15 16:00:34.985353 ttproxy.go:138: 	Request Query Params
+2023/09/15 16:00:34.985792 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9000000009"
+}
+2023/09/15 16:00:34.985841 ttgethandler.go:15: Path = /beta/spa/consumer/patient
+2023/09/15 16:00:34.985888 tttmplts.go:37: CGL Worker starting
+2023/09/15 16:00:34.985900 tttmplts.go:30: PIXm Worker starting
+2023/09/15 16:00:34.986733 tthttp.go:15: Creating PIXm PDQ - Server URL http://lac-demo-01.tianispirit.co.uk:8081/SpiritPIXFhir/r4/Patient?identifier=2.16.840.1.113883.2.1.4.1%7C9000000009
+2023/09/15 16:00:34.987962 tthttp.go:160: Request Headers 
+map[Content-Type:[application/json]]
+2023/09/15 16:00:34.987991 tthttp.go:160: Request Headers 
+map[Accept:[application/json] X-Api-Key:[FNhb#OhxWiEiMdf+@6085k5Zmt] X-Api-Secret:[9710ea0fb4ffb5d56c2e62c71c30bdfhjsyr56a79d]]
+2023/09/15 16:00:35.168809 tthttp.go:174: Server Response - Status Code 404 
+{"errors":[{"message":"No clients matching nhs number 9000000009","path":"\/"}],"status":404}
+2023/09/15 16:00:35.171310 ttutil.go:140: 	{
+  "data": {
+    "client": {
+      "basicDetails": {
+        "address": {},
+        "name": {}
+      },
+      "bbvInformation": {},
+      "drugTestResults": {
+        "results": {}
+      },
+      "riskInformation": {
+        "mentalHealthDomain": {},
+        "riskOfHarmToSelfDomain": {},
+        "socialDomain": {},
+        "substanceMisuseDomain": {}
+      },
+      "safeguardingInformation": {}
+    },
+    "keyWorker": {
+      "name": {}
+    }
+  }
+}
+2023/09/15 16:00:35.171377 tttmplts.go:39: CGL Worker done
+2023/09/15 16:00:35.171399 tttmplts.go:40: CGL Worker Status Code 404
+2023/09/15 16:00:39.987783 tthttp.go:174: Server Response - Status Code 0 
+2023/09/15 16:00:39.988433 tttmplts.go:32: PIXm Worker done
+2023/09/15 16:00:39.988514 tttmplts.go:33: PIXm Worker Status Code 408
+2023/09/15 16:00:39.988854 tthttp.go:56: Creating PDS Search Request - Server URL https://sandbox.api.service.nhs.uk/personal-demographics/FHIR/R4/Patient/9000000009
+2023/09/15 16:00:39.989067 tthttp.go:160: Request Headers 
+map[Accept:[*/*] Content-Type:[application/json] X-Request-Id:[ff3523c7-e891-4e1a-a4d6-e1f4f0d5f2d2]]
+2023/09/15 16:00:40.317453 tthttp.go:174: Server Response - Status Code 200 
+{"resourceType":"Patient","id":"9000000009","identifier":[{"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9000000009","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSNumberVerificationStatus","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-NHSNumberVerificationStatus","version":"1.0.0","code":"01","display":"Number present and verified"}]}}]}],"meta":{"versionId":"2","security":[{"system":"http://terminology.hl7.org/CodeSystem/v3-Confidentiality","code":"U","display":"unrestricted"}]},"name":[{"id":"123","use":"usual","period":{"start":"2020-01-01","end":"2021-12-31"},"given":["Jane"],"family":"Smith","prefix":["Mrs"],"suffix":["MBE"]}],"gender":"female","birthDate":"2010-10-22","multipleBirthInteger":1,"deceasedDateTime":"2010-10-22T00:00:00+00:00","generalPractitioner":[{"id":"254406A3","type":"Organization","identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y12345","period":{"start":"2020-01-01","end":"2021-12-31"}}}],"managingOrganization":{"type":"Organization","identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y12345","period":{"start":"2020-01-01","end":"2021-12-31"}}},"extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy","valueReference":{"identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y12345"}}},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization","valueReference":{"identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y23456"}}},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier","valueReference":{"identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y34567"}}},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus","extension":[{"url":"deathNotificationStatus","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus","version":"1.0.0","code":"2","display":"Formal - death notice received from Registrar of Deaths"}]}},{"url":"systemEffectiveDate","valueDateTime":"2010-10-22T00:00:00+00:00"}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication","extension":[{"url":"language","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage","version":"1.0.0","code":"fr","display":"French"}]}},{"url":"interpreterRequired","valueBoolean":true}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference","extension":[{"url":"PreferredWrittenCommunicationFormat","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat","code":"12","display":"Braille"}]}},{"url":"PreferredContactMethod","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod","code":"1","display":"Letter"}]}},{"url":"PreferredContactTimes","valueString":"Not after 7pm"}]},{"url":"http://hl7.org/fhir/StructureDefinition/patient-birthPlace","valueAddress":{"city":"Manchester","district":"Greater Manchester","country":"GBR"}},{"url":"https://fhir.nhs.uk/StructureDefinition/Extension-PDS-RemovalFromRegistration","extension":[{"url":"removalFromRegistrationCode","valueCodeableConcept":{"coding":[{"system":"https://fhir.nhs.uk/CodeSystem/PDS-RemovalReasonExitCode","code":"SCT","display":"Transferred to Scotland"}]}},{"url":"effectiveTime","valuePeriod":{"start":"2020-01-01T00:00:00+00:00","end":"2021-12-31T00:00:00+00:00"}}]}],"telecom":[{"id":"789","period":{"start":"2020-01-01","end":"2021-12-31"},"system":"phone","value":"01632960587","use":"home"},{"id":"790","period":{"start":"2019-01-01","end":"2022-12-31"},"system":"email","value":"jane.smith@example.com","use":"home"},{"id":"OC789","period":{"start":"2020-01-01","end":"2021-12-31"},"system":"other","value":"01632960587","use":"home","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem","code":"textphone","display":"Minicom (Textphone)"}}]}],"contact":[{"id":"C123","period":{"start":"2020-01-01","end":"2021-12-31"},"relationship":[{"coding":[{"system":"http://terminology.hl7.org/CodeSystem/v2-0131","code":"C","display":"Emergency Contact"}]}],"telecom":[{"system":"phone","value":"01632960587"}]}],"address":[{"id":"456","period":{"start":"2020-01-01","end":"2021-12-31"},"use":"home","line":["1 Trevelyan Square","Boar Lane","City Centre","Leeds","West Yorkshire"],"postalCode":"LS1 6AE","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"PAF"}},{"url":"value","valueString":"12345678"}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"UPRN"}},{"url":"value","valueString":"123456789012"}]}]},{"id":"T456","period":{"start":"2020-01-01","end":"2021-12-31"},"use":"temp","text":"Student Accommodation","line":["1 Trevelyan Square","Boar Lane","City Centre","Leeds","West Yorkshire"],"postalCode":"LS1 6AE","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"PAF"}},{"url":"value","valueString":"12345678"}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"UPRN"}},{"url":"value","valueString":"123456789012"}]}]}]}
+2023/09/15 16:00:40.515002 tttmplts.go:100: Caching 24 Templates
+2023/09/15 16:00:40.520186 tttmplts.go:87: Processing Template allpatientSrvs_tmplt
+2023/09/15 16:00:40.523730 tttmplts.go:93: template: pdsretrieve_tmplt:135:30: executing "pdsretrieve_tmplt" at <.Display>: can't evaluate field Display in type struct { URL string "json:\"url,omitempty\""; ValueCoding struct { System string "json:\"system,omitempty\""; Code string "json:\"code,omitempty\""; Display string "json:\"display,omitempty\"" } "json:\"valueCoding,omitempty\"" }
+2023/09/15 16:00:40.523922 ttproxy.go:105: template: pdsretrieve_tmplt:135:30: executing "pdsretrieve_tmplt" at <.Display>: can't evaluate field Display in type struct { URL string "json:\"url,omitempty\""; ValueCoding struct { System string "json:\"system,omitempty\""; Code string "json:\"code,omitempty\""; Display string "json:\"display,omitempty\"" } "json:\"valueCoding,omitempty\"" }
+2023/09/15 16:00:40.523969 ttproxy.go:149: Response Status Code 500
+2023/09/15 16:00:40.523984 ttproxy.go:151: 
+2023/09/15 16:00:40.523995 ttproxy.go:152: Response Headers
+2023/09/15 16:00:40.524086 ttutil.go:140: 	{
+  "Access-Control-Allow-Origin": "*",
+  "Content-Type": "",
+  "Server": "Workflow Service"
+}
+2023/09/15 16:00:40.524111 ttproxy.go:154: ----------------
+2023/09/15 16:00:40.524121 ttproxy.go:155: Response
+2023/09/15 16:00:40.524129 ttproxy.go:156: ----------------
+2023/09/15 16:00:40.524413 ttutil.go:140: 	{
+  "Host": "MacBook-Pro-3.lan",
+  "Path": "/beta/spa/consumer/patient",
+  "Method": "GET",
+  "SourceIP": "[::1]:54992",
+  "ReqContentType": "",
+  "RspContentType": "",
+  "ResponseBody": "{\"resourceType\":\"Patient\",\"id\":\"9000000009\",\"identifier\":[{\"system\":\"https://fhir.nhs.uk/Id/nhs-number\",\"value\":\"9000000009\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSNumberVerificationStatus\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-NHSNumberVerificationStatus\",\"version\":\"1.0.0\",\"code\":\"01\",\"display\":\"Number present and verified\"}]}}]}],\"meta\":{\"versionId\":\"2\",\"security\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v3-Confidentiality\",\"code\":\"U\",\"display\":\"unrestricted\"}]},\"name\":[{\"id\":\"123\",\"use\":\"usual\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"},\"given\":[\"Jane\"],\"family\":\"Smith\",\"prefix\":[\"Mrs\"],\"suffix\":[\"MBE\"]}],\"gender\":\"female\",\"birthDate\":\"2010-10-22\",\"multipleBirthInteger\":1,\"deceasedDateTime\":\"2010-10-22T00:00:00+00:00\",\"generalPractitioner\":[{\"id\":\"254406A3\",\"type\":\"Organization\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}}],\"managingOrganization\":{\"type\":\"Organization\",\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"}}},\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y12345\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y23456\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier\",\"valueReference\":{\"identifier\":{\"system\":\"https://fhir.nhs.uk/Id/ods-organization-code\",\"value\":\"Y34567\"}}},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus\",\"extension\":[{\"url\":\"deathNotificationStatus\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus\",\"version\":\"1.0.0\",\"code\":\"2\",\"display\":\"Formal - death notice received from Registrar of Deaths\"}]}},{\"url\":\"systemEffectiveDate\",\"valueDateTime\":\"2010-10-22T00:00:00+00:00\"}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication\",\"extension\":[{\"url\":\"language\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage\",\"version\":\"1.0.0\",\"code\":\"fr\",\"display\":\"French\"}]}},{\"url\":\"interpreterRequired\",\"valueBoolean\":true}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference\",\"extension\":[{\"url\":\"PreferredWrittenCommunicationFormat\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat\",\"code\":\"12\",\"display\":\"Braille\"}]}},{\"url\":\"PreferredContactMethod\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod\",\"code\":\"1\",\"display\":\"Letter\"}]}},{\"url\":\"PreferredContactTimes\",\"valueString\":\"Not after 7pm\"}]},{\"url\":\"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\"valueAddress\":{\"city\":\"Manchester\",\"district\":\"Greater Manchester\",\"country\":\"GBR\"}},{\"url\":\"https://fhir.nhs.uk/StructureDefinition/Extension-PDS-RemovalFromRegistration\",\"extension\":[{\"url\":\"removalFromRegistrationCode\",\"valueCodeableConcept\":{\"coding\":[{\"system\":\"https://fhir.nhs.uk/CodeSystem/PDS-RemovalReasonExitCode\",\"code\":\"SCT\",\"display\":\"Transferred to Scotland\"}]}},{\"url\":\"effectiveTime\",\"valuePeriod\":{\"start\":\"2020-01-01T00:00:00+00:00\",\"end\":\"2021-12-31T00:00:00+00:00\"}}]}],\"telecom\":[{\"id\":\"789\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"},\"system\":\"phone\",\"value\":\"01632960587\",\"use\":\"home\"},{\"id\":\"790\",\"period\":{\"start\":\"2019-01-01\",\"end\":\"2022-12-31\"},\"system\":\"email\",\"value\":\"jane.smith@example.com\",\"use\":\"home\"},{\"id\":\"OC789\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"},\"system\":\"other\",\"value\":\"01632960587\",\"use\":\"home\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem\",\"code\":\"textphone\",\"display\":\"Minicom (Textphone)\"}}]}],\"contact\":[{\"id\":\"C123\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"},\"relationship\":[{\"coding\":[{\"system\":\"http://terminology.hl7.org/CodeSystem/v2-0131\",\"code\":\"C\",\"display\":\"Emergency Contact\"}]}],\"telecom\":[{\"system\":\"phone\",\"value\":\"01632960587\"}]}],\"address\":[{\"id\":\"456\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"},\"use\":\"home\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"UPRN\"}},{\"url\":\"value\",\"valueString\":\"123456789012\"}]}]},{\"id\":\"T456\",\"period\":{\"start\":\"2020-01-01\",\"end\":\"2021-12-31\"},\"use\":\"temp\",\"text\":\"Student Accommodation\",\"line\":[\"1 Trevelyan Square\",\"Boar Lane\",\"City Centre\",\"Leeds\",\"West Yorkshire\"],\"postalCode\":\"LS1 6AE\",\"extension\":[{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"PAF\"}},{\"url\":\"value\",\"valueString\":\"12345678\"}]},{\"url\":\"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey\",\"extension\":[{\"url\":\"type\",\"valueCoding\":{\"system\":\"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType\",\"code\":\"UPRN\"}},{\"url\":\"value\",\"valueString\":\"123456789012\"}]}]}]}",
+  "StatusCode": 500,
+  "IsBase64": false,
+  "Timeout": 0
+}
+2023/09/15 16:00:40.524500 ttproxy.go:158: -------------
+2023/09/15 16:00:40.524516 ttproxy.go:160: Error template: pdsretrieve_tmplt:135:30: executing "pdsretrieve_tmplt" at <.Display>: can't evaluate field Display in type struct { URL string "json:\"url,omitempty\""; ValueCoding struct { System string "json:\"system,omitempty\""; Code string "json:\"code,omitempty\""; Display string "json:\"display,omitempty\"" } "json:\"valueCoding,omitempty\"" }
+2023/09/15 16:00:40.524524 ttproxy.go:161: -------------
+2023/09/15 16:01:26.084913 ttserver.go:52: ICB Workflow Service stopped
+2023/09/15 16:01:27.607535 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/15 16:01:27.608006 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/15 16:01:27.608148 ttdb.go:54: Opened Database
+2023/09/15 16:01:27.780969 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/15 16:01:27.847560 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/15 16:01:27.847684 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/15 16:01:27.910940 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/15 16:01:28.009793 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/15 16:01:28.009853 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/15 16:01:28.073112 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/15 16:01:28.140288 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/15 16:01:28.140435 ttdb.go:366: Persisted Template pdssearch_tmplt.html
+2023/09/15 16:01:28.203263 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/15 16:01:28.268093 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/15 16:01:28.268231 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/15 16:01:28.331592 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/15 16:01:28.395589 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/15 16:01:28.395666 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/15 16:01:28.459267 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/15 16:01:28.576599 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/15 16:01:28.576703 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/15 16:01:28.640085 ttdb.go:379: Persisting Template publishfile2t_tmplt
+2023/09/15 16:01:28.705982 ttdb.go:385: Persisted Template publishfile2t_tmplt
+2023/09/15 16:01:28.706098 ttdb.go:366: Persisted Template publishfile2t_tmplt.html
+2023/09/15 16:01:28.772613 ttdb.go:379: Persisting Template react_tmplt
+2023/09/15 16:01:28.834080 ttdb.go:385: Persisted Template react_tmplt
+2023/09/15 16:01:28.834287 ttdb.go:366: Persisted Template react_tmplt.html
+2023/09/15 16:01:28.901891 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/15 16:01:28.970060 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/15 16:01:28.970287 ttdb.go:366: Persisted Template pdsretrieve_tmplt.html
+2023/09/15 16:01:29.038632 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/15 16:01:29.103654 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/15 16:01:29.103845 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/15 16:01:29.166714 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/15 16:01:29.245187 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/15 16:01:29.245223 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/15 16:01:29.309520 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/15 16:01:29.389785 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/15 16:01:29.389805 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/15 16:01:29.453003 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/15 16:01:29.532676 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/15 16:01:29.532766 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/15 16:01:29.607134 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/15 16:01:29.671641 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/15 16:01:29.671697 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/15 16:01:29.737643 ttdb.go:379: Persisting Template error_tmplt
+2023/09/15 16:01:29.801376 ttdb.go:385: Persisted Template error_tmplt
+2023/09/15 16:01:29.801525 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/15 16:01:29.866717 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/15 16:01:29.943749 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/15 16:01:29.943884 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/15 16:01:30.007845 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/15 16:01:30.079211 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/15 16:01:30.079368 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/15 16:01:30.145337 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/15 16:01:30.220597 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/15 16:01:30.220738 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/15 16:01:30.286836 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/15 16:01:30.359783 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/15 16:01:30.359926 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/15 16:01:30.424836 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/15 16:01:30.494001 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/15 16:01:30.494161 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/15 16:01:30.557756 ttdb.go:379: Persisting Template events_tmplt
+2023/09/15 16:01:30.629312 ttdb.go:385: Persisted Template events_tmplt
+2023/09/15 16:01:30.629474 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/15 16:01:30.696588 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/15 16:01:30.761515 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/15 16:01:30.761655 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/15 16:01:30.761941 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/15 16:01:33.951322 ttgethandler.go:10: Processing new GET Request
+2023/09/15 16:01:33.951414 ttproxy.go:138: 	Request Query Params
+2023/09/15 16:01:33.951646 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9000000009"
+}
+2023/09/15 16:01:33.951665 ttgethandler.go:15: Path = /beta/spa/consumer/patient
+2023/09/15 16:01:33.951686 tttmplts.go:37: CGL Worker starting
+2023/09/15 16:01:33.951692 tttmplts.go:30: PIXm Worker starting
+2023/09/15 16:01:33.951814 tthttp.go:15: Creating PIXm PDQ - Server URL http://lac-demo-01.tianispirit.co.uk:8081/SpiritPIXFhir/r4/Patient?identifier=2.16.840.1.113883.2.1.4.1%7C9000000009
+2023/09/15 16:01:33.953042 tthttp.go:160: Request Headers 
+map[Content-Type:[application/json]]
+2023/09/15 16:01:33.953122 tthttp.go:160: Request Headers 
+map[Accept:[application/json] X-Api-Key:[FNhb#OhxWiEiMdf+@6085k5Zmt] X-Api-Secret:[9710ea0fb4ffb5d56c2e62c71c30bdfhjsyr56a79d]]
+2023/09/15 16:01:34.128778 tthttp.go:174: Server Response - Status Code 404 
+{"errors":[{"message":"No clients matching nhs number 9000000009","path":"\/"}],"status":404}
+2023/09/15 16:01:34.131975 ttutil.go:140: 	{
+  "data": {
+    "client": {
+      "basicDetails": {
+        "address": {},
+        "name": {}
+      },
+      "bbvInformation": {},
+      "drugTestResults": {
+        "results": {}
+      },
+      "riskInformation": {
+        "mentalHealthDomain": {},
+        "riskOfHarmToSelfDomain": {},
+        "socialDomain": {},
+        "substanceMisuseDomain": {}
+      },
+      "safeguardingInformation": {}
+    },
+    "keyWorker": {
+      "name": {}
+    }
+  }
+}
+2023/09/15 16:01:34.132069 tttmplts.go:39: CGL Worker done
+2023/09/15 16:01:34.132088 tttmplts.go:40: CGL Worker Status Code 404
+2023/09/15 16:01:38.954021 tthttp.go:174: Server Response - Status Code 0 
+2023/09/15 16:01:38.954536 tttmplts.go:32: PIXm Worker done
+2023/09/15 16:01:38.954620 tttmplts.go:33: PIXm Worker Status Code 408
+2023/09/15 16:01:38.955119 tthttp.go:56: Creating PDS Search Request - Server URL https://sandbox.api.service.nhs.uk/personal-demographics/FHIR/R4/Patient/9000000009
+2023/09/15 16:01:38.955327 tthttp.go:160: Request Headers 
+map[Accept:[*/*] Content-Type:[application/json] X-Request-Id:[55ae206c-95d6-4d88-a9ee-9c9adc0868b6]]
+2023/09/15 16:01:39.163322 tthttp.go:174: Server Response - Status Code 200 
+{"resourceType":"Patient","id":"9000000009","identifier":[{"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9000000009","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSNumberVerificationStatus","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-NHSNumberVerificationStatus","version":"1.0.0","code":"01","display":"Number present and verified"}]}}]}],"meta":{"versionId":"2","security":[{"system":"http://terminology.hl7.org/CodeSystem/v3-Confidentiality","code":"U","display":"unrestricted"}]},"name":[{"id":"123","use":"usual","period":{"start":"2020-01-01","end":"2021-12-31"},"given":["Jane"],"family":"Smith","prefix":["Mrs"],"suffix":["MBE"]}],"gender":"female","birthDate":"2010-10-22","multipleBirthInteger":1,"deceasedDateTime":"2010-10-22T00:00:00+00:00","generalPractitioner":[{"id":"254406A3","type":"Organization","identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y12345","period":{"start":"2020-01-01","end":"2021-12-31"}}}],"managingOrganization":{"type":"Organization","identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y12345","period":{"start":"2020-01-01","end":"2021-12-31"}}},"extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy","valueReference":{"identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y12345"}}},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization","valueReference":{"identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y23456"}}},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier","valueReference":{"identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y34567"}}},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus","extension":[{"url":"deathNotificationStatus","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus","version":"1.0.0","code":"2","display":"Formal - death notice received from Registrar of Deaths"}]}},{"url":"systemEffectiveDate","valueDateTime":"2010-10-22T00:00:00+00:00"}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication","extension":[{"url":"language","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage","version":"1.0.0","code":"fr","display":"French"}]}},{"url":"interpreterRequired","valueBoolean":true}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference","extension":[{"url":"PreferredWrittenCommunicationFormat","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat","code":"12","display":"Braille"}]}},{"url":"PreferredContactMethod","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod","code":"1","display":"Letter"}]}},{"url":"PreferredContactTimes","valueString":"Not after 7pm"}]},{"url":"http://hl7.org/fhir/StructureDefinition/patient-birthPlace","valueAddress":{"city":"Manchester","district":"Greater Manchester","country":"GBR"}},{"url":"https://fhir.nhs.uk/StructureDefinition/Extension-PDS-RemovalFromRegistration","extension":[{"url":"removalFromRegistrationCode","valueCodeableConcept":{"coding":[{"system":"https://fhir.nhs.uk/CodeSystem/PDS-RemovalReasonExitCode","code":"SCT","display":"Transferred to Scotland"}]}},{"url":"effectiveTime","valuePeriod":{"start":"2020-01-01T00:00:00+00:00","end":"2021-12-31T00:00:00+00:00"}}]}],"telecom":[{"id":"789","period":{"start":"2020-01-01","end":"2021-12-31"},"system":"phone","value":"01632960587","use":"home"},{"id":"790","period":{"start":"2019-01-01","end":"2022-12-31"},"system":"email","value":"jane.smith@example.com","use":"home"},{"id":"OC789","period":{"start":"2020-01-01","end":"2021-12-31"},"system":"other","value":"01632960587","use":"home","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem","code":"textphone","display":"Minicom (Textphone)"}}]}],"contact":[{"id":"C123","period":{"start":"2020-01-01","end":"2021-12-31"},"relationship":[{"coding":[{"system":"http://terminology.hl7.org/CodeSystem/v2-0131","code":"C","display":"Emergency Contact"}]}],"telecom":[{"system":"phone","value":"01632960587"}]}],"address":[{"id":"456","period":{"start":"2020-01-01","end":"2021-12-31"},"use":"home","line":["1 Trevelyan Square","Boar Lane","City Centre","Leeds","West Yorkshire"],"postalCode":"LS1 6AE","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"PAF"}},{"url":"value","valueString":"12345678"}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"UPRN"}},{"url":"value","valueString":"123456789012"}]}]},{"id":"T456","period":{"start":"2020-01-01","end":"2021-12-31"},"use":"temp","text":"Student Accommodation","line":["1 Trevelyan Square","Boar Lane","City Centre","Leeds","West Yorkshire"],"postalCode":"LS1 6AE","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"PAF"}},{"url":"value","valueString":"12345678"}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"UPRN"}},{"url":"value","valueString":"123456789012"}]}]}]}
+2023/09/15 16:01:39.355640 tttmplts.go:100: Caching 24 Templates
+2023/09/15 16:01:39.366391 tttmplts.go:87: Processing Template allpatientSrvs_tmplt
+2023/09/15 16:01:39.372479 ttproxy.go:149: Response Status Code 200
+2023/09/15 16:24:17.409114 ttserver.go:52: ICB Workflow Service stopped
+2023/09/15 16:24:19.725646 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/15 16:24:19.726154 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/15 16:24:19.726291 ttdb.go:54: Opened Database
+2023/09/15 16:24:19.946291 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/15 16:24:20.009766 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/15 16:24:20.009809 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/15 16:24:20.072880 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/15 16:24:20.169737 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/15 16:24:20.169911 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/15 16:24:20.232276 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/15 16:24:20.297714 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/15 16:24:20.297855 ttdb.go:366: Persisted Template pdssearch_tmplt.html
+2023/09/15 16:24:20.362344 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/15 16:24:20.426907 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/15 16:24:20.427082 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/15 16:24:20.492401 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/15 16:24:20.562511 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/15 16:24:20.562695 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/15 16:24:20.629945 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/15 16:24:20.752950 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/15 16:24:20.753159 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/15 16:24:20.817649 ttdb.go:379: Persisting Template publishfile2t_tmplt
+2023/09/15 16:24:20.888727 ttdb.go:385: Persisted Template publishfile2t_tmplt
+2023/09/15 16:24:20.888881 ttdb.go:366: Persisted Template publishfile2t_tmplt.html
+2023/09/15 16:24:20.951312 ttdb.go:379: Persisting Template react_tmplt
+2023/09/15 16:24:21.016170 ttdb.go:385: Persisted Template react_tmplt
+2023/09/15 16:24:21.016198 ttdb.go:366: Persisted Template react_tmplt.html
+2023/09/15 16:24:21.079231 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/15 16:24:21.147182 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/15 16:24:21.147265 ttdb.go:366: Persisted Template pdsretrieve_tmplt.html
+2023/09/15 16:24:21.210722 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/15 16:24:21.273125 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/15 16:24:21.273179 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/15 16:24:21.337610 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/15 16:24:21.414331 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/15 16:24:21.414440 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/15 16:24:21.476994 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/15 16:24:21.557062 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/15 16:24:21.557255 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/15 16:24:21.619613 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/15 16:24:21.689319 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/15 16:24:21.689408 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/15 16:24:21.752656 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/15 16:24:21.818096 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/15 16:24:21.818259 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/15 16:24:21.880815 ttdb.go:379: Persisting Template error_tmplt
+2023/09/15 16:24:21.945026 ttdb.go:385: Persisted Template error_tmplt
+2023/09/15 16:24:21.945257 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/15 16:24:22.008677 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/15 16:24:22.073229 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/15 16:24:22.073365 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/15 16:24:22.135903 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/15 16:24:22.203427 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/15 16:24:22.203466 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/15 16:24:22.266893 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/15 16:24:22.330575 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/15 16:24:22.330605 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/15 16:24:22.393070 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/15 16:24:22.458166 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/15 16:24:22.458239 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/15 16:24:22.521553 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/15 16:24:22.593535 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/15 16:24:22.593607 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/15 16:24:22.656387 ttdb.go:379: Persisting Template events_tmplt
+2023/09/15 16:24:22.721317 ttdb.go:385: Persisted Template events_tmplt
+2023/09/15 16:24:22.721349 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/15 16:24:22.783527 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/15 16:24:22.847720 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/15 16:24:22.847889 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/15 16:24:22.848230 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/15 16:24:25.828871 ttgethandler.go:10: Processing new GET Request
+2023/09/15 16:24:25.829065 ttproxy.go:138: 	Request Query Params
+2023/09/15 16:24:25.829439 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical",
+  "Nhs": "9000000009"
+}
+2023/09/15 16:24:25.829476 ttgethandler.go:15: Path = /beta/spa/consumer/patient
+2023/09/15 16:24:25.829510 tttmplts.go:37: CGL Worker starting
+2023/09/15 16:24:25.829513 tttmplts.go:30: PIXm Worker starting
+2023/09/15 16:24:25.829987 tthttp.go:15: Creating PIXm PDQ - Server URL http://lac-demo-01.tianispirit.co.uk:8081/SpiritPIXFhir/r4/Patient?identifier=2.16.840.1.113883.2.1.4.1%7C9000000009
+2023/09/15 16:24:25.831247 tthttp.go:160: Request Headers 
+map[Content-Type:[application/json]]
+2023/09/15 16:24:25.831263 tthttp.go:160: Request Headers 
+map[Accept:[application/json] X-Api-Key:[FNhb#OhxWiEiMdf+@6085k5Zmt] X-Api-Secret:[9710ea0fb4ffb5d56c2e62c71c30bdfhjsyr56a79d]]
+2023/09/15 16:24:26.026693 tthttp.go:174: Server Response - Status Code 404 
+{"errors":[{"message":"No clients matching nhs number 9000000009","path":"\/"}],"status":404}
+2023/09/15 16:24:26.029756 ttutil.go:140: 	{
+  "data": {
+    "client": {
+      "basicDetails": {
+        "address": {},
+        "name": {}
+      },
+      "bbvInformation": {},
+      "drugTestResults": {
+        "results": {}
+      },
+      "riskInformation": {
+        "mentalHealthDomain": {},
+        "riskOfHarmToSelfDomain": {},
+        "socialDomain": {},
+        "substanceMisuseDomain": {}
+      },
+      "safeguardingInformation": {}
+    },
+    "keyWorker": {
+      "name": {}
+    }
+  }
+}
+2023/09/15 16:24:26.029859 tttmplts.go:39: CGL Worker done
+2023/09/15 16:24:26.029888 tttmplts.go:40: CGL Worker Status Code 404
+2023/09/15 16:24:30.831917 tthttp.go:174: Server Response - Status Code 0 
+2023/09/15 16:24:30.832584 tttmplts.go:32: PIXm Worker done
+2023/09/15 16:24:30.832688 tttmplts.go:33: PIXm Worker Status Code 408
+2023/09/15 16:24:30.833089 tthttp.go:56: Creating PDS Search Request - Server URL https://sandbox.api.service.nhs.uk/personal-demographics/FHIR/R4/Patient/9000000009
+2023/09/15 16:24:30.833300 tthttp.go:160: Request Headers 
+map[Accept:[*/*] Content-Type:[application/json] X-Request-Id:[c671e4cc-606d-497b-9d84-0c97ba0cdf74]]
+2023/09/15 16:24:31.069287 tthttp.go:174: Server Response - Status Code 200 
+{"resourceType":"Patient","id":"9000000009","identifier":[{"system":"https://fhir.nhs.uk/Id/nhs-number","value":"9000000009","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSNumberVerificationStatus","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-NHSNumberVerificationStatus","version":"1.0.0","code":"01","display":"Number present and verified"}]}}]}],"meta":{"versionId":"2","security":[{"system":"http://terminology.hl7.org/CodeSystem/v3-Confidentiality","code":"U","display":"unrestricted"}]},"name":[{"id":"123","use":"usual","period":{"start":"2020-01-01","end":"2021-12-31"},"given":["Jane"],"family":"Smith","prefix":["Mrs"],"suffix":["MBE"]}],"gender":"female","birthDate":"2010-10-22","multipleBirthInteger":1,"deceasedDateTime":"2010-10-22T00:00:00+00:00","generalPractitioner":[{"id":"254406A3","type":"Organization","identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y12345","period":{"start":"2020-01-01","end":"2021-12-31"}}}],"managingOrganization":{"type":"Organization","identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y12345","period":{"start":"2020-01-01","end":"2021-12-31"}}},"extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NominatedPharmacy","valueReference":{"identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y12345"}}},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-PreferredDispenserOrganization","valueReference":{"identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y23456"}}},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-MedicalApplianceSupplier","valueReference":{"identifier":{"system":"https://fhir.nhs.uk/Id/ods-organization-code","value":"Y34567"}}},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-DeathNotificationStatus","extension":[{"url":"deathNotificationStatus","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-DeathNotificationStatus","version":"1.0.0","code":"2","display":"Formal - death notice received from Registrar of Deaths"}]}},{"url":"systemEffectiveDate","valueDateTime":"2010-10-22T00:00:00+00:00"}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-NHSCommunication","extension":[{"url":"language","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-HumanLanguage","version":"1.0.0","code":"fr","display":"French"}]}},{"url":"interpreterRequired","valueBoolean":true}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-ContactPreference","extension":[{"url":"PreferredWrittenCommunicationFormat","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredWrittenCommunicationFormat","code":"12","display":"Braille"}]}},{"url":"PreferredContactMethod","valueCodeableConcept":{"coding":[{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-PreferredContactMethod","code":"1","display":"Letter"}]}},{"url":"PreferredContactTimes","valueString":"Not after 7pm"}]},{"url":"http://hl7.org/fhir/StructureDefinition/patient-birthPlace","valueAddress":{"city":"Manchester","district":"Greater Manchester","country":"GBR"}},{"url":"https://fhir.nhs.uk/StructureDefinition/Extension-PDS-RemovalFromRegistration","extension":[{"url":"removalFromRegistrationCode","valueCodeableConcept":{"coding":[{"system":"https://fhir.nhs.uk/CodeSystem/PDS-RemovalReasonExitCode","code":"SCT","display":"Transferred to Scotland"}]}},{"url":"effectiveTime","valuePeriod":{"start":"2020-01-01T00:00:00+00:00","end":"2021-12-31T00:00:00+00:00"}}]}],"telecom":[{"id":"789","period":{"start":"2020-01-01","end":"2021-12-31"},"system":"phone","value":"01632960587","use":"home"},{"id":"790","period":{"start":"2019-01-01","end":"2022-12-31"},"system":"email","value":"jane.smith@example.com","use":"home"},{"id":"OC789","period":{"start":"2020-01-01","end":"2021-12-31"},"system":"other","value":"01632960587","use":"home","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-OtherContactSystem","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-OtherContactSystem","code":"textphone","display":"Minicom (Textphone)"}}]}],"contact":[{"id":"C123","period":{"start":"2020-01-01","end":"2021-12-31"},"relationship":[{"coding":[{"system":"http://terminology.hl7.org/CodeSystem/v2-0131","code":"C","display":"Emergency Contact"}]}],"telecom":[{"system":"phone","value":"01632960587"}]}],"address":[{"id":"456","period":{"start":"2020-01-01","end":"2021-12-31"},"use":"home","line":["1 Trevelyan Square","Boar Lane","City Centre","Leeds","West Yorkshire"],"postalCode":"LS1 6AE","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"PAF"}},{"url":"value","valueString":"12345678"}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"UPRN"}},{"url":"value","valueString":"123456789012"}]}]},{"id":"T456","period":{"start":"2020-01-01","end":"2021-12-31"},"use":"temp","text":"Student Accommodation","line":["1 Trevelyan Square","Boar Lane","City Centre","Leeds","West Yorkshire"],"postalCode":"LS1 6AE","extension":[{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"PAF"}},{"url":"value","valueString":"12345678"}]},{"url":"https://fhir.hl7.org.uk/StructureDefinition/Extension-UKCore-AddressKey","extension":[{"url":"type","valueCoding":{"system":"https://fhir.hl7.org.uk/CodeSystem/UKCore-AddressKeyType","code":"UPRN"}},{"url":"value","valueString":"123456789012"}]}]}]}
+2023/09/15 16:24:31.255321 tttmplts.go:100: Caching 24 Templates
+2023/09/15 16:24:31.260996 tttmplts.go:87: Processing Template allpatientSrvs_tmplt
+2023/09/15 16:24:31.265069 ttproxy.go:149: Response Status Code 200
+2023/09/15 17:07:49.296724 ttserver.go:52: ICB Workflow Service stopped

@@ -1,0 +1,280 @@
+{{define "cgl_tmplt"}}
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading panel-default" style="text-align: center; color: blue;">
+                    CGL Patient Record
+                </div>
+                <div class="panel-body">
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                            <tr>
+                                <td data-toggle="collapse" data-target="#cgl1" class="accordion-toggle"><span class="glyphicon glyphicon-chevron-down"></span> Encounters</td>
+                                <td data-toggle="collapse" data-target="#cgl2" class="accordion-toggle"><span class="glyphicon glyphicon-chevron-down"></span> Drug Tests</td>
+                                <td data-toggle="collapse" data-target="#cgl3" class="accordion-toggle"><span class="glyphicon glyphicon-chevron-down"></span> Mental Health</td>
+                                <td data-toggle="collapse" data-target="#cgl4" class="accordion-toggle"><span class="glyphicon glyphicon-chevron-down"></span> Risks</td>
+                                <td data-toggle="collapse" data-target="#cgl5" class="accordion-toggle"><span class="glyphicon glyphicon-chevron-down"></span> Patient ID's</td>
+                            </tr>
+                            <tr class="info">
+                                <th>Fist Name</th>
+                                <th>Last Name</th>
+                                <th>D.O.B</th>
+                                <th>Gender</th>
+                                <th>Street</th>
+                                <th>City</th>
+                                <th>County</th>
+                                <th>Postcode</th>
+                                <th>Disabilities</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>{{.data.client.basicDetails.name.given}}</td>
+                                <td>{{.data.client.basicDetails.name.family}}</td>
+                                <td>{{.data.client.basicDetails.birthDate}}</td>
+                                <td>{{.data.client.basicDetails.sexAtBirth}}</td>
+                                <td>{{.data.client.basicDetails.address.addressLine1}}</td>
+                                <td>{{.data.client.basicDetails.address.addressLine2}}</td>
+                                <td>{{.data.client.basicDetails.address.addressLine3}}</td>
+                                <td>{{.data.client.basicDetails.address.postCode}}</td>
+                                <td>{{.data.client.basicDetails.disability}}</td>
+                            </tr>
+                            <tr> 
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="cgl1">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th>Last Engagement</th>
+                                                    <th>Last Face to Face</th>
+                                                    <th>Next Appointment</th>
+                                                    <th>Key Worker Name</th>
+                                                    <th>Key Worker Tel</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{.data.client.basicDetails.lastEngagementByCGLDate}}</td>
+                                                    <td>{{.data.client.basicDetails.lastFaceToFaceEngagementDate}}</td>
+                                                    <td>{{.data.client.basicDetails.nextCGLAppointmentDate}}</td>
+                                                    <td>{{.data.keyWorker.name.given}} {{.data.keyWorker.name.family}}</td>
+                                                    <td>{{.data.keyWorker.telecom}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="cgl2">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th>Drug Test Results</th>
+                                                    <th>BBV Tested</th>
+                                                    <th>HepC Last Test Date</th>
+                                                    <th>HepC Result</th>
+                                                    <th>HIV Positive</th>
+                                                    <th>Injecting</th>
+                                                    <th>Poly Drugs Use</th>
+                                                    <th>Previous Overdose</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    {{$cnt := len .data.client.drugTestResults.results}}
+                                                    {{if eq $cnt 0}}
+                                                    <td>Test Results Not Available</td>
+                                                    {{else}}
+                                                    <td>{{range .data.client.drugTestResults.results}}{{.}} {{end}}</td>
+                                                    {{end}}
+                                                    {{if eq .data.client.bbvInformation.bbvTested "Yes"}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{else}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+                                                    <td>{{.data.client.bbvInformation.hepCLastTestDate}}</td>
+                                                    <td>{{.data.client.bbvInformation.hepCResult}}</td>
+                                                    {{if eq .data.client.bbvInformation.hivPositive "Yes"}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{else}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+                                                    <td>{{.data.client.riskInformation.substanceMisuseDomain.injecting}}</td>
+                                                    <td>{{.data.client.riskInformation.substanceMisuseDomain.polyDrugUse}}</td>
+                                                    <td>{{.data.client.riskInformation.substanceMisuseDomain.previousOverDose}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="cgl3">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th>Reported</th>
+                                                    <th>Suicide Attmpt</th>
+                                                    <th>Condition</th>
+                                                    <th>Admissions</th>
+                                                    <th>Non Compliance</th>
+                                                    <th>Interventions</th>
+                                                    <th>Capacity</th>
+                                                    <th>Learning Disability</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{.data.client.riskInformation.lastSelfReportedDate}}</td>
+                                                    
+                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.attemptedSuicide "Current"}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.attemptedSuicide "Previous"}}
+                                                    <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.attemptedSuicide ""}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+                                                    
+                                                    <td>{{.data.client.riskInformation.mentalHealthDomain.diagnosedMentalHealthCondition}}</td>
+                                                    <td>{{.data.client.riskInformation.mentalHealthDomain.hospitalAdmissionsForMentalHealth}}</td>
+                                                    <td>{{.data.client.riskInformation.mentalHealthDomain.notTakingPrescribedMedicationAsInstructed}}</td>
+                                                    
+                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.psychiatricOrPreviousCrisisTeamIntervention "Current"}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.psychiatricOrPreviousCrisisTeamIntervention "Previous"}}
+                                                    <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.mentalHealthDomain.psychiatricOrPreviousCrisisTeamIntervention ""}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+
+                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.assessedAsNotHavingMentalCapacity "Current"}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.assessedAsNotHavingMentalCapacity "Previous"}}
+                                                    <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.assessedAsNotHavingMentalCapacity ""}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+
+                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.learningDisability "Current"}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.learningDisability "Previous"}}
+                                                    <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.riskOfHarmToSelfDomain.learningDisability ""}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="cgl4">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th>No Fixed Abode</th>
+                                                    <th>Housing at Risk</th>
+                                                    <th>Socially Isolated</th>
+                                                    <th>From others</th>
+                                                    <th>To Adults</th>
+                                                    <th>To Children or YP</th>
+                                                    <th>To Self</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    {{if eq .data.client.riskInformation.socialDomain.homelessRoughSleepingNFA "Current"}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.socialDomain.homelessRoughSleepingNFA "Previous"}}
+                                                    <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.socialDomain.homelessRoughSleepingNFA ""}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+
+                                                    {{if eq .data.client.riskInformation.socialDomain.housingAtRisk "Current"}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.socialDomain.housingAtRisk "Previous"}}
+                                                    <td style="color: orange;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{end}}
+                                                    {{if eq .data.client.riskInformation.socialDomain.housingAtRisk ""}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+
+                                                    <td>{{.data.client.riskInformation.socialDomain.sociallyIsolatedNoSupport}}</td>
+                                                    
+                                                    {{if eq .data.client.safeguardingInformation.riskHarmFromOthers "Yes"}}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{else}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+
+                                                    {{if eq .data.client.safeguardingInformation.riskToAdults "Yes" }}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{else}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+                                                    
+                                                    {{if eq .data.client.safeguardingInformation.riskToChildrenOrYP "Yes" }}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{else}}
+                                                    <td> style="color: green;"<i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+                                                    
+                                                    {{if eq .data.client.safeguardingInformation.riskToSelf "Yes" }}
+                                                    <td style="color: red;"><i class="glyphicon glyphicon-ok"></i></td>
+                                                    {{else}}
+                                                    <td style="color: green;"><i class="glyphicon glyphicon-remove"></i></td>
+                                                    {{end}}
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="cgl5">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th>CGL ID</th>
+                                                    <th>NHS ID</th>
+                                                    <th>Key Worker ID</th>
+                                                </tr>
+                                            </thead>
+                            
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{.data.client.basicDetails.localIdentifier}}</td>
+                                                    <td>{{.data.client.basicDetails.nhsNumber}}</td>
+                                                    <td>{{.data.keyWorker.localIdentifier}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{{end}}

@@ -1,0 +1,53 @@
+{
+    "ref": "radconsult_def",
+    "name": "Radiology Consultation",
+    "confidentialitycode": "Normal",
+    "startbytime": "hour(1)",
+    "completebytime": "hour(3)",
+    "expirationtime": "hour(4)",
+    "completionBehavior": [{
+        "completion": {
+            "condition": "task(2)"
+        }
+    }],
+    "tasks": [
+        {   
+            "id": "1",
+            "tasktype": "NOTIFICATION",
+            "name": "RAD1_Consult_Request",
+            "description": "Radiology Consult Requested",
+            "expirationtime": "hour(2)",
+            "completebytime": "hour(1)",
+            "isskipable": false,
+            "completionBehavior": [{
+                "completion": {
+                    "condition": "output(RAD1_Consult_Request)"
+                }
+                }],
+            "output": [{
+                "name": "RAD1_Consult_Request",
+                "contenttype": "text/plain",
+                "accesstype": "URL"
+            }]
+        },
+        {
+            "id": "2",
+            "tasktype": "NOTIFICATION",
+            "name": "RAD2_Consult_Claimed",
+            "description": "Claim Radiology Consult",
+            "expirationtime": "hour(3)",
+            "completebytime": "hour(2)",
+            "isskipable": false,
+            "completionBehavior": [{
+                "completion": {
+                    "condition": "output(RAD2_Consult_Claimed)"
+                }
+                }],
+            "output": [{
+                "name": "RAD2_Consult_Claimed",
+                "contenttype": "text/plain",
+                "accesstype": "URL"
+            }]
+        }
+    ]
+}

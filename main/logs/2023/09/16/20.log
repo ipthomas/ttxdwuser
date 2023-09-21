@@ -1,0 +1,160 @@
+2023/09/16 20:37:37.453248 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/16 20:37:37.453757 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/16 20:37:37.453883 ttdb.go:54: Opened Database
+2023/09/16 20:37:37.663886 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/16 20:37:37.731681 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/16 20:37:37.731878 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/16 20:37:37.798916 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/16 20:37:37.901719 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/16 20:37:37.901848 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/16 20:37:37.968653 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/16 20:37:38.036898 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/16 20:37:38.036985 ttdb.go:366: Persisted Template pdssearch_tmplt.html
+2023/09/16 20:37:38.101900 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/16 20:37:38.167456 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/16 20:37:38.167520 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/16 20:37:38.232490 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/16 20:37:38.296404 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/16 20:37:38.296436 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/16 20:37:38.363758 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/16 20:37:38.492976 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/16 20:37:38.493118 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/16 20:37:38.557783 ttdb.go:379: Persisting Template publishfile2t_tmplt
+2023/09/16 20:37:38.624180 ttdb.go:385: Persisted Template publishfile2t_tmplt
+2023/09/16 20:37:38.624205 ttdb.go:366: Persisted Template publishfile2t_tmplt.html
+2023/09/16 20:37:38.688899 ttdb.go:379: Persisting Template react_tmplt
+2023/09/16 20:37:38.753383 ttdb.go:385: Persisted Template react_tmplt
+2023/09/16 20:37:38.753422 ttdb.go:366: Persisted Template react_tmplt.html
+2023/09/16 20:37:38.818815 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/16 20:37:38.888898 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/16 20:37:38.888951 ttdb.go:366: Persisted Template pdsretrieve_tmplt.html
+2023/09/16 20:37:38.954998 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/16 20:37:39.023148 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/16 20:37:39.023303 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/16 20:37:39.090416 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/16 20:37:39.171453 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/16 20:37:39.171570 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/16 20:37:39.242085 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/16 20:37:39.322673 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/16 20:37:39.322847 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/16 20:37:39.388607 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/16 20:37:39.461520 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/16 20:37:39.461605 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/16 20:37:39.524519 ttdb.go:379: Persisting Template patpoxy_tmplt
+2023/09/16 20:37:39.590073 ttdb.go:385: Persisted Template patpoxy_tmplt
+2023/09/16 20:37:39.590153 ttdb.go:366: Persisted Template patpoxy_tmplt.html
+2023/09/16 20:37:39.659472 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/16 20:37:39.728337 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/16 20:37:39.728497 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/16 20:37:39.793678 ttdb.go:379: Persisting Template error_tmplt
+2023/09/16 20:37:39.859972 ttdb.go:385: Persisted Template error_tmplt
+2023/09/16 20:37:39.860081 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/16 20:37:39.926699 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/16 20:37:39.999803 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/16 20:37:39.999910 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/16 20:37:40.066642 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/16 20:37:40.134712 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/16 20:37:40.134862 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/16 20:37:40.261770 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/16 20:37:40.405025 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/16 20:37:40.405171 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/16 20:37:40.554635 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/16 20:37:40.623945 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/16 20:37:40.623973 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/16 20:37:40.750461 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/16 20:37:40.886006 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/16 20:37:40.886175 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/16 20:37:41.005994 ttdb.go:379: Persisting Template events_tmplt
+2023/09/16 20:37:41.136265 ttdb.go:385: Persisted Template events_tmplt
+2023/09/16 20:37:41.136411 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/16 20:37:41.270758 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/16 20:37:41.384603 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/16 20:37:41.384651 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/16 20:37:41.384712 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/16 20:46:32.174717 ttserver.go:52: ICB Workflow Service stopped
+2023/09/16 20:46:34.041294 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/16 20:46:34.041802 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/16 20:46:34.041943 ttdb.go:54: Opened Database
+2023/09/16 20:46:34.248553 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/16 20:46:34.311145 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/16 20:46:34.311201 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/16 20:46:34.374415 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/16 20:46:34.471539 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/16 20:46:34.471716 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/16 20:46:34.535046 ttdb.go:379: Persisting Template pdssearch_tmplt
+2023/09/16 20:46:34.601821 ttdb.go:385: Persisted Template pdssearch_tmplt
+2023/09/16 20:46:34.601913 ttdb.go:366: Persisted Template pdssearch_tmplt.html
+2023/09/16 20:46:34.664364 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/16 20:46:34.727810 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/16 20:46:34.727929 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/16 20:46:34.789335 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/16 20:46:34.851078 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/16 20:46:34.851167 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/16 20:46:34.913575 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/16 20:46:35.027689 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/16 20:46:35.027832 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/16 20:46:35.089880 ttdb.go:379: Persisting Template publishfile2t_tmplt
+2023/09/16 20:46:35.152816 ttdb.go:385: Persisted Template publishfile2t_tmplt
+2023/09/16 20:46:35.152960 ttdb.go:366: Persisted Template publishfile2t_tmplt.html
+2023/09/16 20:46:35.215081 ttdb.go:379: Persisting Template react_tmplt
+2023/09/16 20:46:35.278136 ttdb.go:385: Persisted Template react_tmplt
+2023/09/16 20:46:35.278291 ttdb.go:366: Persisted Template react_tmplt.html
+2023/09/16 20:46:35.340416 ttdb.go:379: Persisting Template pdsretrieve_tmplt
+2023/09/16 20:46:35.408589 ttdb.go:385: Persisted Template pdsretrieve_tmplt
+2023/09/16 20:46:35.408621 ttdb.go:366: Persisted Template pdsretrieve_tmplt.html
+2023/09/16 20:46:35.470106 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/16 20:46:35.531888 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/16 20:46:35.531921 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/16 20:46:35.598931 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/16 20:46:35.671555 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/16 20:46:35.671579 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/16 20:46:35.735673 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/16 20:46:35.843444 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/16 20:46:35.843734 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/16 20:46:35.939090 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/16 20:46:36.047795 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/16 20:46:36.048035 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/16 20:46:36.215305 ttdb.go:379: Persisting Template patpoxy_tmplt
+2023/09/16 20:46:36.297444 ttdb.go:385: Persisted Template patpoxy_tmplt
+2023/09/16 20:46:36.297506 ttdb.go:366: Persisted Template patpoxy_tmplt.html
+2023/09/16 20:46:36.427963 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/16 20:46:36.560456 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/16 20:46:36.560513 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/16 20:46:36.739809 ttdb.go:379: Persisting Template error_tmplt
+2023/09/16 20:46:36.871704 ttdb.go:385: Persisted Template error_tmplt
+2023/09/16 20:46:36.871832 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/16 20:46:36.986294 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/16 20:46:37.110556 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/16 20:46:37.110662 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/16 20:46:37.245771 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/16 20:46:37.418161 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/16 20:46:37.418295 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/16 20:46:37.480356 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/16 20:46:37.565784 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/16 20:46:37.566009 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/16 20:46:37.695091 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/16 20:46:37.803937 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/16 20:46:37.804083 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/16 20:46:37.866123 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/16 20:46:37.934074 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/16 20:46:37.934153 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/16 20:46:38.000468 ttdb.go:379: Persisting Template events_tmplt
+2023/09/16 20:46:38.069723 ttdb.go:385: Persisted Template events_tmplt
+2023/09/16 20:46:38.069867 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/16 20:46:38.135942 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/16 20:46:38.199222 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/16 20:46:38.199273 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/16 20:46:38.199441 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/17 11:40:55.905485 ttserver.go:52: ICB Workflow Service stopped

@@ -1,0 +1,438 @@
+{{define "xdw2t_tmplt"}}
+{{$user := .Query.User}}
+{{$org := .Query.Org}}
+{{$role := .Query.Role}}
+{{$wf := .XDWState.WorkflowDocument.WorkflowDefinitionReference}}
+{{$mwf := mappedid $user $wf}}
+{{$nhs := .XDWState.WorkflowDocument.Patient.Extension}}
+{{$wse := .EnvVars.SERVER_URL}}
+{{$vers := .Query.Vers}}
+{{$wfauthor := .XDWState.WorkflowDocument.Author.AssignedAuthor.AssignedPerson.Name.Family}}
+{{$wforg := .XDWState.WorkflowDocument.Author.AssignedAuthor.ID.Extension}}
+{{$wfrole := .XDWState.WorkflowDocument.Author.AssignedAuthor.AssignedPerson.Name.Prefix}}
+{{$events := .XDWState.Events}}
+{{$confcode := .XDWState.WorkflowDocument.ConfidentialityCode.Code}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ICB Workflow Service</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-H+KXa9O5YmYJcAx5j0pTQ0YFIBQ5g0g9pfYP/R1F4U2t7BKK1u2IT1t5iZ7Rg9fLGVnLaNByiDzZj1lVI/aI0Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"
+            integrity="sha512-4WxehX3asQW2+pC0ze+SnHqZL9OZQYZl4ysJpykkNbUM3H7fHPvF33pvNLljLh6CUkECZgbVxPc/iYQguwyzFQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="color: blue;">
+                    <a href="/beta/spa/consumer/xdws?user={{$user}}&org={{$org}}&role={{$role}}&act=select&vers=-1&taskid=-1"
+                        target="iconsumer">
+                        <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+                        ICB Workflows
+                    </a>
+                    <a href="/beta/spa/consumer/xdws?user={{$user}}&org={{$org}}&role={{$role}}&act=select&pathway={{$wf}}&vers=-1&taskid=-1"
+                        target="iconsumer">
+                        <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+                    {{$mwf}} Workflows
+                    </a>
+                    <a href="/beta/spa/consumer/xdws?user={{$user}}&org={{$org}}&role={{$role}}&act=select&nhs={{$nhs}}&vers=-1&taskid=-1"
+                        target="iconsumer">
+                        <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
+                         NHS ID {{$nhs}} Workflows
+                    </a>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-condensed table-striped">
+                        <thead> 
+                            <tr>
+                                <td data-toggle="collapse" data-target="#xdw1" class="accordion-toggle" id="trigger-element">
+                                    <a class="btn btn-default btn-xs">
+                                        <div class="trigger">
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <div class="popup">
+                                                {{$mwf}} Progress
+                                            </div>
+                                        </div>
+                                    </a> Workflow Events
+                                </td>
+                                <td data-toggle="collapse" data-target="#xdw3" class="accordion-toggle" id="trigger-element">
+                                    <a class="btn btn-default btn-xs">
+                                        <div class="trigger">
+                                            <i class="glyphicon glyphicon-chevron-down"></i>
+                                            <div class="popup">
+                                                {{$mwf}} Events
+                                            </div>
+                                        </div>
+                                    </a> Task Events
+                                </td>
+                                <td></td>
+                                <td>
+                                <!-- <td data-toggle="collapse" data-target="#xdw2" class="accordion-toggle" id="trigger-element"> -->
+                                    <!-- <a class="btn btn-default btn-xs"> -->
+                                    <div class="trigger">
+                                        <!-- <i class="glyphicon glyphicon-chevron-down"></i> -->
+                                        <div class="popup">
+                                            {{$mwf}} Tasks
+                                        </div>
+                                    </div>
+                                    <!-- </a>  -->
+                                    <h4 style="text-align: center;color: green;">{{$mwf}} Workflow Tasks</h4>
+                                </td>
+                            </tr>
+                            <tr class="info">
+                                <th>NHS ID</th>
+                                <th>Status</th>
+                                <th>Author</th>
+                                <th>Organisation</th>
+                                <th>Role</th>
+                                <th>Created</th>
+                                <th>Confidentiality</th>
+                                <th>Version</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{$nhs}}</td>
+                                {{if eq .XDWState.WorkflowDocument.WorkflowStatus "OPEN"}}
+                                <td style="color: green;">{{.XDWState.WorkflowDocument.WorkflowStatus}}</td>
+                                {{else}}
+                                <td style="color: gray;">{{.XDWState.WorkflowDocument.WorkflowStatus}}</td>
+                                {{end}}
+                                <td>{{$wfauthor}}</td>
+                                <td>{{$wforg}}</td>
+                                <td>{{$wfrole}}</td>
+                                <td>{{prettytime .XDWState.WorkflowDocument.EffectiveTime.Value}}</td>
+                                {{if eq $confcode "Restricted"}}
+                                <td style="color: red;">{{$confcode}}</td>
+                                {{else}}
+                                <td>{{$confcode}}</td>
+                                {{end}}
+                                <td id="wfvers">{{$vers}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="xdw3">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th>ID</th>
+                                                    <th>Task</th>
+                                                    <th>Created</th>
+                                                    <th>Event Type</th>
+                                                    <th>Comments</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            {{range $events.Events}}
+                                                {{if and (ne .Eventtype "CREATE_TASK") (ne .Taskid -1)}}
+                                                <tr>
+                                                    <td>{{.Id}}</td>
+                                                    <td>{{.Taskid}}</td>
+                                                    <td>{{prettytime .Creationtime}}</td>
+                                                    <td>{{.Eventtype}}</td>
+                                                    <td>{{.Comments}}</td>
+                                                </tr>
+                                                {{end}}
+                                            {{end}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body collapse" id="xdw1">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th></th>
+                                                    <th>Workflow Task Id</th>
+                                                    <th>Workflow Event Type</th>
+                                                    <th>Workflow Event Author</th>
+                                                    <th>Workflow Event Time</th>
+                                                    <th>Workflow Previous Status</th>
+                                                    <th>Workflow Actual Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{range .XDWState.WorkflowDocument.WorkflowStatusHistory.DocumentEvent}}
+                                                <tr >
+                                                    <td></td>
+                                                    <td>{{.TaskEventIdentifier}}</td>
+                                                    <td>{{.EventType}}</td>
+                                                    <td>{{.Author}}</td>
+                                                    <td>{{prettytime .EventTime}}</td>
+                                                    <td>{{.PreviousStatus}}</td>
+                                                    <td>{{.ActualStatus}}</td>
+                                                </tr>
+                                                {{end}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" class="hiddenRow">
+                                    <div class="accordian-body" id="xdw2">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr class="info">
+                                                    <th></th>
+                                                    <th>Task</th>
+                                                    <th>Description</th>
+                                                    <th>Status</th>
+                                                    <th>Owner</th>
+                                                    <th>Created</th>
+                                                    <th>Started</th>
+                                                    <th>Latest Update</th>
+                                                    <th>Time Elapsed</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {{range .XDWState.WorkflowDocument.TaskList.XDWTask}}
+                                                {{$taskid := .TaskData.TaskDetails.ID}}
+                                                {{$taskstatus := .TaskData.TaskDetails.Status}}
+                                                <tr data-toggle="collapse" class="accordion-toggle" data-target="#task{{.TaskData.TaskDetails.ID}}"
+                                                    id="trigger-element">
+                                                    <td>
+                                                        <a class="btn btn-default btn-xs">
+                                                            <div class="trigger">
+                                                                <i class="glyphicon glyphicon-chevron-down"></i>
+                                                                <div class="popup">
+                                                                    Click to View Task Inputs/Outputs
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </td>
+                                                    <td>{{$taskid}}</td>
+                                                    <td>{{.TaskData.Description}}</td>
+                                                    {{if eq .TaskData.TaskDetails.Status "COMPLETE"}}
+                                                    <td style="color: green;">{{.TaskData.TaskDetails.Status}}</td>
+                                                    {{end}}
+                                                    {{if eq .TaskData.TaskDetails.Status "CREATED"}}
+                                                    <td style="color: red;">{{.TaskData.TaskDetails.Status}}</td>
+                                                    {{end}}
+                                                    {{if eq .TaskData.TaskDetails.Status "IN_PROGRESS"}}
+                                                    <td style="color: orange;">{{.TaskData.TaskDetails.Status}}</td>
+                                                    {{end}}
+                                                    <td>{{.TaskData.TaskDetails.ActualOwner}}</td>
+                                                    <td>{{prettytime .TaskData.TaskDetails.CreatedTime}}</td>
+                                                    <td>{{prettytime .TaskData.TaskDetails.ActivationTime}}</td>
+                                                    <td>{{prettytime .TaskData.TaskDetails.LastModifiedTime}}</td>
+                                                    {{if ne .TaskData.TaskDetails.ActivationTime ""}}
+                                                    <td>{{duration .TaskData.TaskDetails.CreatedTime .TaskData.TaskDetails.LastModifiedTime}}</td>
+                                                    {{else}}
+                                                    <td></td>
+                                                    {{end}}
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="12" class="hiddenRow">
+                                                        <div class="accordian-body collapse" id="task{{.TaskData.TaskDetails.ID}}">
+                                                            <table class="table table-striped">
+                                                                <thead>
+                                                                    <tr class="info">
+                                                                        <th></th>
+                                                                        <th></th>
+                                                                        <th>ID</th>
+                                                                        <th>Type</th>
+                                                                        <th>Attached By</th>
+                                                                        <th>Content Type</th>
+                                                                        <th>Attached Time</th>
+                                                                        <th>Document Name</th>
+                                                                        <th>Published To</th>
+                                                                    </tr>    
+                                                                </thead>
+                                                                <tbody>
+                                                                    {{$tdesc := .TaskData.Description}}
+                                                                    {{range .TaskData.Input}}
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td>{{.Part.AttachmentInfo.Identifier}}</td>
+                                                                        <td>Input</td>
+                                                                        <td>{{.Part.AttachmentInfo.AttachedBy}}</td>
+                                                                        <td>{{.Part.AttachmentInfo.ContentType}}</td>
+                                                                        <td>{{prettytime .Part.AttachmentInfo.AttachedTime}}</td>
+                                                                        <td>{{mappedid $user .Part.AttachmentInfo.Name}}</td>
+                                                                        <td>{{mappedid $user .Part.AttachmentInfo.AccessType}}</td>
+                                                                    </tr>
+                                                                    {{if ne $taskstatus "COMPLETE"}}
+                                                                    {{if eq .Part.AttachmentInfo.AttachedTime ""}}
+                                                                    <tr>
+                                                                        <td colspan="100">
+                                                                           <form target="iconsumer" action="/beta/spa/publisher/event" method="post">
+                                                                                <label for="comments">Comments:</label>
+                                                                                <div class="trigger">
+                                                                                    <textarea type="input" class="form-control" id="comments" name="comments" rows="3" cols="200">{{$tdesc}} - Task {{$taskid}} - {{mappedid $user .Part.AttachmentInfo.Name}} - has been Actioned by {{$user}} at {{$org}} in the Role of {{$role}}. A {{mappedid $user .Part.AttachmentInfo.Name}} message has been sent to the HIE for NHS ID: {{$nhs}}</textarea>
+                                                                                    <div class="popup">
+                                                                                        Enter any Additional information for this Event 
+                                                                                    </div>
+                                                                                </div>
+                                                                                <input type="hidden" class="form-control" id="eventtype" name="eventtype" value="UPDATE_TASK">
+                                                                                <input type="hidden" class="form-control" id="formatcode" name="formatcode" value="{{.Part.AttachmentInfo.ContentType}}">
+                                                                                <input type="hidden" class="form-control" id="pathway" name="pathway" value="{{$wf}}">
+                                                                                <input type="hidden" class="form-control" id="nhs" name="nhs" value="{{$nhs}}">
+                                                                                <input type="hidden" class="form-control" id="vers" name="vers" value="{{$vers}}">
+                                                                                <input type="hidden" class="form-control" id="topic" name="topic" value="{{.Part.AttachmentInfo.AccessType}}">
+                                                                                <input type="hidden" class="form-control" id="expression" name="expression" value="{{.Part.AttachmentInfo.Name}}">
+                                                                                <input type="hidden" class="form-control" id="taskid" name="taskid" value="{{$taskid}}">
+                                                                                <input type="hidden" class="form-control" id="user" name="user" value="{{$user}}">
+                                                                                <input type="hidden" class="form-control" id="org" name="org" value="{{$org}}">
+                                                                                <input type="hidden" class="form-control" id="role" name="role" value="{{$role}}">
+                                                                                <input type="hidden" class="form-control" id="repositoryuid" name="repositoryuid" value="">
+                                                                                <input type="hidden" class="form-control" id="xdsdocentryuid" name="xdsdocentryuid" value="{{$wse}}/spa/consumer/event?user={{$user}}&org={{$org}}&role={{$role}}&pathway={{$wf}}&nhs={{$nhs}}&vers={{$vers}}&taskid={{$taskid}}">
+                                                                                <input type="submit" value="Simulate EPR Message">
+                                                                            </form>
+                                                                        </td>
+                                                                    </tr>
+                                                                    {{end}}
+                                                                    {{end}}
+                                                                    {{end}}
+                                                                    {{range .TaskData.Output}}
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td>{{.Part.AttachmentInfo.Identifier}}</td>
+                                                                        <td>Ouput</td>
+                                                                        <td>{{.Part.AttachmentInfo.AttachedBy}}</td>
+                                                                        <td>{{.Part.AttachmentInfo.ContentType}}</td>
+                                                                        <td>{{prettytime .Part.AttachmentInfo.AttachedTime}}</td>
+                                                                        <td>{{mappedid $user .Part.AttachmentInfo.Name}}</td>
+                                                                        <td>{{mappedid $user .Part.AttachmentInfo.AccessType}}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="100">
+                                                                            <form target="iconsumer" action="/beta/spa/publisher/event" method="post">
+                                                                                <label for="comments">Comments:</label>
+                                                                                <div class="trigger">
+                                                                                    <textarea type="input" class="form-control" id="comments" name="comments" rows="3" cols="200">{{$tdesc}} - Task {{$taskid}} - {{mappedid $user .Part.AttachmentInfo.Name}} - has been Actioned by {{$user}} at {{$org}} in the Role of {{$role}}. A {{mappedid $user .Part.AttachmentInfo.Name}} message has been sent to the HIE for NHS ID: {{$nhs}}</textarea>
+                                                                                    <div class="popup">
+                                                                                        Enter any Additional information for this Event
+                                                                                    </div>
+                                                                                </div>
+                                                                                <input type="hidden" class="form-control" id="eventtype" name="eventtype" value="UPDATE_TASK">
+                                                                                <input type="hidden" class="form-control" id="formatcode" name="formatcode" value="{{.Part.AttachmentInfo.ContentType}}">
+                                                                                <input type="hidden" class="form-control" id="pathway" name="pathway" value="{{$wf}}">
+                                                                                <input type="hidden" class="form-control" id="nhs" name="nhs" value="{{$nhs}}">
+                                                                                <input type="hidden" class="form-control" id="vers" name="vers" value="{{$vers}}">
+                                                                                <input type="hidden" class="form-control" id="topic" name="topic" value="{{.Part.AttachmentInfo.AccessType}}">
+                                                                                <input type="hidden" class="form-control" id="expression" name="expression" value="{{.Part.AttachmentInfo.Name}}">
+                                                                                <input type="hidden" class="form-control" id="taskid" name="taskid" value="{{$taskid}}">
+                                                                                <input type="hidden" class="form-control" id="user" name="user" value="{{$user}}">
+                                                                                <input type="hidden" class="form-control" id="org" name="org" value="{{$org}}">
+                                                                                <input type="hidden" class="form-control" id="role" name="role" value="{{$role}}">
+                                                                                <input type="hidden" class="form-control" id="repositoryuid" name="repositoryuid" value="">
+                                                                                <input type="hidden" class="form-control" id="xdsdocentryuid" name="xdsdocentryuid" value="{{$wse}}/spa/consumer/event?user={{$user}}&org={{$org}}&role={{$role}}&pathway={{$wf}}&nhs={{$nhs}}&vers={{$vers}}&taskid={{$taskid}}">
+                                                                                <input type="submit" value="Simulate EPR Message">
+                                                                            </form>
+                                                                        </td>
+                                                                    </tr>
+                                                                    {{end}}
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                {{end}}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var bodyElement = document.querySelector('body');
+        var triggerElement = document.querySelector('.trigger-element');
+            triggerElement.addEventListener('click', function () {
+                bodyElement.classList.add('no-scroll');
+            });
+
+            var collapseElement = document.querySelector('.trigger-element');
+            collapseElement.addEventListener('click', function () {
+                bodyElement.classList.remove('no-scroll');
+            });
+    </script>
+    <script>
+        function hideLoader() {
+            document.querySelector('.loader').style.display = 'none';
+            document.querySelector('iframe').style.display = 'block';
+        }
+    </script>
+    <script>
+        function showprogress() {
+            document.querySelector('.loader').style.display = 'block';
+            document.querySelector('iframe').style.display = 'none';
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+
+</body>
+<style>
+    body {
+        padding-top: 50px;
+        background-color: #34495e;
+        font-family: sans-serif;
+    }
+
+    .hiddenRow {
+        padding: 0 !important;
+    }
+    
+    .popup {
+        position: absolute;
+        display: none;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        z-index: 1;
+    }
+    
+    .trigger {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .trigger:hover .popup {
+        display: block;
+    }
+    .loader {
+        border: 16px solid #f3f3f3;
+        /* Light grey border */
+        border-top: 16px solid #3498db;
+        /* Blue border */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        margin: 0 auto;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+    }
+</style>
+
+</html>
+{{end}}

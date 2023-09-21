@@ -1,0 +1,191 @@
+{
+    "ref": "lac_def",
+    "name": "Looked After Child",
+    "confidentialitycode": "Restricted",
+    "startbytime": "",
+    "completebytime": "day(20)",
+    "expirationtime": "",
+    "completionBehavior": [
+      {
+        "completion": {
+          "condition": "task(6)"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "id": "1",
+        "tasktype": "TASK",
+        "name": "LAC_Identified",
+        "description": "LAC Identfied By Child Services",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(LAC1^^TypeCode_EPUT_2018)"
+            }
+          },
+          {
+            "completion": {
+              "condition": "task(2)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "LAC1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "tasktype": "TASK",
+        "name": "LAC_Paperwork_Sent",
+        "description": "LAC paperwork sent to Provide",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "day(2)",
+        "completebytime": "day(3)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "task(3)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "LAC4^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "tasktype": "TASK",
+        "name": "LAC_Paperwork_Accepted",
+        "description": "Provide Accepts or Rejects LAC Paperwork",
+        "actualowner": "",
+        "expirationtime": "day(14)",
+        "startbytime": "day(3)",
+        "completebytime": "day(7)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(LAC5^^TypeCode_EPUT_2018) and latest(LAC5^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "LAC5^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "LAC6^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "tasktype": "TASK",
+        "name": "LAC_IHA_Scheduled",
+        "description": "Provide Schedules IHA Apointment",
+        "actualowner": "",
+        "expirationtime": "day(15)",
+        "startbytime": "day(7)",
+        "completebytime": "day(8)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(LAC7^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "LAC7^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "tasktype": "TASK",
+        "name": "LAC_IHA_Completed",
+        "description": "Provide Completes IHA Assessment",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "day(8)",
+        "completebytime": "day(18)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(LAC8^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "LAC7^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "LAC8^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "tasktype": "TASK",
+        "name": "LAC_Workflow_Completed",
+        "description": "Child Services Acknowledges Receipt of IHA",
+        "actualowner": "",
+        "expirationtime": "day(25)",
+        "startbytime": "day(19)",
+        "completebytime": "day(20)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(LAC9^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "LAC8^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "LAC9^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      }
+    ]
+  }

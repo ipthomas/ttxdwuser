@@ -1,0 +1,656 @@
+2023/09/14 16:58:10.057753 ttutil.go:133: -----------------------------------------------------------------------------------
+2023/09/14 16:58:10.058219 ttdb.go:51: Opening DB Connection to mysql instance
+User: root
+Host: tuk.coil1nnpqdlr.eu-west-1.rds.amazonaws.com
+Port: :3306
+Name: tuk
+Connect Timeout 2s
+Read Timeout 5s
+2023/09/14 16:58:10.058329 ttdb.go:54: Opened Database
+2023/09/14 16:58:10.281438 ttdb.go:379: Persisting Template dsubcancel_tmplt
+2023/09/14 16:58:10.343988 ttdb.go:385: Persisted Template dsubcancel_tmplt
+2023/09/14 16:58:10.344178 ttdb.go:366: Persisted Template dsubcancel_tmplt.xml
+2023/09/14 16:58:10.407085 ttdb.go:379: Persisting Template cgl_tmplt
+2023/09/14 16:58:10.504114 ttdb.go:385: Persisted Template cgl_tmplt
+2023/09/14 16:58:10.504270 ttdb.go:366: Persisted Template cgl_tmplt.html
+2023/09/14 16:58:10.566002 ttdb.go:379: Persisting Template dsubsubscribe_tmplt
+2023/09/14 16:58:10.628660 ttdb.go:385: Persisted Template dsubsubscribe_tmplt
+2023/09/14 16:58:10.628810 ttdb.go:366: Persisted Template dsubsubscribe_tmplt.xml
+2023/09/14 16:58:10.691912 ttdb.go:379: Persisting Template notification_tmplt
+2023/09/14 16:58:10.754271 ttdb.go:385: Persisted Template notification_tmplt
+2023/09/14 16:58:10.754321 ttdb.go:366: Persisted Template notification_tmplt.txt
+2023/09/14 16:58:10.818586 ttdb.go:379: Persisting Template wfstate2t_tmplt
+2023/09/14 16:58:10.947608 ttdb.go:385: Persisted Template wfstate2t_tmplt
+2023/09/14 16:58:10.947680 ttdb.go:366: Persisted Template wfstate2t_tmplt.html
+2023/09/14 16:58:11.040936 ttdb.go:379: Persisting Template publishfile2t_tmplt
+2023/09/14 16:58:11.155406 ttdb.go:385: Persisted Template publishfile2t_tmplt
+2023/09/14 16:58:11.155555 ttdb.go:366: Persisted Template publishfile2t_tmplt.html
+2023/09/14 16:58:11.245030 ttdb.go:379: Persisting Template react_tmplt
+2023/09/14 16:58:11.306971 ttdb.go:385: Persisted Template react_tmplt
+2023/09/14 16:58:11.307045 ttdb.go:366: Persisted Template react_tmplt.html
+2023/09/14 16:58:11.368854 ttdb.go:379: Persisting Template allpatientSrvs_tmplt
+2023/09/14 16:58:11.430819 ttdb.go:385: Persisted Template allpatientSrvs_tmplt
+2023/09/14 16:58:11.430867 ttdb.go:366: Persisted Template allpatientSrvs_tmplt.html
+2023/09/14 16:58:11.493233 ttdb.go:379: Persisting Template spa2t_tmplt
+2023/09/14 16:58:11.576060 ttdb.go:385: Persisted Template spa2t_tmplt
+2023/09/14 16:58:11.576107 ttdb.go:366: Persisted Template spa2t_tmplt.html
+2023/09/14 16:58:11.638074 ttdb.go:379: Persisting Template xdw2t_tmplt
+2023/09/14 16:58:11.716345 ttdb.go:385: Persisted Template xdw2t_tmplt
+2023/09/14 16:58:11.716415 ttdb.go:366: Persisted Template xdw2t_tmplt.html
+2023/09/14 16:58:11.778342 ttdb.go:379: Persisting Template spaheader2t_tmplt
+2023/09/14 16:58:11.846957 ttdb.go:385: Persisted Template spaheader2t_tmplt
+2023/09/14 16:58:11.847049 ttdb.go:366: Persisted Template spaheader2t_tmplt.html
+2023/09/14 16:58:11.906455 ttdb.go:379: Persisting Template pds_tmplt
+2023/09/14 16:58:11.973011 ttdb.go:385: Persisted Template pds_tmplt
+2023/09/14 16:58:11.973070 ttdb.go:366: Persisted Template pds_tmplt.html
+2023/09/14 16:58:12.038037 ttdb.go:379: Persisting Template error_tmplt
+2023/09/14 16:58:12.101082 ttdb.go:385: Persisted Template error_tmplt
+2023/09/14 16:58:12.101296 ttdb.go:366: Persisted Template error_tmplt.html
+2023/09/14 16:58:12.165282 ttdb.go:379: Persisting Template dsuback_tmplt
+2023/09/14 16:58:12.227136 ttdb.go:385: Persisted Template dsuback_tmplt
+2023/09/14 16:58:12.227291 ttdb.go:366: Persisted Template dsuback_tmplt.xml
+2023/09/14 16:58:12.288815 ttdb.go:379: Persisting Template pixm_tmplt
+2023/09/14 16:58:12.354631 ttdb.go:385: Persisted Template pixm_tmplt
+2023/09/14 16:58:12.354718 ttdb.go:366: Persisted Template pixm_tmplt.html
+2023/09/14 16:58:12.416933 ttdb.go:379: Persisting Template subscriptions2t_tmplt
+2023/09/14 16:58:12.481043 ttdb.go:385: Persisted Template subscriptions2t_tmplt
+2023/09/14 16:58:12.481083 ttdb.go:366: Persisted Template subscriptions2t_tmplt.html
+2023/09/14 16:58:12.544247 ttdb.go:379: Persisting Template codemaps2t_tmplt
+2023/09/14 16:58:12.612250 ttdb.go:385: Persisted Template codemaps2t_tmplt
+2023/09/14 16:58:12.612377 ttdb.go:366: Persisted Template codemaps2t_tmplt.html
+2023/09/14 16:58:12.674531 ttdb.go:379: Persisting Template mhdpublish_tmplt
+2023/09/14 16:58:12.745912 ttdb.go:385: Persisted Template mhdpublish_tmplt
+2023/09/14 16:58:12.745965 ttdb.go:366: Persisted Template mhdpublish_tmplt.json
+2023/09/14 16:58:12.809269 ttdb.go:379: Persisting Template events_tmplt
+2023/09/14 16:58:12.875515 ttdb.go:385: Persisted Template events_tmplt
+2023/09/14 16:58:12.875542 ttdb.go:366: Persisted Template events_tmplt.html
+2023/09/14 16:58:12.938296 ttdb.go:379: Persisting Template uploadfile2t_tmplt
+2023/09/14 16:58:13.001376 ttdb.go:385: Persisted Template uploadfile2t_tmplt
+2023/09/14 16:58:13.001518 ttdb.go:366: Persisted Template uploadfile2t_tmplt.html
+2023/09/14 16:58:13.001742 ttserver.go:40: Starting ICB Workflow Service. Service Endpoint http://MacBook-Pro-3.lan:8080/
+2023/09/14 16:58:25.213319 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:58:25.213648 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:58:25.214003 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:58:25.214038 ttgethandler.go:15: Path = /spa
+2023/09/14 16:58:25.214317 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:58:25.397494 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:58:25.412319 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:58:25.413056 server.go:3217: http: panic serving [::1]:53120: runtime error: invalid memory address or nil pointer dereference
+goroutine 50 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc000221130?, 0xc00050a178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc0003c4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc0003c4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc0003c4000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc0003c4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc0003c4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc0002255e0}, 0xc0003aa000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc000228289?, {0x1565b90?, 0xc0002255e0?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc000202ba0?}, {0x1565b90, 0xc0002255e0}, 0xc0003aa000)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000294090, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:58:25.414671 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:58:25.414744 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:58:25.414808 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:58:25.414832 ttgethandler.go:15: Path = /spa
+2023/09/14 16:58:25.414847 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:58:25.497814 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:58:25.505899 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:58:25.506459 server.go:3217: http: panic serving [::1]:53121: runtime error: invalid memory address or nil pointer dereference
+goroutine 51 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc0000265c0?, 0xc0007e2178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc00013f000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc00079a000}, 0xc0002be000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc000030149?, {0x1565b90?, 0xc00079a000?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc0002982d0?}, {0x1565b90, 0xc00079a000}, 0xc0002be000)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000294120, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:58:25.507998 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:58:25.508081 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:58:25.508139 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:58:25.508164 ttgethandler.go:15: Path = /spa
+2023/09/14 16:58:25.508185 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:58:25.592745 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:58:25.604756 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:58:25.605336 server.go:3217: http: panic serving [::1]:53124: runtime error: invalid memory address or nil pointer dereference
+goroutine 67 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc00053e530?, 0xc000454178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc0003c5000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc0003c5000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc0003c5000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc0003c5000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc0003c5000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc00079a8c0}, 0xc000545800)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc00009f949?, {0x1565b90?, 0xc00079a8c0?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc0000fb440?}, {0x1565b90, 0xc00079a8c0}, 0xc000545800)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00016e2d0, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:58:26.632704 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:58:26.632773 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:58:26.632807 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:58:26.632820 ttgethandler.go:15: Path = /spa
+2023/09/14 16:58:26.632830 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:58:26.788155 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:58:26.795782 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:58:26.796348 server.go:3217: http: panic serving [::1]:53126: runtime error: invalid memory address or nil pointer dereference
+goroutine 14 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc00078a370?, 0xc0000c8178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc0003c4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc0003c4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc0003c4000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc0003c4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc0003c4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc00059a000}, 0xc000544000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc00009e009?, {0x1565b90?, 0xc00059a000?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc000596030?}, {0x1565b90, 0xc00059a000}, 0xc000544000)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00016e000, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:58:26.797184 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:58:26.797253 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:58:26.797312 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:58:26.797338 ttgethandler.go:15: Path = /spa
+2023/09/14 16:58:26.797356 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:58:26.882361 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:58:26.888368 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:58:26.889300 server.go:3217: http: panic serving [::1]:53127: runtime error: invalid memory address or nil pointer dereference
+goroutine 15 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc00053e110?, 0xc0003dc178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc00013f000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc00059a8c0}, 0xc0002bf200)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc000031849?, {0x1565b90?, 0xc00059a8c0?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc0001d77d0?}, {0x1565b90, 0xc00059a8c0}, 0xc0002bf200)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00016e120, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:58:26.890649 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:58:26.890757 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:58:26.890822 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:58:26.890839 ttgethandler.go:15: Path = /spa
+2023/09/14 16:58:26.890853 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:58:26.975190 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:58:26.978438 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:58:26.978753 server.go:3217: http: panic serving [::1]:53128: runtime error: invalid memory address or nil pointer dereference
+goroutine 39 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc00053e340?, 0xc000238178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc000000000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc000000000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc000000000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc000000000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc000000000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc00059a1c0}, 0xc0002bf900)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc00052b589?, {0x1565b90?, 0xc00059a1c0?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc0004285a0?}, {0x1565b90, 0xc00059a1c0}, 0xc0002bf900)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00016e000, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:58:32.000335 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:58:32.000496 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:58:32.000604 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:58:32.000631 ttgethandler.go:15: Path = /spa
+2023/09/14 16:58:32.000663 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:58:32.183026 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:58:32.190350 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:58:32.190820 server.go:3217: http: panic serving [::1]:53129: runtime error: invalid memory address or nil pointer dereference
+goroutine 85 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc00078a170?, 0xc0000c8178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc0003c0000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc0003c0000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc0003c0000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc0003c0000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc0003c0000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc0001e62a0}, 0xc0002bfa00)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc0002b07c9?, {0x1565b90?, 0xc0001e62a0?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc0004289f0?}, {0x1565b90, 0xc0001e62a0}, 0xc0002bfa00)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000206000, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:58:32.191455 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:58:32.191516 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:58:32.191568 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:58:32.191589 ttgethandler.go:15: Path = /spa
+2023/09/14 16:58:32.191618 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:58:32.274624 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:58:32.282412 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:58:32.283000 server.go:3217: http: panic serving [::1]:53130: runtime error: invalid memory address or nil pointer dereference
+goroutine 86 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc0002a1d30?, 0xc000244178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc0003c1000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc0003c1000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc0003c1000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc0003c1000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc0003c1000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc0001e6380}, 0xc0003e9f00)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc00009f449?, {0x1565b90?, 0xc0001e6380?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc00033d890?}, {0x1565b90, 0xc0001e6380}, 0xc0003e9f00)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000206120, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:58:32.283896 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:58:32.283964 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:58:32.284012 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:58:32.284034 ttgethandler.go:15: Path = /spa
+2023/09/14 16:58:32.284056 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:58:32.367654 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:58:32.375197 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:58:32.375481 server.go:3217: http: panic serving [::1]:53131: runtime error: invalid memory address or nil pointer dereference
+goroutine 44 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc00078bc30?, 0xc0003e6178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc00013f000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc0001e6c40}, 0xc00031aa00)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc000030d89?, {0x1565b90?, 0xc0001e6c40?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc000333a40?}, {0x1565b90, 0xc0001e6c40}, 0xc00031aa00)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00016e2d0, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:59:02.402089 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:59:02.402180 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:59:02.402240 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:59:02.402257 ttgethandler.go:15: Path = /spa
+2023/09/14 16:59:02.402274 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:59:02.586476 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:59:02.588250 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:59:02.588409 server.go:3217: http: panic serving [::1]:53153: runtime error: invalid memory address or nil pointer dereference
+goroutine 47 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc00070e160?, 0xc000232178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc00013f000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc0004f6000}, 0xc000354000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc000358009?, {0x1565b90?, 0xc0004f6000?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc000346030?}, {0x1565b90, 0xc0004f6000}, 0xc000354000)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00016e5a0, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:59:02.588812 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:59:02.588833 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:59:02.588853 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:59:02.588860 ttgethandler.go:15: Path = /spa
+2023/09/14 16:59:02.588868 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:59:02.674365 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:59:02.675962 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:59:02.676141 server.go:3217: http: panic serving [::1]:53154: runtime error: invalid memory address or nil pointer dereference
+goroutine 48 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc0002a01e0?, 0xc00043e178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc0002b8000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc0002b8000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc0002b8000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc0002b8000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc0002b8000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc0001ec2a0}, 0xc000431e00)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc00052b549?, {0x1565b90?, 0xc0001ec2a0?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc0004f56e0?}, {0x1565b90, 0xc0001ec2a0}, 0xc000431e00)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00016e630, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 16:59:02.676952 ttgethandler.go:10: Processing new GET Request
+2023/09/14 16:59:02.676971 ttproxy.go:138: 	Request Query Params
+2023/09/14 16:59:02.676987 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 16:59:02.676992 ttgethandler.go:15: Path = /spa
+2023/09/14 16:59:02.676998 tttmplts.go:23: Using Default SPA template
+2023/09/14 16:59:02.759692 tttmplts.go:107: Caching 22 Templates
+2023/09/14 16:59:02.761120 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 16:59:02.761264 server.go:3217: http: panic serving [::1]:53155: runtime error: invalid memory address or nil pointer dereference
+goroutine 113 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc00009c180?, 0xc0001ec178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc0004d4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc0004d4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc0004d4000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc0004d4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc0004d4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc00031a380}, 0xc00046b500)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc000031709?, {0x1565b90?, 0xc00031a380?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc0004cb8c0?}, {0x1565b90, 0xc00031a380}, 0xc00046b500)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00044c120, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 17:00:02.784949 ttgethandler.go:10: Processing new GET Request
+2023/09/14 17:00:02.785108 ttproxy.go:138: 	Request Query Params
+2023/09/14 17:00:02.785198 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 17:00:02.785232 ttgethandler.go:15: Path = /spa
+2023/09/14 17:00:02.785251 tttmplts.go:23: Using Default SPA template
+2023/09/14 17:00:03.025490 tttmplts.go:107: Caching 22 Templates
+2023/09/14 17:00:03.026795 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 17:00:03.026978 server.go:3217: http: panic serving [::1]:53167: runtime error: invalid memory address or nil pointer dereference
+goroutine 115 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc0002a0360?, 0xc0003e4178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc00013f000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc00013f000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc0001ec000}, 0xc0002be000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc0002b0009?, {0x1565b90?, 0xc0001ec000?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc0002ba030?}, {0x1565b90, 0xc0001ec000}, 0xc0002be000)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000206000, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 17:00:03.027361 ttgethandler.go:10: Processing new GET Request
+2023/09/14 17:00:03.027385 ttproxy.go:138: 	Request Query Params
+2023/09/14 17:00:03.027400 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 17:00:03.027405 ttgethandler.go:15: Path = /spa
+2023/09/14 17:00:03.027409 tttmplts.go:23: Using Default SPA template
+2023/09/14 17:00:03.199889 tttmplts.go:107: Caching 22 Templates
+2023/09/14 17:00:03.201996 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 17:00:03.202118 server.go:3217: http: panic serving [::1]:53168: runtime error: invalid memory address or nil pointer dereference
+goroutine 116 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc0000264b0?, 0xc0004f0178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc0004d5000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc0004d5000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc0004d5000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc0004d5000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc0004d5000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc0001ec8c0}, 0xc000151600)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc000403549?, {0x1565b90?, 0xc0001ec8c0?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc00024de90?}, {0x1565b90, 0xc0001ec8c0}, 0xc000151600)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc000206120, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 17:00:03.202704 ttgethandler.go:10: Processing new GET Request
+2023/09/14 17:00:03.202741 ttproxy.go:138: 	Request Query Params
+2023/09/14 17:00:03.202759 ttutil.go:140: 	{
+  "User": "ian.thomas",
+  "Org": "2tsolutions",
+  "Role": "clinical"
+}
+2023/09/14 17:00:03.202768 ttgethandler.go:15: Path = /spa
+2023/09/14 17:00:03.202773 tttmplts.go:23: Using Default SPA template
+2023/09/14 17:00:03.351747 tttmplts.go:107: Caching 22 Templates
+2023/09/14 17:00:03.354988 tttmplts.go:111: Template pds_tmplt caused Error template: pds_tmplt:143: unexpected EOF
+2023/09/14 17:00:03.355220 server.go:3217: http: panic serving [::1]:53171: runtime error: invalid memory address or nil pointer dereference
+goroutine 117 [running]:
+net/http.(*conn).serve.func1()
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1854 +0xbf
+panic({0x1434fa0, 0x17e4e70})
+	/Users/IanThomas/sdk/go1.20.5/src/runtime/panic.go:890 +0x263
+html/template.(*Template).New(0x14c1aba?, {0xc00070f140?, 0xc0001c2178?})
+	/Users/IanThomas/sdk/go1.20.5/src/html/template/template.go:305 +0x37
+main.(*Trans).cacheTemplates(0xc0004d4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:110 +0x1d2
+main.(*Trans).setResponseFromTemplate(0xc0004d4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:92 +0x45
+main.(*Trans).setSpaTemplate(0xc0004d4000?)
+	/Users/IanThomas/go/src/ttxdwuser/main/tttmplts.go:26 +0x9a
+main.(*Trans).newGetHandler(0xc0004d4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttgethandler.go:44 +0xd58
+main.(*Trans).newProxyTrans(0xc0004d4000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:73 +0x4d1
+main.Handle_HTTP_Request({0x1565b90, 0xc0001ec1c0}, 0xc000151000)
+	/Users/IanThomas/go/src/ttxdwuser/main/ttproxy.go:15 +0xf2
+net/http.HandlerFunc.ServeHTTP(0xc000030789?, {0x1565b90?, 0xc0001ec1c0?}, 0x1064cee?)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2122 +0x2f
+net/http.serverHandler.ServeHTTP({0xc0000b2600?}, {0x1565b90, 0xc0001ec1c0}, 0xc000151000)
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc00016e000, {0x1565d88, 0xc000298180})
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/Users/IanThomas/sdk/go1.20.5/src/net/http/server.go:3089 +0x5ed
+2023/09/14 17:00:45.961081 ttserver.go:52: ICB Workflow Service stopped

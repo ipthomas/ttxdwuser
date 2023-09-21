@@ -1,0 +1,142 @@
+{
+    "ref": "toc_def",
+    "name": "Transfer of Care",
+    "confidentialitycode": "N",
+    "startbytime": "",
+    "completebytime": "day(2)",
+    "expirationtime": "",
+    "completionBehavior": [
+      {
+        "completion": {
+          "condition": "task(4)"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "id": "1",
+        "tasktype": "TASK",
+        "name": "Transfer_Requested",
+        "description": "Transfer of Care Requested",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "task(2)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "TOC1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "tasktype": "NOTIFICATION",
+        "name": "Transfer_Claimed",
+        "description": "Transfer Of Care Request Claimed",
+        "actualowner": "",
+        "expirationtime": "day(1)",
+        "startbytime": "",
+        "completebytime": "hour(4)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(TOC2_Claimed)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "TOC1^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "Transfer_Claimed",
+            "contenttype": "text/plain",
+            "accesstype": "url"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "tasktype": "NOTIFICATION",
+        "name": "Transfer_Scheduled",
+        "description": "Patient Transfer Scheduled",
+        "actualowner": "",
+        "expirationtime": "day(1)",
+        "startbytime": "",
+        "completebytime": "hour(8)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(Transfer_Scheduled)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "Transfer_Claimed",
+            "contenttype": "text/plain",
+            "accesstype": "url"
+          }
+        ],
+        "output": [
+          {
+            "name": "Transfer_Scheduled",
+            "contenttype": "text/plain",
+            "accesstype": "url"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "tasktype": "TASK",
+        "name": "Patient_Admitted",
+        "description": "Patient Admitted by New Provider",
+        "actualowner": "",
+        "expirationtime": "day(2)",
+        "startbytime": "",
+        "completebytime": "day(2)",
+        "isskipable": false,
+        "potentialOwners": null,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(TOC4^^TypeCode_EPUT_2018)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "Transfer_Scheduled",
+            "contenttype": "text/plain",
+            "accesstype": "url"
+          }
+        ],
+        "output": [
+          {
+            "name": "TOC4^^TypeCode_EPUT_2018",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      }
+    ]
+  }
