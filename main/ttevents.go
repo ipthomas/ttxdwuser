@@ -99,7 +99,7 @@ func (i *Trans) newUserEvent() {
 	i.Query.Template = "xdw2t_tmplt"
 	i.setResponseFromTemplate()
 }
-func (i *Trans) getEvents() {
+func (i *Trans) setEvents() {
 	if i.XDWState.Events, i.Error = getEvents(i.Query.Pathway, i.Query.Nhs, GetIntFromString(i.Query.Vers), GetIntFromString(i.Query.Taskid)); i.Error != nil {
 		log.Println(i.Error.Error())
 		return

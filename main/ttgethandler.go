@@ -15,27 +15,27 @@ func (i *Trans) newGetHandler() {
 		log.Printf("Path = %s", path)
 		switch {
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_TASK_STATUS):
-			i.getTaskState()
+			i.setTaskState()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_TASKS_STATUS):
-			i.getTasksState()
+			i.setTasksState()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_EVENTS):
-			i.getEvents()
+			i.setEvents()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_UPLOAD):
-			i.setDocumentUploadTemplate()
+			i.setUploadTemplate()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_CLEAR_CACHE):
 			InitTemplates = true
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_PATIENT):
-			i.setPatientTemplate()
+			i.setPatient()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_CODEMAP):
-			i.getUserMappings()
+			i.setUserMappings()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_PATHWAYS), strings.HasSuffix(path, HTTP_PATH_API_STATE_PATHWAYS):
-			i.getPathways()
+			i.setPathways()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_EXPRESSIONS), strings.HasSuffix(path, HTTP_PATH_API_STATE_EXPRESSIONS):
-			i.getExpressionsState()
+			i.setExpressions()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_STATIC), strings.HasSuffix(path, "favicon.ico"):
-			i.getImage()
+			i.setImage()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_COMMENTS), strings.HasSuffix(path, HTTP_PATH_API_STATE_COMMENTS):
-			i.getCommentsState()
+			i.setComments()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_XDWS):
 			i.setXDWs()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_XDW):
@@ -43,7 +43,7 @@ func (i *Trans) newGetHandler() {
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_SPA):
 			i.setSpaTemplate()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_MYSUBS):
-			i.getUserSubscriptions()
+			i.setUserSubscriptions()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_NEWSUB):
 			i.newUserSubscription()
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_DELSUB):
@@ -57,31 +57,28 @@ func (i *Trans) newGetHandler() {
 		case strings.HasSuffix(path, HTTP_PATH_CONSUMER_DEFINITION), strings.HasSuffix(path, HTTP_PATH_CONSUMER_TEMPLATE), strings.HasSuffix(path, HTTP_PATH_PUBLISH):
 			i.newUploadFileForm()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE):
-			i.getState()
+			i.setState()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_DASHBOARD):
-			i.getDashboardState()
+			i.setDashboardState()
+		case strings.HasSuffix(path, HTTP_PATH_API_STATE_WORKFLOWS_COUNT):
+			i.setWorkflowsCount()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_WORKFLOWS):
-			i.getWorkflowStates()
+			i.setStates()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_WORKFLOW):
-			i.getWorkflowState()
+			i.setWorkflowState()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_EVENTS):
-			i.getEventStates()
+			i.setEventStates()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_TERMINOLOGY):
-			i.getTerminology()
+			i.setTerminology()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_SUBSCRIPTIONS):
-			i.getSubscriptions()
+			i.setSubscriptions()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_DEFINITION):
-			i.getXDWDefinition()
+			i.setXDWDefinition()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_META):
-			i.getXDWMeta()
+			i.setXDWMeta()
 		default:
 			i.Error = errors.New("Unsupported Consumer query path - " + i.HTTP.Path)
-			i.getErrorTemplate()
+			i.setErrorTemplate()
 		}
 	}
-}
-func (i *Trans) getErrorTemplate() {
-	i.Query.Template = "error_tmplt"
-	i.Query.Act = SELECT
-	i.setResponseFromTemplate()
 }

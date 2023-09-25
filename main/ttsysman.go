@@ -229,7 +229,7 @@ func (i *Trans) newImage() {
 	}
 }
 
-func (i *Trans) getUserMappings() {
+func (i *Trans) setUserMappings() {
 	i.IdMaps = getUserTerminology(i.Query.User)
 	i.Query.Template = "codemaps2t_tmplt"
 	i.setResponseFromTemplate()
@@ -265,7 +265,7 @@ func getUserTerminology(user string) IdMaps {
 	}
 	return idmaps
 }
-func (i *Trans) getImage() {
+func (i *Trans) setImage() {
 	if i.Query.Name == "" {
 		i.Query.Name = "favicon.ico"
 	}

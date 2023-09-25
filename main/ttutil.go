@@ -13,7 +13,6 @@ import (
 	"reflect"
 	"strconv"
 	"strings"
-	"text/template"
 	"time"
 
 	"github.com/aws/aws-lambda-go/events"
@@ -76,24 +75,6 @@ func capitalizeFirstChar(s string) string {
 		return firstChar + s[1:]
 	}
 	return s
-}
-
-// TemplateFuncMap returns a functionMap of ttutils for use in templates
-func TemplateFuncMap() template.FuncMap {
-	return template.FuncMap{
-		"dtday":         Tuk_Day,
-		"dtmonth":       Tuk_Month,
-		"dtyear":        Tuk_Year,
-		"prettytime":    PrettyTime,
-		"newuuid":       NewUuid,
-		"newid":         Newid,
-		"tuktime":       Time_Now,
-		"isafternow":    IsAfterNow,
-		"duration":      GetDuration,
-		"durationsince": GetDurationSince,
-		"hasexpired":    OHT_ShouldEscalate,
-		"completedate":  OHT_FutureDate,
-	}
 }
 
 // CreateLog checks if the log folder exists and creates it if not. It then checks for a subfolder for the current year i.e. 2022 and creates it if it does not exist. It then checks for a log file with a name equal to the current day and month and extension .log i.e. 0905.log. If it exists log output is appended to the existing file otherwise a new log file is created.
@@ -191,29 +172,30 @@ func GetDurationSince(stime string) string {
 	daysstr := strconv.Itoa(days)
 	hrsstr := strconv.Itoa(hrs)
 	minstr := strconv.Itoa(min - (days * 24 * 60) - (hrs * 60))
-	log.Println("Returning " + daysstr + " Days " + hrsstr + " Hrs " + minstr + " Mins")
-	return daysstr + " Days " + hrsstr + " Hrs " + minstr + " Mins"
-}
-
-// GetDuration takes 2 times as string inputs in RFC3339 format (yyyy-MM-ddThh:mm:ssZ) and returns the duration in days, hours and mins in a 'pretty format' eg '2 Days 0 Hrs 52 Mins' between the provided times as a string
-//
-//	Example : GetDuration("2022-09-04T13:15:20Z", "2022-09-14T16:20:01Z") returns `10 Days 3 Hrs 4 Mins`
-func GetDuration(dur time.Duration) string {
-	days := 0
-	hrs := int(dur.Hours())
-	min := int(dur.Minutes())
-	secs := int(dur.Seconds())
-	if secs < 60 {
-		return strconv.Itoa(secs) + " Secs"
+	rtnStr := ""
+	if days > 0 {
+		if days == 1 {
+			rtnStr = "1 Day "
+		} else {
+			rtnStr = daysstr + " Days "
+		}
 	}
-	if hrs > 24 {
-		days = hrs / 24
-		hrs = hrs % 24
+	if hrs > 0 {
+		if hrs == 1 {
+			rtnStr = rtnStr + hrsstr + " Hr "
+		} else {
+			rtnStr = rtnStr + hrsstr + " Hrs "
+		}
 	}
-	daysstr := strconv.Itoa(days)
-	hrsstr := strconv.Itoa(hrs)
-	minstr := strconv.Itoa(min - (days * 24 * 60) - (hrs * 60))
-	return daysstr + " Days " + hrsstr + " Hrs " + minstr + " Mins"
+	if min > 0 {
+		if min == 1 {
+			rtnStr = rtnStr + minstr + " Min "
+		} else {
+			rtnStr = rtnStr + minstr + " Mins "
+		}
+	}
+	log.Println("Returning " + rtnStr)
+	return rtnStr
 }
 
 // IsAfterNow takes a time as a string input in RFC3339 format (yyyy-MM-ddThh:mm:ssZ) and returns true if the input time is after time.Now() and false if input time is before time.Now()
@@ -498,7 +480,8 @@ func PrettyPrintDuration(duration time.Duration) string {
 	} else {
 		rsp = GetStringFromInt(days) + " Days " + GetStringFromInt(hrs) + " Hours " + GetStringFromInt(mins) + " Mins "
 	}
-	return strings.TrimPrefix(strings.TrimPrefix(rsp, "0 Days 0 Hours "), "0 Days ")
+
+	return strings.TrimPrefix(strings.TrimPrefix(rsp, "0 Days "), "0 Hours ")
 }
 func DT_Day() string {
 	return fmt.Sprintf("%02d",

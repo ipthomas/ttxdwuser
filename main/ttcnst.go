@@ -226,6 +226,7 @@ const (
 	HTTP_PATH_API_STATE_EVENTS                = "/api/state/events"
 	HTTP_PATH_API_STATE_TERMINOLOGY           = "/api/state/terminology"
 	HTTP_PATH_API_STATE_WORKFLOWS             = "/api/state/workflows"
+	HTTP_PATH_API_STATE_WORKFLOWS_COUNT       = "/api/state/workflows/count"
 	HTTP_PATH_API_STATE_WORKFLOW              = "/api/state/workflow"
 	HTTP_PATH_API_STATE_SUBSCRIPTIONS         = "/api/state/subscriptions"
 	HTTP_PATH_API_STATE_PATHWAYS              = "/api/state/pathways"

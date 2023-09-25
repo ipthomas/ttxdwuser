@@ -24,9 +24,9 @@
         "name": "LAC_Identified",
         "description": "Simulate the Social Services EPR sending a message to start the LAC Workflow",
         "actualowner": "",
-        "expirationtime": "",
-        "startbytime": "",
-        "completebytime": "",
+        "expirationtime": "day(2)",
+        "startbytime": "hour(4)",
+        "completebytime": "day(1)",
         "isskipable": false,
         "completionBehavior": [
           {
@@ -49,9 +49,9 @@
         "name": "LAC_Paperwork_Sent",
         "description": "Simulate the Social Services EPR sending messages to the HIE with the different Paperwork items",
         "actualowner": "",
-        "expirationtime": "day(6)",
-        "startbytime": "day(4)",
-        "completebytime": "day(5)",
+        "expirationtime": "day(4)",
+        "startbytime": "day(2)",
+        "completebytime": "day(3)",
         "isskipable": false,
         "completionBehavior": [
           {
@@ -170,9 +170,9 @@
         "name": "LAC_IHA_Completed",
         "description": "Simulate Provide EPR sending a message to the HIE with the IHA Information",
         "actualowner": "",
-        "expirationtime": "day(19)",
-        "startbytime": "day(13)",
-        "completebytime": "day(18)",
+        "expirationtime": "day(18)",
+        "startbytime": "day(11)",
+        "completebytime": "day(17)",
         "isskipable": false,
         "completionBehavior": [
           {
@@ -236,7 +236,7 @@
         "actualowner": "",
         "expirationtime": "",
         "startbytime": "",
-        "completebytime": "day(21)",
+        "completebytime": "",
         "isskipable": true,
         "completionBehavior": [
           {

@@ -4,16 +4,14 @@ import (
 	"bytes"
 	"html/template"
 	"log"
-	"net/http"
-	"sync"
 )
 
 var htmlTemplates *template.Template
 var InitTemplates = true
 
-func (i *Trans) setDocumentUploadTemplate() {
+func (i *Trans) setUploadTemplate() {
 	if i.Query.Template == "" {
-		log.Println("Using Default DocumentUpload template")
+		log.Println("Using Default Upload template")
 		i.Query.Template = "publishfile2t_tmplt"
 	}
 	i.setResponseFromTemplate()
@@ -25,31 +23,18 @@ func (i *Trans) setSpaTemplate() {
 	}
 	i.setResponseFromTemplate()
 }
-func (i *Trans) pixmQueryThread(wg *sync.WaitGroup) {
-	defer wg.Done()
-	log.Println("PIXm Worker starting")
-	i.newPIXmReq()
-	log.Println("PIXm Worker done")
-	log.Printf("PIXm Worker Status Code %v", i.HTTP.StatusCode)
-}
-func (i *Trans) cglQueryThread(wg *sync.WaitGroup) {
-	defer wg.Done()
-	log.Println("CGL Worker starting")
-	i.newCglReq()
-	log.Println("CGL Worker done")
-	log.Printf("CGL Worker Status Code %v", i.HTTP.StatusCode)
+func (i *Trans) setErrorTemplate() {
+	if i.Query.Template == "" {
+		log.Println("Using Default Error template")
+		i.Query.Template = "error_tmplt"
+	}
+	i.setResponseFromTemplate()
 }
 func (i *Trans) setPatientTemplate() {
-	i.Query.Pid = i.Query.Nhs
-	i.Query.Pidoid = NHS_OID_DEFAULT
-	var wg sync.WaitGroup
-	wg.Add(2)
-	go i.pixmQueryThread(&wg)
-	go i.cglQueryThread(&wg)
-	wg.Wait()
-	i.newPDSReq()
-	i.HTTP.StatusCode = http.StatusOK
-	i.Query.Template = "allpatientSrvs_tmplt"
+	if i.Query.Template == "" {
+		log.Println("Using Default patient template")
+		i.Query.Template = "allpatientSrvs_tmplt"
+	}
 	i.setResponseFromTemplate()
 }
 func (i *Trans) setDsubAckTemplate() {
@@ -66,18 +51,7 @@ func (i *Trans) setDsubSubscribeTemplate() {
 }
 func (i *Trans) setNotificationTemplate() {
 	i.Query.Template = "notification_tmplt"
-	var tplReturn bytes.Buffer
-	if InitTemplates {
-		i.cacheTemplates()
-	}
-	if i.Error == nil {
-		log.Printf("Processing Template %s", i.Query.Template)
-		if i.Error = htmlTemplates.ExecuteTemplate(&tplReturn, i.Query.Template, i); i.Error == nil {
-			log.Printf("Created Template \n%s", i.HTTP.ResponseBody)
-			i.HTTP.ResponseBody = tplReturn.String()
-			return
-		}
-	}
+	i.setResponseFromTemplate()
 }
 func (i *Trans) setResponseFromTemplate() {
 	var tplReturn bytes.Buffer

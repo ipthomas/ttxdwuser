@@ -1739,6 +1739,7 @@ type Comments struct {
 }
 type TaskState struct {
 	Taskid               int      `json:"taskid"`
+	Name                 string   `json:"name"`
 	TargetMet            bool     `json:"targetmet"`
 	Escalated            bool     `json:"escalated"`
 	Status               string   `json:"status"`
@@ -1750,6 +1751,16 @@ type TaskState struct {
 	Owner                string   `json:"owner"`
 	CompletedOn          string   `json:"completedon"`
 	Duration             string   `json:"duration"`
+}
+type WorkflowTasksState struct {
+	TaskState []TaskState `json:"taskstate"`
+}
+type WorkflowCount struct {
+	Workflow string `json:"workflow"`
+	Count    int    `json:"count"`
+}
+type WorkflowsCount struct {
+	WorkflowCount []WorkflowCount `json:"workflowcount"`
 }
 
 func (e Pathways) Len() int {

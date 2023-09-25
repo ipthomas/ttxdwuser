@@ -18,7 +18,7 @@ func (i *Trans) setBrokerSubscriptions() {
 		i.newDsubCancelReq()
 	}
 }
-func (i *Trans) getUserSubscriptions() {
+func (i *Trans) setUserSubscriptions() {
 	i.Subscriptions = i.newSubscriptionRequest().getSubscriptions()
 	i.sortSubscriptions()
 	if i.HTTP.RspContentType == "" || i.HTTP.RspContentType == TEXT_HTML {
@@ -36,12 +36,12 @@ func (i *Trans) newUserSubscription() {
 			log.Println(i.Error.Error())
 		}
 	}
-	i.getUserSubscriptions()
+	i.setUserSubscriptions()
 }
 func (i *Trans) cancelUserSubscription() {
 	i.newSubscriptionRequest().cancelUserSubscription()
 	i.Query.Id = "0"
-	i.getUserSubscriptions()
+	i.setUserSubscriptions()
 }
 func (i *Trans) newBrokerSubscriptions() {
 	i.HTTP.Method = http.MethodPost

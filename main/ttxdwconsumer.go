@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func (i *Trans) getXDWDefinition() {
+func (i *Trans) setXDWDefinition() {
 	xdwstr := getXDW(i.Query.Pathway+"_def", false)
 	def := WorkflowDefinition{}
 	json.Unmarshal([]byte(xdwstr), &def)
@@ -17,7 +17,7 @@ func (i *Trans) getXDWDefinition() {
 	i.HTTP.ResponseBody = string(bb)
 	i.HTTP.RspContentType = APPLICATION_JSON
 }
-func (i *Trans) getXDWMeta() {
+func (i *Trans) setXDWMeta() {
 	metastr := getXDW(i.Query.Pathway+"_meta", true)
 	meta := WorkflowMeta{}
 	json.Unmarshal([]byte(metastr), &meta)
@@ -26,27 +26,27 @@ func (i *Trans) getXDWMeta() {
 	i.HTTP.ResponseBody = string(bb)
 	i.HTTP.RspContentType = APPLICATION_JSON
 }
-func (i *Trans) getTerminology() {
+func (i *Trans) setTerminology() {
 	i.IdMaps = getUserTerminology(i.Query.User)
 	var bb []byte
 	bb, i.Error = json.MarshalIndent(i.IdMaps, "", "  ")
 	i.HTTP.ResponseBody = string(bb)
 	i.HTTP.RspContentType = APPLICATION_JSON
 }
-func (i *Trans) getSubscriptions() {
+func (i *Trans) setSubscriptions() {
 	i.Subscriptions = i.newSubscriptionRequest().getSubscriptions()
 	var bb []byte
 	bb, i.Error = json.MarshalIndent(i.Subscriptions, "", "  ")
 	i.HTTP.ResponseBody = string(bb)
 	i.HTTP.RspContentType = APPLICATION_JSON
 }
-func (i *Trans) getCommentsState() {
+func (i *Trans) setComments() {
 	bodybytes, err := GetTaskNotes(i.Query.Pathway, i.Query.Nhs, GetIntFromString(i.Query.Taskid), GetIntFromString(i.Query.Vers))
 	i.HTTP.ResponseBody = string(bodybytes)
 	i.HTTP.RspContentType = APPLICATION_JSON
 	i.Error = err
 }
-func (i *Trans) getExpressionsState() {
+func (i *Trans) setExpressions() {
 	if i.Query.Pathway == "" {
 		return
 	}
@@ -82,14 +82,14 @@ func (i *Trans) getExpressionsState() {
 		i.Error = err
 	}
 }
-func (i *Trans) getDashboardState() {
+func (i *Trans) setDashboardState() {
 	i.setWorkflowStates()
 	var bb []byte
 	bb, i.Error = json.MarshalIndent(i.XDWState.Dashboard, "", "  ")
 	i.HTTP.ResponseBody = string(bb)
 	i.HTTP.RspContentType = APPLICATION_JSON
 }
-func (i *Trans) getWorkflowState() {
+func (i *Trans) setWorkflowState() {
 	vers := 1
 	if i.Query.Vers != "" {
 		vers = GetIntFromString(i.Query.Vers)
@@ -110,14 +110,31 @@ func (i *Trans) getWorkflowState() {
 		}
 	}
 }
-func (i *Trans) getWorkflowStates() {
+func (i *Trans) setStates() {
 	i.setWorkflowStates()
 	var bb []byte
 	bb, i.Error = json.MarshalIndent(i.XDWState.WorkflowStates, "", "  ")
 	i.HTTP.ResponseBody = string(bb)
 	i.HTTP.RspContentType = APPLICATION_JSON
 }
-func (i *Trans) getEventStates() {
+func (i *Trans) setWorkflowsCount() {
+	i.XDWState.Workflows, i.Error = GetWorkflows("", i.Query.Nhs, -1, i.Query.Status)
+	pwys := make(map[string]int)
+	for _, wf := range i.XDWState.Workflows.Workflows {
+		if wf.Pathway != "" {
+			if cnt := pwys[wf.Pathway]; cnt == 0 {
+				pwys[wf.Pathway] = 1
+			} else {
+				pwys[wf.Pathway] = pwys[wf.Pathway] + 1
+			}
+		}
+	}
+	var bb []byte
+	bb, i.Error = json.MarshalIndent(pwys, "", "  ")
+	i.HTTP.ResponseBody = string(bb)
+	i.HTTP.RspContentType = APPLICATION_JSON
+}
+func (i *Trans) setEventStates() {
 	taskid := -1
 	vers := -1
 	if i.Query.Taskid != "" {
@@ -138,7 +155,7 @@ func (i *Trans) getEventStates() {
 	i.HTTP.ResponseBody = string(bb)
 	i.HTTP.RspContentType = APPLICATION_JSON
 }
-func (i *Trans) getState() {
+func (i *Trans) setState() {
 	i.setWorkflowStates()
 	i.Subscriptions = i.newSubscriptionRequest().getSubscriptions()
 	i.IdMaps = getUserTerminology(i.Query.User)
@@ -323,16 +340,16 @@ func (i *Trans) getLatestWorkflowEventTime() time.Time {
 	return we
 }
 func (i *Trans) getWorkflowDuration() string {
-	ws := GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value)
-	log.Printf("Workflow Started %s Status %s", ws.String(), i.XDWState.WorkflowDocument.WorkflowStatus)
+	// ws := GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value)
+	// log.Printf("Workflow Started %s Status %s", ws.String(), i.XDWState.WorkflowDocument.WorkflowStatus)
 	loc, _ := time.LoadLocation("Europe/London")
 	we := time.Now().In(loc)
-	log.Printf("Time Now %s", we.String())
 	if i.XDWState.WorkflowDocument.WorkflowStatus == STATUS_CLOSED {
 		we = i.getLatestWorkflowEventTime()
 		log.Printf("Workflow is Complete. Latest Event Time was %s", we.String())
 	}
-	duration := GetDuration(we.Sub(ws))
+	// duration := GetDuration(we.Sub(ws))
+	duration := timeDuratipn(i.XDWState.WorkflowDocument.EffectiveTime.Value, we.String())
 	log.Println("Duration - " + duration)
 	return duration
 }
@@ -381,7 +398,7 @@ func (i *Trans) isWorkflowEscalated() bool {
 	log.Println("No Escalate time defined for Workflow")
 	return false
 }
-func (i *Trans) getPathways() {
+func (i *Trans) setPathways() {
 	pwys := Pwys{}
 	pathways := make(map[string]bool)
 	xdws := getXDWs()
@@ -407,62 +424,88 @@ func GetWorkflows(pathway string, nhsid string, version int, status string) (Wor
 	log.Printf("selected %v Workflows for Pathway %s NHS %s Version %v", wfs.Count, pathway, nhsid, version)
 	return wfs, err
 }
-func (i *Trans) getTasksState() {
-}
-func (i *Trans) getTaskState() {
-	log.Printf("Setting Task %s Task Index %v State", i.Query.Taskid, GetIntFromString(i.Query.Taskid))
-	i.Query.Name = i.Query.Pathway
-	i.setWorkflowDocument()
-	if i.Error == nil {
-		i.setWorkflowDefinition()
-		if i.Error == nil {
-			taskstate := TaskState{Taskid: GetIntFromString(i.Query.Taskid)}
-			if i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].CompleteByTime == "" {
-				taskstate.CompleteBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime).String()
-			} else {
-				taskstate.CompleteBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].CompleteByTime).String()
-			}
-			if i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].StartByTime == "" {
-				taskstate.StartBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime).String()
-			} else {
-				taskstate.StartBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].StartByTime).String()
-			}
-			if i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].ExpirationTime == "" {
-				taskstate.EscalateOn = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime).String()
-			} else {
-				taskstate.EscalateOn = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].ExpirationTime).String()
-			}
-			for _, v := range i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].CompletionBehavior {
-				if v.Completion.Condition != "" {
-					taskstate.CompletionConditions = append(taskstate.CompletionConditions, v.Completion.Condition)
-				}
-			}
-			taskstate.Status = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status
-			if taskstate.Status == STATUS_COMPLETE {
-				taskstate.CompletedOn = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.LastModifiedTime
-			}
-			taskstate.StartedOn = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActivationTime
-			taskstate.Owner = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActualOwner
-			taskstate.Duration = i.getTaskDuration()
-			if time.Now().After(GetTimeFromString(taskstate.CompleteBy)) {
-				taskstate.TargetMet = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status == STATUS_COMPLETE
-			} else {
-				taskstate.TargetMet = true
-			}
-			if time.Now().After(GetTimeFromString(taskstate.EscalateOn)) {
-				taskstate.Escalated = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status != STATUS_COMPLETE
-			} else {
-				taskstate.Escalated = false
-			}
-			var bb []byte
-			bb, i.Error = json.MarshalIndent(taskstate, "", "  ")
-			i.HTTP.ResponseBody = string(bb)
-			i.HTTP.RspContentType = APPLICATION_JSON
+func (i *Trans) getTaskState() TaskState {
+	taskstate := TaskState{Taskid: GetIntFromString(i.Query.Taskid), Name: i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].Name}
+	if i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].CompleteByTime == "" {
+		taskstate.CompleteBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime).String()
+	} else {
+		taskstate.CompleteBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].CompleteByTime).String()
+	}
+	if i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].StartByTime == "" {
+		taskstate.StartBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime).String()
+	} else {
+		taskstate.StartBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].StartByTime).String()
+	}
+	if i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].ExpirationTime == "" {
+		taskstate.EscalateOn = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime).String()
+	} else {
+		taskstate.EscalateOn = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].ExpirationTime).String()
+	}
+	for _, v := range i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].CompletionBehavior {
+		if v.Completion.Condition != "" {
+			taskstate.CompletionConditions = append(taskstate.CompletionConditions, v.Completion.Condition)
 		}
 	}
+	taskstate.Status = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status
+	if taskstate.Status == STATUS_COMPLETE {
+		taskstate.CompletedOn = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.LastModifiedTime
+	}
+	taskstate.StartedOn = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActivationTime
+	taskstate.Owner = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActualOwner
+	taskstate.Duration = i.getTaskDuration()
+	if time.Now().After(GetTimeFromString(taskstate.CompleteBy)) {
+		taskstate.TargetMet = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status == STATUS_COMPLETE
+	} else {
+		taskstate.TargetMet = true
+	}
+	if time.Now().After(GetTimeFromString(taskstate.EscalateOn)) {
+		taskstate.Escalated = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status != STATUS_COMPLETE
+	} else {
+		taskstate.Escalated = false
+	}
+	return taskstate
+}
+func (i *Trans) setTasksState() {
+	i.setWorkflowDocument()
+	state := WorkflowTasksState{}
+	for _, task := range i.XDWState.WorkflowDocument.TaskList.XDWTask {
+		i.Query.Taskid = task.TaskData.TaskDetails.ID
+		state.TaskState = append(state.TaskState, i.getTaskState())
+	}
+	var bb []byte
+	bb, i.Error = json.MarshalIndent(state, "", "  ")
+	i.HTTP.ResponseBody = string(bb)
+	i.HTTP.RspContentType = APPLICATION_JSON
+}
+func (i *Trans) setTaskState() {
+	log.Printf("Setting Task %s Task Index %v State", i.Query.Taskid, GetIntFromString(i.Query.Taskid))
+	if !i.setDocAndDef() {
+		return
+	}
+	taskstate := i.getTaskState()
 	if i.Error != nil {
 		log.Println(i.Error.Error())
+		return
 	}
+	var bb []byte
+	bb, i.Error = json.MarshalIndent(taskstate, "", "  ")
+	i.HTTP.ResponseBody = string(bb)
+	i.HTTP.RspContentType = APPLICATION_JSON
+}
+
+func (i *Trans) setDocAndDef() bool {
+	i.Query.Name = i.Query.Pathway
+	i.setWorkflowDocument()
+	if i.Error != nil {
+		log.Println(i.Error.Error())
+		return false
+	}
+	i.setWorkflowDefinition()
+	if i.Error != nil {
+		log.Println(i.Error.Error())
+		return false
+	}
+	return true
 }
 func (i *Trans) getTaskDuration() string {
 	at := i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActivationTime
