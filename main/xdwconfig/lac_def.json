@@ -24,9 +24,9 @@
         "name": "LAC_Identified",
         "description": "Simulate the Social Services EPR sending a message to start the LAC Workflow",
         "actualowner": "",
-        "expirationtime": "day(2)",
-        "startbytime": "hour(4)",
-        "completebytime": "day(1)",
+        "expirationtime": "hour(4)",
+        "startbytime": "hour(1)",
+        "completebytime": "hour(2)",
         "isskipable": false,
         "completionBehavior": [
           {

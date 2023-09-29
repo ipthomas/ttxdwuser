@@ -21,7 +21,7 @@
             "isskipable": false,
             "completionBehavior": [{
                 "completion": {
-                    "condition": "task(2)"
+                    "condition": "output(RAD1^^TypeCode_EPUT_2018)"
                 }
                 }],
             "output": [{
@@ -40,7 +40,7 @@
             "isskipable": false,
             "completionBehavior": [{
                 "completion": {
-                    "condition": "output(RAD2_Consult_Claimed)"
+                    "condition": "output(RAD2^^TypeCode_EPUT_2018)"
                 }
                 }],
             "input": [
@@ -52,9 +52,9 @@
             ],
             "output": [
                 {
-                    "name": "RAD2_Consult_Claimed",
-                    "contenttype": "text/plain",
-                    "accesstype": "URL"
+                    "name": "RAD2^^TypeCode_EPUT_2018",
+                    "contenttype": "application/pdf",
+                    "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
                 }
             ]
         },
@@ -76,8 +76,8 @@
             "input": [
                 {
                     "name": "RAD2^^TypeCode_EPUT_2018",
-                    "contenttype": "text/plain",
-                    "accesstype": "URL"
+                    "contenttype": "application/pdf",
+                    "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
                 }
             ],
             "output": [

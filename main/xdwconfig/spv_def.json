@@ -4,7 +4,7 @@
     "confidentialitycode": "N",
     "startbytime": "",
     "completebytime": "day(2)",
-    "expirationtime": "",
+    "expirationtime": "day(3)",
     "completionBehavior": [
       {
         "completion": {
@@ -19,11 +19,10 @@
         "name": "Transport_Scheduled",
         "description": "Secure Transport Scheduled",
         "actualowner": "",
-        "expirationtime": "",
+        "expirationtime": "day(1)",
         "startbytime": "",
-        "completebytime": "",
+        "completebytime": "hour(4)",
         "isskipable": false,
-        "potentialOwners": null,
         "completionBehavior": [
           {
             "completion": {
@@ -45,15 +44,14 @@
         "name": "Patient_Admitted",
         "description": "Patient Admitted by Health Provider",
         "actualowner": "",
-        "expirationtime": "",
+        "expirationtime": "day(1)",
         "startbytime": "",
-        "completebytime": "day(1)",
+        "completebytime": "hour(10)",
         "isskipable": false,
-        "potentialOwners": null,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "task(3)"
+              "condition": "output(SPV2^^TypeCode_EPUT_2018)"
             }
           }
         ],
@@ -80,13 +78,12 @@
         "actualowner": "",
         "expirationtime": "",
         "startbytime": "",
-        "completebytime": "day(1)",
+        "completebytime": "day(2)",
         "isskipable": false,
-        "potentialOwners": null,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(SPV3_Patinet Discharged)"
+              "condition": "SPV3^^TypeCode_EPUT_2018"
             }
           }
         ],
@@ -113,9 +110,8 @@
         "actualowner": "",
         "expirationtime": "",
         "startbytime": "",
-        "completebytime": "day(1)",
+        "completebytime": "day(2)",
         "isskipable": false,
-        "potentialOwners": null,
         "completionBehavior": [
           {
             "completion": {

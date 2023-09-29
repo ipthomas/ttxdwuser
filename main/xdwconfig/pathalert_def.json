@@ -22,7 +22,7 @@
             "completionBehavior": [
               {
                 "completion": {
-                    "condition": "output(Path1_Request_Consult)"
+                    "condition": "output(Path1^^TypeCode_EPUT_2018)"
                 }
               }
             ],
@@ -43,7 +43,7 @@
             "isskipable": false,
             "completionBehavior": [{
                 "completion": {
-                    "condition": "output(Path2_Consult_Claimed)"
+                    "condition": "output(Path2^^TypeCode_EPUT_2018)"
                 }
             }],
             "input": [
@@ -55,9 +55,9 @@
             ],
             "output": [
                 {
-                    "name": "Path2_Consult_Claimed",
-                    "contenttype": "text/plain",
-                    "accesstype": "URL"
+                    "name": "Path2^^TypeCode_EPUT_2018",
+                    "contenttype": "application/pdf",
+                    "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
                 }
             ]
         },
@@ -70,14 +70,14 @@
             "isskipable": false,
             "completionBehavior": [{
                 "completion": {
-                    "condition": "output(Path3^^TypeCode_LPRES_2018)"
+                    "condition": "output(Path3^^TypeCode_EPUT_2018)"
                 }
             }],
             "input": [
                 {
                     "name": "Path2^^TypeCode_EPUT_2018",
-                    "contenttype": "text/plain",
-                    "accesstype": "URL"
+                    "contenttype": "application/pdf",
+                    "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
                 }
             ],
             "output": [{

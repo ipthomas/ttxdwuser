@@ -4,6 +4,49 @@ import (
 	"sort"
 )
 
+func (e Pathways) Len() int {
+	return len(e.Pathway)
+}
+func (e Pathways) Less(i, j int) bool {
+	return e.Pathway[i].Value < e.Pathway[j].Value
+}
+func (e Pathways) Swap(i, j int) {
+	e.Pathway[i], e.Pathway[j] = e.Pathway[j], e.Pathway[1]
+}
+func (e Expressions) Len() int {
+	return len(e.Expression)
+}
+func (e Expressions) Less(i, j int) bool {
+	return e.Expression[i].Value < e.Expression[j].Value
+}
+func (e Expressions) Swap(i, j int) {
+	e.Expression[i], e.Expression[j] = e.Expression[j], e.Expression[1]
+}
+
+// sort interface for Document Events
+
+func (e WorkflowStatusHistory) Len() int {
+	return len(e.DocumentEvent)
+}
+func (e WorkflowStatusHistory) Less(i, j int) bool {
+	return e.DocumentEvent[i].EventTime > e.DocumentEvent[j].EventTime
+}
+func (e WorkflowStatusHistory) Swap(i, j int) {
+	e.DocumentEvent[i], e.DocumentEvent[j] = e.DocumentEvent[j], e.DocumentEvent[i]
+}
+
+// sort interface for Task Events
+
+func (e TaskEventHistory) Len() int {
+	return len(e.TaskEvent)
+}
+func (e TaskEventHistory) Less(i, j int) bool {
+	return e.TaskEvent[i].EventTime > e.TaskEvent[j].EventTime
+}
+func (e TaskEventHistory) Swap(i, j int) {
+	e.TaskEvent[i], e.TaskEvent[j] = e.TaskEvent[j], e.TaskEvent[i]
+}
+
 // sort interface for events
 func (e Events) Len() int {
 	return len(e.Events)

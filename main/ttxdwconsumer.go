@@ -446,20 +446,25 @@ func (i *Trans) getTaskState() TaskState {
 			taskstate.CompletionConditions = append(taskstate.CompletionConditions, v.Completion.Condition)
 		}
 	}
-	taskstate.Status = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status
+	taskDetails := i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails
+	taskstate.Status = taskDetails.Status
 	if taskstate.Status == STATUS_COMPLETE {
-		taskstate.CompletedOn = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.LastModifiedTime
+		taskstate.CompletedOn = taskDetails.LastModifiedTime
 	}
-	taskstate.StartedOn = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActivationTime
-	taskstate.Owner = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActualOwner
+	taskstate.StartedOn = taskDetails.ActivationTime
+	taskstate.Owner = taskDetails.ActualOwner
 	taskstate.Duration = i.getTaskDuration()
 	if time.Now().After(GetTimeFromString(taskstate.CompleteBy)) {
-		taskstate.TargetMet = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status == STATUS_COMPLETE
+		if taskstate.Status == STATUS_COMPLETE {
+			taskstate.TargetMet = GetTimeFromString(taskstate.CompletedOn).Before(GetTimeFromString(taskstate.CompleteBy))
+		} else {
+			taskstate.TargetMet = false
+		}
 	} else {
 		taskstate.TargetMet = true
 	}
 	if time.Now().After(GetTimeFromString(taskstate.EscalateOn)) {
-		taskstate.Escalated = i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status != STATUS_COMPLETE
+		taskstate.Escalated = taskDetails.Status != STATUS_COMPLETE
 	} else {
 		taskstate.Escalated = false
 	}

@@ -138,18 +138,15 @@ func (i *Trans) isTaskCompleteBehaviorMet(taskid string) bool {
 			var conditions []string
 			var completedConditions = 0
 			for _, cond := range task.CompletionBehavior {
-				if i.EnvVars.DEBUG_MODE {
-					log.Printf("Task %s Completion Condition is %s", taskid, cond)
-				}
+				log.Printf("Task %s Completion Condition is %s", taskid, cond)
 				if cond.Completion.Condition != "" {
 					if strings.Contains(cond.Completion.Condition, " and ") {
 						conditions = strings.Split(cond.Completion.Condition, " and ")
 					} else {
 						conditions = append(conditions, cond.Completion.Condition)
 					}
-					if i.EnvVars.DEBUG_MODE {
-						log.Printf("Checkiing Task %s %v completion conditions", taskid, len(conditions))
-					}
+					log.Printf("Checkiing Task %s %v completion conditions", taskid, len(conditions))
+
 					for _, condition := range conditions {
 						endMethodInd := strings.Index(condition, "(")
 						if endMethodInd > 0 {
@@ -160,18 +157,15 @@ func (i *Trans) isTaskCompleteBehaviorMet(taskid string) bool {
 								continue
 							}
 							param := condition[endMethodInd+1 : endParamInd]
-							if i.EnvVars.DEBUG_MODE {
-								log.Printf("Completion condition is %s", method)
-							}
+							log.Printf("Completion condition is %s", method)
+
 							switch method {
 							case "output":
 								for _, op := range i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(taskid)-1].TaskData.Output {
 									if op.Part.AttachmentInfo.AttachedTime != "" {
 										if op.Part.AttachmentInfo.Name == param {
 											completedConditions = completedConditions + 1
-											if i.EnvVars.DEBUG_MODE {
-												log.Printf("Task %s Output Part %s - Attached %s", taskid, op.Part.AttachmentInfo.Name, op.Part.AttachmentInfo.AttachedTime)
-											}
+											log.Printf("Task %s Output Part %s - Attached %s", taskid, op.Part.AttachmentInfo.Name, op.Part.AttachmentInfo.AttachedTime)
 										}
 									}
 								}
