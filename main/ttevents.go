@@ -77,12 +77,15 @@ func (i *Trans) newUserEvent() {
 		Comments:       i.Query.Comments,
 		Version:        GetIntFromString(i.Query.Vers),
 		Taskid:         GetIntFromString(i.Query.Taskid),
+		Brokerref:      i.Query.Brokerref,
 		Repositoryuid:  i.Query.Repositoryuid,
 		Xdsdocentryuid: i.Query.Xdsdocentryuid,
-		Brokerref:      i.Query.Brokerref,
 	}
 	if event.Repositoryuid == "" {
 		event.Repositoryuid = i.XDWState.Meta.Repositoryuniqueid
+	}
+	if event.Xdsdocentryuid == "" {
+		event.Xdsdocentryuid = i.EnvVars.SERVER_URL + "api/state/events?vers=1&user=" + i.Query.User + "&org=" + i.Query.Org + "&role=" + i.Query.Role + "&pathway=" + i.Query.Pathway + "&nhs=" + i.Query.Nhs + "&taskid=" + i.Query.Taskid
 	}
 	if i.Error = event.persistEvent(); i.Error == nil {
 		log.Println("Persisted Event")

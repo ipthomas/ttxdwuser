@@ -2,7 +2,7 @@
     "ref": "lac_def",
     "name": "Looked After Child",
     "confidentialitycode": "Restricted",
-    "startbytime": "",
+    "startbytime": "hour(1)",
     "completebytime": "day(20)",
     "expirationtime": "day(21)",
     "completionBehavior": [
@@ -22,7 +22,7 @@
         "id": "1",
         "tasktype": "TASK",
         "name": "LAC_Identified",
-        "description": "Simulate the Social Services EPR sending a message to start the LAC Workflow",
+        "description": "Looked after Child Identfied to Social Services",
         "actualowner": "",
         "expirationtime": "hour(4)",
         "startbytime": "hour(1)",
@@ -47,7 +47,7 @@
         "id": "2",
         "tasktype": "TASK",
         "name": "LAC_Paperwork_Sent",
-        "description": "Simulate the Social Services EPR sending messages to the HIE with the different Paperwork items",
+        "description": "Publish Looked after Child Paperwork items",
         "actualowner": "",
         "expirationtime": "day(4)",
         "startbytime": "day(2)",
@@ -89,7 +89,7 @@
         "id": "3",
         "tasktype": "TASK",
         "name": "LAC_Paperwork_Accepted_Rejected",
-        "description": "Simulate Provide EPR sending a message to the HIE to Accept or Reject the LAC Paperwork",
+        "description": "Accept or Reject the LAC Paperwork Items",
         "actualowner": "",
         "expirationtime": "day(8)",
         "startbytime": "day(5)",
@@ -136,7 +136,7 @@
         "id": "4",
         "tasktype": "TASK",
         "name": "LAC_IHA_Scheduled",
-        "description": "Simulate Provide EPR sending a message to the HIE with the IHA appointment Information",
+        "description": "Schedule Initial Health Assessment Appointment",
         "actualowner": "",
         "expirationtime": "day(10)",
         "startbytime": "day(8)",
@@ -168,7 +168,7 @@
         "id": "5",
         "tasktype": "TASK",
         "name": "LAC_IHA_Completed",
-        "description": "Simulate Provide EPR sending a message to the HIE with the IHA Information",
+        "description": "Publish Looked after Cild Initial Health Assessment",
         "actualowner": "",
         "expirationtime": "day(18)",
         "startbytime": "day(11)",
@@ -200,7 +200,7 @@
         "id": "6",
         "tasktype": "TASK",
         "name": "IHA_Accepted",
-        "description": "Simulate Social Services EPR sending a message to the HIE to Accept the IHA",
+        "description": "Social Services Accepts or Rejects the Initial Health Assessment",
         "actualowner": "",
         "expirationtime": "day(21)",
         "startbytime": "day(19)",
@@ -209,7 +209,7 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(LAC9^^TypeCode_EPUT_2018)"
+              "condition": "output(LAC9^^TypeCode_EPUT_2018) and latest(LAC9^^TypeCode_EPUT_2018)"
             }
           }
         ],
@@ -225,14 +225,19 @@
             "name": "LAC9^^TypeCode_EPUT_2018",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "Reject",
+            "contenttype": "text/plain",
+            "accesstype": "url"
           }
         ]
       },
       {
         "id": "7",
         "tasktype": "TASK",
-        "name": "IHA_Withdrawn",
-        "description": "Simulate any stakeholders' EPR sending a message to the HIE to withdraw the IHA Request",
+        "name": "IHA_CLOSED",
+        "description": "Close the IHA Request",
         "actualowner": "",
         "expirationtime": "",
         "startbytime": "",

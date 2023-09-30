@@ -80,14 +80,8 @@ func (i *Trans) updateXDW() {
 		wfseqnum = wfseqnum + 1
 		i.XDWState.WorkflowDocument.WorkflowDocumentSequenceNumber = strconv.Itoa(int(wfseqnum))
 	}
-	for k, task := range i.XDWState.WorkflowDocument.TaskList.XDWTask {
-		if i.isTaskCompleteBehaviorMet(task.TaskData.TaskDetails.ID) {
-			i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.Status = STATUS_COMPLETE
-		} else {
-			if i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.Status == STATUS_COMPLETE {
-				i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.Status = IN_PROGRESS
-			}
-		}
+	for cnt := 0; cnt < 3; cnt++ {
+		i.checkTasksCompletionBehaviour()
 	}
 
 	if complete, completiontask := i.isWorkflowCompleteBehaviorMet(); complete {
@@ -110,6 +104,17 @@ func (i *Trans) updateXDW() {
 		log.Println("Closed Workflow")
 	}
 	i.persistUpdatedXDW()
+}
+func (i *Trans) checkTasksCompletionBehaviour() {
+	for k, task := range i.XDWState.WorkflowDocument.TaskList.XDWTask {
+		if i.isTaskCompleteBehaviorMet(task.TaskData.TaskDetails.ID) {
+			i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.Status = STATUS_COMPLETE
+		} else {
+			if i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.Status == STATUS_COMPLETE {
+				i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.Status = IN_PROGRESS
+			}
+		}
+	}
 }
 func (i *Trans) isNewEvent(ev Event) bool {
 	for _, te := range i.XDWState.WorkflowDocument.TaskList.XDWTask[ev.Taskid-1].TaskEventHistory.TaskEvent {

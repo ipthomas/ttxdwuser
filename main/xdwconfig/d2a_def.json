@@ -2,9 +2,9 @@
     "ref": "d2a_def",
     "name": "Discharge to Assessment",
     "confidentialitycode": "Normal",
-    "startbytime": "",
-    "completebytime": "day(20)",
-    "expirationtime": "",
+    "startbytime": "hour(1)",
+    "completebytime": "day(6)",
+    "expirationtime": "day(7)",
     "completionBehavior": [
       {
         "completion": {
@@ -24,10 +24,9 @@
         "name": "D2A_Identified",
         "description": "Patient Identfied for Assessment",
         "actualowner": "",
-        "expirationtime": "",
-        "startbytime": "",
-        "completebytime": "",
-        "isskipable": false,
+        "expirationtime": "hour(8)",
+        "startbytime": "hour(2)",
+        "completebytime": "hour(4)",
         "completionBehavior": [
           {
             "completion": {
@@ -54,10 +53,9 @@
         "name": "Assessment_Created",
         "description": "D2A Assessment Published",
         "actualowner": "",
-        "expirationtime": "",
+        "expirationtime": "day(4)",
         "startbytime": "day(2)",
         "completebytime": "day(3)",
-        "isskipable": false,
         "completionBehavior": [
           {
             "completion": {
@@ -86,10 +84,9 @@
         "name": "Assessment Accepted",
         "description": "LCC Accepts or Rejects Assessment",
         "actualowner": "",
-        "expirationtime": "day(14)",
-        "startbytime": "day(3)",
-        "completebytime": "day(7)",
-        "isskipable": false,
+        "expirationtime": "day(6)",
+        "startbytime": "day(4)",
+        "completebytime": "day(5)",
         "completionBehavior": [
           {
             "completion": {
@@ -123,10 +120,9 @@
         "name": "Patient_Discharged",
         "description": "Patient Discharged onto D2A Pathway ",
         "actualowner": "",
-        "expirationtime": "day(15)",
-        "startbytime": "day(7)",
-        "completebytime": "day(8)",
-        "isskipable": false,
+        "expirationtime": "day(7)",
+        "startbytime": "day(5)",
+        "completebytime": "day(6)",
         "completionBehavior": [
           {
             "completion": {
@@ -158,7 +154,6 @@
         "expirationtime": "",
         "startbytime": "",
         "completebytime": "",
-        "isskipable": true,
         "completionBehavior": [
           {
             "completion": {
