@@ -58,6 +58,8 @@ func (i *Trans) newGetHandler() {
 			i.newUploadFileForm()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE):
 			i.setState()
+		case strings.HasSuffix(path, HTTP_PATH_API_STATE_PATIENT):
+			i.setPatientState()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_DASHBOARD):
 			i.setDashboardState()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_WORKFLOWS_COUNT):

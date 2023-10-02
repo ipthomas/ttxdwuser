@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 	"sync"
@@ -21,6 +22,10 @@ func (i *Trans) cglQueryThread(wg *sync.WaitGroup) {
 	log.Printf("CGL Worker Status Code %v", i.HTTP.StatusCode)
 }
 func (i *Trans) setPatient() {
+	i.setPatients()
+	i.setPatientTemplate()
+}
+func (i *Trans) setPatients() {
 	i.Query.Pid = i.Query.Nhs
 	i.Query.Pidoid = NHS_OID_DEFAULT
 	var wg sync.WaitGroup
@@ -30,5 +35,12 @@ func (i *Trans) setPatient() {
 	wg.Wait()
 	i.newPDSReq()
 	i.HTTP.StatusCode = http.StatusOK
-	i.setPatientTemplate()
+}
+func (i *Trans) setPatientState() {
+	i.setPatients()
+	pats := Patients{PIX: i.PIXmResponse, PDS_Retrieve: i.PDSRetrieveResponse, PDS_Search: i.PDSSearchResponse, CGL: i.CGLResponse}
+	var rsp []byte
+	rsp, _ = json.MarshalIndent(pats, "", "  ")
+	i.HTTP.ResponseBody = string(rsp)
+	i.HTTP.RspContentType = APPLICATION_JSON
 }

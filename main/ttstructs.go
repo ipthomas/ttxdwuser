@@ -185,6 +185,12 @@ type HTTPRequest struct {
 	StatusCode int
 	Timeout    int
 }
+type Patients struct {
+	PIX          PIXmResponse
+	PDS_Retrieve PDSRetrieveResponse
+	PDS_Search   PDSSearchResponse
+	CGL          CGLUserResponse
+}
 type XDWCreator struct {
 	User       string
 	Org        string

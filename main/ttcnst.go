@@ -222,6 +222,7 @@ const (
 	HTTP_PATH_CONSUMER_DEFINITIONS            = "/spa/consumer/definitions"
 	HTTP_PATH_CONSUMER_SPA                    = "/spa"
 	HTTP_PATH_API_STATE                       = "/api/state"
+	HTTP_PATH_API_STATE_PATIENT               = "/api/state/patient"
 	HTTP_PATH_API_STATE_DASHBOARD             = "/api/state/dashboard"
 	HTTP_PATH_API_STATE_EVENTS                = "/api/state/events"
 	HTTP_PATH_API_STATE_TERMINOLOGY           = "/api/state/terminology"

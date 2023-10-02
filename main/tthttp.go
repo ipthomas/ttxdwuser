@@ -53,7 +53,7 @@ func (i *Trans) newPDSReq() {
 	} else {
 		url = i.EnvVars.PDS_SERVER_URL + "/Patient/" + i.Query.Nhs
 	}
-	log.Printf("Creating PDS Search Request - Server URL %s", url)
+	log.Printf("Creating PDS Request - Server URL %s", url)
 	header := http.Header{}
 	header.Set(HTTP_HEADER_CONTENT_TYPE, APPLICATION_JSON)
 	header.Set("X-Request-ID", NewUuid())
