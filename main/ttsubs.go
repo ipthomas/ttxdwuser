@@ -94,6 +94,34 @@ func (i *Trans) setEmailNotifySubscriptions() {
 			}
 		}
 	}
+	i.setWorkflowDefinition()
+	sub = Subscription{
+		Pathway:    i.Query.Pathway,
+		Topic:      "EMAIL",
+		Role:       "Potential Owner",
+		NhsId:      i.XDWState.Events.Events[0].Nhs,
+		Expression: i.XDWState.Events.Events[0].Expression,
+	}
+	log.Println("Checking for potential workflow owners")
+	for _, wfOwners := range i.XDWState.Definition.PotentialOwners {
+		log.Printf("Workflow Potential Owner - %s", wfOwners.OrganizationalEntity.User)
+		sub.Email = wfOwners.OrganizationalEntity.User
+		sub.User = strings.Split(wfOwners.OrganizationalEntity.User, "@")[0]
+		sub.Org = strings.Split(strings.Split(wfOwners.OrganizationalEntity.User, "@")[1], ".")[0]
+		i.Subscriptions.Subscriptions = append(i.Subscriptions.Subscriptions, sub)
+	}
+	log.Println("Checking for potential task owners")
+	for _, task := range i.XDWState.Definition.Tasks {
+		if task.ID == GetStringFromInt(i.XDWState.Events.Events[0].Taskid) {
+			for _, potentialOwner := range task.PotentialOwners {
+				log.Printf("Task %v Potential Owner - %s", task.ID, potentialOwner.OrganizationalEntity.User)
+				sub.Email = potentialOwner.OrganizationalEntity.User
+				sub.User = strings.Split(potentialOwner.OrganizationalEntity.User, "@")[0]
+				sub.Org = strings.Split(strings.Split(potentialOwner.OrganizationalEntity.User, "@")[1], ".")[0]
+				i.Subscriptions.Subscriptions = append(i.Subscriptions.Subscriptions, sub)
+			}
+		}
+	}
 }
 func (i *Trans) newSubscriptionRequest() Subscription {
 	sub := Subscription{

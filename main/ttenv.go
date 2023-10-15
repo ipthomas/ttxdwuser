@@ -21,7 +21,7 @@ func SetServiceState() {
 				field = reflect.ValueOf(EnvState).Elem().FieldByName(strings.Split(awsenvar, "=")[0])
 			}
 			if field.IsValid() && field.CanSet() {
-				if strings.Split(awsenvar, "=")[0] == ENV_DEBUG_MODE || strings.Split(awsenvar, "=")[0] == ENV_PERSIST_TEMPLATES || strings.Split(awsenvar, "=")[0] == ENV_DEBUG_DB || strings.Split(awsenvar, "=")[0] == ENV_DEBUG_DB_ERROR {
+				if strings.Split(awsenvar, "=")[0] == ENV_DEBUG_MODE || strings.Split(awsenvar, "=")[0] == ENV_PERSIST_TEMPLATES || strings.Split(awsenvar, "=")[0] == ENV_DEBUG_DB || strings.Split(awsenvar, "=")[0] == ENV_DEBUG_DB_ERROR || strings.Split(awsenvar, "=")[0] == ENV_CALENDAR_MODE_DISABLED {
 					envBool, _ := strconv.ParseBool(strings.Split(awsenvar, "=")[1])
 					field.Set(reflect.ValueOf(envBool))
 				} else {
@@ -41,7 +41,7 @@ func SetServiceState() {
 			for k, v := range envvarsmap {
 				field := reflect.ValueOf(EnvState).Elem().FieldByName(k)
 				if field.IsValid() && field.CanSet() {
-					if k == ENV_DEBUG_MODE || k == ENV_PERSIST_TEMPLATES || k == ENV_DEBUG_DB || k == ENV_DEBUG_DB_ERROR || k == ENV_PERSIST_DEFINITIONS {
+					if k == ENV_DEBUG_MODE || k == ENV_PERSIST_TEMPLATES || k == ENV_DEBUG_DB || k == ENV_DEBUG_DB_ERROR || k == ENV_PERSIST_DEFINITIONS || k == ENV_CALENDAR_MODE_DISABLED {
 						envBool, _ := strconv.ParseBool(v)
 						field.Set(reflect.ValueOf(envBool))
 					} else {

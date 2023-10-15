@@ -17,6 +17,7 @@ var (
 	DBConn       *sql.DB
 	cachedIDMaps = []IdMap{}
 	cached       time.Time
+	debug        = false
 )
 
 type DBInterface interface {
@@ -27,6 +28,7 @@ func NewDBEvent(i DBInterface) error {
 	return i.newEvent()
 }
 func (i *Trans) openDBConnection() {
+	debug = i.EnvVars.DEBUG_MODE
 	if DBConn == nil {
 		conn := DBConnection{DBUser: i.DBVars.DB_USER, DBPassword: i.DBVars.DB_PASSWORD, DBHost: i.DBVars.DB_HOST, DBPort: i.DBVars.DB_PORT, DBName: i.DBVars.DB_NAME}
 		err := conn.newDBEvent()
@@ -363,7 +365,6 @@ func PersistTemplates() {
 				filebytes := loadFile(file, "./templates/")
 				if len(filebytes) > 0 {
 					persistTemplate("system", strings.Split(file.Name(), ".")[0], string(filebytes))
-					log.Printf("Persisted Template %s", file.Name())
 				}
 			}
 		}
@@ -376,12 +377,14 @@ func persistTemplate(user string, templatename string, templatestr string) error
 	tmplt := Template{Name: templatename, User: user}
 	tmplts.Templates = append(tmplts.Templates, tmplt)
 	tmplts.newEvent()
-	log.Printf("Persisting Template %s", templatename)
+	if debug {
+		log.Printf("Persisting Template %s", templatename)
+	}
 	tmplts = Templates{Action: INSERT}
 	tmplt = Template{Name: templatename, User: user, Template: templatestr}
 	tmplts.Templates = append(tmplts.Templates, tmplt)
 	err := tmplts.newEvent()
-	if err == nil {
+	if debug {
 		log.Printf("Persisted Template %s", templatename)
 	}
 	return err

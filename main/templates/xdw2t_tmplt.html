@@ -272,12 +272,7 @@
                                                                         <td colspan="100">
                                                                            <form target="iconsumer" action="/beta/spa/publisher/event" method="post">
                                                                                 <label for="comments">Comments:</label>
-                                                                                <div class="trigger">
-                                                                                    <textarea type="input" class="form-control" id="comments" name="comments" rows="3" cols="200">{{$tdesc}} - Task {{$taskid}} - {{mappedid $user .Part.AttachmentInfo.Name}} - has been Actioned by {{$user}} at {{$org}} in the Role of {{$role}}. A {{mappedid $user .Part.AttachmentInfo.Name}} message has been sent to the HIE for NHS ID: {{$nhs}}</textarea>
-                                                                                    <div class="popup">
-                                                                                        Enter any Additional information for this Event 
-                                                                                    </div>
-                                                                                </div>
+                                                                                <textarea type="input" class="form-control" id="comments" name="comments" rows="3" cols="200"> Task {{$taskid}} - {{mappedid $user .Part.AttachmentInfo.Name}}. An Event Message has been sent to the HIE for {{$mwf}} Workflow NHS ID: {{$nhs}} Task {{mappedid $user .Part.AttachmentInfo.Name}}</textarea>
                                                                                 <input type="hidden" class="form-control" id="eventtype" name="eventtype" value="UPDATE_TASK">
                                                                                 <input type="hidden" class="form-control" id="formatcode" name="formatcode" value="{{.Part.AttachmentInfo.ContentType}}">
                                                                                 <input type="hidden" class="form-control" id="pathway" name="pathway" value="{{$wf}}">
@@ -314,12 +309,7 @@
                                                                         <td colspan="100">
                                                                             <form target="iconsumer" action="/beta/spa/publisher/event" method="post">
                                                                                 <label for="comments">Comments:</label>
-                                                                                <div class="trigger">
-                                                                                    <textarea type="input" class="form-control" id="comments" name="comments" rows="3" cols="200">{{$tdesc}} - Task {{$taskid}} - {{mappedid $user .Part.AttachmentInfo.Name}} - has been Actioned by {{$user}} at {{$org}} in the Role of {{$role}}. A {{mappedid $user .Part.AttachmentInfo.Name}} message has been sent to the HIE for NHS ID: {{$nhs}}</textarea>
-                                                                                    <div class="popup">
-                                                                                        Enter any Additional information for this Event
-                                                                                    </div>
-                                                                                </div>
+                                                                                <textarea type="input" class="form-control" id="comments" name="comments" rows="3" cols="200">Task {{$taskid}} - {{mappedid $user .Part.AttachmentInfo.Name}}. An Event Message has been sent to the HIE for {{$mwf}} Workflow NHS ID: {{$nhs}} Task {{mappedid $user .Part.AttachmentInfo.Name}}</textarea>
                                                                                 <input type="hidden" class="form-control" id="eventtype" name="eventtype" value="UPDATE_TASK">
                                                                                 <input type="hidden" class="form-control" id="formatcode" name="formatcode" value="{{.Part.AttachmentInfo.ContentType}}">
                                                                                 <input type="hidden" class="form-control" id="pathway" name="pathway" value="{{$wf}}">

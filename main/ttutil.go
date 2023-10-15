@@ -120,101 +120,171 @@ func logStruct(struc interface{}) {
 	b, _ := json.MarshalIndent(struc, "", "  ")
 	log.Println("\t" + string(b))
 }
-
-// OHT_ShouldEscalate takes a start time and a period in the future as a string containing an OASIS Human Task api function eg. day(2). It calls OHT_FutureDate(startime,htDate) to get the escalation date. It returns true if time.Now() after escalation date or false if not
-func OHT_ShouldEscalate(startdate time.Time, htDate string) bool {
-	escalationdate := OHT_FutureDate(startdate, htDate)
-	log.Printf("Escalation required - %v", time.Now().After(escalationdate))
-	return time.Now().After(escalationdate)
+func GetSummerBankHoliday(year int) time.Time {
+	aug31 := time.Date(year, time.August, 31, 0, 0, 0, 0, time.UTC)
+	dayOfWeek := int(aug31.Weekday())
+	daysToSubtract := (7 - dayOfWeek) % 7
+	summerBankHoliday := aug31.AddDate(0, 0, -daysToSubtract)
+	return summerBankHoliday
+}
+func GetSpringBankHoliday(year int) time.Time {
+	may31 := time.Date(year, time.May, 31, 0, 0, 0, 0, time.UTC)
+	dayOfWeek := int(may31.Weekday())
+	daysToSubtract := (7 - dayOfWeek) % 7
+	springBankHoliday := may31.AddDate(0, 0, -daysToSubtract)
+	return springBankHoliday
+}
+func GetEarlyMayBankHoliday(year int) time.Time {
+	may1 := time.Date(year, time.May, 1, 0, 0, 0, 0, time.UTC)
+	dayOfWeek := int(may1.Weekday())
+	daysToAdd := (8 - dayOfWeek) % 7
+	earlyMayBankHoliday := may1.AddDate(0, 0, daysToAdd)
+	return earlyMayBankHoliday
+}
+func GetEasterDate(year int) time.Time {
+	a := year % 19
+	b := year / 100
+	c := year % 100
+	d := b / 4
+	e := b % 4
+	f := (b + 8) / 25
+	g := (b - f + 1) / 3
+	h := (b - f + 1) % 3
+	i := (19*a + b - d - g + 15) / 30
+	k := (19*a + b - d - g + 15) % 30
+	L := (2*e + 2*h + i - k - c + 4) / 7
+	m := (2*e + 2*h + i - k - c + 4) % 7
+	month := i - k + L + 114
+	day := k + m + 1
+	if month > 12 {
+		month -= 12
+	}
+	easterDate := time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.UTC)
+	return easterDate
+}
+func isSummerBankHoliday(currentDate time.Time) bool {
+	return currentDate == GetSummerBankHoliday(currentDate.Year())
+}
+func isSpringBankHoliday(currentDate time.Time) bool {
+	return currentDate == GetSpringBankHoliday(currentDate.Year())
+}
+func isEarlyMayBankHoliday(currentDate time.Time) bool {
+	return currentDate == GetEarlyMayBankHoliday(currentDate.Year())
+}
+func isGoodFriday(currentDate time.Time) bool {
+	easterDate := GetEasterDate(currentDate.Year())
+	return currentDate == easterDate.AddDate(0, 0, -2)
+}
+func isSaturday(currentDate time.Time) bool {
+	return currentDate.Weekday() == time.Saturday
+}
+func isWeekend(currentDate time.Time) bool {
+	return currentDate.Weekday() == time.Saturday || currentDate.Weekday() == time.Sunday
+}
+func isXmasDay(currentDate time.Time) bool {
+	return currentDate.Month() == time.December && currentDate.Day() == 25
+}
+func isBoxingDay(currentDate time.Time) bool {
+	return currentDate.Month() == time.December && currentDate.Day() == 26
+}
+func isNewYearsDay(currentDate time.Time) bool {
+	return currentDate.Month() == time.January && currentDate.Day() == 1
+}
+func (i *Trans) CalendarMode(startDate, endDate time.Time, isDuration bool) time.Time {
+	debug := i.EnvVars.DEBUG_MODE
+	if i.EnvVars.CALENDAR_MODE != "calendardays" {
+		adjust := 0
+		newEndDate := endDate
+		for currentDate := startDate; currentDate.Before(newEndDate) || currentDate.Equal(newEndDate); currentDate = currentDate.AddDate(0, 0, 1) {
+			if isXmasDay(currentDate) || isBoxingDay(currentDate) || isNewYearsDay(currentDate) {
+				newEndDate = newEndDate.AddDate(0, 0, 1)
+				if debug {
+					log.Printf("%v is a xmas period holiday. End Date Adjusted 1 Day to %v", currentDate, newEndDate)
+				}
+				adjust = adjust + 1
+			}
+			if isWeekend(currentDate) {
+				if isSaturday(currentDate) && currentDate == newEndDate {
+					adjust = adjust + 2
+					newEndDate = newEndDate.AddDate(0, 0, 2)
+					if debug {
+						log.Printf("%v is a Saturday and the workflow end date. End Date Adjusted 2 Days to %v", currentDate, newEndDate)
+					}
+					currentDate = newEndDate
+				} else {
+					adjust = adjust + 1
+					newEndDate = newEndDate.AddDate(0, 0, 1)
+					if debug {
+						log.Printf("%v is a Weekend. End Date Adjusted 1 Day to %v", currentDate, newEndDate)
+					}
+				}
+			} else {
+				if isGoodFriday(currentDate) {
+					if currentDate == newEndDate {
+						adjust = adjust + 4
+						newEndDate = newEndDate.AddDate(0, 0, 4)
+						if debug {
+							log.Printf("%v is Good Friday and the workflow end date. End Date Adjusted 4 Days to %v", currentDate, newEndDate)
+						}
+						currentDate = newEndDate
+					} else {
+						adjust = adjust + 2
+						newEndDate = newEndDate.AddDate(0, 0, 4)
+						if debug {
+							log.Printf("%v is Good Friday. End Date Adjusted 2 Days to %v", currentDate, newEndDate)
+						}
+					}
+				}
+				if isEarlyMayBankHoliday(currentDate) || isSpringBankHoliday(currentDate) || isSummerBankHoliday(currentDate) {
+					adjust = adjust + 1
+					if debug {
+						log.Printf("%v is a Bank Holiday. Adjust Total = %v", currentDate, adjust)
+					}
+				}
+			}
+		}
+		if isDuration {
+			if debug {
+				log.Printf("Workflow Duration adjusted to account for Weekends and UK Public Holidays by %v days ", adjust)
+			}
+			return startDate.AddDate(0, 0, adjust)
+		} else {
+			if debug {
+				log.Printf("Workflow End Date adjusted to account for Weekends and UK Public Holidays by %v days ", adjust)
+			}
+			return newEndDate
+		}
+	} else {
+		if isDuration {
+			return startDate
+		} else {
+			return endDate
+		}
+	}
 }
 
 // OHT_FutureDate takes a 'start date' and a period in the future as a string containing an OASIS Human Task api function eg. day(x). It returns x days in the future from the `start date`. Valid periods are min(x),hour(x),day(x),month(x) and year(x)
-func OHT_FutureDate(startdate time.Time, htDate string) time.Time {
+func (i *Trans) OHT_FutureDate(startdate time.Time, htDate string) time.Time {
+	fd := startdate
 	if strings.Contains(htDate, "(") && strings.Contains(htDate, ")") {
 		periodstr := strings.Split(htDate, "(")[0]
 		periodtime := GetIntFromString(strings.Split(strings.Split(htDate, "(")[1], ")")[0])
 		switch periodstr {
 		case "sec":
-			return GetFutureDate(startdate, 0, 0, 0, 0, 0, periodtime)
+			fd = GetFutureDate(startdate, 0, 0, 0, 0, 0, periodtime)
 		case "min":
-			return GetFutureDate(startdate, 0, 0, 0, 0, periodtime, 0)
+			fd = GetFutureDate(startdate, 0, 0, 0, 0, periodtime, 0)
 		case "hour":
-			return GetFutureDate(startdate, 0, 0, 0, periodtime, 0, 0)
+			fd = GetFutureDate(startdate, 0, 0, 0, periodtime, 0, 0)
 		case "day":
-			return GetFutureDate(startdate, 0, 0, periodtime, 0, 0, 0)
+			fd = GetFutureDate(startdate, 0, 0, periodtime, 0, 0, 0)
 		case "month":
-			return GetFutureDate(startdate, 0, periodtime, 0, 0, 0, 0)
+			fd = GetFutureDate(startdate, 0, periodtime, 0, 0, 0, 0)
 		case "year":
-			return GetFutureDate(startdate, periodtime, 0, 0, 0, 0, 0)
+			fd = GetFutureDate(startdate, periodtime, 0, 0, 0, 0, 0)
 		}
 	}
-	return startdate
-}
-
-// GetDurationSince takes a time as string input in RFC3339 format (yyyy-MM-ddThh:mm:ssZ) and returns the duration in days, hours and mins in a 'pretty format' eg '2 Days 0 Hrs 52 Mins' between the provided time and time.Now() as a string
-func GetDurationSince(stime string) string {
-	log.Println("Obtaining time Duration since - " + stime)
-	st, err := time.Parse(time.RFC3339, stime)
-	if err != nil {
-		log.Println(err.Error())
-		return "Not Available"
-	}
-	dur := time.Since(st)
-	log.Printf("Duration - %v", dur.String())
-	days := 0
-	hrs := int(dur.Hours())
-	min := int(dur.Minutes())
-
-	if hrs > 24 {
-		days = hrs / 24
-		hrs = hrs % 24
-	}
-	daysstr := strconv.Itoa(days)
-	hrsstr := strconv.Itoa(hrs)
-	minstr := strconv.Itoa(min - (days * 24 * 60) - (hrs * 60))
-	rtnStr := ""
-	if days > 0 {
-		if days == 1 {
-			rtnStr = "1 Day "
-		} else {
-			rtnStr = daysstr + " Days "
-		}
-	}
-	if hrs > 0 {
-		if hrs == 1 {
-			rtnStr = rtnStr + hrsstr + " Hr "
-		} else {
-			rtnStr = rtnStr + hrsstr + " Hrs "
-		}
-	}
-	if min > 0 {
-		if min == 1 {
-			rtnStr = rtnStr + minstr + " Min "
-		} else {
-			rtnStr = rtnStr + minstr + " Mins "
-		}
-	}
-	log.Println("Returning " + rtnStr)
-	return rtnStr
-}
-
-// IsAfterNow takes a time as a string input in RFC3339 format (yyyy-MM-ddThh:mm:ssZ) and returns true if the input time is after time.Now() and false if input time is before time.Now()
-func IsAfterNow(inTime string) bool {
-	it, err := time.Parse(time.RFC3339, inTime)
-	if err != nil {
-		log.Println(err.Error())
-		return false
-	}
-	now := time.Now().Local()
-	log.Println("Time Now - " + now.Local().String())
-	log.Println("Start Time - " + it.Local().String())
-	log.Printf("Time %s IsAfter(time.Now()) = %v", inTime, now.Before(it))
-	return now.Before(it)
-}
-
-// Pretty_Time_Now returns a pretty version of the current time for location Europe/London (strips everything after the `.` in Tuk_Time)
-func Pretty_Time_Now() string {
-	return PrettyTime(Time_Now())
+	return i.CalendarMode(startdate, fd, false)
 }
 
 // Time_Now returns the current time for location Europe/London.
@@ -227,12 +297,9 @@ func Time_Now() string {
 	return time.Now().In(location).Format(time.RFC3339)
 }
 
-// PrettyTime fist splits the input based on sep =`.`, it takes index 0 of the split and replaces any T with a space then removes any trailing Z. It then splits the resulting string on sep = `+` returning index 0 of the split
 func PrettyTime(time string) string {
 	if time != "" {
-		t := GetTimeFromString(time)
-		time = t.Local().String()
-		return strings.TrimSuffix(strings.Split(strings.TrimSuffix(strings.ReplaceAll(strings.Split(time, ".")[0], "T", " "), "Z"), "+")[0], " ")
+		return GetTimeFromString(time).String()
 	}
 	return time
 }
@@ -241,22 +308,6 @@ func PrettyTime(time string) string {
 func Tuk_Hour() string {
 	return fmt.Sprintf("%02d",
 		time.Now().Local().Hour())
-}
-
-// TUK_Min returns the current minute as a 2 digit string
-func Tuk_Min() string {
-	return fmt.Sprintf("%02d", time.Now().Local().Minute())
-}
-
-// TUK_Sec returns the current second as a 2 digit string
-func Tuk_Sec() string {
-	return fmt.Sprintf("%02d",
-		time.Now().Local().Second())
-}
-
-// TUK_MilliSec returns the current milliseconds as a 3 digit int
-func Tuk_MilliSec() int {
-	return GetIntFromString(Substr(GetStringFromInt(time.Now().Nanosecond()), 0, 3))
 }
 
 // TUK_Day returns the current day as a 2 digit string
@@ -399,13 +450,15 @@ func GetTimeFromString(timestr string) time.Time {
 		rsptime, err = time.ParseInLocation(time.RFC3339, timestr, loc)
 		if err != nil {
 			log.Println(err.Error())
-			rsptime, err = time.ParseInLocation("2006-01-02T15:04:05Z", timestr, loc)
+			rsptime, err = time.ParseInLocation("2006-01-02T15:04:05", timestr, loc)
 			if err != nil {
 				log.Println(err.Error())
 			}
 		}
 	}
-	return rsptime
+	return rsptime.Local()
+	//return parseTime(timestr)
+
 }
 
 func GetFutureDate(startDate time.Time, years int, months int, days int, hours int, mins int, secs int) time.Time {
@@ -452,15 +505,19 @@ func GetDocumentReturnList(message string) string {
 	}
 	return message
 }
-func timeDuratipn(stime string, etime string) string {
-	if stime != "" && etime != "" {
+func timeDuration(stime string, etime string) string {
+	i := Trans{EnvVars: EnvState}
+	return i.TimeDuration(stime, etime)
+}
+func (i *Trans) TimeDuration(stime string, etime string) string {
+	if stime != "" {
 		sTime := GetTimeFromString(stime)
 		eTime := GetTimeFromString(etime)
 		if eTime.After(sTime) {
-			td := eTime.Sub(sTime)
-			return PrettyPrintDuration(td)
+			sTime = i.CalendarMode(sTime, eTime, true)
+			duration := eTime.Sub(sTime)
+			return PrettyPrintDuration(duration)
 		}
-		return "less than a minute"
 	}
 	return ""
 }

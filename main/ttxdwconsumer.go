@@ -205,29 +205,27 @@ func (i *Trans) setXDWs() {
 	}
 }
 func (i *Trans) setWorkflowStates() {
-	if i.XDWState.Workflows.Count == 0 {
-		taskid := -1
-		vers := -1
-		if i.Query.Taskid != "" {
-			taskid = GetIntFromString(i.Query.Taskid)
-			if taskid < 1 {
-				taskid = -1
-			}
-		}
-		if i.Query.Vers != "" {
-			vers = GetIntFromString(i.Query.Vers)
-			if vers < 1 {
-				vers = -1
-			}
-		}
-		if i.XDWState.Workflows, i.Error = GetWorkflows(i.Query.Pathway, i.Query.Nhs, vers, i.Query.Status); i.Error == nil {
-			if i.XDWState.Events, i.Error = getEvents(i.Query.Pathway, i.Query.Nhs, vers, taskid); i.Error != nil {
-				i.setError()
-				return
-			}
+	taskid := -1
+	vers := -1
+	if i.Query.Taskid != "" {
+		taskid = GetIntFromString(i.Query.Taskid)
+		if taskid < 1 {
+			taskid = -1
 		}
 	}
-	log.Println("Setting Workflow States")
+	if i.Query.Vers != "" {
+		vers = GetIntFromString(i.Query.Vers)
+		if vers < 1 {
+			vers = -1
+		}
+	}
+	if i.XDWState.Workflows, i.Error = GetWorkflows(i.Query.Pathway, i.Query.Nhs, vers, i.Query.Status); i.Error == nil {
+		if i.XDWState.Events, i.Error = getEvents(i.Query.Pathway, i.Query.Nhs, vers, taskid); i.Error != nil {
+			i.setError()
+			return
+		}
+	}
+	log.Printf("Setting Workflow States - Total Workflows %v", i.XDWState.Workflows.Count)
 	i.XDWState.Dashboard.Total = i.XDWState.Workflows.Count
 	for _, wf := range i.XDWState.Workflows.Workflows {
 		if len(wf.XDW_Doc) > 0 {
@@ -240,9 +238,12 @@ func (i *Trans) setWorkflowStates() {
 				i.setError()
 				return
 			}
-			log.Printf("Setting %s Workflow state for Patient %s", i.XDWState.WorkflowDocument.WorkflowDefinitionReference, i.XDWState.WorkflowDocument.Patient.Extension)
+			if i.EnvVars.DEBUG_MODE {
+				log.Printf("Setting %s Workflow state for Patient %s", i.XDWState.WorkflowDocument.WorkflowDefinitionReference, i.XDWState.WorkflowDocument.Patient.Extension)
+			}
 			state := Workflowstate{}
-			state.Created = wf.Created
+			wfCreated := GetTimeFromString(wf.Created)
+			state.Created = wfCreated.String()
 			state.Status = wf.Status
 			state.Published = wf.Published
 			state.WorkflowId = wf.Id
@@ -250,7 +251,7 @@ func (i *Trans) setWorkflowStates() {
 			state.NHSId = wf.NHSId
 			state.Version = wf.Version
 			state.CreatedBy = i.XDWState.WorkflowDocument.Author.AssignedAuthor.AssignedPerson.Name.Family + " " + i.XDWState.WorkflowDocument.Author.AssignedAuthor.AssignedPerson.Name.Prefix
-			state.LastUpdate = i.getLatestWorkflowEventTime().String()
+			state.LastUpdate = i.getLatestWorkflowEventTime().Local().String()
 			state.Owner = i.getWorkflowOwner()
 			state.Overdue = "FALSE"
 			state.Escalated = "FALSE"
@@ -266,7 +267,6 @@ func (i *Trans) setWorkflowStates() {
 				i.XDWState.OpenWorkflows.Count = i.XDWState.OpenWorkflows.Count + 1
 				i.XDWState.OpenWorkflows.Workflows = append(i.XDWState.OpenWorkflows.Workflows, wf)
 			}
-			workflowStartTime := GetTimeFromString(state.Created)
 			if i.isWorkflowOverdue() {
 				i.XDWState.Dashboard.TargetMissed = i.XDWState.Dashboard.TargetMissed + 1
 				state.Overdue = "TRUE"
@@ -283,34 +283,46 @@ func (i *Trans) setWorkflowStates() {
 			if i.XDWState.Definition.CompleteByTime == "" {
 				state.CompleteBy = "Non Specified"
 			} else {
+
 				period := strings.Split(i.XDWState.Definition.CompleteByTime, "(")[0]
 				periodDuration := GetIntFromString(strings.Split(strings.Split(i.XDWState.Definition.CompleteByTime, "(")[1], ")")[0])
 				switch period {
 				case "month":
-					state.CompleteBy = strings.Split(GetFutureDate(workflowStartTime, 0, periodDuration, 0, 0, 0, 0).String(), " +")[0]
+					state.CompleteBy = strings.Split(GetFutureDate(GetTimeFromString(state.Created), 0, periodDuration, 0, 0, 0, 0).String(), " +")[0]
 				case "day":
-					state.CompleteBy = strings.Split(GetFutureDate(workflowStartTime, 0, 0, periodDuration, 0, 0, 0).String(), " +")[0]
+					state.CompleteBy = strings.Split(GetFutureDate(GetTimeFromString(state.Created), 0, 0, periodDuration, 0, 0, 0).String(), " +")[0]
 				case "hour":
-					state.CompleteBy = strings.Split(GetFutureDate(workflowStartTime, 0, 0, 0, periodDuration, 0, 0).String(), " +")[0]
+					state.CompleteBy = strings.Split(GetFutureDate(GetTimeFromString(state.Created), 0, 0, 0, periodDuration, 0, 0).String(), " +")[0]
 				case "min":
-					state.CompleteBy = strings.Split(GetFutureDate(workflowStartTime, 0, 0, 0, 0, periodDuration, 0).String(), " +")[0]
+					state.CompleteBy = strings.Split(GetFutureDate(GetTimeFromString(state.Created), 0, 0, 0, 0, periodDuration, 0).String(), " +")[0]
 				case "sec":
-					state.CompleteBy = strings.Split(GetFutureDate(workflowStartTime, 0, 0, 0, 0, 0, periodDuration).String(), " +")[0]
+					state.CompleteBy = strings.Split(GetFutureDate(GetTimeFromString(state.Created), 0, 0, 0, 0, 0, periodDuration).String(), " +")[0]
 				}
+				if i.EnvVars.DEBUG_MODE {
+					log.Println("Calling CalendarMode from setWorkflowStates")
+				}
+				completeBy := i.CalendarMode(wfCreated, GetTimeFromString(state.CompleteBy), false)
+				state.CompleteBy = completeBy.String()
 			}
 
 			if i.XDWState.WorkflowDocument.WorkflowStatus == STATUS_OPEN {
-				log.Printf("Workflow %s is OPEN", wf.XDW_Key)
+				if i.EnvVars.DEBUG_MODE {
+					log.Printf("Workflow %s is OPEN", wf.XDW_Key)
+				}
 				i.XDWState.Dashboard.InProgress = i.XDWState.Dashboard.InProgress + 1
 				if i.isWorkflowEscalated() {
-					log.Printf("Workflow %s is ESCALATED", wf.XDW_Key)
+					if i.EnvVars.DEBUG_MODE {
+						log.Printf("Workflow %s is ESCALATED", wf.XDW_Key)
+					}
 					i.XDWState.Dashboard.Escalated = i.XDWState.Dashboard.Escalated + 1
 					state.Escalated = "TRUE"
 					i.XDWState.EscalatedWorkflows.Count = i.XDWState.EscalatedWorkflows.Count + 1
 					i.XDWState.EscalatedWorkflows.Workflows = append(i.XDWState.EscalatedWorkflows.Workflows, wf)
 				}
 			} else {
-				log.Printf("Workflow %s is CLOSED", wf.XDW_Key)
+				if i.EnvVars.DEBUG_MODE {
+					log.Printf("Workflow %s is CLOSED", wf.XDW_Key)
+				}
 				i.XDWState.Dashboard.Complete = i.XDWState.Dashboard.Complete + 1
 				state.InProgress = "FALSE"
 			}
@@ -340,62 +352,81 @@ func (i *Trans) getLatestWorkflowEventTime() time.Time {
 	return we
 }
 func (i *Trans) getWorkflowDuration() string {
-	// ws := GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value)
-	// log.Printf("Workflow Started %s Status %s", ws.String(), i.XDWState.WorkflowDocument.WorkflowStatus)
-	loc, _ := time.LoadLocation("Europe/London")
-	we := time.Now().In(loc)
-	if i.XDWState.WorkflowDocument.WorkflowStatus == STATUS_CLOSED {
-		we = i.getLatestWorkflowEventTime()
-		log.Printf("Workflow is Complete. Latest Event Time was %s", we.String())
+	we := i.getLatestWorkflowEventTime()
+	duration := i.TimeDuration(i.XDWState.WorkflowDocument.EffectiveTime.Value, we.String())
+	if i.EnvVars.DEBUG_MODE {
+		log.Println("Duration - " + duration)
 	}
-	// duration := GetDuration(we.Sub(ws))
-	duration := timeDuratipn(i.XDWState.WorkflowDocument.EffectiveTime.Value, we.String())
-	log.Println("Duration - " + duration)
 	return duration
 }
 func (i *Trans) getWorkflowTimeRemaining() string {
-	createTime := GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value)
-	completeby := OHT_FutureDate(createTime, i.XDWState.Definition.CompleteByTime)
-	log.Printf("Completion time %s", completeby.String())
+	completeby := i.getWorkflowCompleteByDate()
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("Completion time %s", completeby.String())
+	}
 	if time.Now().After(completeby) {
 		return "0"
 	}
 	timeRemaining := time.Until(completeby)
-	log.Println("Workflow Time Remaining : " + timeRemaining.String())
+	if i.EnvVars.DEBUG_MODE {
+		log.Println("Workflow Time Remaining : " + timeRemaining.String())
+	}
 	return PrettyPrintDuration(timeRemaining)
 }
 func (i *Trans) isWorkflowOverdue() bool {
-	log.Println("Checking if Workflow is Overdue")
+	if i.EnvVars.DEBUG_MODE {
+		log.Println("Checking if Workflow is Overdue")
+	}
 	if i.XDWState.Definition.CompleteByTime != "" {
-		completebyDate := i.getWorkflowCompleteByDate()
-		log.Printf("Workflow Complete By Date is %s", completebyDate.String())
-		if time.Now().After(completebyDate) {
+		completeby := i.getWorkflowCompleteByDate()
+		if i.EnvVars.DEBUG_MODE {
+			log.Printf("Workflow Complete By Date is %s", completeby.String())
+		}
+		if time.Now().After(completeby) {
 			if i.XDWState.WorkflowDocument.WorkflowStatus == STATUS_CLOSED {
 				levent := i.getLatestWorkflowEventTime()
-				log.Printf("Workflow Latest Event Time %s. Workflow Target Met = %v", levent.String(), levent.Before(completebyDate))
-				return levent.After(completebyDate)
+				if i.EnvVars.DEBUG_MODE {
+					log.Printf("Workflow Latest Event Time %s. Workflow Target Met = %v", levent.String(), levent.Before(completeby))
+				}
+				return levent.After(completeby)
 			} else {
-				log.Println("Workflow Target Met = false")
+				if i.EnvVars.DEBUG_MODE {
+					log.Println("Workflow Target Met = false")
+				}
 				return true
 			}
 		} else {
-			log.Println("Workflow is not overdue")
+			if i.EnvVars.DEBUG_MODE {
+				log.Println("Workflow is not overdue")
+			}
 			return false
 		}
 	}
-	log.Printf("XDW Definition for %s Workflow does not specify a Complete By Time. Workflow Target Met = true", i.Query.Pathway)
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("XDW Definition for %s Workflow does not specify a Complete By Time. Workflow Target Met = true", i.Query.Pathway)
+	}
 	return false
 }
 func (i *Trans) getWorkflowCompleteByDate() time.Time {
-	return OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime)
+	if i.EnvVars.DEBUG_MODE {
+		log.Println("Calling OHT_FutureDate from getWorkflowCompleteByDate")
+	}
+	return i.OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime)
 }
 func (i *Trans) isWorkflowEscalated() bool {
 	if i.XDWState.Definition.ExpirationTime != "" {
-		escalatedate := OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.ExpirationTime)
-		log.Printf("Workflow Start Time %s Worklow Escalate Time %s Workflow Escaleted = %v", i.XDWState.WorkflowDocument.EffectiveTime.Value, escalatedate.String(), time.Now().After(escalatedate))
-		return time.Now().After(escalatedate)
+		if i.EnvVars.DEBUG_MODE {
+			log.Println("Calling OHT_FutureDate from isWorkflowEscalated")
+		}
+		escalatedate := i.OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.ExpirationTime)
+		if i.EnvVars.DEBUG_MODE {
+			log.Printf("Workflow Start Time %s Worklow Escalate Time %s Workflow Escaleted = %v", i.XDWState.WorkflowDocument.EffectiveTime.Value, escalatedate.String(), time.Now().Local().After(escalatedate))
+		}
+		return time.Now().Local().After(escalatedate)
 	}
-	log.Println("No Escalate time defined for Workflow")
+	if i.EnvVars.DEBUG_MODE {
+		log.Println("No Escalate time defined for Workflow")
+	}
 	return false
 }
 func (i *Trans) setPathways() {
@@ -421,27 +452,47 @@ func GetWorkflows(pathway string, nhsid string, version int, status string) (Wor
 	wf := Workflow{Pathway: pathway, NHSId: nhsid, Version: version, Status: status}
 	wfs.Workflows = append(wfs.Workflows, wf)
 	err := wfs.newEvent()
-	log.Printf("selected %v Workflows for Pathway %s NHS %s Version %v", wfs.Count, pathway, nhsid, version)
 	return wfs, err
 }
 func (i *Trans) getTaskState() TaskState {
-	taskstate := TaskState{Taskid: GetIntFromString(i.Query.Taskid), Name: i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].Name}
-	if i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].CompleteByTime == "" {
-		taskstate.CompleteBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime).String()
+	wfStart := GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value)
+	taskid := GetIntFromString(i.Query.Taskid) - 1
+	task := i.XDWState.Definition.Tasks[taskid]
+	taskstate := TaskState{Taskid: taskid, Name: task.Name}
+	if task.CompleteByTime == "" {
+		if i.EnvVars.DEBUG_MODE {
+			log.Println("Calling OHT_FutureDate from getTaskState")
+		}
+		taskstate.CompleteBy = i.OHT_FutureDate(wfStart, i.XDWState.Definition.CompleteByTime).String()
 	} else {
-		taskstate.CompleteBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].CompleteByTime).String()
+		if i.EnvVars.DEBUG_MODE {
+			log.Println("Calling OHT_FutureDate from getTaskState")
+		}
+		taskstate.CompleteBy = i.OHT_FutureDate(wfStart, task.CompleteByTime).String()
 	}
-	if i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].StartByTime == "" {
-		taskstate.StartBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime).String()
+	if task.StartByTime == "" {
+		if i.EnvVars.DEBUG_MODE {
+			log.Println("Calling OHT_FutureDate from getTaskState")
+		}
+		taskstate.StartBy = i.OHT_FutureDate(wfStart, i.XDWState.Definition.CompleteByTime).String()
 	} else {
-		taskstate.StartBy = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].StartByTime).String()
+		if i.EnvVars.DEBUG_MODE {
+			log.Println("Calling OHT_FutureDate from getTaskState")
+		}
+		taskstate.StartBy = i.OHT_FutureDate(wfStart, task.StartByTime).String()
 	}
-	if i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].ExpirationTime == "" {
-		taskstate.EscalateOn = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.CompleteByTime).String()
+	if task.ExpirationTime == "" {
+		if i.EnvVars.DEBUG_MODE {
+			log.Println("Calling OHT_FutureDate from getTaskState")
+		}
+		taskstate.EscalateOn = i.OHT_FutureDate(wfStart, i.XDWState.Definition.CompleteByTime).String()
 	} else {
-		taskstate.EscalateOn = OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].ExpirationTime).String()
+		if i.EnvVars.DEBUG_MODE {
+			log.Println("Calling OHT_FutureDate from getTaskState")
+		}
+		taskstate.EscalateOn = i.OHT_FutureDate(wfStart, task.ExpirationTime).String()
 	}
-	for _, v := range i.XDWState.Definition.Tasks[GetIntFromString(i.Query.Taskid)-1].CompletionBehavior {
+	for _, v := range task.CompletionBehavior {
 		if v.Completion.Condition != "" {
 			taskstate.CompletionConditions = append(taskstate.CompletionConditions, v.Completion.Condition)
 		}
@@ -451,19 +502,26 @@ func (i *Trans) getTaskState() TaskState {
 	if taskstate.Status == STATUS_COMPLETE {
 		taskstate.CompletedOn = taskDetails.LastModifiedTime
 	}
-	taskstate.StartedOn = taskDetails.ActivationTime
+	if taskDetails.ActivationTime != "" {
+		taskstate.StartedOn = GetTimeFromString(taskDetails.ActivationTime).String()
+	} else {
+		taskstate.StartedOn = ""
+	}
 	taskstate.Owner = taskDetails.ActualOwner
-	taskstate.Duration = i.getTaskDuration()
-	if time.Now().After(GetTimeFromString(taskstate.CompleteBy)) {
+	taskstate.Duration = i.getTaskDuration(i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActivationTime, i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.LastModifiedTime)
+	if taskstate.Duration == "" || strings.HasPrefix(taskstate.Duration, "-") {
+		taskstate.Duration = "0"
+	}
+	if time.Now().Local().After(GetTimeFromString(taskstate.CompleteBy)) {
 		if taskstate.Status == STATUS_COMPLETE {
-			taskstate.TargetMet = GetTimeFromString(taskstate.CompletedOn).Before(GetTimeFromString(taskstate.CompleteBy))
+			taskstate.TargetMet = GetTimeFromString(taskstate.CompletedOn).Local().Before(GetTimeFromString(taskstate.CompleteBy))
 		} else {
 			taskstate.TargetMet = false
 		}
 	} else {
 		taskstate.TargetMet = true
 	}
-	if time.Now().After(GetTimeFromString(taskstate.EscalateOn)) {
+	if time.Now().Local().After(GetTimeFromString(taskstate.EscalateOn)) {
 		taskstate.Escalated = taskDetails.Status != STATUS_COMPLETE
 	} else {
 		taskstate.Escalated = false
@@ -483,7 +541,9 @@ func (i *Trans) setTasksState() {
 	i.HTTP.RspContentType = APPLICATION_JSON
 }
 func (i *Trans) setTaskState() {
-	log.Printf("Setting Task %s Task Index %v State", i.Query.Taskid, GetIntFromString(i.Query.Taskid))
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("Setting Task %s Task Index %v State", i.Query.Taskid, GetIntFromString(i.Query.Taskid))
+	}
 	if !i.setDocAndDef() {
 		return
 	}
@@ -505,23 +565,23 @@ func (i *Trans) setDocAndDef() bool {
 		log.Println(i.Error.Error())
 		return false
 	}
-	i.setWorkflowDefinition()
-	if i.Error != nil {
-		log.Println(i.Error.Error())
-		return false
-	}
 	return true
 }
-func (i *Trans) getTaskDuration() string {
-	at := i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActivationTime
-	isActive := at != ""
-	lmt := i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.LastModifiedTime
-	if isActive {
-		if i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.Status == STATUS_COMPLETE {
-			return timeDuratipn(i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActivationTime, lmt)
-		}
-		return GetDurationSince(at)
-	} else {
+func (i *Trans) getTaskDuration(startTime string, endTime string) string {
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("Input Task Start Time %s", startTime)
+	}
+	if startTime == "" {
 		return "0"
 	}
+	st := GetTimeFromString(startTime).Local()
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("Date Task Start Time %s", st.Local().String())
+		log.Printf("Input End Time %s", endTime)
+	}
+	et := GetTimeFromString(endTime).Local()
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("Date End Time %s", et.Local().String())
+	}
+	return i.TimeDuration(startTime, endTime)
 }

@@ -24,9 +24,9 @@
         "name": "LAC_Identified",
         "description": "Looked after Child Identfied to Social Services",
         "actualowner": "",
-        "expirationtime": "hour(4)",
+        "expirationtime": "day(2)",
         "startbytime": "hour(1)",
-        "completebytime": "hour(2)",
+        "completebytime": "day(1)",
         "isskipable": false,
         "completionBehavior": [
           {

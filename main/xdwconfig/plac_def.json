@@ -3,8 +3,15 @@
     "name": "Provide LAC",
     "confidentialitycode": "Restricted",
     "startbytime": "hour(1)",
-    "completebytime": "day(28)",
-    "expirationtime": "day(29)",
+    "completebytime": "day(19)",
+    "expirationtime": "day(20)",
+    "potentialOwners": [
+      {
+        "organizationalEntity": {
+          "user": "ian.thomas@2tsolutions.co.uk"
+        }
+      }
+    ],
     "completionBehavior": [
       {
         "completion": {
@@ -24,9 +31,9 @@
         "name": "PLAC_Identified",
         "description": "Child Identfied to Social Services",
         "actualowner": "",
-        "expirationtime": "hour(4)",
+        "expirationtime": "day(2)",
         "startbytime": "hour(1)",
-        "completebytime": "hour(2)",
+        "completebytime": "day(1)",
         "isskipable": false,
         "completionBehavior": [
           {
@@ -113,7 +120,7 @@
         "name": "PLAC_Placement_Notification_Accepted_Rejected",
         "description": "Placement Notification Accepted or Rejected",
         "actualowner": "",
-        "expirationtime": "day(8)",
+        "expirationtime": "day(6)",
         "startbytime": "day(3)",
         "completebytime": "day(5)",
         "isskipable": false,
@@ -150,7 +157,7 @@
         "name": "PLAC_Signed_Consent_Accept_Reject",
         "description": "Signed Consent Accepted or Rejected",
         "actualowner": "",
-        "expirationtime": "day(8)",
+        "expirationtime": "day(6)",
         "startbytime": "day(3)",
         "completebytime": "day(5)",
         "isskipable": false,
@@ -184,12 +191,12 @@
       {
         "id": "6",
         "tasktype": "TASK",
-        "name": "PLAC_BAAF_Consent",
+        "name": "Request_PLAC_BAAF_Consent",
         "description": "Request BAAF Consent",
         "actualowner": "",
-        "expirationtime": "day(10)",
-        "startbytime": "day(8)",
-        "completebytime": "day(9)",
+        "expirationtime": "day(7)",
+        "startbytime": "day(5)",
+        "completebytime": "day(6)",
         "isskipable": false,
         "completionBehavior": [
           {
@@ -216,12 +223,12 @@
       {
         "id": "7",
         "tasktype": "TASK",
-        "name": "PLAC_Background_Referral",
+        "name": "Request_PLAC_Background_Referral",
         "description": "Request Background Referral Information",
         "actualowner": "",
-        "expirationtime": "day(10)",
-        "startbytime": "day(8)",
-        "completebytime": "day(9)",
+        "expirationtime": "day(7)",
+        "startbytime": "day(5)",
+        "completebytime": "day(6)",
         "isskipable": false,
         "completionBehavior": [
           {
@@ -251,9 +258,9 @@
         "name": "PLAC_IHA_Scheduled",
         "description": "Schedule Initial Health Assessment Appointment",
         "actualowner": "",
-        "expirationtime": "day(15)",
-        "startbytime": "day(11)",
-        "completebytime": "day(14)",
+        "expirationtime": "day(8)",
+        "startbytime": "day(6)",
+        "completebytime": "day(7)",
         "isskipable": false,
         "completionBehavior": [
           {
@@ -288,9 +295,9 @@
         "name": "PLAC_IHA_Completed",
         "description": "Publish Looked after Child Initial Health Assessment",
         "actualowner": "",
-        "expirationtime": "day(29)",
-        "startbytime": "day(15)",
-        "completebytime": "day(28)",
+        "expirationtime": "day(20)",
+        "startbytime": "day(7)",
+        "completebytime": "day(19)",
         "isskipable": false,
         "completionBehavior": [
           {

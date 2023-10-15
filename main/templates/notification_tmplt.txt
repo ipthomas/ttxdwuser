@@ -7,19 +7,11 @@ Hi {{$sub.User}}
     
     Event Type {{.Eventtype}}
 
-{{if ne .Comments "None"}}{{mappedid $sub.User $sub.Pathway}} - {{.Comments}}{{end}}
+{{if ne .Comments "None"}}{{$sub.User}} Included the following Comments when actioning the {{mappedid $sub.User $sub.Pathway}} Workflow{{.Comments}}{{end}}
 
-    To View / Manage the {{mappedid $sub.User $sub.Pathway}} please use the link. 
-        {{mappedid $sub.User $sub.Pathway}} WorkFlow   - {{$url}}/beta/spa/consumer/xdw?user={{$sub.User}}&org={{$sub.Org}}&role={{$sub.Role}}&pathway={{.Pathway}}&nhs={{.Nhs}}&vers=1
+    To Access the ICB Workflows Dashboard, please use the link. 
+        https://master.d1kcztssyoy6jj.amplifyapp.com/
 
-    To View / Manage your Workflow Service Subscriptions please use the link below. 
-        My Subscriptions - {{$url}}/beta/spa/consumer/mysubs?user={{$sub.User}}&org={{$sub.Org}}&role={{$sub.Role}}
-
-    To View / Manage your Workflow Terminology please use the link below. 
-        My Terminology   - {{$url}}/beta/spa/consumer/codemap?user={{$sub.User}}&org={{$sub.Org}}&role={{$sub.Role}}
-    
-    To View / Manage All ICB Workflows please use the link below. 
-        My Terminology   - {{$url}}/beta/spa?user={{$sub.User}}&org={{$sub.Org}}&role={{$sub.Role}}
 
 {{end}}{{end}}
 

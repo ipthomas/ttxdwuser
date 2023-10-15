@@ -16,6 +16,9 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3"
 )
 
+func (i *Trans) setCalenderMode() {
+	EnvState.CALENDAR_MODE = i.Query.Operation
+}
 func (i *Trans) newS3Object() {
 	// Create an AWS session
 	sess, err := session.NewSession(&aws.Config{
@@ -144,7 +147,6 @@ func (i *Trans) setWorkflowDocument() {
 		if wfs.Count == 1 {
 			i.Error = json.Unmarshal([]byte(wfs.Workflows[1].XDW_Doc), &i.XDWState.WorkflowDocument)
 			i.Error = json.Unmarshal([]byte(wfs.Workflows[1].XDW_Def), &i.XDWState.Definition)
-			i.setWorkflowXDSMeta()
 		} else {
 			i.Error = errors.New("no workflow found for Pathway " + i.Query.Pathway + " NHS " + i.Query.Nhs + " Version " + GetStringFromInt(vers))
 			log.Println(i.Error.Error())
@@ -154,32 +156,27 @@ func (i *Trans) setWorkflowDocument() {
 	}
 }
 func (i *Trans) setWorkflowDefinition() {
-	if i.XDWState.Definition.Ref == "" {
-		log.Println("No Definition currently Loaded")
-		xdws := XDWS{Action: SELECT}
-		xdw := XDW{Name: i.Query.Pathway + "_def"}
-		log.Printf("Retrieving XDW Definition %s", xdw.Name)
-		xdws.XDW = append(xdws.XDW, xdw)
-		if i.Error = xdws.newEvent(); i.Error == nil {
-			if xdws.Count == 1 {
-				i.Error = json.Unmarshal([]byte(xdws.XDW[1].XDW), &i.XDWState.Definition)
-			} else {
-				i.Error = errors.New("no xdw registered for " + xdw.Name)
-			}
+	xdws := XDWS{Action: SELECT}
+	xdw := XDW{Name: i.Query.Pathway + "_def"}
+	log.Printf("Retrieving XDW Definition %s", xdw.Name)
+	xdws.XDW = append(xdws.XDW, xdw)
+	if i.Error = xdws.newEvent(); i.Error == nil {
+		if xdws.Count == 1 {
+			i.Error = json.Unmarshal([]byte(xdws.XDW[1].XDW), &i.XDWState.Definition)
+		} else {
+			i.Error = errors.New("no xdw registered for " + xdw.Name)
 		}
 	}
 }
 func (i *Trans) setWorkflowXDSMeta() {
-	if i.XDWState.Meta.Id == "" {
-		xdws := XDWS{Action: SELECT}
-		xdw := XDW{Name: i.Query.Name + "_meta", IsXDSMeta: true}
-		xdws.XDW = append(xdws.XDW, xdw)
-		if i.Error = xdws.newEvent(); i.Error == nil {
-			if xdws.Count == 1 {
-				i.Error = json.Unmarshal([]byte(xdws.XDW[1].XDW), &i.XDWState.Meta)
-			} else {
-				i.Error = errors.New("no xdw meta registered for " + i.Query.Name)
-			}
+	xdws := XDWS{Action: SELECT}
+	xdw := XDW{Name: i.Query.Name + "_meta", IsXDSMeta: true}
+	xdws.XDW = append(xdws.XDW, xdw)
+	if i.Error = xdws.newEvent(); i.Error == nil {
+		if xdws.Count == 1 {
+			i.Error = json.Unmarshal([]byte(xdws.XDW[1].XDW), &i.XDWState.Meta)
+		} else {
+			i.Error = errors.New("no xdw meta registered for " + i.Query.Name)
 		}
 	}
 }

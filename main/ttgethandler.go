@@ -78,6 +78,8 @@ func (i *Trans) newGetHandler() {
 			i.setXDWDefinition()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_META):
 			i.setXDWMeta()
+		case strings.HasSuffix(path, HTTP_PATH_API_ADMIN_CALENDAR_MODE):
+			i.setCalenderMode()
 		default:
 			i.Error = errors.New("Unsupported Consumer query path - " + i.HTTP.Path)
 			i.setErrorTemplate()

@@ -33,15 +33,17 @@ func (i *Trans) updateXDW() {
 			for k, wfdoctask := range i.XDWState.WorkflowDocument.TaskList.XDWTask {
 				for inp, input := range wfdoctask.TaskData.Input {
 					if ev.Expression == input.Part.Name {
-						log.Printf("Matched Task %v %s Input with event %v", wfdoctask.TaskData.TaskDetails.ID, input.Part.Name, ev.Id)
-						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Input[inp].Part.AttachmentInfo.AttachedTime = ev.Creationtime
+						if i.EnvVars.DEBUG_MODE {
+							log.Printf("Matched Task %v %s Input with event %v", wfdoctask.TaskData.TaskDetails.ID, input.Part.Name, ev.Id)
+						}
+						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Input[inp].Part.AttachmentInfo.AttachedTime = GetTimeFromString(ev.Creationtime).String()
 						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Input[inp].Part.AttachmentInfo.AttachedBy = ev.User + " " + ev.Org + " " + ev.Role
 						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Input[inp].Part.AttachmentInfo.HomeCommunityId = i.EnvVars.REG_OID
-						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.LastModifiedTime = ev.Creationtime
+						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.LastModifiedTime = GetTimeFromString(ev.Creationtime).String()
 						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.Status = IN_PROGRESS
 						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActualOwner = ev.User + " " + ev.Org + " " + ev.Role
 						if i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActivationTime == "" {
-							i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActivationTime = ev.Creationtime
+							i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActivationTime = GetTimeFromString(ev.Creationtime).String()
 							log.Printf("Set Task %s Activation Time %s", wfdoctask.TaskData.TaskDetails.ID, i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActivationTime)
 						}
 						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Input[inp].Part.AttachmentInfo.Identifier = GetStringFromInt(int(ev.Id))
@@ -54,14 +56,16 @@ func (i *Trans) updateXDW() {
 				}
 				for oup, output := range i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Output {
 					if ev.Expression == output.Part.Name {
-						log.Println("Matched workflow document task " + wfdoctask.TaskData.TaskDetails.ID + " Output Part : " + output.Part.Name + " with Event Expression : " + ev.Expression + " Status : " + wfdoctask.TaskData.TaskDetails.Status)
-						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.LastModifiedTime = ev.Creationtime
-						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Output[oup].Part.AttachmentInfo.AttachedTime = ev.Creationtime
+						if i.EnvVars.DEBUG_MODE {
+							log.Println("Matched workflow document task " + wfdoctask.TaskData.TaskDetails.ID + " Output Part : " + output.Part.Name + " with Event Expression : " + ev.Expression + " Status : " + wfdoctask.TaskData.TaskDetails.Status)
+						}
+						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.LastModifiedTime = GetTimeFromString(ev.Creationtime).String()
+						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Output[oup].Part.AttachmentInfo.AttachedTime = GetTimeFromString(ev.Creationtime).String()
 						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Output[oup].Part.AttachmentInfo.AttachedBy = ev.User + " " + ev.Org + " " + ev.Role
 						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActualOwner = ev.User + " " + ev.Org + " " + ev.Role
 						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.Status = IN_PROGRESS
 						if i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActivationTime == "" {
-							i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActivationTime = ev.Creationtime
+							i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActivationTime = GetTimeFromString(ev.Creationtime).String()
 							log.Printf("Set Task %s Activation Time %s", wfdoctask.TaskData.TaskDetails.ID, i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.TaskDetails.ActivationTime)
 						}
 						i.XDWState.WorkflowDocument.TaskList.XDWTask[k].TaskData.Output[oup].Part.AttachmentInfo.Identifier = GetStringFromInt(int(ev.Id))
@@ -119,18 +123,22 @@ func (i *Trans) checkTasksCompletionBehaviour() {
 func (i *Trans) isNewEvent(ev Event) bool {
 	for _, te := range i.XDWState.WorkflowDocument.TaskList.XDWTask[ev.Taskid-1].TaskEventHistory.TaskEvent {
 		if GetIntFromString(te.ID) == ev.Id {
-			log.Printf("Event ID %v is Registered", ev.Id)
+			if i.EnvVars.DEBUG_MODE {
+				log.Printf("Event ID %v is Registered", ev.Id)
+			}
 			return false
 		}
 	}
-	log.Printf("New Event Found. ID = %v", ev.Id)
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("New Event Found. ID = %v", ev.Id)
+	}
 	return true
 }
 func (i *Trans) newXDWTaskEvent(ev Event) {
 	nte := TaskEvent{
 		ID:         GetStringFromInt(ev.Id),
 		Identifier: GetStringFromInt(ev.Taskid),
-		EventTime:  Pretty_Time_Now(),
+		EventTime:  PrettyTime(Time_Now()),
 		EventType:  i.XDWState.WorkflowDocument.TaskList.XDWTask[ev.Taskid-1].TaskData.TaskDetails.TaskType,
 		Status:     STATUS_COMPLETE,
 	}
@@ -139,19 +147,24 @@ func (i *Trans) newXDWTaskEvent(ev Event) {
 func (i *Trans) isTaskCompleteBehaviorMet(taskid string) bool {
 	for _, task := range i.XDWState.Definition.Tasks {
 		if task.ID == taskid {
-			log.Printf("Checking if Task %s is complete", taskid)
+			if i.EnvVars.DEBUG_MODE {
+				log.Printf("Checking if Task %s is complete", taskid)
+			}
 			var conditions []string
 			var completedConditions = 0
 			for _, cond := range task.CompletionBehavior {
-				log.Printf("Task %s Completion Condition is %s", taskid, cond)
+				if i.EnvVars.DEBUG_MODE {
+					log.Printf("Task %s Completion Condition is %s", taskid, cond)
+				}
 				if cond.Completion.Condition != "" {
 					if strings.Contains(cond.Completion.Condition, " and ") {
 						conditions = strings.Split(cond.Completion.Condition, " and ")
 					} else {
 						conditions = append(conditions, cond.Completion.Condition)
 					}
-					log.Printf("Checkiing Task %s %v completion conditions", taskid, len(conditions))
-
+					if i.EnvVars.DEBUG_MODE {
+						log.Printf("Checkiing Task %s %v completion conditions", taskid, len(conditions))
+					}
 					for _, condition := range conditions {
 						endMethodInd := strings.Index(condition, "(")
 						if endMethodInd > 0 {
@@ -162,15 +175,18 @@ func (i *Trans) isTaskCompleteBehaviorMet(taskid string) bool {
 								continue
 							}
 							param := condition[endMethodInd+1 : endParamInd]
-							log.Printf("Completion condition is %s", method)
-
+							if i.EnvVars.DEBUG_MODE {
+								log.Printf("Completion condition is %s", method)
+							}
 							switch method {
 							case "output":
 								for _, op := range i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(taskid)-1].TaskData.Output {
 									if op.Part.AttachmentInfo.AttachedTime != "" {
 										if op.Part.AttachmentInfo.Name == param {
 											completedConditions = completedConditions + 1
-											log.Printf("Task %s Output Part %s - Attached %s", taskid, op.Part.AttachmentInfo.Name, op.Part.AttachmentInfo.AttachedTime)
+											if i.EnvVars.DEBUG_MODE {
+												log.Printf("Task %s Output Part %s - Attached %s", taskid, op.Part.AttachmentInfo.Name, op.Part.AttachmentInfo.AttachedTime)
+											}
 										}
 									}
 								}
@@ -194,12 +210,16 @@ func (i *Trans) isTaskCompleteBehaviorMet(taskid string) bool {
 				}
 			}
 			if len(conditions) == completedConditions {
-				log.Printf("Task %s is complete", taskid)
+				if i.EnvVars.DEBUG_MODE {
+					log.Printf("Task %s is complete", taskid)
+				}
 				return true
 			}
 		}
 	}
-	log.Printf("Task %s is not complete", taskid)
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("Task %s is not complete", taskid)
+	}
 	return false
 }
 func (i *Trans) isWorkflowCompleteBehaviorMet() (bool, string) {
@@ -208,7 +228,9 @@ func (i *Trans) isWorkflowCompleteBehaviorMet() (bool, string) {
 		var conditions []string
 		var completedConditions = 0
 		if cc.Completion.Condition != "" {
-			log.Printf("Workflow Completion Condition %v %s", c+1, cc.Completion.Condition)
+			if i.EnvVars.DEBUG_MODE {
+				log.Printf("Workflow Completion Condition %v %s", c+1, cc.Completion.Condition)
+			}
 			if strings.Contains(cc.Completion.Condition, " and ") {
 				conditions = strings.Split(cc.Completion.Condition, " and ")
 			} else {
@@ -235,12 +257,16 @@ func (i *Trans) isWorkflowCompleteBehaviorMet() (bool, string) {
 				}
 			}
 			if len(conditions) == completedConditions {
-				log.Printf("%s Workflow for Nhs ID %s is complete", i.Query.Pathway, i.Query.Nhs)
+				if i.EnvVars.DEBUG_MODE {
+					log.Printf("%s Workflow for Nhs ID %s is complete", i.Query.Pathway, i.Query.Nhs)
+				}
 				return true, completionTask
 			}
 		}
 	}
-	log.Printf("%s Workflow for Nhs ID %s is not complete", i.Query.Pathway, i.Query.Nhs)
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("%s Workflow for Nhs ID %s is not complete", i.Query.Pathway, i.Query.Nhs)
+	}
 	return false, ""
 }
 func (i *Trans) newXDWDocEvent(ev Event) {

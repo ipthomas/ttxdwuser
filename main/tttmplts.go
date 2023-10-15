@@ -88,7 +88,7 @@ func funcMap() template.FuncMap {
 		"newid":      Newid,
 		"mappedid":   GetMappedValue,
 		"prettytime": PrettyTime,
-		"duration":   timeDuratipn,
+		"duration":   timeDuration,
 		"docid":      getDocId,
 	}
 }

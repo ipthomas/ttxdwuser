@@ -251,6 +251,7 @@ type EnvVars struct {
 	SMTP_PASSWORD           string `json:"SMTP_PASSWORD"`
 	PERSIST_TEMPLATES       bool   `json:"PERSIST_TEMPLATES"`
 	PERSIST_DEFINITIONS     bool   `json:"PERSIST_DEFINITIONS"`
+	CALENDAR_MODE           string `json:"CALENDAR_MODE"`
 }
 type QueryVars struct {
 	Act            string `json:"Act,omitempty"`
@@ -339,7 +340,12 @@ type WorkflowDefinition struct {
 	StartByTime         string `json:"startbytime"`
 	CompleteByTime      string `json:"completebytime"`
 	ExpirationTime      string `json:"expirationtime"`
-	CompletionBehavior  []struct {
+	PotentialOwners     []struct {
+		OrganizationalEntity struct {
+			User string `json:"user"`
+		} `json:"organizationalEntity"`
+	} `json:"potentialOwners,omitempty"`
+	CompletionBehavior []struct {
 		Completion struct {
 			Condition string `json:"condition"`
 		} `json:"completion"`
