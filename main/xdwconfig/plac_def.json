@@ -1,0 +1,343 @@
+{
+    "ref": "plac_def",
+    "name": "Provide LAC",
+    "confidentialitycode": "Restricted",
+    "startbytime": "hour(1)",
+    "completebytime": "day(28)",
+    "expirationtime": "day(29)",
+    "completionBehavior": [
+      {
+        "completion": {
+          "condition": "task(9)"
+        }
+      },
+      {
+        "completion": {
+          "condition": "task(10)"
+        }
+      }
+    ],
+    "tasks": [
+      {
+        "id": "1",
+        "tasktype": "TASK",
+        "name": "PLAC_Identified",
+        "description": "Child Identfied to Social Services",
+        "actualowner": "",
+        "expirationtime": "hour(4)",
+        "startbytime": "hour(1)",
+        "completebytime": "hour(2)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(PLAC1^^TypeCode_Provide)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC1^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "tasktype": "TASK",
+        "name": "PLAC_Placement_Notification_Form_Sent",
+        "description": "Send Placement Notification Form",
+        "actualowner": "",
+        "expirationtime": "day(4)",
+        "startbytime": "day(2)",
+        "completebytime": "day(3)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "task(4)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "PLAC1^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC2^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "tasktype": "TASK",
+        "name": "PLAC_Signed_Consent_Sent",
+        "description": "Send Signed Consent",
+        "actualowner": "",
+        "expirationtime": "day(4)",
+        "startbytime": "day(2)",
+        "completebytime": "day(3)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "task(5)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "PLAC1^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC3^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "tasktype": "TASK",
+        "name": "PLAC_Placement_Notification_Accepted_Rejected",
+        "description": "Placement Notification Accepted or Rejected",
+        "actualowner": "",
+        "expirationtime": "day(8)",
+        "startbytime": "day(3)",
+        "completebytime": "day(5)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(PLAC10^^TypeCode_Provide) and latest(PLAC10^^TypeCode_Provide)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "PLAC2^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC10^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "PLAC11^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "tasktype": "TASK",
+        "name": "PLAC_Signed_Consent_Accept_Reject",
+        "description": "Signed Consent Accepted or Rejected",
+        "actualowner": "",
+        "expirationtime": "day(8)",
+        "startbytime": "day(3)",
+        "completebytime": "day(5)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(PLAC12^^TypeCode_Provide) and latest(PLAC12^^TypeCode_Provide)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "PLAC3^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC12^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "PLAC13^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "tasktype": "TASK",
+        "name": "PLAC_BAAF_Consent",
+        "description": "Request BAAF Consent",
+        "actualowner": "",
+        "expirationtime": "day(10)",
+        "startbytime": "day(8)",
+        "completebytime": "day(9)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(PLAC5^^TypeCode_Provide)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "PLAC12^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC5^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "tasktype": "TASK",
+        "name": "PLAC_Background_Referral",
+        "description": "Request Background Referral Information",
+        "actualowner": "",
+        "expirationtime": "day(10)",
+        "startbytime": "day(8)",
+        "completebytime": "day(9)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(PLAC6^^TypeCode_Provide)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "PLAC10^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC6^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "tasktype": "TASK",
+        "name": "PLAC_IHA_Scheduled",
+        "description": "Schedule Initial Health Assessment Appointment",
+        "actualowner": "",
+        "expirationtime": "day(15)",
+        "startbytime": "day(11)",
+        "completebytime": "day(14)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "input(PLAC5^^Typecode_Provide) and input(PLAC6^^Typecode_Provide) and output(PLAC7^^TypeCode_Provide)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "PLAC5^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          },
+          {
+            "name": "PLAC6^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC7^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "tasktype": "TASK",
+        "name": "PLAC_IHA_Completed",
+        "description": "Publish Looked after Child Initial Health Assessment",
+        "actualowner": "",
+        "expirationtime": "day(29)",
+        "startbytime": "day(15)",
+        "completebytime": "day(28)",
+        "isskipable": false,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(PLAC9^^TypeCode_Provide)"
+            }
+          }
+        ],
+        "input": [
+          {
+            "name": "PLAC7^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC9^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "tasktype": "TASK",
+        "name": "PLAC_IHA_Withdrawn",
+        "description": "Withdraw the IHA Request",
+        "actualowner": "",
+        "expirationtime": "",
+        "startbytime": "",
+        "completebytime": "",
+        "isskipable": true,
+        "completionBehavior": [
+          {
+            "completion": {
+              "condition": "output(PLAC14^^TypeCode_Provide)"
+            }
+          }
+        ],
+        "output": [
+          {
+            "name": "PLAC14^^TypeCode_Provide",
+            "contenttype": "application/pdf",
+            "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
+          }
+        ]
+      }
+    ]
+  }
