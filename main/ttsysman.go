@@ -5,6 +5,7 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"errors"
+	"io"
 	"io/fs"
 	"log"
 	"net/http"
@@ -16,6 +17,30 @@ import (
 	"github.com/aws/aws-sdk-go/service/s3"
 )
 
+func (i *Trans) setQOTD() {
+	i.HTTP.RspContentType = APPLICATION_JSON
+	url := "https://zenquotes.io/api/random"
+	var quotes Quotes
+	var quote Quote
+	quote.Q = "Your here for a good time not a long time"
+	quote.A = "some guy"
+	resp, err := http.Get(url)
+
+	if err == nil {
+		if resp.StatusCode == http.StatusOK {
+			rspBytes, _ := io.ReadAll(resp.Body)
+			log.Println(string(rspBytes))
+			i.HTTP.ResponseBody = string(rspBytes)
+			return
+		}
+	}
+	defer resp.Body.Close()
+
+	log.Println(err.Error())
+	quotes.Quote = append(quotes.Quote, quote)
+	quoteRsp, _ := json.Marshal(quotes)
+	i.HTTP.ResponseBody = string(quoteRsp)
+}
 func (i *Trans) setCalenderMode() {
 	EnvState.CALENDAR_MODE = i.Query.Operation
 }

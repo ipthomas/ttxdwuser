@@ -233,6 +233,7 @@ const (
 	HTTP_PATH_API_STATE_SUBSCRIPTIONS         = "/api/state/subscriptions"
 	HTTP_PATH_API_STATE_PATHWAYS              = "/api/state/pathways"
 	HTTP_PATH_API_STATE_TASK_STATUS           = "/api/state/task/status"
+	HTTP_PATH_API_QOTD                        = "/api/qotd"
 	HTTP_PATH_API_STATE_TASKS_STATUS          = "/api/state/tasks/status"
 	HTTP_PATH_API_STATE_EXPRESSIONS           = "/api/state/expressions"
 	HTTP_PATH_API_STATE_COMMENTS              = "/api/state/comments"

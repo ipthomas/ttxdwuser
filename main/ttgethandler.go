@@ -14,6 +14,8 @@ func (i *Trans) newGetHandler() {
 		path := i.HTTP.Path
 		log.Printf("Path = %s", path)
 		switch {
+		case strings.HasSuffix(path, HTTP_PATH_API_QOTD):
+			i.setQOTD()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_TASK_STATUS):
 			i.setTaskState()
 		case strings.HasSuffix(path, HTTP_PATH_API_STATE_TASKS_STATUS):

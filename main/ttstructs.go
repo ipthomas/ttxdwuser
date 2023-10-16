@@ -6,6 +6,13 @@ import (
 	"time"
 )
 
+type Quotes struct {
+	Quote []Quote
+}
+type Quote struct {
+	Q string `json:"q"`
+	A string `json:"a"`
+}
 type DBConnection struct {
 	DBUser        string
 	DBPassword    string
