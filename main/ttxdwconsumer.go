@@ -225,7 +225,7 @@ func (i *Trans) setWorkflowStates() {
 			return
 		}
 	}
-	log.Printf("Setting Workflow States - Total Workflows %v", i.XDWState.Workflows.Count)
+	log.Printf("Setting Workflow States using Calendar Mode %s - Total Workflows %v", i.EnvVars.CALENDAR_MODE, i.XDWState.Workflows.Count)
 	i.XDWState.Dashboard.Total = i.XDWState.Workflows.Count
 	for _, wf := range i.XDWState.Workflows.Workflows {
 		if len(wf.XDW_Doc) > 0 {
