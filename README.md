@@ -15,7 +15,9 @@ The Backend utilises the following IHE Profiles and Actors
 
 DSUB Implementation
 
-    It also implements DSUB 'pullpoint' functionality by providing a DSUB 'proxy' Broker service. This service parses workflow definitions and registers subscriptions with the SCR Broker for applicable workflow tasks. Users/Epr's can use this proxy DSUB Broker service to create their subscriptions to specifc workflows and events and receive email notifications when those workflow events occure.
+    It also implements DSUB 'pullpoint' functionality by providing a DSUB 'proxy' Broker service. 
+    This service parses workflow definitions and registers subscriptions with the SCR DSUB Broker for applicable workflow tasks. 
+    Users/Epr's can use this proxy DSUB Broker service to create their own subscriptions to specifc workflows and events and receive email notifications when those workflow events occure.
 
 Patient Services
 
@@ -23,12 +25,14 @@ Patient Services
 
 Deployment
 
-    The Event Service utilises environment variables for configuration of the service. If the service is deployed in AWS as a lambda service, the lambda configuration/environment variables are used. Deployment on a local server utilises the envvars.json file in the root folder of the application.
+    The Event Service utilises environment variables for configuration of the service. 
+    If the service is deployed in AWS as a lambda service, the lambda configuration/environment variables are used. 
+    Deployment on a local server utilises the envvars.json file in the root folder of the application. 
+    When the application is started or triggered it automattically loads the environment vars from the relevant configuration (file or AWS vars).
 
     Example envvars.json 
 
         {
-            
             "DB_USER": "your db admin username",
             "DB_PASSWORD": "your db admin password",
             "DB_HOST": "your db host",
@@ -62,4 +66,10 @@ Deployment
             "TIME_LOCATION" : "Europe/London",
             "TIME_LOCALE" : "en_GB"
         }
+    
+    Database
+
+        Create a database called tuk
+        'use tuk'
+        The build folder contains a database folder with tuk.sql that can be used to create the various event service 'tuk' tables. 
 
