@@ -23,4 +23,43 @@ Patient Services
 
 Deployment
 
+    The Event Service utilises environment variables for configuration of the service. If the service is deployed in AWS as a lambda service, the lambda configuration/environment variables are used. Deployment on a local server utilises the envvars.json file in the root folder of the application.
+
+    Example envvars.json 
+
+        {
+            
+            "DB_USER": "your db admin username",
+            "DB_PASSWORD": "your db admin password",
+            "DB_HOST": "your db host",
+            "DB_PORT": "your db host port",
+            "DB_NAME": "your db name",
+            "DEBUG_MODE": "true or false",
+            "DEBUG_DB": "true or false",
+            "DEBUG_DB_ERROR": "true or false",
+            "DSUB_BROKER_URL": "HIE DSUB Broker URL",
+            "DSUB_CONSUMER_URL": "the event service URL",
+            "LOGO_FILE": "logo file to use in html responses",
+            "SERVER_PORT": "the event service port",
+            "SERVER_URL": "the event service URL",
+            "SERVER_NAME": "the event service name",
+            "SCR_URL": "your HIE MHD endpoint URL",
+            "REG_OID": "your HIE Reg/Regional OID",
+            "PIXM_SERVER_URL": "your HIE PIXm endpoint URL",
+            "PDS_SERVER_URL": "your hIE PDS Fhir endpoint URL",
+            "CGL_SERVER_URL": "your CGL endpoint URL",
+            "CGL_SERVER_X_API_KEY": "your CGL API key",
+            "CGL_SERVER_X_API_SECRET": "your CGL API secret",
+            "S3_PUBLISH_FILES": "Not Implemented",
+            "SMTP_USER": "your smtp user",
+            "SMTP_SERVER": "your smtp server",
+            "SMTP_PORT": "your smtp port",
+            "SMTP_PASSWORD": "your smtp password",
+            "SMTP_SUBJECT": "the subject text for email notifications",
+            "PERSIST_TEMPLATES": "true or false",
+            "PERSIST_DEFINITIONS": "true or false",
+            "CALENDAR_MODE": "calendardays or workingdays",
+            "TIME_LOCATION" : "Europe/London",
+            "TIME_LOCALE" : "en_GB"
+        }
 
