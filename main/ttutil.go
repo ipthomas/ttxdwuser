@@ -121,25 +121,25 @@ func logStruct(struc interface{}) {
 	log.Println("\t" + string(b))
 }
 func GetSummerBankHoliday(year int) time.Time {
-	aug31 := time.Date(year, time.August, 31, 0, 0, 0, 0, time.UTC)
+	aug31 := time.Date(year, time.August, 31, 0, 0, 0, 0, LOC)
 	dayOfWeek := int(aug31.Weekday())
 	daysToSubtract := (7 - dayOfWeek) % 7
 	summerBankHoliday := aug31.AddDate(0, 0, -daysToSubtract)
-	return summerBankHoliday
+	return summerBankHoliday.In(LOC)
 }
 func GetSpringBankHoliday(year int) time.Time {
-	may31 := time.Date(year, time.May, 31, 0, 0, 0, 0, time.UTC)
+	may31 := time.Date(year, time.May, 31, 0, 0, 0, 0, LOC)
 	dayOfWeek := int(may31.Weekday())
 	daysToSubtract := (7 - dayOfWeek) % 7
 	springBankHoliday := may31.AddDate(0, 0, -daysToSubtract)
-	return springBankHoliday
+	return springBankHoliday.In(LOC)
 }
 func GetEarlyMayBankHoliday(year int) time.Time {
-	may1 := time.Date(year, time.May, 1, 0, 0, 0, 0, time.UTC)
-	dayOfWeek := int(may1.Weekday())
+	may1 := time.Date(year, time.May, 1, 0, 0, 0, 0, LOC)
+	dayOfWeek := int(may1.In(LOC).Weekday())
 	daysToAdd := (8 - dayOfWeek) % 7
 	earlyMayBankHoliday := may1.AddDate(0, 0, daysToAdd)
-	return earlyMayBankHoliday
+	return earlyMayBankHoliday.In(LOC)
 }
 func GetEasterDate(year int) time.Time {
 	a := year % 19
@@ -159,47 +159,58 @@ func GetEasterDate(year int) time.Time {
 	if month > 12 {
 		month -= 12
 	}
-	easterDate := time.Date(year, time.Month(month), day, 0, 0, 0, 0, time.UTC)
-	return easterDate
+	easterDate := time.Date(year, time.Month(month), day, 0, 0, 0, 0, LOC)
+	return easterDate.In(LOC)
 }
 func isSummerBankHoliday(currentDate time.Time) bool {
-	return currentDate == GetSummerBankHoliday(currentDate.Year())
+	return currentDate == GetSummerBankHoliday(currentDate.In(LOC).Year())
 }
 func isSpringBankHoliday(currentDate time.Time) bool {
-	return currentDate == GetSpringBankHoliday(currentDate.Year())
+	return currentDate == GetSpringBankHoliday(currentDate.In(LOC).Year())
 }
 func isEarlyMayBankHoliday(currentDate time.Time) bool {
-	return currentDate == GetEarlyMayBankHoliday(currentDate.Year())
+	return currentDate == GetEarlyMayBankHoliday(currentDate.In(LOC).Year())
 }
 func isGoodFriday(currentDate time.Time) bool {
 	easterDate := GetEasterDate(currentDate.Year())
-	return currentDate == easterDate.AddDate(0, 0, -2)
+	return currentDate == easterDate.In(LOC).AddDate(0, 0, -2)
 }
 func isSaturday(currentDate time.Time) bool {
-	return currentDate.Weekday() == time.Saturday
+	return currentDate.In(LOC).Weekday() == time.Saturday
 }
 func isWeekend(currentDate time.Time) bool {
-	return currentDate.Weekday() == time.Saturday || currentDate.Weekday() == time.Sunday
+	return currentDate.In(LOC).Weekday() == time.Saturday || currentDate.Weekday() == time.Sunday
 }
 func isXmasDay(currentDate time.Time) bool {
-	return currentDate.Month() == time.December && currentDate.Day() == 25
+	return currentDate.In(LOC).Month() == time.December && currentDate.Day() == 25
 }
 func isBoxingDay(currentDate time.Time) bool {
-	return currentDate.Month() == time.December && currentDate.Day() == 26
+	return currentDate.In(LOC).Month() == time.December && currentDate.Day() == 26
 }
 func isNewYearsDay(currentDate time.Time) bool {
-	return currentDate.Month() == time.January && currentDate.Day() == 1
+	return currentDate.In(LOC).Month() == time.January && currentDate.Day() == 1
 }
 func (i *Trans) CalendarMode(startDate, endDate time.Time, isDuration bool) time.Time {
 	debug := i.EnvVars.DEBUG_MODE
-	if i.EnvVars.CALENDAR_MODE != "calendardays" {
+	if i.EnvVars.CALENDAR_MODE == "workingdays" {
+		if isDuration {
+			log.Println("Adjusting Start Date for working days")
+		} else {
+			log.Println("Adjusting End Date for working days")
+		}
 		adjust := 0
-		newEndDate := endDate
-		for currentDate := startDate; currentDate.Before(newEndDate) || currentDate.Equal(newEndDate); currentDate = currentDate.AddDate(0, 0, 1) {
+		newEndDate := endDate.In(LOC)
+		newStartDate := startDate.In(LOC)
+		for currentDate := startDate.In(LOC); currentDate.Before(newEndDate) || currentDate.Equal(newEndDate); currentDate = currentDate.AddDate(0, 0, 1) {
 			if isXmasDay(currentDate) || isBoxingDay(currentDate) || isNewYearsDay(currentDate) {
 				newEndDate = newEndDate.AddDate(0, 0, 1)
+				newStartDate = newStartDate.AddDate(0, 0, 1)
 				if debug {
-					log.Printf("%v is a xmas period holiday. End Date Adjusted 1 Day to %v", currentDate, newEndDate)
+					if !isDuration {
+						log.Printf("%v is a xmas period holiday. End Date Adjusted 1 Day to %v", currentDate, newEndDate)
+					} else {
+						log.Printf("%v is a xmas period holiday. Start Date Adjusted 1 Day to %v", currentDate, newStartDate)
+					}
 				}
 				adjust = adjust + 1
 			}
@@ -207,15 +218,18 @@ func (i *Trans) CalendarMode(startDate, endDate time.Time, isDuration bool) time
 				if isSaturday(currentDate) && currentDate == newEndDate {
 					adjust = adjust + 2
 					newEndDate = newEndDate.AddDate(0, 0, 2)
-					if debug {
+					if debug && !isDuration {
 						log.Printf("%v is a Saturday and the workflow end date. End Date Adjusted 2 Days to %v", currentDate, newEndDate)
 					}
 					currentDate = newEndDate
 				} else {
 					adjust = adjust + 1
 					newEndDate = newEndDate.AddDate(0, 0, 1)
-					if debug {
+					newStartDate = newStartDate.AddDate(0, 0, 1)
+					if debug && !isDuration {
 						log.Printf("%v is a Weekend. End Date Adjusted 1 Day to %v", currentDate, newEndDate)
+					} else {
+						log.Printf("%v is a Weekend. Start Date Adjusted 1 Day to %v", currentDate, newStartDate)
 					}
 				}
 			} else {
@@ -223,31 +237,38 @@ func (i *Trans) CalendarMode(startDate, endDate time.Time, isDuration bool) time
 					if currentDate == newEndDate {
 						adjust = adjust + 4
 						newEndDate = newEndDate.AddDate(0, 0, 4)
-						if debug {
+						if debug && !isDuration {
 							log.Printf("%v is Good Friday and the workflow end date. End Date Adjusted 4 Days to %v", currentDate, newEndDate)
 						}
 						currentDate = newEndDate
 					} else {
 						adjust = adjust + 2
-						newEndDate = newEndDate.AddDate(0, 0, 4)
-						if debug {
+						newEndDate = newEndDate.AddDate(0, 0, 2)
+						newStartDate = newStartDate.AddDate(0, 0, 2)
+						if debug && !isDuration {
 							log.Printf("%v is Good Friday. End Date Adjusted 2 Days to %v", currentDate, newEndDate)
+						} else {
+							log.Printf("%v is Good Friday. Start Date Adjusted 2 Days to %v", currentDate, newStartDate)
 						}
 					}
 				}
 				if isEarlyMayBankHoliday(currentDate) || isSpringBankHoliday(currentDate) || isSummerBankHoliday(currentDate) {
 					adjust = adjust + 1
-					if debug {
-						log.Printf("%v is a Bank Holiday. Adjust Total = %v", currentDate, adjust)
+					newEndDate = newEndDate.AddDate(0, 0, 1)
+					newStartDate = newStartDate.AddDate(0, 0, 1)
+					if debug && !isDuration {
+						log.Printf("%v is a Bank Holiday. End Date Adjusted 1 Day to %v", currentDate, newEndDate)
+					} else {
+						log.Printf("%v is a Bank Holiday. Start Date Adjusted 1 Day to %v", currentDate, newStartDate)
 					}
 				}
 			}
 		}
 		if isDuration {
 			if debug {
-				log.Printf("Workflow Duration adjusted to account for Weekends and UK Public Holidays by %v days ", adjust)
+				log.Printf("Workflow Start Date adjusted to account for Weekends and UK Public Holidays by %v days ", adjust)
 			}
-			return startDate.AddDate(0, 0, adjust)
+			return newStartDate
 		} else {
 			if debug {
 				log.Printf("Workflow End Date adjusted to account for Weekends and UK Public Holidays by %v days ", adjust)
@@ -284,17 +305,12 @@ func (i *Trans) OHT_FutureDate(startdate time.Time, htDate string) time.Time {
 			fd = GetFutureDate(startdate, periodtime, 0, 0, 0, 0, 0)
 		}
 	}
-	return i.CalendarMode(startdate, fd, false)
+	return i.CalendarMode(startdate.In(LOC), fd.In(LOC), false)
 }
 
-// Time_Now returns the current time for location Europe/London.
+// Time_Now returns the current time for location defined in envars.
 func Time_Now() string {
-	location, err := time.LoadLocation("Europe/London")
-	if err != nil {
-		log.Println(err.Error())
-		return time.Now().String()
-	}
-	return time.Now().In(location).Format(time.RFC3339)
+	return time.Now().In(LOC).String()
 }
 
 func PrettyTime(time string) string {
@@ -307,25 +323,25 @@ func PrettyTime(time string) string {
 // TUK_Hour returns the current hour as a 2 digit string
 func Tuk_Hour() string {
 	return fmt.Sprintf("%02d",
-		time.Now().Local().Hour())
+		time.Now().In(LOC).Hour())
 }
 
 // TUK_Day returns the current day as a 2 digit string
 func Tuk_Day() string {
 	return fmt.Sprintf("%02d",
-		time.Now().Local().Day())
+		time.Now().In(LOC).Day())
 }
 
 // TUK_Year returns the current year as a 4 digit string
 func Tuk_Year() string {
 	return fmt.Sprintf("%d",
-		time.Now().Local().Year())
+		time.Now().In(LOC).Year())
 }
 
 // TUK_Month returns the current month as a 2 digit string
 func Tuk_Month() string {
 	return fmt.Sprintf("%02d",
-		time.Now().Local().Month())
+		time.Now().In(LOC).Month())
 }
 
 // NewUuid returns a random UUID as a string
@@ -436,75 +452,35 @@ func GetTimeFromString(timestr string) time.Time {
 	timestr = strings.Split(timestr, " +")[0]
 	var err error
 	var rsptime time.Time
-	loc, err := time.LoadLocation("Europe/London")
 	if err != nil {
 		log.Println(err.Error())
 		return rsptime
 	}
 	if !strings.Contains(timestr, "T") {
-		rsptime, err = time.ParseInLocation("2006-01-02 15:04:05", timestr, loc)
+		rsptime, err = time.ParseInLocation("2006-01-02 15:04:05", timestr, LOC)
 		if err != nil {
 			log.Println(err.Error())
 		}
 	} else {
-		rsptime, err = time.ParseInLocation(time.RFC3339, timestr, loc)
+		rsptime, err = time.ParseInLocation(time.RFC3339, timestr, LOC)
 		if err != nil {
 			log.Println(err.Error())
-			rsptime, err = time.ParseInLocation("2006-01-02T15:04:05", timestr, loc)
+			rsptime, err = time.ParseInLocation("2006-01-02T15:04:05", timestr, LOC)
 			if err != nil {
 				log.Println(err.Error())
 			}
 		}
 	}
-	return rsptime.Local()
-	//return parseTime(timestr)
-
+	return rsptime.In(LOC)
 }
 
 func GetFutureDate(startDate time.Time, years int, months int, days int, hours int, mins int, secs int) time.Time {
-	fdate := startDate.AddDate(years, months, days)
-	fdate = fdate.Add(time.Hour * time.Duration(hours))
-	fdate = fdate.Add(time.Minute * time.Duration(mins))
-	return fdate.Add(time.Second * time.Duration(secs))
+	fdate := startDate.In(LOC).AddDate(years, months, days)
+	fdate = fdate.In(LOC).Add(time.Hour * time.Duration(hours))
+	fdate = fdate.In(LOC).Add(time.Minute * time.Duration(mins))
+	return fdate.In(LOC).Add(time.Second * time.Duration(secs))
 }
 
-// getErrorMessage returns the error message within
-// the SOAP response or returns a generic error message
-func GetErrorMessage(message string) string {
-	if strings.Contains(message, "soap:Reason") {
-		var start = strings.Index(message, "<soap:Reason>") + 13
-		var end = strings.Index(message, "</soap:Reason>")
-		var xmlmessage string = message[start:end]
-		start = strings.Index(xmlmessage, ">") + 1
-		end = strings.Index(xmlmessage, "</soap")
-		return xmlmessage[start:end]
-	}
-
-	if strings.Contains(message, "faultstring") {
-		var start = strings.Index(message, "<faultstring>") + 13
-		var end = strings.Index(message, "</faultstring>")
-		return message[start:end]
-	}
-
-	return "Soap error reason not found."
-}
-
-// containsError checks to see if the supplied
-// message contains one of the two error tags
-func ContainsError(message string) bool {
-	return strings.Contains(message, "<soap:Fault>") || strings.Contains(message, "<faultstring>")
-}
-
-// getDocumentReturnList extracts the document
-// return list from the SOAP response message
-func GetDocumentReturnList(message string) string {
-	if strings.Contains(message, "<return>") {
-		var start = strings.Index(message, "<return>")
-		var end = strings.Index(message, "</return>") + 9
-		return message[start:end]
-	}
-	return message
-}
 func timeDuration(stime string, etime string) string {
 	i := Trans{EnvVars: EnvState}
 	return i.TimeDuration(stime, etime)
@@ -513,9 +489,9 @@ func (i *Trans) TimeDuration(stime string, etime string) string {
 	if stime != "" {
 		sTime := GetTimeFromString(stime)
 		eTime := GetTimeFromString(etime)
-		if eTime.After(sTime) {
-			sTime = i.CalendarMode(sTime, eTime, true)
-			duration := eTime.Sub(sTime)
+		if eTime.In(LOC).After(sTime) {
+			sTime = i.CalendarMode(sTime.In(LOC), eTime.In(LOC), true)
+			duration := eTime.In(LOC).Sub(sTime.In(LOC))
 			return PrettyPrintDuration(duration)
 		}
 	}
@@ -542,36 +518,21 @@ func PrettyPrintDuration(duration time.Duration) string {
 }
 func DT_Day() string {
 	return fmt.Sprintf("%02d",
-		time.Now().Local().Day())
+		time.Now().In(LOC).Day())
 }
 func DT_Hour() string {
 	return fmt.Sprintf("%02d",
-		time.Now().Local().Hour())
+		time.Now().In(LOC).Hour())
 }
 func DT_Min() string {
-	return fmt.Sprintf("%02d", time.Now().Local().Minute())
+	return fmt.Sprintf("%02d", time.Now().In(LOC).Minute())
 }
 func DT_Sec() string {
 	return fmt.Sprintf("%02d",
-		time.Now().Local().Second())
+		time.Now().In(LOC).Second())
 }
 func DT_MilliSec() int {
 	return GetMilliseconds()
-}
-func DT_yyyy_MM_dd() string {
-	return DT_Year() + "-" + DT_MM_dd()
-}
-func DT_yyyy_MM_dd_hh() string {
-	return DT_yyyy_MM_dd() + " " + DT_Hour()
-}
-func DT_yyyy_MM_dd_hh_mm() string {
-	return DT_yyyy_MM_dd_hh() + ":" + DT_Min()
-}
-func DT_yyyy_MM_dd_hh_mm_SS() string {
-	return DT_yyyy_MM_dd_hh_mm() + ":" + DT_Sec()
-}
-func DT_yyyy_MM_dd_hh_mm_SS_sss() string {
-	return DT_yyyy_MM_dd_hh_mm_SS() + "." + GetStringFromInt(DT_MilliSec())
 }
 func DT_yyyyMMddhhmmSSsss() string {
 	return DT_Year() + DT_Month() + DT_Hour() + DT_Min() + DT_Sec() + strconv.Itoa(DT_MilliSec())
@@ -579,73 +540,21 @@ func DT_yyyyMMddhhmmSSsss() string {
 func DT_SQL() string {
 	return DT_Year() + "-" + DT_Month() + "-" + DT_Day() + "T" + DT_Hour() + ":" + DT_Min() + ":" + DT_Sec()
 }
-func DT_SQL_Future_Year() string {
-	t := time.Now().Local().AddDate(1, 0, 0)
-	return GetStringFromInt(t.Local().Year()) + "-" + GetStringFromInt(int(t.Local().Month())) + "-" + GetStringFromInt(t.Local().Day()) + "T" + GetStringFromInt(t.Local().Hour()) + ":" + GetStringFromInt(t.Local().Minute()) + ":" + GetStringFromInt(t.Local().Second())
-}
-func DT_Zulu() string {
-	return DT_SQL() + "." + GetStringFromInt(DT_MilliSec()) + "Z"
-}
-func DT_Zulu_Future(future int64) string {
-	t := time.Now().Local().Add(time.Hour*time.Duration(0) + time.Minute*time.Duration(future) + time.Second*time.Duration(0))
-	return GetStringFromInt(t.Local().Year()) + "-" + GetStringFromInt(int(t.Local().Month())) + "-" + GetStringFromInt(t.Local().Day()) + "T" + GetStringFromInt(t.Local().Hour()) + ":" + GetStringFromInt(t.Local().Minute()) + ":" + GetStringFromInt(t.Local().Second()) + "." + GetStringFromInt(GetMilliseconds()) + "Z"
-}
-func DT_Zulu_Future_Year() string {
-	t := time.Now().Local().AddDate(1, 0, 0)
-	return GetStringFromInt(t.Local().Year()) + "-" + GetStringFromInt(int(t.Local().Month())) + "-" + GetStringFromInt(t.Local().Day()) + "T" + GetStringFromInt(t.Local().Hour()) + ":" + GetStringFromInt(t.Local().Minute()) + ":" + GetStringFromInt(t.Local().Second()) + "." + GetStringFromInt(GetMilliseconds()) + "Z"
-}
-func DT_Kitchen() string {
-	return time.Now().Format(time.Kitchen)
-}
-func DT_Unix() string {
-	return time.Now().Format(time.UnixDate)
-}
-func DT_ANSIC() string {
-	return time.Now().Format(time.ANSIC)
-}
-func DT_Stamp() string {
-	return time.Now().Format(time.Stamp)
-}
-func DT_Date() string {
-	return time.Now().Format("Jan 2 2006")
-}
-func DT_Time() string {
-	return time.Now().Format("15:04:05")
-}
-func DT_EPOCH() string {
-	timestamp := time.Now().Unix()
-	return fmt.Sprintln(timestamp)
-}
-func GetMilliseconds() int {
-	return GetIntFromString(Substr(GetStringFromInt(time.Now().Nanosecond()), 0, 3))
-}
 
-func Newdatetime() string {
-	return DT_yyyy_MM_dd_hh_mm_SS()
-}
-func Newyearfuturezulu() string {
-	return DT_Zulu_Future_Year()
-}
-func Newzulu() string {
-	return DT_Zulu()
-}
-func New30mfutureyearzulu() string {
-	return DT_Zulu_Future(30)
-}
-func DT_MM_dd() string {
-	return DT_Month() + "-" + DT_Day()
+func GetMilliseconds() int {
+	return GetIntFromString(Substr(GetStringFromInt(time.Now().In(LOC).Nanosecond()), 0, 3))
 }
 
 func DT_Year() string {
 	return fmt.Sprintf("%d",
-		time.Now().Local().Year())
+		time.Now().In(LOC).Year())
 }
 func GetIdIncrementSeed(len int) int {
-	return GetIntFromString(Substr(GetStringFromInt(time.Now().Nanosecond()), 0, len))
+	return GetIntFromString(Substr(GetStringFromInt(time.Now().In(LOC).Nanosecond()), 0, len))
 }
 func DT_Month() string {
 	return fmt.Sprintf("%02d",
-		time.Now().Local().Month())
+		time.Now().In(LOC).Month())
 }
 
 // returns unique id in format '1.2.40.0.13.1.1.3542466645.20211021090059143.32643'
@@ -659,20 +568,6 @@ func Newid() string {
 	return id
 }
 
-func GetXMLNodeVal(message string, node string) string {
-	if strings.Contains(message, node) {
-		var nodeopen = "<" + node + ">"
-		var nodeclose = "</" + node + ">"
-		log.Println("Searching for value in : " + nodeopen + nodeclose)
-		var start = strings.Index(message, nodeopen) + len(nodeopen)
-		var end = strings.Index(message, nodeclose)
-		m := message[start:end]
-		log.Println("Returning value : " + m)
-		return m
-	}
-	log.Println("Message does not contain Node : " + node)
-	return ""
-}
 func GetFileBytes(f string) ([]byte, error) {
 	file, err := os.Open(f)
 	if err != nil {
@@ -682,17 +577,7 @@ func GetFileBytes(f string) ([]byte, error) {
 	byteValue, _ := io.ReadAll(file)
 	return byteValue, nil
 }
-func GetXmlReturnNode(message string) string {
-	log.Println("Searching for <return> node in response message")
-	if strings.Contains(message, "<return>") {
-		var start = strings.Index(message, "<return>")
-		var end = strings.Index(message, "</return>") + 9
-		log.Println("Found Node <return>")
-		return message[start:end]
-	}
-	log.Println("Node <return> Not found. Returning message")
-	return message
-}
+
 func SplitFhirOid(oid string) string {
 	if !strings.Contains(oid, ":") {
 		return oid

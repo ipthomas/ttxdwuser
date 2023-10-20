@@ -86,6 +86,7 @@ func (i *Trans) createWorkflow() {
 	i.XDWState.WorkflowDocument.ID.Extension = wfid
 	i.XDWState.WorkflowDocument.ID.AssigningAuthorityName = "NHS"
 	i.XDWState.WorkflowDocument.EffectiveTime.Value = effectiveTime
+	log.Printf("Set Workflow Creation Time %s", i.XDWState.WorkflowDocument.EffectiveTime.Value)
 	i.XDWState.WorkflowDocument.ConfidentialityCode.Code = confcode
 	i.XDWState.WorkflowDocument.Patient.Root = NHS_OID_DEFAULT
 	i.XDWState.WorkflowDocument.Patient.Extension = i.Query.Nhs
@@ -109,6 +110,7 @@ func (i *Trans) createWorkflow() {
 	docevent.Author = i.Query.User + " " + i.Query.Org + " " + i.Query.Role
 	docevent.TaskEventIdentifier = "0"
 	docevent.EventTime = effectiveTime
+	log.Printf("Set XDW DocumentEvent Time %s", docevent.EventTime)
 	docevent.EventType = i.Query.Eventtype
 	docevent.ActualStatus = STATUS_OPEN
 	i.XDWState.WorkflowDocument.WorkflowStatusHistory.DocumentEvent = append(i.XDWState.WorkflowDocument.WorkflowStatusHistory.DocumentEvent, docevent)
@@ -125,8 +127,10 @@ func (i *Trans) createWorkflow() {
 		task.TaskData.TaskDetails.ActualOwner = t.ActualOwner
 		task.TaskData.TaskDetails.CreatedBy = i.Query.Role + " " + i.Query.User
 		task.TaskData.TaskDetails.CreatedTime = effectiveTime
+		log.Printf("Set Task Creation Time %s", task.TaskData.TaskDetails.CreatedTime)
 		task.TaskData.TaskDetails.RenderingMethodExists = "false"
 		task.TaskData.TaskDetails.LastModifiedTime = effectiveTime
+		log.Printf("Set Task Last Modified Time %s", task.TaskData.TaskDetails.LastModifiedTime)
 		task.TaskData.Description = t.Description
 		task.TaskData.TaskDetails.Status = STATUS_CREATED
 		for _, inp := range t.Input {
@@ -151,6 +155,7 @@ func (i *Trans) createWorkflow() {
 		}
 		tev := TaskEvent{}
 		tev.EventTime = effectiveTime
+		log.Printf("Set Task Event Time %s", tev.EventTime)
 		tev.ID = i.Query.Taskid
 		tev.Identifier = t.ID
 		tev.EventType = XDW_OPERATION_CREATE_TASK

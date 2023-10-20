@@ -442,7 +442,7 @@ func GetMappedValue(user string, localid string) string {
 	}
 	duration := time.Duration(1) * time.Minute
 	expires := cached.Add(duration)
-	if len(cachedIDMaps) == 0 || time.Now().After(expires) {
+	if len(cachedIDMaps) == 0 || time.Now().In(LOC).After(expires) {
 		idmaps := IdMaps{Action: SELECT}
 		if err := idmaps.newEvent(); err != nil {
 			log.Println(err.Error())

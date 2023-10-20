@@ -259,6 +259,8 @@ type EnvVars struct {
 	PERSIST_TEMPLATES       bool   `json:"PERSIST_TEMPLATES"`
 	PERSIST_DEFINITIONS     bool   `json:"PERSIST_DEFINITIONS"`
 	CALENDAR_MODE           string `json:"CALENDAR_MODE"`
+	TIME_LOCATION           string `json:"TIME_LOCATION"`
+	TIME_LOCALE             string `json:"TIME_LOCALE"`
 }
 type QueryVars struct {
 	Act            string `json:"Act,omitempty"`

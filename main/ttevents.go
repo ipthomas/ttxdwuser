@@ -91,7 +91,7 @@ func (i *Trans) newUserEvent() {
 		log.Println("Persisted Event")
 		logStruct(event)
 		i.newXDWUpdater()
-		event.Creationtime = time.Now().Local().String()
+		event.Creationtime = time.Now().In(LOC).String()
 		i.XDWState.Events = Events{}
 		i.XDWState.Events.Events = append(i.XDWState.Events.Events, event)
 		i.notifyEmailSubscribers()
@@ -164,7 +164,7 @@ func (i *Trans) newDSUBEvent() {
 									}
 								}
 							}
-							event.Creationtime = time.Now().Local().String()
+							event.Creationtime = time.Now().In(LOC).String()
 							i.XDWState.Events = Events{}
 							i.XDWState.Events.Events = append(i.XDWState.Events.Events, event)
 							i.notifyEmailSubscribers()
