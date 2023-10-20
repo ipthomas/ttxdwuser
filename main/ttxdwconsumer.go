@@ -503,10 +503,10 @@ func (i *Trans) getTaskState() TaskState {
 		taskstate.StartedOn = ""
 	}
 	taskstate.Owner = taskDetails.ActualOwner
-	if taskstate.Status == STATUS_CLOSED {
-		taskstate.Duration = i.getTaskDuration(i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActivationTime, i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.LastModifiedTime)
+	if taskstate.Status == STATUS_COMPLETE {
+		taskstate.Duration = i.getTaskDuration(taskDetails.ActivationTime, taskDetails.LastModifiedTime)
 	} else {
-		taskstate.Duration = i.getTaskDuration(i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails.ActivationTime, time.Now().In(LOC).String())
+		taskstate.Duration = i.getTaskDuration(taskDetails.ActivationTime, time.Now().In(LOC).String())
 	}
 	if taskstate.Duration == "" || strings.HasPrefix(taskstate.Duration, "-") {
 		taskstate.Duration = "0"
