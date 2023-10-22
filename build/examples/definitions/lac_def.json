@@ -1,6 +1,6 @@
 {
     "ref": "lac_def",
-    "name": "Looked After Child (EPUT)",
+    "name": "Looked After Child",
     "confidentialitycode": "Restricted",
     "startbytime": "hour(1)",
     "completebytime": "day(20)",

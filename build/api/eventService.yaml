@@ -1,0 +1,70 @@
+openapi: '3.0.2'
+info:
+  title: Workflow Event Service
+  version: '1.0'
+servers:
+  - url: https://fwa7l2kp71.execute-api.eu-west-1.amazonaws.com/beta
+
+paths:
+  /spa:
+    get:
+      responses:
+        '200':
+          description: OK
+  /api/qotd: 
+    get:
+      summary: Get Quote of the Day
+      operationId: getQOTD
+      responses:
+        '200':
+          description: OK
+  /api/state/task/status?user={user}&org={org}&role={role}&pathway={pathway}&nhs={nhs}&taskid={taskid}&vers={vers}:
+    get:
+      summary: Get Task Status
+      operationId: getTaskStatus
+      responses:
+        '200':
+          description: OK
+      parameters:
+      - name: user
+        in: query
+        required: true
+        description: ID of the user
+        schema:
+          type: string
+      - name: org
+        in: query
+        required: true
+        description: user organisation
+        schema:
+          type: string
+      - name: role
+        in: query
+        required: true
+        description: user role
+        schema:
+          type: string
+      - name: pathway
+        in: query
+        required: true
+        description: pathway
+        schema:
+          type: string
+      - name: nhs
+        in: query
+        required: true
+        description: nhs id
+        schema:
+          type: integer
+      - name: taskid
+        in: query
+        required: true
+        description: task id
+        schema:
+          type: integer
+      - name: vers
+        in: query
+        required: true
+        description: workflow version
+        schema:
+          type: integer

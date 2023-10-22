@@ -1,17 +1,10 @@
 {
-    "ref": "plac_def",
-    "name": "Looked After Child (Provide)",
+    "ref": "elac_def",
+    "name": "Looked After Child (ECC)",
     "confidentialitycode": "Restricted",
     "startbytime": "hour(1)",
-    "completebytime": "day(19)",
-    "expirationtime": "day(20)",
-    "potentialOwners": [
-      {
-        "organizationalEntity": {
-          "user": "ian.thomas@2tsolutions.co.uk"
-        }
-      }
-    ],
+    "completebytime": "day(20)",
+    "expirationtime": "day(24)",
     "completionBehavior": [
       {
         "completion": {
@@ -28,7 +21,7 @@
       {
         "id": "1",
         "tasktype": "TASK",
-        "name": "PLAC_Identified",
+        "name": "ELAC_Identified",
         "description": "Child Identfied to Social Services",
         "actualowner": "",
         "expirationtime": "day(2)",
@@ -38,13 +31,13 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(PLAC1^^TypeCode_Provide)"
+              "condition": "output(ELAC1^^TypeCode_ECC)"
             }
           }
         ],
         "output": [
           {
-            "name": "PLAC1^^TypeCode_Provide",
+            "name": "ELAC1^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
@@ -53,7 +46,7 @@
       {
         "id": "2",
         "tasktype": "TASK",
-        "name": "PLAC_Placement_Notification_Form_Sent",
+        "name": "ELAC_Placement_Notification_Form_Sent",
         "description": "Send Placement Notification Form",
         "actualowner": "",
         "expirationtime": "day(4)",
@@ -63,20 +56,20 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "task(4)"
+              "condition": "output(ELAC2^^TypeCode_ECC)"
             }
           }
         ],
         "input": [
           {
-            "name": "PLAC1^^TypeCode_Provide",
+            "name": "ELAC1^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "PLAC2^^TypeCode_Provide",
+            "name": "ELAC2^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
@@ -85,7 +78,7 @@
       {
         "id": "3",
         "tasktype": "TASK",
-        "name": "PLAC_Signed_Consent_Sent",
+        "name": "ELAC_Signed_Consent_Sent",
         "description": "Send Signed Consent",
         "actualowner": "",
         "expirationtime": "day(4)",
@@ -95,20 +88,20 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "task(5)"
+              "condition": "output(ELAC3^^TypeCode_ECC)"
             }
           }
         ],
         "input": [
           {
-            "name": "PLAC1^^TypeCode_Provide",
+            "name": "ELAC1^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "PLAC3^^TypeCode_Provide",
+            "name": "ELAC3^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
@@ -117,8 +110,8 @@
       {
         "id": "4",
         "tasktype": "TASK",
-        "name": "PLAC_Placement_Notification_Accepted_Rejected",
-        "description": "Placement Notification Accepted or Rejected",
+        "name": "ELAC_Placement_Notification_Accepted_Rejected",
+        "description": "Accept or Reject Placement Notification",
         "actualowner": "",
         "expirationtime": "day(6)",
         "startbytime": "day(3)",
@@ -127,25 +120,25 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(PLAC10^^TypeCode_Provide) and latest(PLAC10^^TypeCode_Provide)"
+              "condition": "output(ELAC10^^TypeCode_ECC) and latest(ELAC10^^TypeCode_ECC)"
             }
           }
         ],
         "input": [
           {
-            "name": "PLAC2^^TypeCode_Provide",
+            "name": "ELAC2^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "PLAC10^^TypeCode_Provide",
+            "name": "ELAC10^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           },
           {
-            "name": "PLAC11^^TypeCode_Provide",
+            "name": "ELAC11^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
@@ -154,8 +147,8 @@
       {
         "id": "5",
         "tasktype": "TASK",
-        "name": "PLAC_Signed_Consent_Accept_Reject",
-        "description": "Signed Consent Accepted or Rejected",
+        "name": "ELAC_Signed_Consent_Accept_Reject",
+        "description": "Accept or Reject Signed Consent",
         "actualowner": "",
         "expirationtime": "day(6)",
         "startbytime": "day(3)",
@@ -164,25 +157,25 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(PLAC12^^TypeCode_Provide) and latest(PLAC12^^TypeCode_Provide)"
+              "condition": "output(ELAC12^^TypeCode_ECC) and latest(ELAC12^^TypeCode_ECC)"
             }
           }
         ],
         "input": [
           {
-            "name": "PLAC3^^TypeCode_Provide",
+            "name": "ELAC3^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "PLAC12^^TypeCode_Provide",
+            "name": "ELAC12^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           },
           {
-            "name": "PLAC13^^TypeCode_Provide",
+            "name": "ELAC13^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
@@ -191,7 +184,7 @@
       {
         "id": "6",
         "tasktype": "TASK",
-        "name": "Request_PLAC_BAAF_Consent",
+        "name": "Send_ELAC_BAAF_Consent",
         "description": "Send BAAF Consent",
         "actualowner": "",
         "expirationtime": "day(7)",
@@ -201,20 +194,20 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(PLAC5^^TypeCode_Provide)"
+              "condition": "output(ELAC5^^TypeCode_ECC)"
             }
           }
         ],
         "input": [
           {
-            "name": "PLAC12^^TypeCode_Provide",
+            "name": "ELAC12^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "PLAC5^^TypeCode_Provide",
+            "name": "ELAC5^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
@@ -223,7 +216,7 @@
       {
         "id": "7",
         "tasktype": "TASK",
-        "name": "Request_PLAC_Background_Referral",
+        "name": "Send_ELAC_Background_Referral",
         "description": "Send Background Referral Information",
         "actualowner": "",
         "expirationtime": "day(7)",
@@ -233,20 +226,20 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(PLAC6^^TypeCode_Provide)"
+              "condition": "output(ELAC6^^TypeCode_ECC)"
             }
           }
         ],
         "input": [
           {
-            "name": "PLAC10^^TypeCode_Provide",
+            "name": "ELAC10^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "PLAC6^^TypeCode_Provide",
+            "name": "ELAC6^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
@@ -255,7 +248,7 @@
       {
         "id": "8",
         "tasktype": "TASK",
-        "name": "PLAC_IHA_Scheduled",
+        "name": "ELAC_IHA_Scheduled",
         "description": "Schedule IHA Appointment",
         "actualowner": "",
         "expirationtime": "day(8)",
@@ -265,25 +258,25 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "input(PLAC5^^Typecode_Provide) and input(PLAC6^^Typecode_Provide) and output(PLAC7^^TypeCode_Provide)"
+              "condition": "input(ELAC5^^Typecode_ECC) and input(ELAC6^^Typecode_ECC) and output(ELAC7^^TypeCode_ECC)"
             }
           }
         ],
         "input": [
           {
-            "name": "PLAC5^^TypeCode_Provide",
+            "name": "ELAC5^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           },
           {
-            "name": "PLAC6^^TypeCode_Provide",
+            "name": "ELAC6^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "PLAC7^^TypeCode_Provide",
+            "name": "ELAC7^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
@@ -292,30 +285,30 @@
       {
         "id": "9",
         "tasktype": "TASK",
-        "name": "PLAC_IHA_Completed",
+        "name": "ELAC_IHA_Completed",
         "description": "Publish Looked after Child Initial Health Assessment",
         "actualowner": "",
-        "expirationtime": "day(20)",
+        "expirationtime": "day(24)",
         "startbytime": "day(7)",
-        "completebytime": "day(19)",
+        "completebytime": "day(20)",
         "isskipable": false,
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(PLAC9^^TypeCode_Provide)"
+              "condition": "output(ELAC9^^TypeCode_ECC)"
             }
           }
         ],
         "input": [
           {
-            "name": "PLAC7^^TypeCode_Provide",
+            "name": "ELAC7^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
         ],
         "output": [
           {
-            "name": "PLAC9^^TypeCode_Provide",
+            "name": "ELAC9^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }
@@ -324,7 +317,7 @@
       {
         "id": "10",
         "tasktype": "TASK",
-        "name": "PLAC_IHA_Withdrawn",
+        "name": "ELAC_IHA_Withdrawn",
         "description": "Withdraw the IHA Request",
         "actualowner": "",
         "expirationtime": "",
@@ -334,13 +327,13 @@
         "completionBehavior": [
           {
             "completion": {
-              "condition": "output(PLAC14^^TypeCode_Provide)"
+              "condition": "output(ELAC14^^TypeCode_ECC)"
             }
           }
         ],
         "output": [
           {
-            "name": "PLAC14^^TypeCode_Provide",
+            "name": "ELAC14^^TypeCode_ECC",
             "contenttype": "application/pdf",
             "accesstype": "urn:ihe:iti:xdw:2011:XDSregistered"
           }

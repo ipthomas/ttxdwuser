@@ -1,6 +1,6 @@
 {
     "ref": "plac_def",
-    "name": "Looked After Child (Provide)",
+    "name": "Provide LAC",
     "confidentialitycode": "Restricted",
     "startbytime": "hour(1)",
     "completebytime": "day(19)",
