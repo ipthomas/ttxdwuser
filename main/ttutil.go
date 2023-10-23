@@ -492,6 +492,9 @@ func (i *Trans) TimeDuration(stime string, etime string) string {
 		if eTime.In(LOC).After(sTime) {
 			sTime = i.CalendarMode(sTime.In(LOC), eTime.In(LOC), true)
 			duration := eTime.In(LOC).Sub(sTime.In(LOC))
+			if i.EnvVars.CALENDAR_MODE == "workingdays" {
+				duration = eTime.In(LOC).Sub(sTime.In(LOC)) / 3
+			}
 			return PrettyPrintDuration(duration)
 		}
 	}

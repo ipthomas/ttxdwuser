@@ -364,25 +364,27 @@ func (i *Trans) getWorkflowDuration(status string) string {
 }
 func (i *Trans) getWorkflowTimeRemaining() string {
 	completeby := i.getWorkflowCompleteByDate().In(LOC)
-	log.Printf("Workflow Completion Date %s", completeby.In(LOC).String())
-
+	if i.EnvVars.DEBUG_MODE {
+		log.Printf("Workflow Completion Date %s", completeby.In(LOC).String())
+	}
 	if time.Now().In(LOC).After(completeby) {
 		return "0"
 	}
 	timeRemaining := time.Until(i.getWorkflowCompleteByDate())
-	log.Println("Workflow Time Remaining : " + timeRemaining.String())
-
+	if i.EnvVars.DEBUG_MODE {
+		log.Println("Workflow Time Remaining : " + timeRemaining.String())
+	}
 	return PrettyPrintDuration(timeRemaining)
 }
 func (i *Trans) isWorkflowOverdue() bool {
-	log.Println("Checking if Workflow is Overdue")
-
 	if i.XDWState.Definition.CompleteByTime != "" {
 		completeby := i.getWorkflowCompleteByDate()
 		if time.Now().In(LOC).After(completeby) {
 			if i.XDWState.WorkflowDocument.WorkflowStatus == STATUS_CLOSED {
 				levent := i.getLatestWorkflowEventTime()
-				log.Printf("Workflow Latest Event Time %s. Workflow Target Met = %v", levent.In(LOC).String(), levent.In(LOC).Before(completeby.In(LOC)))
+				if i.EnvVars.DEBUG_MODE {
+					log.Printf("Workflow Latest Event Time %s. Workflow Target Met = %v", levent.In(LOC).String(), levent.In(LOC).Before(completeby.In(LOC)))
+				}
 				return levent.In(LOC).After(completeby.In(LOC))
 			} else {
 				if i.EnvVars.DEBUG_MODE {
