@@ -175,6 +175,10 @@ func isGoodFriday(currentDate time.Time) bool {
 	easterDate := GetEasterDate(currentDate.Year())
 	return currentDate == easterDate.In(LOC).AddDate(0, 0, -2)
 }
+func isEasterBankHolidayMonday(currentDate time.Time) bool {
+	return currentDate.Equal(GetEasterDate(currentDate.Year()).AddDate(0, 0, 1))
+
+}
 func isSaturday(currentDate time.Time) bool {
 	return currentDate.In(LOC).Weekday() == time.Saturday
 }
@@ -189,6 +193,143 @@ func isBoxingDay(currentDate time.Time) bool {
 }
 func isNewYearsDay(currentDate time.Time) bool {
 	return currentDate.In(LOC).Month() == time.January && currentDate.Day() == 1
+}
+func (i *Trans) GetTaskTimeRemaining(taskState TaskState) string {
+	taskDueDate := i.OHT_FutureDate(GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value), i.XDWState.Definition.Tasks[taskState.Taskid].CompleteByTime)
+	if taskState.Status == "COMPLETE" || time.Now().In(LOC).After(taskDueDate.In(LOC)) {
+		return "0"
+	}
+	return PrettyPrintDuration(taskDueDate.In(LOC).Sub(time.Now().In(LOC)))
+}
+func (i *Trans) GetWorkingDaysCompletionDate(startDate time.Time, htDate string) string {
+	currentMode := i.EnvVars.CALENDAR_MODE
+	endDate := i.OHT_FutureDate(startDate, htDate)
+	i.EnvVars.CALENDAR_MODE = "workingdays"
+	newEndDate := i.CalendarMode(startDate, endDate, false)
+	i.EnvVars.CALENDAR_MODE = currentMode
+	return newEndDate.String()
+}
+func (i *Trans) GetWorkingDaysTaskStartByDate(taskState TaskState) string {
+	wfStart := GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value)
+	taskStartBy := GetTimeFromString(taskState.StartBy)
+	newTaskStartBy := taskStartBy
+	for currentDate := wfStart; currentDate.Before(newTaskStartBy) || currentDate.Equal(newTaskStartBy); currentDate = currentDate.AddDate(0, 0, 1) {
+		if isXmasDay(currentDate) || isBoxingDay(currentDate) || isNewYearsDay(currentDate) {
+			newTaskStartBy = newTaskStartBy.AddDate(0, 0, 1)
+		}
+		if isWeekend(currentDate) {
+			if isSaturday(currentDate) && currentDate == newTaskStartBy {
+				newTaskStartBy = newTaskStartBy.AddDate(0, 0, 2)
+			} else {
+				newTaskStartBy = newTaskStartBy.AddDate(0, 0, 1)
+			}
+		}
+		if isGoodFriday(currentDate) {
+			if currentDate == newTaskStartBy {
+				newTaskStartBy = newTaskStartBy.AddDate(0, 0, 4)
+			} else {
+				newTaskStartBy = newTaskStartBy.AddDate(0, 0, 2)
+			}
+		}
+		if isEarlyMayBankHoliday(currentDate) || isSpringBankHoliday(currentDate) || isSummerBankHoliday(currentDate) {
+			newTaskStartBy = newTaskStartBy.AddDate(0, 0, 1)
+		}
+
+	}
+	return newTaskStartBy.In(LOC).String()
+}
+func (i *Trans) GetWorkingDaysTaskEscalateOnDate(taskState TaskState) string {
+	wfStart := GetTimeFromString(i.XDWState.WorkflowDocument.EffectiveTime.Value)
+	taskEscalateOn := GetTimeFromString(taskState.EscalateOn)
+	newTaskEscalateOn := taskEscalateOn
+	for currentDate := wfStart; currentDate.Before(newTaskEscalateOn) || currentDate.Equal(newTaskEscalateOn); currentDate = currentDate.AddDate(0, 0, 1) {
+		if isXmasDay(currentDate) || isBoxingDay(currentDate) || isNewYearsDay(currentDate) {
+			newTaskEscalateOn = newTaskEscalateOn.AddDate(0, 0, 1)
+		}
+		if isWeekend(currentDate) {
+			if isSaturday(currentDate) && currentDate == newTaskEscalateOn {
+				newTaskEscalateOn = newTaskEscalateOn.AddDate(0, 0, 2)
+			} else {
+				newTaskEscalateOn = newTaskEscalateOn.AddDate(0, 0, 1)
+			}
+		}
+		if isGoodFriday(currentDate) {
+			if currentDate == newTaskEscalateOn {
+				newTaskEscalateOn = newTaskEscalateOn.AddDate(0, 0, 4)
+			} else {
+				newTaskEscalateOn = newTaskEscalateOn.AddDate(0, 0, 2)
+			}
+		}
+		if isEarlyMayBankHoliday(currentDate) || isSpringBankHoliday(currentDate) || isSummerBankHoliday(currentDate) {
+			newTaskEscalateOn = newTaskEscalateOn.AddDate(0, 0, 1)
+		}
+
+	}
+	return newTaskEscalateOn.In(LOC).String()
+}
+
+func (i *Trans) GetWorkingDaysTimeRemaining(startDate, endDate time.Time) string {
+	var timeRemaining time.Duration = 0
+	sodHour := GetIntFromString(i.EnvVars.START_OF_DAY_HOUR)
+	eodHour := GetIntFromString(i.EnvVars.END_OF_DAY_HOUR)
+	for currentDate := startDate.In(LOC); currentDate.Before(endDate.In(LOC)) || currentDate.Equal(endDate.In(LOC)); currentDate = currentDate.AddDate(0, 0, 1) {
+		if !isXmasDay(currentDate) || !isBoxingDay(currentDate) || !isNewYearsDay(currentDate) || !isWeekend(currentDate) || !isGoodFriday(currentDate) || !isEarlyMayBankHoliday(currentDate) || isSpringBankHoliday(currentDate) || isSummerBankHoliday(currentDate) || !isEasterBankHolidayMonday(currentDate) {
+			sod := time.Date(currentDate.Year(), currentDate.Month(), currentDate.Day(), sodHour, 0, 0, 0, LOC)
+			eod := time.Date(currentDate.Year(), currentDate.Month(), currentDate.Day(), eodHour, 0, 0, 0, LOC)
+			if currentDate.After(sod) {
+				if currentDate.Before(eod) {
+					timeRemaining = timeRemaining + currentDate.Sub(sod)
+				} else {
+					timeRemaining = eod.Sub(sod)
+				}
+			}
+
+		}
+	}
+	return PrettyPrintDuration(timeRemaining)
+}
+func (i *Trans) GetWorkingDaysDuration(startDate, endDate time.Time) string {
+	newEndDate := endDate.In(LOC)
+	var workedDuration time.Duration = 0
+	sodHour := GetIntFromString(i.EnvVars.START_OF_DAY_HOUR)
+	eodHour := GetIntFromString(i.EnvVars.END_OF_DAY_HOUR)
+	for currentDate := startDate.In(LOC); currentDate.Before(newEndDate) || currentDate.Equal(newEndDate); currentDate = currentDate.AddDate(0, 0, 1) {
+		if isXmasDay(currentDate) || isBoxingDay(currentDate) || isNewYearsDay(currentDate) {
+			newEndDate = newEndDate.AddDate(0, 0, 1)
+		} else {
+			if isWeekend(currentDate) {
+				if isSaturday(currentDate) && currentDate == newEndDate {
+					newEndDate = newEndDate.AddDate(0, 0, 2)
+				} else {
+					newEndDate = newEndDate.AddDate(0, 0, 1)
+				}
+			} else {
+				if isGoodFriday(currentDate) {
+					if currentDate == newEndDate {
+						newEndDate = newEndDate.AddDate(0, 0, 4)
+					} else {
+						newEndDate = newEndDate.AddDate(0, 0, 2)
+					}
+				} else {
+					if isEarlyMayBankHoliday(currentDate) || isSpringBankHoliday(currentDate) || isSummerBankHoliday(currentDate) {
+						newEndDate = newEndDate.AddDate(0, 0, 1)
+					} else {
+						sod := time.Date(currentDate.Year(), currentDate.Month(), currentDate.Day(), sodHour, 0, 0, 0, LOC)
+						eod := time.Date(currentDate.Year(), currentDate.Month(), currentDate.Day(), eodHour, 0, 0, 0, LOC)
+						if currentDate.After(sod) {
+							if currentDate.Before(eod) {
+								workedDuration = workedDuration + currentDate.Sub(sod)
+							} else {
+								workedDuration = eod.Sub(sod)
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+	return PrettyPrintDuration(workedDuration)
 }
 func (i *Trans) CalendarMode(startDate, endDate time.Time, isDuration bool) time.Time {
 	debug := i.EnvVars.DEBUG_MODE
@@ -221,7 +362,6 @@ func (i *Trans) CalendarMode(startDate, endDate time.Time, isDuration bool) time
 					if debug && !isDuration {
 						log.Printf("%v is a Saturday and the workflow end date. End Date Adjusted 2 Days to %v", currentDate, newEndDate)
 					}
-					currentDate = newEndDate
 				} else {
 					adjust = adjust + 1
 					newEndDate = newEndDate.AddDate(0, 0, 1)

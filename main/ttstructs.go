@@ -124,23 +124,26 @@ type WorkflowStates struct {
 	Workflowstate []Workflowstate `json:"workflowstate"`
 }
 type Workflowstate struct {
-	WorkflowId    int    `json:"workflowid"`
-	Pathway       string `json:"pathway"`
-	NHSId         string `json:"nhsid"`
-	Version       int    `json:"version"`
-	Published     bool   `json:"published"`
-	Created       string `json:"created"`
-	CreatedBy     string `json:"createdby"`
-	Status        string `json:"status"`
-	CompleteBy    string `json:"completeby,omitempty"`
-	LastUpdate    string `json:"lastupdate"`
-	Owner         string `json:"owner,omitempty"`
-	Overdue       string `json:"overdue"`
-	Escalated     string `json:"escalated"`
-	TargetMet     string `json:"targetmet"`
-	InProgress    string `json:"inprogress"`
-	Duration      string `json:"duration"`
-	TimeRemaining string `json:"timeremaining"`
+	WorkflowId      int    `json:"workflowid"`
+	Pathway         string `json:"pathway"`
+	NHSId           string `json:"nhsid"`
+	Version         int    `json:"version"`
+	Published       bool   `json:"published"`
+	Created         string `json:"created"`
+	CreatedBy       string `json:"createdby"`
+	Status          string `json:"status"`
+	CompleteBy      string `json:"completeby,omitempty"`
+	WDCompleteBy    string `json:"wdcompleteby,omitempty"`
+	LastUpdate      string `json:"lastupdate"`
+	Owner           string `json:"owner,omitempty"`
+	Overdue         string `json:"overdue"`
+	Escalated       string `json:"escalated"`
+	TargetMet       string `json:"targetmet"`
+	InProgress      string `json:"inprogress"`
+	Duration        string `json:"duration"`
+	WDDuration      string `json:"wdduration"`
+	TimeRemaining   string `json:"timeremaining"`
+	WDTimeRemaining string `json:"wdtimeremaining"`
 }
 type XDWS struct {
 	Action       string `json:"action"`
@@ -261,6 +264,8 @@ type EnvVars struct {
 	CALENDAR_MODE           string `json:"CALENDAR_MODE"`
 	TIME_LOCATION           string `json:"TIME_LOCATION"`
 	TIME_LOCALE             string `json:"TIME_LOCALE"`
+	START_OF_DAY_HOUR       string `json:"START_OF_DAY_HOUR"`
+	END_OF_DAY_HOUR         string `json:"END_OF_DAY_HOUR"`
 }
 type QueryVars struct {
 	Act            string `json:"Act,omitempty"`
@@ -1765,13 +1770,17 @@ type TaskState struct {
 	Escalated            bool     `json:"escalated"`
 	Status               string   `json:"status"`
 	StartBy              string   `json:"startby"`
+	WDStartBy            string   `json:"wdstartby"`
 	CompleteBy           string   `json:"completeby"`
+	WDCompleteBy         string   `json:"wdcompleteby"`
 	EscalateOn           string   `json:"escalateon"`
+	WDEscalateOn         string   `json:"wdescalateon"`
 	CompletionConditions []string `json:"completionconditions"`
 	StartedOn            string   `json:"startedon"`
 	Owner                string   `json:"owner"`
 	CompletedOn          string   `json:"completedon"`
 	Duration             string   `json:"duration"`
+	TimeRemaining        string   `json:"timeremaining"`
 }
 type WorkflowTasksState struct {
 	TaskState []TaskState `json:"taskstate"`

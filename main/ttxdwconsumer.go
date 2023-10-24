@@ -251,13 +251,16 @@ func (i *Trans) setWorkflowStates() {
 			state.NHSId = wf.NHSId
 			state.Version = wf.Version
 			state.CreatedBy = i.XDWState.WorkflowDocument.Author.AssignedAuthor.AssignedPerson.Name.Family + " " + i.XDWState.WorkflowDocument.Author.AssignedAuthor.AssignedPerson.Name.Prefix
-			state.LastUpdate = i.getLatestWorkflowEventTime().Local().String()
+			state.LastUpdate = i.getLatestWorkflowEventTime().In(LOC).String()
 			state.Owner = i.getWorkflowOwner()
 			state.Overdue = "FALSE"
 			state.Escalated = "FALSE"
 			state.TargetMet = "TRUE"
 			state.InProgress = "TRUE"
 			state.Duration = i.getWorkflowDuration(state.Status)
+			log.Printf("Calander Days Duration is %s", state.Duration)
+			state.WDDuration = i.GetWorkingDaysDuration(wfCreated.In(LOC), i.getLatestWorkflowEventTime().In(LOC))
+			log.Printf("Working Days Duration is %s", state.WDDuration)
 			if state.Status == STATUS_CLOSED {
 				state.TimeRemaining = "0"
 				i.XDWState.ClosedWorkflows.Count = i.XDWState.ClosedWorkflows.Count + 1
@@ -303,8 +306,9 @@ func (i *Trans) setWorkflowStates() {
 				}
 				completeBy := i.CalendarMode(wfCreated.In(LOC), GetTimeFromString(state.CompleteBy).In(LOC), false)
 				state.CompleteBy = completeBy.String()
+				state.WDCompleteBy = i.GetWorkingDaysCompletionDate(wfCreated.In(LOC), i.XDWState.Definition.CompleteByTime)
 			}
-
+			state.WDTimeRemaining = i.GetWorkingDaysTimeRemaining(GetTimeFromString(state.Created), GetTimeFromString(state.CompleteBy))
 			if i.XDWState.WorkflowDocument.WorkflowStatus == STATUS_OPEN {
 				if i.EnvVars.DEBUG_MODE {
 					log.Printf("Workflow %s is OPEN", wf.XDW_Key)
@@ -456,53 +460,40 @@ func (i *Trans) getTaskState() TaskState {
 	taskid := GetIntFromString(i.Query.Taskid) - 1
 	task := i.XDWState.Definition.Tasks[taskid]
 	taskstate := TaskState{Taskid: taskid, Name: task.Name}
+	taskDetails := i.XDWState.WorkflowDocument.TaskList.XDWTask[taskid].TaskData.TaskDetails
+	taskstate.Status = taskDetails.Status
+
+	if taskDetails.ActivationTime != "" {
+		taskstate.StartedOn = GetTimeFromString(taskDetails.ActivationTime).String()
+	} else {
+		taskstate.StartedOn = ""
+	}
 	if task.CompleteByTime == "" {
-		if i.EnvVars.DEBUG_MODE {
-			log.Println("Calling OHT_FutureDate from getTaskState")
-		}
 		taskstate.CompleteBy = i.OHT_FutureDate(wfStart, i.XDWState.Definition.CompleteByTime).String()
 	} else {
-		if i.EnvVars.DEBUG_MODE {
-			log.Println("Calling OHT_FutureDate from getTaskState")
-		}
 		taskstate.CompleteBy = i.OHT_FutureDate(wfStart, task.CompleteByTime).String()
 	}
+	// taskstate.WDCompleteBy = i.GetWorkingDaysCompletionDate(wfStart, task.CompleteByTime)
 	if task.StartByTime == "" {
-		if i.EnvVars.DEBUG_MODE {
-			log.Println("Calling OHT_FutureDate from getTaskState")
-		}
 		taskstate.StartBy = i.OHT_FutureDate(wfStart, i.XDWState.Definition.CompleteByTime).String()
 	} else {
-		if i.EnvVars.DEBUG_MODE {
-			log.Println("Calling OHT_FutureDate from getTaskState")
-		}
 		taskstate.StartBy = i.OHT_FutureDate(wfStart, task.StartByTime).String()
 	}
+	// taskstate.WDStartBy = i.GetWorkingDaysTaskStartByDate(taskstate)
+
 	if task.ExpirationTime == "" {
-		if i.EnvVars.DEBUG_MODE {
-			log.Println("Calling OHT_FutureDate from getTaskState")
-		}
 		taskstate.EscalateOn = i.OHT_FutureDate(wfStart, i.XDWState.Definition.CompleteByTime).String()
 	} else {
-		if i.EnvVars.DEBUG_MODE {
-			log.Println("Calling OHT_FutureDate from getTaskState")
-		}
 		taskstate.EscalateOn = i.OHT_FutureDate(wfStart, task.ExpirationTime).String()
 	}
+	// taskstate.WDEscalateOn = i.GetWorkingDaysTaskEscalateOnDate(taskstate)
 	for _, v := range task.CompletionBehavior {
 		if v.Completion.Condition != "" {
 			taskstate.CompletionConditions = append(taskstate.CompletionConditions, v.Completion.Condition)
 		}
 	}
-	taskDetails := i.XDWState.WorkflowDocument.TaskList.XDWTask[GetIntFromString(i.Query.Taskid)-1].TaskData.TaskDetails
-	taskstate.Status = taskDetails.Status
 	if taskstate.Status == STATUS_COMPLETE {
 		taskstate.CompletedOn = taskDetails.LastModifiedTime
-	}
-	if taskDetails.ActivationTime != "" {
-		taskstate.StartedOn = GetTimeFromString(taskDetails.ActivationTime).String()
-	} else {
-		taskstate.StartedOn = ""
 	}
 	taskstate.Owner = taskDetails.ActualOwner
 	if taskstate.Status == STATUS_COMPLETE {
@@ -527,6 +518,7 @@ func (i *Trans) getTaskState() TaskState {
 	} else {
 		taskstate.Escalated = false
 	}
+	taskstate.TimeRemaining = i.GetTaskTimeRemaining(taskstate)
 	return taskstate
 }
 func (i *Trans) setTasksState() {
